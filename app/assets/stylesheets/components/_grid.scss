@@ -1,0 +1,15 @@
+#grids {
+  width: 800px;
+  height: 800px;
+  border: 1px solid black;
+  display: flex;
+  flex-wrap: wrap;
+  .grid {
+    width: 10%;
+    height: 10%;
+    border: 1px solid black;
+  }
+  .active {
+    background-color: beige;
+  }
+};
