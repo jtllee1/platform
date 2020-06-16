@@ -7,14 +7,25 @@ const grid = () => {
 
   document.addEventListener('keydown', (e) => {
     const active = document.querySelector(".active");
+    const right = document.getElementById(parseInt(active.id) + 1);
+    const left = document.getElementById(parseInt(active.id) - 1);
+    const down = document.getElementById(parseInt(active.id) + 10);
+    const up = document.getElementById(parseInt(active.id) - 10);
+
     if (e.keyCode === 39) {
-      const right = document.getElementById(parseInt(active.id) + 1);
       right.classList.add("active");
       active.classList.remove("active");
     }
     else if (e.keyCode === 37) {
-      const left = document.getElementById(parseInt(active.id) - 1);
       left.classList.add("active");
+      active.classList.remove("active");
+    }
+    else if (e.keyCode === 40) {
+      down.classList.add("active");
+      active.classList.remove("active");
+    }
+    else if (e.keyCode === 38) {
+      up.classList.add("active");
       active.classList.remove("active");
     }
   });
