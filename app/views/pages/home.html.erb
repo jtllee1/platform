@@ -1,2 +1,7 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div id="grids">
+  <% i = 1 %>
+  <% 100.times do %>
+      <div id="<%= i %>" class="grid <%= i == 1  ? "active" : "" %>"><%= i %></div>
+      <% i += 1 %>
+  <% end %>
+</div>
