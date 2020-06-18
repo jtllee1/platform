@@ -1,7 +1,11 @@
 <div id="grids">
   <% i = 1 %>
-  <% 100.times do %>
-      <div id="<%= i %>" class="grid <%= i == 1  ? "active" : "" %>"><%= i %></div>
-      <% i += 1 %>
+  <% 10.times do %>
+    <% j = 1 %>
+    <% 10.times do %>
+      <div id="grid-<%= i %>-<%= j %>" class="grid <%= i == 1 && j == 1  ? "active" : "" %> <%= i == 1 || i == 10 || j == 1 || j == 10 ? "boundary" : "" %>"><%= i %>-<%= j %></div>
+      <% j +=1 %>
+    <% end %>
+    <% i += 1 %>
   <% end %>
 </div>
