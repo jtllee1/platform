@@ -4,7 +4,7 @@
   <% 10.times do %>
     <% k = 1 %>
     <% 10.times do %>
-      <div id="<%= j %>" class="grid <%= i == 1 && k == 1  ? "active" : "" %> <%= i == 1 || i == 10 || k == 1 || k == 10 ? "boundary" : "" %>"><%= j %></div>
+      <div id="<%= j %>" class="grid <%= j == 1 ? "active" : "" %> <%= k == 1 ? "left-boundary" : "" %> <%= k == 10 ? "right-boundary" : "" %>"><%= j %></div>
       <% j += 1 %>
       <% k += 1 %>
     <% end %>

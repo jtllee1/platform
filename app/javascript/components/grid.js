@@ -22,19 +22,19 @@ const grid = () => {
     const down = document.getElementById(parseInt(active.id) + 10);
     const up = document.getElementById(parseInt(active.id) - 10);
 
-    if (keyState[39]) {
+    if (keyState[39] && right && active.classList.contains("right-boundary") == false) {
       right.classList.add("active");
       active.classList.remove("active");
     }
-    else if (keyState[37]) {
+    else if (keyState[37] && left && active.classList.contains("left-boundary") == false) {
       left.classList.add("active");
       active.classList.remove("active");
     }
-    else if (keyState[40]) {
+    else if (keyState[40] && down) {
       down.classList.add("active");
       active.classList.remove("active");
     }
-    else if (keyState[38]) {
+    else if (keyState[38] && up) {
       up.classList.add("active");
       active.classList.remove("active");
     }
