@@ -16,11 +16,11 @@ const grid = () => {
   });
 
   function movementLoop() {
-    const active = document.querySelector(".active");
-    const right = document.getElementById(parseInt(active.id) + 1);
-    const left = document.getElementById(parseInt(active.id) - 1);
-    const down = document.getElementById(parseInt(active.id) + 10);
-    const up = document.getElementById(parseInt(active.id) - 10);
+    let active = document.querySelector(".active");
+    let right = document.getElementById(parseInt(active.id) + 1);
+    let left = document.getElementById(parseInt(active.id) - 1);
+    let down = document.getElementById(parseInt(active.id) + 20);
+    let up = document.getElementById(parseInt(active.id) - 20);
 
     if (keyState[39] && right && active.classList.contains("right-boundary") == false) {
       right.classList.add("active");
@@ -37,9 +37,9 @@ const grid = () => {
     else if (keyState[38] && up) {
       up.classList.add("active");
       active.classList.remove("active");
-    }
+    };
 
-    setTimeout(movementLoop, 300);
+    setTimeout(movementLoop, 30);
   };
 
   movementLoop();
