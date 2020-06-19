@@ -9,8 +9,15 @@ const laser = () => {
       for (let step = 0; step < 20; step++) {
         setTimeout( function timer() {
           if (up.id - i >= -19){
-            document.getElementById(parseInt(active.id) - i).classList.add("laser");
-            i = i + 20;
+            let object = document.getElementById(parseInt(active.id) - i);
+            if (object.classList.contains("enemy")) {
+              object.classList.remove("enemy");
+              i = -19;
+            }
+            else {
+              object.classList.add("laser");
+              i = i + 20;
+            }
           };
         }, step * 18 );
 
