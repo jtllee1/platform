@@ -5,11 +5,15 @@
   display: flex;
   flex-wrap: wrap;
   .grid {
-    width: 10%;
-    height: 10%;
-    border: 1px solid black;
+    width: 5%;
+    height: 5%;
+    // border: 1px solid black;
   }
   .active {
-    background-color: beige;
+    background-color: blue;
   }
 };
+
+.laser {
+  background-color: red;
+}
