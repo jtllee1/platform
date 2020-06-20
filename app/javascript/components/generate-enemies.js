@@ -8,7 +8,6 @@ const generateEnemies = () => {
       if (ids.includes(chosenId) == false) {
         ids.push(chosenId)
         document.getElementById(chosenId).classList.add("enemy");
-        console.log(ids.length);
       };
     };
   });
