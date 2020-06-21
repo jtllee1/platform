@@ -1,3 +1,5 @@
+import { enemyMovement } from '../components/enemy-movement';
+
 const generateEnemies = () => {
   const start = document.getElementById("start");
   const grids = document.querySelectorAll(".grid");
@@ -17,6 +19,18 @@ const generateEnemies = () => {
       };
     };
   });
+
+  function enemyMovementLoop() {
+    const enemies = document.querySelectorAll(".enemy");
+
+    enemies.forEach((enemy) => {
+      enemyMovement(enemy);
+    });
+
+    setTimeout(enemyMovementLoop, 1000);
+  };
+
+  enemyMovementLoop();
 };
 
 export { generateEnemies };

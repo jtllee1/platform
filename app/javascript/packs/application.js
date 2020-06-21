@@ -26,7 +26,7 @@ require("channels")
 import "bootstrap";
 import { grid } from '../components/grid';
 import { laser } from '../components/laser';
-import { generateEnemies } from '../components/generate-enemies'
+import { generateEnemies } from '../components/generate-enemies';
 
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
