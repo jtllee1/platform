@@ -11,18 +11,34 @@ const enemyMovement = (enemy) => {
   if (movement == 0 && right && enemy.classList.contains("right-boundary") == false && right.classList.contains("enemy") == false && right.classList.contains("active") == false) {
     right.classList.add("enemy");
     enemy.classList.remove("enemy");
+    if (enemy.classList.contains("level-2")) {
+      right.classList.add("level-2");
+      enemy.classList.remove("level-2");
+    };
   }
   else if (movement == 1 && left && enemy.classList.contains("left-boundary") == false && left.classList.contains("enemy") == false && left.classList.contains("active") == false) {
     left.classList.add("enemy");
     enemy.classList.remove("enemy");
+    if (enemy.classList.contains("level-2")) {
+      left.classList.add("level-2");
+      enemy.classList.remove("level-2");
+    };
   }
   else if (movement == 2 && down && down.classList.contains("enemy") == false && down.classList.contains("active") == false) {
     down.classList.add("enemy");
     enemy.classList.remove("enemy");
+    if (enemy.classList.contains("level-2")) {
+      down.classList.add("level-2");
+      enemy.classList.remove("level-2");
+    };
   }
   else if (movement == 3 && up && up.classList.contains("enemy") == false && up.classList.contains("active") == false) {
     up.classList.add("enemy");
     enemy.classList.remove("enemy");
+    if (enemy.classList.contains("level-2")) {
+      up.classList.add("level-2");
+      enemy.classList.remove("level-2");
+    };
   };
 };
 

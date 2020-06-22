@@ -16,6 +16,7 @@ const generateEnemies = () => {
       if (ids.includes(chosenId) == false) {
         ids.push(chosenId)
         document.getElementById(chosenId).classList.add("enemy");
+        document.getElementById(chosenId).classList.add("level-2");
       };
     };
   });

@@ -11,7 +11,12 @@ const laser = () => {
         setTimeout( function timer() {
           if (up.id - i >= -19 && keepGoing){
             let object = document.getElementById(parseInt(active.id) - i);
-            if (object.classList.contains("enemy")) {
+            if (object.classList.contains("level-2")) {
+              object.classList.remove("level-2");
+              i = i + 20;
+              keepGoing = false;
+            }
+            else if (object.classList.contains("enemy")) {
               object.classList.remove("enemy");
               i = i + 20;
               keepGoing = false;
