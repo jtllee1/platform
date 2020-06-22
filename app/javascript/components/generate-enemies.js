@@ -6,6 +6,8 @@ const generateEnemies = () => {
 
   start.addEventListener('click', () => {
     const ids = [];
+    const level1 = [];
+    const level2 = [];
 
     grids.forEach((grid) => {
       grid.classList.remove("enemy");
@@ -15,8 +17,20 @@ const generateEnemies = () => {
       let chosenId = Math.floor(Math.random()*200) + 1;
       if (ids.includes(chosenId) == false) {
         ids.push(chosenId)
+
+        function checkEnemyLevel(enemy, level) {
+          level.push(enemy);
+        }
+
         document.getElementById(chosenId).classList.add("enemy");
-        document.getElementById(chosenId).classList.add("level-2");
+
+        if (level1.length < 11) {
+          checkEnemyLevel(chosenId, level1);
+        }
+        else if (level2.length < 21) {
+          document.getElementById(chosenId).classList.add("level-2");
+          checkEnemyLevel(chosenId, level2);
+        }
       };
     };
   });
