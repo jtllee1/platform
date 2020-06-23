@@ -5,13 +5,22 @@ const generateEnemies = () => {
   const grids = document.querySelectorAll(".grid");
 
   start.addEventListener('click', () => {
+    const level = document.getElementById("level").innerText;
     const ids = [];
     const level1 = [];
     const level2 = [];
 
     grids.forEach((grid) => {
       grid.classList.remove("enemy");
+      grid.classList.remove("level-2");
     });
+
+    if (level == 1) {
+      var limit1 = 20;
+    }
+    else if (level == 2) {
+      var limit1 = 10;
+    }
 
     for (let i = 0; ids.length < 20; i++) {
       let chosenId = Math.floor(Math.random()*200) + 1;
@@ -20,14 +29,14 @@ const generateEnemies = () => {
 
         function checkEnemyLevel(enemy, level) {
           level.push(enemy);
-        }
+        };
 
         document.getElementById(chosenId).classList.add("enemy");
 
-        if (level1.length < 11) {
+        if (level1.length < limit1) {
           checkEnemyLevel(chosenId, level1);
         }
-        else if (level2.length < 21) {
+        else if (level2.length < 20) {
           document.getElementById(chosenId).classList.add("level-2");
           checkEnemyLevel(chosenId, level2);
         }
