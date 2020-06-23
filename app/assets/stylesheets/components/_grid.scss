@@ -31,3 +31,12 @@
 .level-2 {
   background-color: yellow;
 }
+
+#level-selector {
+  display: flex;
+  .level-adjustor {
+    border: 1px solid black;
+    margin: 8px;
+    padding: 8px;
+  }
+}
