@@ -17,9 +17,15 @@ const generateEnemies = () => {
 
     if (level == 1) {
       var limit1 = 20;
+      var limit2 = 0;
     }
     else if (level == 2) {
       var limit1 = 10;
+      var limit2 = 10;
+    }
+    else if (level == 3) {
+      var limit1 = 0;
+      var limit2 = 20;
     }
 
     for (let i = 0; ids.length < 20; i++) {
@@ -36,7 +42,7 @@ const generateEnemies = () => {
         if (level1.length < limit1) {
           checkEnemyLevel(chosenId, level1);
         }
-        else if (level2.length < 20) {
+        else if (level2.length < limit2) {
           document.getElementById(chosenId).classList.add("level-2");
           checkEnemyLevel(chosenId, level2);
         }
