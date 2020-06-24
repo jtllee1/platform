@@ -10,7 +10,7 @@ const levelAdjustor = () => {
   });
 
   right.addEventListener('click', () => {
-    if (parseInt(level.innerText) < 2) {
+    if (parseInt(level.innerText) < 3) {
       level.innerText = parseInt(level.innerText) + 1;
     };
   });
