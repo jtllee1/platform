@@ -33,7 +33,7 @@ const laser = () => {
             document.getElementById(parseInt(active.id) - j).classList.remove("laser");
             j = j + 20;
           };
-        }, step * 20 );
+        }, step * 18 );
       };
     };
   });
