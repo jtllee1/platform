@@ -20,6 +20,7 @@ const timer = () => {
     if (count.innerText == 0) {
       state = false;
       scoring(0, true);
+      clearGrid();
     };
 
     setTimeout(countdown, 1000);
