@@ -1,3 +1,5 @@
+import { clearGrid } from '../components/clear-grid';
+
 const timer = () => {
   const count = document.getElementById("timer");
   const start = document.getElementById("start");
@@ -11,12 +13,14 @@ const timer = () => {
 
     if (count.innerText == 0) {
       state = false;
+      clearGrid();
     }
 
     setTimeout(countdown, 1000);
   };
 
   start.addEventListener('click', () => {
+    count.innerText = 60;
     state = true;
   });
 
