@@ -1,3 +1,5 @@
+import { scoring } from '../components/scoring';
+
 const laser = () => {
   document.addEventListener('keyup', (e) => {
     let active = document.querySelector(".active");
@@ -15,11 +17,13 @@ const laser = () => {
               object.classList.remove("level-2");
               i = i + 20;
               keepGoing = false;
+              scoring(300, false);
             }
             else if (object.classList.contains("enemy")) {
               object.classList.remove("enemy");
               i = i + 20;
               keepGoing = false;
+              scoring(100, false);
             }
             else {
               object.classList.add("laser");

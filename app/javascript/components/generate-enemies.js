@@ -3,6 +3,7 @@ import { enemyMovement } from '../components/enemy-movement';
 
 const generateEnemies = () => {
   const start = document.getElementById("start");
+  const scoreBoard = document.getElementById("score");
 
   start.addEventListener('click', () => {
     const level = document.getElementById("level").innerText;
@@ -11,6 +12,7 @@ const generateEnemies = () => {
     const level2 = [];
 
     clearGrid();
+    scoreBoard.innerText = 0;
 
     if (level == 1) {
       var limit1 = 20;
