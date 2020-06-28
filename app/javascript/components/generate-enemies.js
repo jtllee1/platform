@@ -1,8 +1,8 @@
+import { clearGrid } from '../components/clear-grid';
 import { enemyMovement } from '../components/enemy-movement';
 
 const generateEnemies = () => {
   const start = document.getElementById("start");
-  const grids = document.querySelectorAll(".grid");
 
   start.addEventListener('click', () => {
     const level = document.getElementById("level").innerText;
@@ -10,10 +10,7 @@ const generateEnemies = () => {
     const level1 = [];
     const level2 = [];
 
-    grids.forEach((grid) => {
-      grid.classList.remove("enemy");
-      grid.classList.remove("level-2");
-    });
+    clearGrid();
 
     if (level == 1) {
       var limit1 = 20;

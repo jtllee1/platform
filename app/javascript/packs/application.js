@@ -27,6 +27,7 @@ import "bootstrap";
 import { grid } from '../components/grid';
 import { levelAdjustor } from '../components/level-adjustor';
 import { laser } from '../components/laser';
+import { timer } from '../components/timer';
 import { generateEnemies } from '../components/generate-enemies';
 
 // Internal imports, e.g:
@@ -38,5 +39,6 @@ document.addEventListener('turbolinks:load', () => {
   grid();
   levelAdjustor();
   laser();
+  timer();
   generateEnemies();
 });
