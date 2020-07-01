@@ -1,11 +1,15 @@
+body {
+  background-color: rgba(0, 50, 150, 0.5);
+}
+
 #grids {
   width: 800px;
   height: 800px;
-  border: 16px solid rgba(100, 100, 100, 1.0);
-  border-radius: 4px;
+  border: 12px solid rgba(150, 150, 150, 0.5);
+  border-radius: 8px;
   display: flex;
   flex-wrap: wrap;
-  background-color: rgba(0, 0, 30, 1.0);
+  background-color: rgba(0, 0, 50, 0.9);
   .grid {
     width: 5%;
     height: 5%;
@@ -24,13 +28,15 @@
   height: 30px;
   margin-left: auto;
   margin-right: auto;
+  margin-bottom: 8px;
   background-color: rgba(200, 100, 0, 1.0);
-  border: 2px solid black;
+  border: 2px solid rgba(200, 150, 0, 1.0);
   border-radius: 24px;
 }
 
 #start:hover {
   cursor: pointer;
+  background-color: rgba(230, 150, 0, 0.9);
 }
 
 .laser {
@@ -56,8 +62,10 @@
 
 #level-selector {
   display: flex;
+  margin-top: 8px;
+  margin-bottom: 8px;
   .level-adjustor {
-    border: 2px solid black;
+    border: 2px solid rgba(200, 150, 0, 1.0);
     border-radius: 8px;
     background-color: rgba(200, 100, 0, 1.0);
     margin: 8px;
@@ -68,16 +76,35 @@
   }
   #level-increase:hover {
     cursor: pointer;
+    background-color: rgba(230, 150, 0, 0.9);
   }
   #level-decrease:hover {
     cursor: pointer;
+    background-color: rgba(230, 150, 0, 0.9);
   }
 }
 
 .main {
   display: flex;
+  justify-content: center;
+  margin-top: 32px;
 }
 
 .data {
+  color: white;
+  background-color: rgba(50, 50, 100, 1.0);
   text-align: center;
+  padding: 8px;
+  height: 100%;
+  border: 8px solid rgba(150, 150, 150, 0.5);
+  border-radius: 8px;
+  margin-left: 16px;
+}
+
+#timer {
+  font-size: 48px;
+}
+
+#score {
+  font-size: 48px;
 }
