@@ -1,4 +1,4 @@
-import { scoring } from '../components/scoring';
+import { scoring } from '../cellbuster/scoring';
 
 const laser = () => {
   document.addEventListener('keyup', (e) => {
