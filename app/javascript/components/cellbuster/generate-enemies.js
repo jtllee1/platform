@@ -1,5 +1,5 @@
-import { clearGrid } from '../components/clear-grid';
-import { enemyMovement } from '../components/enemy-movement';
+import { clearGrid } from '../cellbuster/clear-grid';
+import { enemyMovement } from '../cellbuster/enemy-movement';
 
 const generateEnemies = () => {
   const start = document.getElementById("start");

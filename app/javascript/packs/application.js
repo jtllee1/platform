@@ -24,11 +24,6 @@ require("channels")
 
 // External imports
 import "bootstrap";
-import { grid } from '../components/grid';
-import { levelAdjustor } from '../components/level-adjustor';
-import { laser } from '../components/laser';
-import { timer } from '../components/timer';
-import { generateEnemies } from '../components/generate-enemies';
 
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
@@ -36,9 +31,4 @@ import { generateEnemies } from '../components/generate-enemies';
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
-  grid();
-  levelAdjustor();
-  laser();
-  timer();
-  generateEnemies();
 });

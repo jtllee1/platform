@@ -1,6 +1,6 @@
-import { clearGrid } from '../components/clear-grid';
-import { checkGrid } from '../components/check-grid';
-import { scoring } from '../components/scoring';
+import { clearGrid } from '../cellbuster/clear-grid';
+import { checkGrid } from '../cellbuster/check-grid';
+import { scoring } from '../cellbuster/scoring';
 
 const timer = () => {
   const count = document.getElementById("timer");
