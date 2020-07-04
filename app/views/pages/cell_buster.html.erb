@@ -6,18 +6,18 @@
 
 <div class="main">
   <div id="grids">
+    <% row = 1 %>
     <% i = 1 %>
-    <% j = 1 %>
     <% 20.times do %>
-      <% k = 1 %>
+      <% column = 1 %>
       <% 20.times do %>
-        <div id="<%= j %>" class="grid <%= j == 381 ? "active" : "" %>
-          <%= k == 1 ? "left-boundary" : "" %> <%= k == 20 ? "right-boundary" : "" %>
-          <%= i == 1 ? "up-boundary" : "" %> <%= i == 20 ? "down-boundary" : "" %>"></div>
-        <% j += 1 %>
-        <% k += 1 %>
+        <div id="<%= i %>" class="grid <%= i == 381 ? "active" : "" %>
+          <%= column == 1 ? "left-boundary" : "" %> <%= column == 20 ? "right-boundary" : "" %>
+          <%= row == 1 ? "up-boundary" : "" %> <%= row == 20 ? "down-boundary" : "" %>"></div>
+        <% i += 1 %>
+        <% column += 1 %>
       <% end %>
-      <% i += 1 %>
+      <% row += 1 %>
     <% end %>
   </div>
 

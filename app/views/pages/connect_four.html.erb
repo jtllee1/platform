@@ -1,0 +1,23 @@
+<%= javascript_pack_tag 'connect_four', 'data-turbolinks-track': 'reload', defer: true %>
+
+<div class="title">
+  <h1>Connect Four</h1>
+</div>
+
+<div class="main">
+  <div id="grids">
+    <% row = 1 %>
+    <% i = 1 %>
+    <% 20.times do %>
+      <% column = 1 %>
+      <% 20.times do %>
+        <div id="<%= i %>" class="grid
+          <%= column == 1 ? "left-boundary" : "" %> <%= column == 20 ? "right-boundary" : "" %>
+          <%= row == 1 ? "up-boundary" : "" %> <%= row == 20 ? "down-boundary" : "" %>"></a></div>
+        <% i += 1 %>
+        <% column += 1 %>
+      <% end %>
+      <% row += 1 %>
+    <% end %>
+  </div>
+</div>

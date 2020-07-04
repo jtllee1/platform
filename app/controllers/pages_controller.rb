@@ -4,4 +4,7 @@ class PagesController < ApplicationController
 
   def cell_buster
   end
+
+  def connect_four
+  end
 end
