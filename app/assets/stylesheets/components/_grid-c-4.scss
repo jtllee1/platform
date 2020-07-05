@@ -1,0 +1,30 @@
+#grids-c-4 {
+  width: 800px;
+  height: 800px;
+  border: 12px solid rgba(150, 150, 150, 0.5);
+  border-radius: 8px;
+  display: flex;
+  flex-wrap: wrap;
+  background-color: rgba(0, 100, 200, 1.0);
+  .grid-c-4 {
+    width: 10%;
+    height: 10%;
+    background-color: rgba(0, 0, 100, 1.0);
+    border-radius: 50%;
+  }
+  .active-1 {
+    background-color: yellow;
+  }
+  .active-2 {
+    background-color: red;
+  }
+  .grid-c-4:hover {
+    background-color: cyan;
+  }
+};
+
+.main-c-4 {
+  display: flex;
+  justify-content: center;
+  margin-top: 32px;
+}
