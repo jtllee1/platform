@@ -1,4 +1,4 @@
-const columnHover = (column) => {
+const columnHover = (column, addedClass) => {
   let columnItems = [];
   let check = true;
 
@@ -8,7 +8,7 @@ const columnHover = (column) => {
 
   columnItems.reverse().forEach(item => {
     if (item.classList.contains("active-1") == false && item.classList.contains("active-2") == false && check) {
-      item.classList.add("hover");
+      item.classList.add(`${addedClass}`);
       check = false;
     };
   });
