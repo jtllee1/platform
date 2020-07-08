@@ -8,12 +8,10 @@ import { generateEnemies } from '../components/cellbuster/generate-enemies';
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
 
-document.addEventListener('turbolinks:load', () => {
-  // Call your functions here, e.g:
-  // initSelect2();
-  grid();
-  levelAdjustor();
-  laser();
-  timer();
-  generateEnemies();
-});
+// Call your functions here, e.g:
+// initSelect2();
+grid();
+levelAdjustor();
+laser();
+timer();
+generateEnemies();
