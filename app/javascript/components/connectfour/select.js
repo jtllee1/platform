@@ -3,6 +3,8 @@ import { columnHover } from '../connectfour/column-hover';
 const select = () => {
   const slots = document.querySelectorAll(".grid-c-4");
   const grids = document.getElementById("grids-c-4");
+  const player1 = document.getElementById("player-1");
+  const player2 = document.getElementById("player-2");
 
   let activeColumn = 0;
   let turn = 1;
@@ -60,9 +62,13 @@ const select = () => {
   grids.addEventListener('click', () => {
     if (isOdd(turn)) {
       columnHover(activeColumn, "active-1");
+      player1.classList.remove("active");
+      player2.classList.add("active");
     }
     else {
       columnHover(activeColumn, "active-2");
+      player1.classList.add("active");
+      player2.classList.remove("active");
     }
     turn++
   });

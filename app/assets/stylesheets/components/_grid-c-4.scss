@@ -28,3 +28,24 @@
   justify-content: center;
   margin-top: 32px;
 }
+
+.data-c-4 {
+  display: flex;
+  justify-content: center;
+  height: 100%;
+  .player {
+    border-radius: 8px;
+    margin: 8px;
+    padding: 8px;
+    border: 8px solid rgba(0, 0, 0, 0);
+  }
+  #player-1 {
+    background-color: yellow;
+  }
+  #player-2 {
+    background-color: red;
+  }
+  .active {
+    border: 8px solid rgba(150, 150, 150, 0.5);
+  }
+}
