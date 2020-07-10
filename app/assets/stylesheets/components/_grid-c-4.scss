@@ -16,10 +16,12 @@
     background-color: rgba(0, 255, 255, 0.8);
   }
   .active-1 {
-    background-color: yellow;
+    background-color: #ffff16;
+    border: 12px solid #96961e8a;
   }
   .active-2 {
-    background-color: red;
+    background-color: #ce2828;
+    border: 12px solid #9e2222a3;
   }
 };
 
@@ -41,10 +43,10 @@
     border: 8px solid rgba(0, 0, 0, 0);
   }
   #player-1 {
-    background-color: yellow;
+    background-color: #ffff16;
   }
   #player-2 {
-    background-color: red;
+    background-color: #ce2828;
   }
   .active {
     border: 8px solid rgba(150, 150, 150, 0.5);
