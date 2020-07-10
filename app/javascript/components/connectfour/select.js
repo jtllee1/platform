@@ -1,4 +1,5 @@
 import { columnHover } from '../connectfour/column-hover';
+import { animation } from '../connectfour/animation';
 
 const select = () => {
   const slots = document.querySelectorAll(".grid-c-4");
@@ -61,12 +62,14 @@ const select = () => {
 
   grids.addEventListener('click', () => {
     if (isOdd(turn)) {
-      columnHover(activeColumn, "active-1");
+      animation(activeColumn, "active-1");
+      columnHover(activeColumn, "stop");
       player1.classList.remove("active");
       player2.classList.add("active");
     }
     else {
-      columnHover(activeColumn, "active-2");
+      animation(activeColumn, "active-2");
+      columnHover(activeColumn, "stop");
       player1.classList.add("active");
       player2.classList.remove("active");
     }
