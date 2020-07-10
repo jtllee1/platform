@@ -7,4 +7,3 @@ import { select } from '../components/connectfour/select';
 // Call your functions here, e.g:
 // initSelect2();
 select();
-
