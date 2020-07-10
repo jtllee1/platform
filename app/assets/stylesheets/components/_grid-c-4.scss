@@ -36,6 +36,9 @@
   justify-content: center;
   height: 100%;
   margin-left: 8px;
+  background-color: rgba(0, 100, 200, 1.0);
+  border-radius: 8px;
+  border: 12px solid rgba(150, 150, 150, 0.5);
   .player {
     border-radius: 8px;
     margin: 8px;
@@ -48,7 +51,10 @@
   #player-2 {
     background-color: #ce2828;
   }
-  .active {
-    border: 8px solid rgba(150, 150, 150, 0.5);
+  #player-1.active {
+    border: 8px solid #96961e8a;
+  }
+  #player-2.active {
+    border: 8px solid #9e2222a3;
   }
 }
