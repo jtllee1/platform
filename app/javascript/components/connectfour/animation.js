@@ -13,13 +13,13 @@ const animation = (column, addedClass) => {
       if (columnItems[i].classList.contains("active-1") == false && columnItems[i].classList.contains("active-2") == false) {
         columnItems[i].classList.add(`${addedClass}`);
       }
-    }, (i + 1) * 40 );
+    }, i * 30 );
 
     setTimeout( function timer() {
       if (columnItems[i].classList.contains("stop") == false) {
         columnItems[i].classList.remove(`${addedClass}`);
       };
-    }, (i + 1) * 50 );
+    }, (i + 1) * 30 );
   };
 };
 
