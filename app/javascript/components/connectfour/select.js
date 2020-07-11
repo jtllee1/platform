@@ -73,7 +73,7 @@ const select = () => {
       player1.classList.add("active");
       player2.classList.remove("active");
     }
-    turn++
+    turn++;
   });
 };
 

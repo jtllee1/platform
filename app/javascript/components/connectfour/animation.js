@@ -1,4 +1,5 @@
 import { columnHover } from '../connectfour/column-hover';
+import { checkCondition } from '../connectfour/check-condition';
 
 const animation = (column, addedClass) => {
   const grids = document.getElementById("grids-c-4");
@@ -12,6 +13,7 @@ const animation = (column, addedClass) => {
     setTimeout( function timer() {
       if (columnItems[i].classList.contains("active-1") == false && columnItems[i].classList.contains("active-2") == false) {
         columnItems[i].classList.add(`${addedClass}`);
+        checkCondition();
       }
     }, i * 30 );
 
