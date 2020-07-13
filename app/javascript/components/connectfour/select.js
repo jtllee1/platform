@@ -1,11 +1,13 @@
 import { columnHover } from '../connectfour/column-hover';
 import { animation } from '../connectfour/animation';
+import { reset } from '../connectfour/reset';
 
 const select = () => {
   const slots = document.querySelectorAll(".grid-c-4");
   const grids = document.getElementById("grids-c-4");
   const player1 = document.getElementById("player-1");
   const player2 = document.getElementById("player-2");
+  const restart = document.getElementById("reset");
 
   let activeColumn = 0;
   let turn = 1;
@@ -46,6 +48,17 @@ const select = () => {
       }
       turn++;
     });
+  });
+
+  restart.addEventListener('click', () => {
+    slots.forEach(slot => {
+      reset(slot);
+    });
+
+    turn = 1;
+
+    player1.classList.add("active");
+    player2.classList.remove("active");
   });
 };
 
