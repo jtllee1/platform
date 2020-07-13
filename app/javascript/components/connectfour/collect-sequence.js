@@ -23,15 +23,17 @@ const collectSequence = (first, last, type) => {
   };
 
   function columnCondition(slots, column, active) {
-    if (slots[column - 10].classList.contains(`${active}`) &&
-      slots[column - 20].classList.contains(`${active}`) &&
-      slots[column - 30].classList.contains(`${active}`) &&
-      slots[column].classList.contains("stop") &&
-      slots[column - 10].classList.contains("stop") &&
-      slots[column - 20].classList.contains("stop") &&
-      slots[column - 30].classList.contains("stop")
-      ) {
-      return true;
+    if (column - 30 >= 0) {
+      if (slots[column - 10].classList.contains(`${active}`) &&
+        slots[column - 20].classList.contains(`${active}`) &&
+        slots[column - 30].classList.contains(`${active}`) &&
+        slots[column].classList.contains("stop") &&
+        slots[column - 10].classList.contains("stop") &&
+        slots[column - 20].classList.contains("stop") &&
+        slots[column - 30].classList.contains("stop")
+        ) {
+        return true;
+      };
     };
   };
 
@@ -44,15 +46,17 @@ const collectSequence = (first, last, type) => {
   }
 
   function diagonalCondition(slots, slot, active, a, b, c) {
-    if (slots[slot - a].classList.contains(`${active}`) &&
-      slots[slot - b].classList.contains(`${active}`) &&
-      slots[slot - c].classList.contains(`${active}`) &&
-      slots[slot].classList.contains("stop") &&
-      slots[slot - a].classList.contains("stop") &&
-      slots[slot - b].classList.contains("stop") &&
-      slots[slot - c].classList.contains("stop")
-      ) {
-      return true;
+    if (slot - c >= 0) {
+      if (slots[slot - a].classList.contains(`${active}`) &&
+        slots[slot - b].classList.contains(`${active}`) &&
+        slots[slot - c].classList.contains(`${active}`) &&
+        slots[slot].classList.contains("stop") &&
+        slots[slot - a].classList.contains("stop") &&
+        slots[slot - b].classList.contains("stop") &&
+        slots[slot - c].classList.contains("stop")
+        ) {
+        return true;
+      };
     };
   };
 
