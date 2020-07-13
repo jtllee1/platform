@@ -30,22 +30,22 @@ const select = () => {
         };
       };
     });
-  });
 
-  grids.addEventListener('click', () => {
-    if (isOdd(turn)) {
-      animation(activeColumn, "active-1");
-      columnHover(activeColumn, "stop");
-      player1.classList.remove("active");
-      player2.classList.add("active");
-    }
-    else {
-      animation(activeColumn, "active-2");
-      columnHover(activeColumn, "stop");
-      player1.classList.add("active");
-      player2.classList.remove("active");
-    }
-    turn++;
+    slot.addEventListener('click', () => {
+      if (isOdd(turn)) {
+        animation(activeColumn, "active-1");
+        columnHover(activeColumn, "stop");
+        player1.classList.remove("active");
+        player2.classList.add("active");
+      }
+      else {
+        animation(activeColumn, "active-2");
+        columnHover(activeColumn, "stop");
+        player1.classList.add("active");
+        player2.classList.remove("active");
+      }
+      turn++;
+    });
   });
 };
 
