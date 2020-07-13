@@ -1,6 +1,5 @@
 // External imports
 import { select } from '../components/connectfour/select';
-import { reset } from '../components/connectfour/reset';
 
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
@@ -8,4 +7,3 @@ import { reset } from '../components/connectfour/reset';
 // Call your functions here, e.g:
 // initSelect2();
 select();
-reset();
