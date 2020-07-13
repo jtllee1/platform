@@ -4,7 +4,7 @@ const checkCondition = () => {
   let firstRow = 90;
   let lastRow = 99;
 
-  for (let step = 0; step < 10; step++) {
+  for (let step = 0; step < 11; step++) {
     collectSequence(firstRow, lastRow, "row");
     firstRow = 90 - (10 * step);
     lastRow = 99 - (10 * step);
