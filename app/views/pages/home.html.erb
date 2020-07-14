@@ -1,2 +1,18 @@
-<%= link_to "Cell Buster", cell_buster_path %>
-<%= link_to "Connect Four", connect_four_path %>
+<div class="title">
+  <h1>Gaming Center</h1>
+</div>
+
+<div class="container">
+  <div class="games">
+    <div class="1-p-games">
+      <%= link_to cell_buster_path do %>
+        <%= image_tag "Cell_Buster", class: "game-image", alt: "Cell Buster" %>
+      <% end %>
+    </div>
+    <div class="2-p-games">
+      <%= link_to connect_four_path do %>
+        <%= image_tag "Connect_Four", class: "game-image", alt: "Connect Four" %>
+      <% end %>
+    </div>
+  </div>
+</div>
