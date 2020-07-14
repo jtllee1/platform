@@ -1,1 +1,31 @@
 // Specific CSS for your home-page
+body {
+  background-color: rgba(0, 50, 150, 0.5);
+}
+
+.title {
+  text-align: center;
+  h1 {
+    padding: 16px;
+    background-color: rgba(50, 50, 100, 1.0);
+    color: white;
+  }
+  a {
+    color: white;
+  }
+  a:hover {
+    text-decoration: none;
+  }
+}
+
+.games {
+  display: flex;
+  justify-content: center;
+  img {
+    width: 380px;
+    height: 300px;
+    margin: 16px;
+    border: 8px solid #c8caec;
+    border-radius: 12px;
+  }
+}
