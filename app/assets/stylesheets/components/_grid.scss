@@ -18,6 +18,14 @@
   }
 }
 
+@media only screen and (max-width: 1200px) {
+  #grids {
+    width: 600px;
+    height: 600px;
+    border: 8px solid rgba(150, 150, 150, 0.5);
+  }
+}
+
 #start {
   width: 80px;
   height: 30px;
