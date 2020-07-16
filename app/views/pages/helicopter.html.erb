@@ -1,0 +1,27 @@
+<%= javascript_pack_tag 'helicopter' %>
+
+<div class="title">
+  <h1><%= link_to "Helicopter", root_path %></h1>
+</div>
+
+<div class="main">
+  <div id="grids">
+    <% row = 1 %>
+    <% i = 1 %>
+    <% 20.times do %>
+      <% column = 1 %>
+      <% 20.times do %>
+        <div id="<%= i %>" class="grid <%= i == 381 ? "active" : "" %>"></div>
+        <% i += 1 %>
+        <% column += 1 %>
+      <% end %>
+      <% row += 1 %>
+    <% end %>
+  </div>
+
+  <div class="data">
+    <a><b>Score:</b></a>
+    <div id="score">0</div>
+    <div id="start">Start</div>
+  </div>
+</div>
