@@ -30,14 +30,14 @@ const grid = () => {
       left.classList.add("active");
       active.classList.remove("active");
     }
-    else if (keyState[40] && down && down.classList.contains("enemy") == false) {
-      down.classList.add("active");
-      active.classList.remove("active");
-    }
-    else if (keyState[38] && up && up.classList.contains("enemy") == false) {
-      up.classList.add("active");
-      active.classList.remove("active");
-    };
+    // else if (keyState[40] && down && down.classList.contains("enemy") == false) {
+    //   down.classList.add("active");
+    //   active.classList.remove("active");
+    // }
+    // else if (keyState[38] && up && up.classList.contains("enemy") == false) {
+    //   up.classList.add("active");
+    //   active.classList.remove("active");
+    // };
 
     setTimeout(movementLoop, 30);
   };
