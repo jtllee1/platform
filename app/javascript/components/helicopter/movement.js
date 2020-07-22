@@ -24,7 +24,7 @@ const movement = () => {
       up.classList.add("active");
       active.classList.remove("active");
     }
-    else if (down) {
+    else if (keyState[32] == false && down) {
       down.classList.add("active");
       active.classList.remove("active");
     };
