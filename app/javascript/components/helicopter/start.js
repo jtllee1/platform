@@ -3,6 +3,7 @@ import { obstacle } from '../helicopter/obstacle';
 const start = () => {
   const start = document.getElementById("start");
   const text = document.getElementById("190");
+  const grids = document.querySelectorAll(".grid-heli");
   let on = false;
 
   start.addEventListener('click', () => {
@@ -31,7 +32,18 @@ const start = () => {
     setTimeout(game, 3000);
   };
 
+  function stop() {
+    grids.forEach(grid => {
+      if (grid.classList.contains("active") && grid.classList.contains("obstacle")) {
+        on = false;
+      };
+    });
+
+    setTimeout(stop, 0);
+  };
+
   game();
+  stop();
 };
 
 export { start };
