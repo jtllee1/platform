@@ -6,18 +6,22 @@
   display: flex;
   flex-wrap: wrap;
   background-color: rgba(0, 0, 50, 0.9);
+  color: white;
+  font-size: 30px;
+  font-weight: strong;
   .grid-heli {
     width: 5%;
     height: 5%;
   }
   .active {
-    background-image: image-url('cell');
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+    // background-image: image-url('cell');
+    // background-position: center;
+    // background-repeat: no-repeat;
+    // background-size: cover;
+    background-color: green;
   }
   .obstacle {
-    background-color: red;
+    background-color: beige;
   }
 }
 
