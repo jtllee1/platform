@@ -29,7 +29,7 @@ const movement = () => {
       active.classList.remove("active");
     };
 
-    setTimeout(movementLoop, 30);
+    setTimeout(movementLoop, 50);
   };
 
   movementLoop();
