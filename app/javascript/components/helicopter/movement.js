@@ -45,7 +45,7 @@ const movement = () => {
       });
     };
 
-    setTimeout(movementLoop, 50);
+    setTimeout(movementLoop, 40);
   };
 
   movementLoop();

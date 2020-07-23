@@ -1,17 +1,28 @@
 import { obstacle } from '../helicopter/obstacle';
+import { createClouds } from '../helicopter/create-clouds';
 
 const start = () => {
   const start = document.getElementById("start");
   const text = document.getElementById("1847");
   const grids = document.querySelectorAll(".grid-heli");
+  const score = document.getElementById("score");
   let on = false;
+
+  createClouds(313);
+  createClouds(566);
+  createClouds(1654);
+  createClouds(2914);
+  createClouds(3373);
 
   start.addEventListener('click', () => {
     on = true;
 
+
     grids.forEach(grid => {
       grid.classList.remove("cover");
     });
+
+    score.innerText = 0;
 
     // for (let step = 0; step < 3; step++) {
     //   setTimeout( function timer() {
@@ -30,7 +41,7 @@ const start = () => {
 
   function game() {
     if (on) {
-      obstacle();
+      obstacle(40);
     };
 
     setTimeout(game, 2000);
@@ -50,8 +61,19 @@ const start = () => {
     setTimeout(stop, 0);
   };
 
+  function timer () {
+    if (on) {
+      let value = parseInt(score.innerText);
+
+      score.innerText = value + 10;
+    };
+
+    setTimeout(timer, 2000);
+  };
+
   game();
   stop();
+  timer();
 };
 
 export { start };
