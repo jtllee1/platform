@@ -22,6 +22,9 @@ require("channels")
 
 // External imports
 import "bootstrap";
+
+// Internal imports, e.g:
+// import { initSelect2 } from '../components/init_select2';
 import { grid } from '../components/cellbuster/grid';
 import { levelAdjustor } from '../components/cellbuster/level-adjustor';
 import { laser } from '../components/cellbuster/laser';
@@ -30,9 +33,6 @@ import { generateEnemies } from '../components/cellbuster/generate-enemies';
 import { select } from '../components/connectfour/select';
 import { movement } from '../components/helicopter/movement';
 import { start } from '../components/helicopter/start';
-
-// Internal imports, e.g:
-// import { initSelect2 } from '../components/init_select2';
 
 const id = document.getElementById("name").innerText;
 // Call your functions here, e.g:
