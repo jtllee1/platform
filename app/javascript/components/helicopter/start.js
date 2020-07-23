@@ -9,6 +9,10 @@ const start = () => {
   start.addEventListener('click', () => {
     on = true;
 
+    grids.forEach(grid => {
+      grid.classList.remove("cover");
+    });
+
     for (let step = 0; step < 3; step++) {
       setTimeout( function timer() {
         if (step == 0) {
@@ -36,6 +40,10 @@ const start = () => {
     grids.forEach(grid => {
       if (grid.classList.contains("active") && grid.classList.contains("obstacle")) {
         on = false;
+
+        grids.forEach(grid => {
+          grid.classList.add("cover");
+        });
       };
     });
 
