@@ -8,10 +8,15 @@
   <div id="grids-heli">
     <% row = 1 %>
     <% i = 1 %>
-    <% 20.times do %>
+    <% 40.times do %>
       <% column = 1 %>
-      <% 20.times do %>
-        <div id="<%= i %>" class="grid-heli <%= i == 381 ? "active" : "" %> r-<%= row %> c-<%= column %>"></div>
+      <% 100.times do %>
+        <div id="<%= i %>" class="grid-heli <%= i == 3901 ? "active" : "" %>
+          <%= i == 3902 ? "active" : "" %> <%= i == 3903 ? "active" : "" %>
+          <%= i == 3904 ? "active" : "" %> <%= i == 3905 ? "active" : "" %>
+          <%= i == 3801 ? "active" : "" %> <%= i == 3802 ? "active" : "" %>
+          <%= i == 3803 ? "active" : "" %> <%= i == 3804 ? "active" : "" %>
+          <%= i == 3805 ? "active" : "" %> r-<%= row %> c-<%= column %>"></div>
         <% i += 1 %>
         <% column += 1 %>
       <% end %>

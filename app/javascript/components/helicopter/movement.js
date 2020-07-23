@@ -16,20 +16,36 @@ const movement = () => {
   });
 
   function movementLoop() {
-    let active = document.querySelector(".active");
-    let down = document.getElementById(parseInt(active.id) + 20);
-    let up = document.getElementById(parseInt(active.id) - 20);
+    let actives = document.querySelectorAll(".active");
+    let top = document.getElementById(parseInt(actives[0].id) - 100);
+    let bottom = document.getElementById(parseInt(actives[9].id) + 100);
 
-    if (keyState[32] && up) {
-      up.classList.add("active");
-      active.classList.remove("active");
+    if (keyState[32] && top) {
+      actives.forEach(active => {
+        let up = document.getElementById(parseInt(active.id) - 100);
+        let down = document.getElementById(parseInt(active.id) + 100);
+
+        up.classList.add("active");
+
+        if (down) {
+          down.classList.remove("active");
+        };
+      });
     }
-    else if (keyState[32] == false && down) {
-      down.classList.add("active");
-      active.classList.remove("active");
+    else if (keyState[32] == false && bottom) {
+      actives.forEach(active => {
+        let up = document.getElementById(parseInt(active.id) - 100);
+        let down = document.getElementById(parseInt(active.id) + 100);
+
+        down.classList.add("active");
+
+        if (up) {
+          up.classList.remove("active");
+        };
+      });
     };
 
-    setTimeout(movementLoop, 100);
+    setTimeout(movementLoop, 50);
   };
 
   movementLoop();
