@@ -6,14 +6,16 @@ const obstacle = () => {
 
   let number = Math.floor(Math.random() * 20);
 
-  for (let step = 0; step < 20; step++) {
-    setTimeout( function timer() {
-      generateObstacle(20 - step, number);
-    }, step * 300 );
+  for (let step = 0; step < 100; step++) {
+    for (let i = 0; i < 6; i++) {
+      setTimeout( function timer() {
+        generateObstacle(100 - step, number);
+      }, (step + i) * 40 );
+    };
 
     setTimeout( function timer() {
-      removeObstacle(20 - step, number);
-    }, (step + 1) * 300 );
+      removeObstacle(100 - step, number);
+    }, (step + 6) * 40 );
   };
 };
 
