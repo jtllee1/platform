@@ -5,17 +5,20 @@
   border-radius: 8px;
   display: flex;
   flex-wrap: wrap;
-  background-color: rgba(0, 0, 50, 0.9);
+  background-color: rgba(150, 230, 255, 0.9);
   color: white;
   font-size: 30px;
   font-weight: strong;
   text-align: center;
+  .cloud {
+    background-color: #ffffff7a;
+  }
   .grid-heli {
     width: 1%;
     height: 2.5%;
   }
   .obstacle {
-    background-color: beige;
+    background-color: #844f1d;
   }
   .cover {
     background-color: rgba(0, 0, 0, 0);
@@ -25,7 +28,7 @@
     // background-position: center;
     // background-repeat: no-repeat;
     // background-size: cover;
-    background-color: green;
+    background-color: #0f841b;
   }
 }
 
