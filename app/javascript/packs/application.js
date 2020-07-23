@@ -4,10 +4,8 @@
 // that code so it'll be compiled.
 
 require("@rails/ujs").start()
-require("turbolinks").start()
 require("@rails/activestorage").start()
 require("channels")
-
 
 // Uncomment to copy all static images under ../images to the output folder and reference
 // them with the image_pack_tag helper in views (e.g <%= image_pack_tag 'rails.png' %>)
@@ -24,11 +22,32 @@ require("channels")
 
 // External imports
 import "bootstrap";
+import { grid } from '../components/cellbuster/grid';
+import { levelAdjustor } from '../components/cellbuster/level-adjustor';
+import { laser } from '../components/cellbuster/laser';
+import { timer } from '../components/cellbuster/timer';
+import { generateEnemies } from '../components/cellbuster/generate-enemies';
+import { select } from '../components/connectfour/select';
+import { movement } from '../components/helicopter/movement';
+import { start } from '../components/helicopter/start';
 
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
 
-// document.addEventListener('turbolinks:load', () => {
-  // Call your functions here, e.g:
-  // initSelect2();
-// });
+const id = document.getElementById("name").innerText;
+// Call your functions here, e.g:
+// initSelect2();
+if (id == "Cell Buster") {
+  grid();
+  levelAdjustor();
+  laser();
+  timer();
+  generateEnemies();
+}
+else if (id == "Connect Four") {
+  select();
+}
+else if (id == "Helicopter") {
+  movement();
+  start();
+};
