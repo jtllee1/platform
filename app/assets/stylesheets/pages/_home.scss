@@ -29,4 +29,8 @@ body {
     border: 8px solid #c8caec;
     border-radius: 12px;
   }
+  img:hover {
+    border: 12px solid #b9bbda;
+    transition-delay: 0.04s;
+  }
 }
