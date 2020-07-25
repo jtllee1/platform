@@ -104,6 +104,14 @@
   border: 8px solid rgba(150, 150, 150, 0.5);
   border-radius: 8px;
   margin-left: 16px;
+  .instructions {
+    width: 160px;
+    margin-top: 16px;
+    padding: 4px;
+    border-radius: 8px;
+    background-color: #53539c;
+    border: 2px solid rgba(200, 150, 0, 1.0);
+  }
 }
 
 #timer {
