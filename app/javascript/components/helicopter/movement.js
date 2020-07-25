@@ -5,6 +5,8 @@ const movement = () => {
     }
   }, false);
 
+  const grids = document.getElementById("grids-heli");
+
   var keyState = {};
 
   document.addEventListener('keydown', (e) => {
@@ -13,6 +15,14 @@ const movement = () => {
 
   document.addEventListener('keyup', (e) => {
     keyState[e.keyCode] = false;
+  });
+
+  grids.addEventListener('mousedown', (e) => {
+    keyState[32] = true;
+  });
+
+  grids.addEventListener('mouseup', (e) => {
+    keyState[32] = false;
   });
 
   function movementLoop() {
