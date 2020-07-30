@@ -1,17 +1,17 @@
 <div class="title">
-  <h1 id="name"><%= link_to "Game", root_path %></h1>
+  <h1 id="name"><%= link_to "Snake", root_path %></h1>
 </div>
 
 <div class="main">
-  <div id="grids">
+  <div id="grids-snake">
     <% row = 1 %>
     <% i = 1 %>
     <% 20.times do %>
       <% column = 1 %>
       <% 20.times do %>
-        <div id="<%= i %>" class="grid <%= i == 390 ? "active" : "" %>
+        <div id="<%= i %>" class="grid-snake <%= i == 390 ? "active" : "" %>
           <%= column == 1 ? "left-boundary" : "" %> <%= column == 20 ? "right-boundary" : "" %>
-          <%= row == 1 ? "up-boundary" : "" %> <%= row == 20 ? "down-boundary" : "" %>"></div>
+          <%= row == 1 ? "up-boundary" : "" %> <%= row == 20 ? "down-boundary" : "" %>"><div class="inner"></div></div>
         <% i += 1 %>
         <% column += 1 %>
       <% end %>

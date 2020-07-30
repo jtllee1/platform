@@ -2,8 +2,6 @@ import { generateObstacle } from '../helicopter/generate-obstacle';
 import { removeObstacle } from '../helicopter/remove-obstacle';
 
 const obstacle = (time) => {
-  const start = document.getElementById("start");
-
   let number = Math.floor(Math.random() * 20);
 
   for (let step = 0; step < 100; step++) {
