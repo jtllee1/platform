@@ -33,6 +33,7 @@ import { generateEnemies } from '../components/cellbuster/generate-enemies';
 import { select } from '../components/connectfour/select';
 import { movement } from '../components/helicopter/movement';
 import { start } from '../components/helicopter/start';
+import { continualMovement } from '../components/snake/continual-movement';
 
 const id = document.getElementById("name").innerText;
 // Call your functions here, e.g:
@@ -50,4 +51,7 @@ else if (id == "Connect Four") {
 else if (id == "Helicopter") {
   movement();
   start();
-};
+}
+else if (id == "Snake") {
+  continualMovement();
+}
