@@ -15,6 +15,9 @@ const continualMovement = () => {
   let gameState = false;
   var keyState = {};
 
+  let level = 1;
+  let i = 0;
+
   keyState[38] = true;
 
   document.addEventListener('keydown', (e) => {
@@ -34,29 +37,10 @@ const continualMovement = () => {
   };
 
   start.addEventListener('click', () => {
-    grids.forEach(grid => {
-      grid.classList.remove("food");
-      grid.classList.remove("active");
-    });
-
-    inners.forEach(inner => {
-      inner.classList.remove("body");
-    });
-
-    keyState[37] = false;
-    keyState[39] = false;
-    keyState[40] = false;
-    keyState[38] = true;
-
-    document.getElementById("390").classList.add("active");
-
     gameState = true;
-
     foodLoop();
   });
 
-  let level = 1;
-  let i = 0;
 
   function movementLoop() {
     let active = document.querySelector(".active");

@@ -43,6 +43,30 @@
   background-color: rgba(230, 150, 0, 0.9);
 }
 
+#reset {
+  width: 80px;
+  height: 30px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 8px;
+  margin-top: 16px;
+  background-color: rgba(200, 100, 0, 1.0);
+  border: 2px solid rgba(200, 150, 0, 1.0);
+  border-radius: 24px;
+  font-weight: bold;
+  a {
+    color: white;
+  }
+}
+
+#reset:hover {
+  cursor: pointer;
+  background-color: rgba(230, 150, 0, 0.9);
+  a {
+    text-decoration: none;
+  }
+}
+
 .laser {
   background-image: image-url('particle1');
   background-position: center;
