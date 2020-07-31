@@ -54,17 +54,12 @@
   border: 2px solid rgba(200, 150, 0, 1.0);
   border-radius: 24px;
   font-weight: bold;
-  a {
-    color: white;
-  }
+  color: white;
 }
 
 #reset:hover {
   cursor: pointer;
   background-color: rgba(230, 150, 0, 0.9);
-  a {
-    text-decoration: none;
-  }
 }
 
 .laser {
@@ -135,6 +130,9 @@
     border-radius: 8px;
     background-color: #53539c;
     border: 2px solid rgba(200, 150, 0, 1.0);
+  }
+  a:hover {
+    text-decoration: none;
   }
 }
 
