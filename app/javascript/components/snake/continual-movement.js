@@ -1,4 +1,5 @@
 import { tail } from '../snake/tail';
+import { generateFood } from '../snake/generate-food';
 
 const continualMovement = () => {
   window.addEventListener("keydown", function(e) {
@@ -8,6 +9,9 @@ const continualMovement = () => {
   }, false);
 
   const start = document.getElementById("start");
+  const grids = document.querySelectorAll(".grid-snake");
+  const inners = document.querySelectorAll(".inner");
+
   let gameState = false;
   var keyState = {};
 
@@ -21,11 +25,37 @@ const continualMovement = () => {
     keyState[e.keyCode] = true;
   });
 
+  function foodLoop() {
+    if (gameState) {
+      generateFood();
+
+      setTimeout(foodLoop, 2000);
+    };
+  };
+
   start.addEventListener('click', () => {
+    grids.forEach(grid => {
+      grid.classList.remove("food");
+      grid.classList.remove("active");
+    });
+
+    inners.forEach(inner => {
+      inner.classList.remove("body");
+    });
+
+    keyState[37] = false;
+    keyState[39] = false;
+    keyState[40] = false;
+    keyState[38] = true;
+
+    document.getElementById("390").classList.add("active");
+
     gameState = true;
+
+    foodLoop();
   });
 
-  let level = 5;
+  let level = 1;
   let i = 0;
 
   function movementLoop() {
@@ -41,6 +71,11 @@ const continualMovement = () => {
       right.querySelector(".inner").classList.add("body");
       active.classList.remove("active");
 
+      if (right.classList.contains("food")) {
+        right.classList.remove("food");
+        level++;
+      }
+
       if (i == level) {
         tail(level);
       };
@@ -50,6 +85,11 @@ const continualMovement = () => {
       left.querySelector(".inner").id = `inner-${i}`;
       left.querySelector(".inner").classList.add("body");
       active.classList.remove("active");
+
+      if (left.classList.contains("food")) {
+        left.classList.remove("food");
+        level++;
+      }
 
       if (i == level) {
         tail(level);
@@ -61,6 +101,11 @@ const continualMovement = () => {
       down.querySelector(".inner").classList.add("body");
       active.classList.remove("active");
 
+      if (down.classList.contains("food")) {
+        down.classList.remove("food");
+        level++;
+      }
+
       if (i == level) {
         tail(level);
       };
@@ -71,16 +116,24 @@ const continualMovement = () => {
       up.querySelector(".inner").classList.add("body");
       active.classList.remove("active");
 
+      if (up.classList.contains("food")) {
+        up.classList.remove("food");
+        level++;
+      }
+
       if (i == level) {
         tail(level);
       };
+    }
+    else {
+      gameState = false;
     };
 
     if (i < level && gameState) {
       i++;
     };
 
-    setTimeout(movementLoop, 50);
+    setTimeout(movementLoop, 100);
   };
 
   movementLoop();

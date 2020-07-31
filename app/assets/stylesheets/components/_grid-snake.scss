@@ -9,6 +9,16 @@
   .grid-snake {
     width: 5%;
     height: 5%;
+    .inner {
+      width: 100%;
+      height: 100%;
+    }
+    .body {
+      background-image: image-url('cell');
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
   }
   .active {
     background-image: image-url('cell');
@@ -16,15 +26,8 @@
     background-repeat: no-repeat;
     background-size: cover;
   }
-  .inner {
-    width: 100%;
-    height: 100%;
-  }
-  .body {
-    background-image: image-url('cell');
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+  .food {
+    background-color: yellow;
   }
 }
 
