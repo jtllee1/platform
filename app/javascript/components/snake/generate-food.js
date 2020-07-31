@@ -3,16 +3,9 @@ const generateFood = () => {
 
   let grid = document.getElementById(number);
 
-  function food() {
-    if (grid.classList.contains("food") == false && grid.querySelector(".inner").classList.contains("body") == false) {
-      grid.classList.add("food");
-    }
-    else {
-      food();
-    };
-  };
-
-  food();
+  if (grid.classList.contains("active") == false && grid.classList.contains("food") == false && grid.querySelector(".inner").classList.contains("body") == false) {
+    grid.classList.add("food");
+  }
 };
 
 export { generateFood };

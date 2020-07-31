@@ -79,7 +79,7 @@ const continualMovement = () => {
         tail(level);
       };
     }
-    else if (gameState && keyState[40] && down && down.classList.contains("enemy") == false && down.querySelector(".inner").classList.contains("body") == false) {
+    else if (gameState && keyState[40] && down && down.querySelector(".inner").classList.contains("body") == false) {
       down.classList.add("active");
       down.querySelector(".inner").id = `inner-${i}`;
       down.querySelector(".inner").classList.add("body");
@@ -94,7 +94,7 @@ const continualMovement = () => {
         tail(level);
       };
     }
-    else if (gameState && keyState[38] && up && up.classList.contains("enemy") == false && up.querySelector(".inner").classList.contains("body") == false) {
+    else if (gameState && keyState[38] && up && up.querySelector(".inner").classList.contains("body") == false) {
       up.classList.add("active");
       up.querySelector(".inner").id = `inner-${i}`;
       up.querySelector(".inner").classList.add("body");
