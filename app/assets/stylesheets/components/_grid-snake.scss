@@ -5,7 +5,7 @@
   border-radius: 8px;
   display: flex;
   flex-wrap: wrap;
-  background-color: rgba(0, 0, 50, 0.9);
+  background-color: rgba(255, 250, 230, 0.9);
   .grid-snake {
     width: 5%;
     height: 5%;
@@ -13,21 +13,42 @@
       width: 100%;
       height: 100%;
     }
-    .body {
-      background-image: image-url('cell');
-      background-position: center;
-      background-repeat: no-repeat;
-      background-size: cover;
-    }
   }
-  .active {
-    background-image: image-url('cell');
+  .body {
+    background-image: image-url('body');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  .active-u {
+    background-image: image-url('HeadU');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  .active-d {
+    background-image: image-url('HeadD');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  .active-r {
+    background-image: image-url('HeadR');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  .active-l {
+    background-image: image-url('HeadL');
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
   }
   .food {
-    background-color: yellow;
+    background-image: image-url('leaf');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
   }
 }
 

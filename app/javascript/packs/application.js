@@ -52,7 +52,7 @@ else if (id == "Helicopter") {
   movement();
   start();
 }
-else if (id == "Snake") {
+else if (id == "Caterpillar") {
   continualMovement();
   levelAdjustor();
 }
