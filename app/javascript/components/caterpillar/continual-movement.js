@@ -1,6 +1,6 @@
-import { tail } from '../snake/tail';
-import { generateFood } from '../snake/generate-food';
-import { updateScore } from '../snake/update-score';
+import { tail } from '../caterpillar/tail';
+import { generateFood } from '../caterpillar/generate-food';
+import { updateScore } from '../caterpillar/update-score';
 
 const continualMovement = () => {
   window.addEventListener("keydown", function(e) {

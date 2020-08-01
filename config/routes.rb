@@ -3,6 +3,6 @@ Rails.application.routes.draw do
   get '/cell_buster', to: 'pages#cell_buster'
   get '/connect_four', to: 'pages#connect_four'
   get '/helicopter', to: 'pages#helicopter'
-  get '/snake', to: 'pages#snake'
+  get '/caterpillar', to: 'pages#caterpillar'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

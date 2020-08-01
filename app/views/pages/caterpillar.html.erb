@@ -3,13 +3,13 @@
 </div>
 
 <div class="main">
-  <div id="grids-snake">
+  <div id="grids-caterpillar">
     <% row = 1 %>
     <% i = 1 %>
     <% 20.times do %>
       <% column = 1 %>
       <% 20.times do %>
-        <div id="<%= i %>" class="grid-snake <%= i == 390 ? "active" : "" %> <%= i == 390 ? "active-u" : "" %>
+        <div id="<%= i %>" class="grid-caterpillar <%= i == 390 ? "active" : "" %> <%= i == 390 ? "active-u" : "" %>
           <%= column == 1 ? "left-boundary" : "" %> <%= column == 20 ? "right-boundary" : "" %>
           <%= row == 1 ? "up-boundary" : "" %> <%= row == 20 ? "down-boundary" : "" %>"><div class="inner"></div></div>
         <% i += 1 %>
@@ -32,7 +32,7 @@
     <div class="instructions">
       <a>Move using the arrow keys.</a>
     </div>
-    <%= link_to snake_path do %>
+    <%= link_to caterpillar_path do %>
       <div id="reset">Reset</div>
     <% end %>
   </div>
