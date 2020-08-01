@@ -54,4 +54,5 @@ else if (id == "Helicopter") {
 }
 else if (id == "Snake") {
   continualMovement();
+  levelAdjustor();
 }
