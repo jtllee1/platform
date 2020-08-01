@@ -54,9 +54,14 @@ const continualMovement = () => {
 
     if (gameState && keyState[39] && right && active.classList.contains("right-boundary") == false && right.querySelector(".inner").classList.contains("body") == false) {
       right.classList.add("active");
-      right.querySelector(".inner").id = `inner-${i}`;
-      right.querySelector(".inner").classList.add("body");
+      right.classList.add("active-r");
+      active.querySelector(".inner").id = `inner-${i}`;
+      active.querySelector(".inner").classList.add("body");
       active.classList.remove("active");
+      active.classList.remove("active-u");
+      active.classList.remove("active-d");
+      active.classList.remove("active-r");
+      active.classList.remove("active-l");
 
       if (right.classList.contains("food")) {
         right.classList.remove("food");
@@ -70,9 +75,14 @@ const continualMovement = () => {
     }
     else if (gameState && keyState[37] && left && active.classList.contains("left-boundary") == false && left.querySelector(".inner").classList.contains("body") == false) {
       left.classList.add("active");
-      left.querySelector(".inner").id = `inner-${i}`;
-      left.querySelector(".inner").classList.add("body");
+      left.classList.add("active-l");
+      active.querySelector(".inner").id = `inner-${i}`;
+      active.querySelector(".inner").classList.add("body");
       active.classList.remove("active");
+      active.classList.remove("active-u");
+      active.classList.remove("active-d");
+      active.classList.remove("active-r");
+      active.classList.remove("active-l");
 
       if (left.classList.contains("food")) {
         left.classList.remove("food");
@@ -86,9 +96,14 @@ const continualMovement = () => {
     }
     else if (gameState && keyState[40] && down && down.querySelector(".inner").classList.contains("body") == false) {
       down.classList.add("active");
-      down.querySelector(".inner").id = `inner-${i}`;
-      down.querySelector(".inner").classList.add("body");
+      down.classList.add("active-d");
+      active.querySelector(".inner").id = `inner-${i}`;
+      active.querySelector(".inner").classList.add("body");
       active.classList.remove("active");
+      active.classList.remove("active-u");
+      active.classList.remove("active-d");
+      active.classList.remove("active-r");
+      active.classList.remove("active-l");
 
       if (down.classList.contains("food")) {
         down.classList.remove("food");
@@ -102,9 +117,14 @@ const continualMovement = () => {
     }
     else if (gameState && keyState[38] && up && up.querySelector(".inner").classList.contains("body") == false) {
       up.classList.add("active");
-      up.querySelector(".inner").id = `inner-${i}`;
-      up.querySelector(".inner").classList.add("body");
+      up.classList.add("active-u");
+      active.querySelector(".inner").id = `inner-${i}`;
+      active.querySelector(".inner").classList.add("body");
       active.classList.remove("active");
+      active.classList.remove("active-u");
+      active.classList.remove("active-d");
+      active.classList.remove("active-r");
+      active.classList.remove("active-l");
 
       if (up.classList.contains("food")) {
         up.classList.remove("food");
