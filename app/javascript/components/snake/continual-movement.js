@@ -1,5 +1,6 @@
 import { tail } from '../snake/tail';
 import { generateFood } from '../snake/generate-food';
+import { updateScore } from '../snake/update-score';
 
 const continualMovement = () => {
   window.addEventListener("keydown", function(e) {
@@ -14,8 +15,9 @@ const continualMovement = () => {
 
   let gameState = false;
   var keyState = {};
+  let difficulty = 1;
 
-  let level = 1;
+  let length = 1;
   let i = 0;
 
   keyState[38] = true;
@@ -37,6 +39,7 @@ const continualMovement = () => {
   };
 
   start.addEventListener('click', () => {
+    difficulty = document.getElementById("level").innerText;
     gameState = true;
     foodLoop();
   });
@@ -57,11 +60,12 @@ const continualMovement = () => {
 
       if (right.classList.contains("food")) {
         right.classList.remove("food");
-        level++;
+        length++;
+        updateScore(difficulty);
       }
 
-      if (i == level) {
-        tail(level);
+      if (i == length) {
+        tail(length);
       };
     }
     else if (gameState && keyState[37] && left && active.classList.contains("left-boundary") == false && left.querySelector(".inner").classList.contains("body") == false) {
@@ -72,11 +76,12 @@ const continualMovement = () => {
 
       if (left.classList.contains("food")) {
         left.classList.remove("food");
-        level++;
+        length++;
+        updateScore(difficulty);
       }
 
-      if (i == level) {
-        tail(level);
+      if (i == length) {
+        tail(length);
       };
     }
     else if (gameState && keyState[40] && down && down.querySelector(".inner").classList.contains("body") == false) {
@@ -87,11 +92,12 @@ const continualMovement = () => {
 
       if (down.classList.contains("food")) {
         down.classList.remove("food");
-        level++;
+        length++;
+        updateScore(difficulty);
       }
 
-      if (i == level) {
-        tail(level);
+      if (i == length) {
+        tail(length);
       };
     }
     else if (gameState && keyState[38] && up && up.querySelector(".inner").classList.contains("body") == false) {
@@ -102,22 +108,31 @@ const continualMovement = () => {
 
       if (up.classList.contains("food")) {
         up.classList.remove("food");
-        level++;
+        length++;
+        updateScore(difficulty);
       }
 
-      if (i == level) {
-        tail(level);
+      if (i == length) {
+        tail(length);
       };
     }
     else {
       gameState = false;
     };
 
-    if (i < level && gameState) {
+    if (i < length && gameState) {
       i++;
     };
 
-    setTimeout(movementLoop, 100);
+    if (difficulty == 1) {
+      setTimeout(movementLoop, 100);
+    }
+    else if (difficulty == 2) {
+      setTimeout(movementLoop, 80);
+    }
+    else if (difficulty == 3) {
+      setTimeout(movementLoop, 60);
+    }
   };
 
   movementLoop();
