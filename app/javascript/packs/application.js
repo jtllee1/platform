@@ -56,3 +56,6 @@ else if (id == "Caterpillar") {
   continualMovement();
   levelAdjustor();
 }
+else if (id == "Tetris") {
+
+}
