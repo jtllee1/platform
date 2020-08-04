@@ -1,7 +1,7 @@
 #grids-tetris {
   width: 600px;
   height: 800px;
-  border: 12px solid rgba(150, 150, 150, 0.5);
+  border: 10px solid rgba(150, 150, 150, 0.5);
   border-radius: 8px;
   display: flex;
   flex-wrap: wrap;
@@ -14,12 +14,27 @@
   .red {
     background-color: red;
   }
+  .orange {
+    background-color: orange;
+  }
+  .green {
+    background-color: green;
+  }
+  .cyan {
+    background-color: cyan;
+  }
+  .yellow {
+    background-color: yellow;
+  }
+  .purple {
+    background-color: purple;
+  }
 }
 
 @media only screen and (max-width: 1200px) {
   #grids-tetris {
     width: 450px;
     height: 600px;
-    border: 8px solid rgba(150, 150, 150, 0.5);
+    border: 6px solid rgba(150, 150, 150, 0.5);
   }
 }
