@@ -3,15 +3,15 @@
 </div>
 
 <div class="main">
-  <div id="grids">
+  <div id="grids-tetris">
     <% row = 1 %>
     <% i = 1 %>
     <% 20.times do %>
       <% column = 1 %>
-      <% 20.times do %>
-        <div id="<%= i %>" class="grid <%= i == 390 ? "active" : "" %>
-          <%= column == 1 ? "left-boundary" : "" %> <%= column == 20 ? "right-boundary" : "" %>
-          <%= row == 1 ? "up-boundary" : "" %> <%= row == 20 ? "down-boundary" : "" %>"></div>
+      <% 16.times do %>
+        <div id="<%= i %>" class="grid-tetris <%= column == 1 ? "left-boundary" : "" %>
+          <%= column == 16 ? "right-boundary" : "" %> <%= row == 1 ? "up-boundary" : "" %>
+          <%= row == 20 ? "down-boundary" : "" %>"></div>
         <% i += 1 %>
         <% column += 1 %>
       <% end %>
