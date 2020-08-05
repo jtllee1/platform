@@ -49,11 +49,18 @@ const startTetris = () => {
         next = false;
       };
 
+      let dropCondition = false;
       dropping = document.querySelectorAll(".dropping");
 
       if (dropping[dropping.length - 1] !== undefined) {
         bottom = document.getElementById(parseInt(dropping[dropping.length - 1].id));
-      };
+        if (bottom.classList.contains("down-boundary") == false) {
+          dropCondition = true;
+        }
+      }
+      else {
+        dropCondition = false;
+      }
 
       let down = true;
 
@@ -65,7 +72,7 @@ const startTetris = () => {
         };
       };
 
-      if (bottom.classList.contains("down-boundary") == false) {
+      if (dropCondition) {
         for (let step = 0; step < dropping.length; step++) {
 
           let index = dropping.length - step - 1;
@@ -82,7 +89,7 @@ const startTetris = () => {
             });
 
             next = true;
-          }
+          };
         };
       }
       else {
