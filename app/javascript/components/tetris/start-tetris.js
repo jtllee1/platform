@@ -1,5 +1,6 @@
 import { generateShape } from '../tetris/generate-shape';
 import { moveTetris } from '../tetris/move-tetris';
+import { rotateTetris } from '../tetris/rotate-tetris';
 
 const startTetris = () => {
   window.addEventListener("keydown", function(e) {
@@ -9,11 +10,13 @@ const startTetris = () => {
   }, false);
 
   const start = document.getElementById("start");
-  const shapes = ["S", "Z", "T", "L", "M-L", "Sq", "Line" ];
+  const shapes = ["S", "Z", "T", "L", "M-L", "Sq", "Line"];
   const colors = ["red", "orange", "green", "cyan", "yellow", "purple"];
   let gameState = false;
   let next = false;
+  let rotate = false;
   let time = 500;
+  let orientation = 1;
   let dropping = "";
   let bottom = "";
   var keyState = {};
@@ -27,21 +30,20 @@ const startTetris = () => {
   });
 
   document.addEventListener('keydown', (e) => {
-    if (e.keyCode == 32) {
+    if (e.keyCode == 40) {
       time = 50;
     };
     if (e.keyCode == 39 || e.keyCode == 37) {
-      time = 100;
       keyState[e.keyCode] = true;
     };
   });
 
   document.addEventListener('keyup', (e) => {
-    if (e.keyCode == 32) {
+    if (e.keyCode == 40) {
       time = 500;
     };
-    if (e.keyCode == 39 || e.keyCode == 37) {
-      time = 500;
+    if (e.keyCode == 32 || e.keyCode == 38) {
+      rotate = true;
     };
   });
 
@@ -53,6 +55,7 @@ const startTetris = () => {
 
         generateShape(shape, color);
 
+        orientation = 1;
         next = false;
       };
 
@@ -81,8 +84,18 @@ const startTetris = () => {
 
       let notMoving = true;
 
-      if (keyState[39] || keyState[37]) {
-        moveTetris(keyState,dropping, color);
+      if (rotate) {
+        rotateTetris(shape, color, dropping, orientation);
+        rotate = false;
+        if (orientation == 4) {
+          orientation = 1;
+        }
+        else {
+          orientation++;
+        };
+      }
+      else if (keyState[39] || keyState[37]) {
+        moveTetris(keyState, dropping, color);
         keyState[39] = false;
         keyState[37] = false;
       }
