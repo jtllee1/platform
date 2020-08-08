@@ -18,7 +18,7 @@ const startTetris = () => {
   let gameState = false;
   let next = false;
   let rotate = false;
-  let time = 500;
+  let time = 400;
   let orientation = 1;
   let dropping = "";
   let bottom = "";
@@ -50,7 +50,7 @@ const startTetris = () => {
 
   document.addEventListener('keyup', (e) => {
     if (e.keyCode == 40) {
-      time = 500;
+      time = 400;
     };
     if (e.keyCode == 32 || e.keyCode == 38) {
       rotate = true;
