@@ -11,6 +11,8 @@ const startTetris = () => {
   }, false);
 
   const start = document.getElementById("start");
+  const grids = document.querySelectorAll(".grid-tetris");
+  const score = document.getElementById("score");
   const shapes = ["S", "Z", "T", "L", "M-L", "Sq", "Line"];
   const colors = ["red", "orange", "green", "cyan", "yellow", "purple"];
   let gameState = false;
@@ -27,7 +29,11 @@ const startTetris = () => {
 
   start.addEventListener('click', () => {
     if (gameState == false) {
-      generateShape(shape, color);
+      grids.forEach(grid => {
+        grid.classList.remove("dropped", "dropping", "red", "orange", "green", "cyan", "yellow", "purple");
+      });
+
+      score.innerText = 0;
 
       gameState = true;
     };
@@ -57,7 +63,12 @@ const startTetris = () => {
         shape = shapes[Math.floor(Math.random() * 7)];
         color = colors[Math.floor(Math.random() * 6)];
 
-        generateShape(shape, color);
+        if (generateShape(shape, color, grids) == false) {
+          gameState = false;
+        }
+        else {
+          generateShape(shape, color, grids);
+        };
 
         orientation = 1;
         next = false;
@@ -120,7 +131,7 @@ const startTetris = () => {
               drop.classList.add("dropped");
             });
 
-            clearCondition();
+            clearCondition(grids, score);
 
             next = true;
           };
@@ -132,7 +143,7 @@ const startTetris = () => {
           drop.classList.add("dropped");
         });
 
-        clearCondition();
+        clearCondition(grids, score);
 
         next = true;
       };
