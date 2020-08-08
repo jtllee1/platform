@@ -1,6 +1,7 @@
 import { generateShape } from '../tetris/generate-shape';
 import { moveTetris } from '../tetris/move-tetris';
 import { rotateTetris } from '../tetris/rotate-tetris';
+import { clearCondition } from '../tetris/clear-condition';
 
 const startTetris = () => {
   window.addEventListener("keydown", function(e) {
@@ -116,6 +117,8 @@ const startTetris = () => {
               drop.classList.add("dropped");
             });
 
+            clearCondition();
+
             next = true;
           };
         };
@@ -125,6 +128,8 @@ const startTetris = () => {
           drop.classList.remove("dropping");
           drop.classList.add("dropped");
         });
+
+        clearCondition();
 
         next = true;
       };
