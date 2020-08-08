@@ -26,8 +26,11 @@ const startTetris = () => {
   let color = colors[Math.floor(Math.random() * 6)];
 
   start.addEventListener('click', () => {
+    if (gameState == false) {
       generateShape(shape, color);
+
       gameState = true;
+    };
   });
 
   document.addEventListener('keydown', (e) => {
