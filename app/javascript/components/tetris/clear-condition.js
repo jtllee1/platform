@@ -1,7 +1,4 @@
-const clearCondition = () => {
-  const grids = document.querySelectorAll(".grid-tetris");
-  const score = document.getElementById("score");
-
+const clearCondition = (grids, score) => {
   for (let row = 0; row < 20; row++) {
     let rowCheck = [];
 
