@@ -13,6 +13,7 @@ const startTetris = () => {
   const start = document.getElementById("start");
   const grids = document.querySelectorAll(".grid-tetris");
   const score = document.getElementById("score");
+  const bgMusic = document.querySelector(".bg-music");
   const shapes = ["S", "Z", "T", "L", "M-L", "Sq", "Line"];
   const colors = ["red", "orange", "green", "cyan", "yellow", "purple"];
   let gameState = false;
@@ -36,6 +37,8 @@ const startTetris = () => {
       score.innerText = 0;
 
       gameState = true;
+
+      bgMusic.play();
     };
   });
 
@@ -65,6 +68,8 @@ const startTetris = () => {
 
         if (generateShape(shape, color, grids) == false) {
           gameState = false;
+          bgMusic.pause();
+          bgMusic.currentTime = 0;
         }
         else {
           generateShape(shape, color, grids);
