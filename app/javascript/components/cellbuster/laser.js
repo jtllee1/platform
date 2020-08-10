@@ -1,6 +1,8 @@
 import { scoring } from '../cellbuster/scoring';
 
 const laser = () => {
+  const laserSound = document.querySelector(".laser");
+
   document.addEventListener('keyup', (e) => {
     let active = document.querySelector(".active");
     let up = document.getElementById(parseInt(active.id) - 20);
@@ -9,6 +11,10 @@ const laser = () => {
     let keepGoing = true;
 
     if (e.keyCode === 32) {
+      laserSound.pause();
+      laserSound.currentTime = 0;
+      laserSound.play();
+
       for (let step = 0; step < 20; step++) {
         setTimeout( function timer() {
           if (up.id - i >= -19 && keepGoing){
