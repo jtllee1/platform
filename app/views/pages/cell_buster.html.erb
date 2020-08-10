@@ -2,6 +2,10 @@
   <h1 id="name"><%= link_to "Cell Buster", root_path %></h1>
 </div>
 
+<audio class="laser invisible" controls preload="none">
+    <source src="<%= asset_path('laser.mp3') %>" type="audio/mpeg">
+</audio>
+
 <div class="main">
   <div id="grids">
     <% row = 1 %>
