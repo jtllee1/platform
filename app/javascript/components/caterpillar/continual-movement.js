@@ -13,6 +13,7 @@ const continualMovement = () => {
   const grids = document.querySelectorAll(".grid-snake");
   const inners = document.querySelectorAll(".inner");
 
+  const footstepSound = document.querySelector(".footstep");
   let gameState = false;
   var keyState = {};
   let difficulty = 1;
@@ -40,7 +41,12 @@ const continualMovement = () => {
 
   start.addEventListener('click', () => {
     difficulty = document.getElementById("level").innerText;
+
+    footstepSound.play();
+    footstepSound.playbackRate = 3.0;
+
     gameState = true;
+
     foodLoop();
   });
 
@@ -138,6 +144,8 @@ const continualMovement = () => {
     }
     else {
       gameState = false;
+      footstepSound.pause();
+      footstepSound.currentTime = 0;
     };
 
     if (i < length && gameState) {

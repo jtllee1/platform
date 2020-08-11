@@ -2,3 +2,4 @@
 //= link_directory ../stylesheets .css
 //= link tetris-music.mp3
 //= link laser.mp3
+//= link grass-footstep.mp3
