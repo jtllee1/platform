@@ -60,3 +60,6 @@ else if (id == "Caterpillar") {
 else if (id == "Tetris") {
   startTetris();
 }
+else if (id == "Pong") {
+
+}
