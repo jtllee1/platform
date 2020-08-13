@@ -1,10 +1,4 @@
 const movePaddle = () => {
-  window.addEventListener("keydown", function(e) {
-    if ([32, 37, 38, 39, 40].indexOf(e.keyCode) > -1) {
-        e.preventDefault();
-    }
-  }, false);
-
   var keyState = {};
 
   document.addEventListener('keydown', (e) => {
@@ -17,19 +11,29 @@ const movePaddle = () => {
 
   function movementLoop() {
     let actives = document.querySelectorAll(".active");
-    let right = document.getElementById(parseInt(actives[3].id) + 1);
+    let gameState = document.getElementById("game-state");
+    let ball = document.querySelector(".ball");
+    let right = document.getElementById(parseInt(actives[2].id) + 1);
     let left = document.getElementById(parseInt(actives[0].id) - 1);
 
     if (keyState[39] && right) {
-      document.getElementById(parseInt(actives[3].id) + 1).classList.add("active");
+      document.getElementById(parseInt(actives[2].id) + 1).classList.add("active");
       actives[0].classList.remove("active");
+      if (gameState.innerText == "Off") {
+        document.getElementById(parseInt(ball.id) + 1).classList.add("ball");
+        ball.classList.remove("ball");
+      };
     }
     else if (keyState[37] && left.id > 380) {
       document.getElementById(parseInt(actives[0].id) - 1).classList.add("active");
-      actives[3].classList.remove("active");
+      actives[2].classList.remove("active");
+      if (gameState.innerText == "Off") {
+        document.getElementById(parseInt(ball.id) - 1).classList.add("ball");
+        ball.classList.remove("ball");
+      };
     };
 
-    setTimeout(movementLoop, 100);
+    setTimeout(movementLoop, 80);
   };
 
   movementLoop();

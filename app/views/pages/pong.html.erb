@@ -2,6 +2,8 @@
   <h1 id="name"><%= link_to "Pong", root_path %></h1>
 </div>
 
+<div id="game-state" class="invisible">Off</div>
+
 <div class="main">
   <div id="grids-pong">
     <% row = 1 %>
@@ -9,7 +11,7 @@
     <% 20.times do %>
       <% column = 1 %>
       <% 20.times do %>
-        <div id="<%= i %>" class="grid-pong <%= i == 389 || i == 390 || i == 391 || i == 392 ? "active" : "" %>
+        <div id="<%= i %>" class="grid-pong <%= i == 389 || i == 390 || i == 391 ? "active" : "" %>
           <%= i == 370 ? "ball" : "" %> <%= column == 1 ? "left-boundary" : "" %>
           <%= column == 20 ? "right-boundary" : "" %> <%= row == 1 ? "up-boundary" : "" %>
           <%= row == 20 ? "down-boundary" : "" %>"><%= i %></div>
