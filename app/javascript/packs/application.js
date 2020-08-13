@@ -35,6 +35,7 @@ import { movement } from '../components/helicopter/movement';
 import { start } from '../components/helicopter/start';
 import { continualMovement } from '../components/caterpillar/continual-movement';
 import { startTetris } from '../components/tetris/start-tetris';
+import { movePaddle } from '../components/pong/move-paddle';
 
 const id = document.getElementById("name").innerText;
 // Call your functions here, e.g:
@@ -61,5 +62,5 @@ else if (id == "Tetris") {
   startTetris();
 }
 else if (id == "Pong") {
-
+  movePaddle();
 }
