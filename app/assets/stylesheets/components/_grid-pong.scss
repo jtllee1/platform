@@ -1,5 +1,5 @@
 #grids-pong {
-  width: 800px;
+  width: 1200px;
   height: 800px;
   border: 12px solid rgba(150, 150, 150, 0.5);
   border-radius: 8px;
@@ -8,7 +8,7 @@
   background-color: rgba(0, 0, 50, 0.9);
   color: white;
   .grid-pong {
-    width: 5%;
+    width: 3.33%;
     height: 5%;
     border: 1px solid white;
   }
@@ -24,7 +24,7 @@
 
 @media only screen and (max-width: 1200px) {
   #grids-pong {
-    width: 600px;
+    width: 900px;
     height: 600px;
     border: 8px solid rgba(150, 150, 150, 0.5);
   }

@@ -10,10 +10,10 @@
     <% i = 1 %>
     <% 20.times do %>
       <% column = 1 %>
-      <% 20.times do %>
-        <div id="<%= i %>" class="grid-pong <%= i == 389 || i == 390 || i == 391 ? "active" : "" %>
-          <%= i == 370 ? "ball" : "" %> <%= column == 1 ? "left-boundary" : "" %>
-          <%= column == 20 ? "right-boundary" : "" %> <%= row == 1 ? "up-boundary" : "" %>
+      <% 30.times do %>
+        <div id="<%= i %>" class="grid-pong <%= i == 583 || i == 584 || i == 585 || i == 586 || i == 587 ? "active" : "" %>
+          <%= i == 555 ? "ball" : "" %> <%= column == 1 ? "left-boundary" : "" %>
+          <%= column == 30 ? "right-boundary" : "" %> <%= row == 1 ? "up-boundary" : "" %>
           <%= row == 20 ? "down-boundary" : "" %>"><%= i %></div>
         <% i += 1 %>
         <% column += 1 %>
@@ -22,7 +22,7 @@
     <% end %>
   </div>
 
-  <div class="data">
+ <!--  <div class="data">
     <a><b>Time Remaining:</b></a>
     <div id="timer">60</div>
     <a><b>Level:</b></a>
@@ -37,5 +37,5 @@
     <div class="instructions">
       <a>Move using the arrow keys and press space to shoot.</a>
     </div>
-  </div>
+  </div> -->
 </div>
