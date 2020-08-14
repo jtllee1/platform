@@ -65,4 +65,5 @@ else if (id == "Tetris") {
 else if (id == "Pong") {
   startPong();
   movePaddle();
+  levelAdjustor();
 }
