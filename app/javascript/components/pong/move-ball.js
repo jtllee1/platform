@@ -14,14 +14,14 @@ const moveBall = (initDirection) => {
         nW.classList.add("ball");
         location.classList.remove("ball");
 
-        if (nW.classList.contains("left-boundary")) {
+        if (nW.classList.contains("left-boundary") && nW.classList.contains("up-boundary")) {
+          direction = "SE";
+        }
+        else if (nW.classList.contains("left-boundary")) {
           direction = "NE";
         }
         else if (nW.classList.contains("up-boundary")) {
           direction = "SW";
-        }
-        else if (nW.classList.contains("left-boundary") && nW.classList.contains("up-boundary")) {
-          direction = "SE";
         };
       }
       else if (direction == "NE") {
@@ -30,14 +30,14 @@ const moveBall = (initDirection) => {
         nE.classList.add("ball");
         location.classList.remove("ball");
 
-        if (nE.classList.contains("right-boundary")) {
+        if (nE.classList.contains("right-boundary") && nE.classList.contains("up-boundary")) {
+          direction = "SW";
+        }
+        else if (nE.classList.contains("right-boundary")) {
           direction = "NW";
         }
         else if (nE.classList.contains("up-boundary")) {
           direction = "SE";
-        }
-        else if (nE.classList.contains("right-boundary") && nE.classList.contains("up-boundary")) {
-          direction = "SW";
         };
       }
       else if (direction == "SW") {
