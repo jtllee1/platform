@@ -166,10 +166,10 @@ const moveBall = (initDirection) => {
           sE.classList.remove("obstacle");
 
           if (document.getElementById(parseInt(location.id) + 29).classList.contains("obstacle")) {
-            direction = "NW";
+            direction = "NE";
           }
           else {
-            direction = "SE";
+            direction = "SW";
           };
         }
         else if (down.classList.contains("obstacle")) {
