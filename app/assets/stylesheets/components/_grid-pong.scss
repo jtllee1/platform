@@ -23,6 +23,27 @@
   }
 }
 
+.lives {
+  display: flex;
+  justify-content: center;
+  .life {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: cyan;
+    margin: 4px;
+    margin-bottom: 12px;
+  }
+  .empty {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: grey;
+    margin: 4px;
+    margin-bottom: 12px;
+  }
+}
+
 @media only screen and (max-width: 1200px) {
   #grids-pong {
     width: 600px;
