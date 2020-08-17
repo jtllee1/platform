@@ -1,3 +1,5 @@
+import { life } from '../pong/life';
+
 const moveBall = (initDirection) => {
   let direction = initDirection;
   let gameState = document.getElementById("game-state");
@@ -104,6 +106,9 @@ const moveBall = (initDirection) => {
           else {
             direction = "NW";
           };
+        }
+        else if (s.classList.contains("down-boundary")) {
+          life();
         };
       }
       else if (direction == "SW") {
@@ -117,6 +122,9 @@ const moveBall = (initDirection) => {
 
         if (sW.classList.contains("left-boundary") && document.getElementById(parseInt(sW.id) + 30).classList.contains("active")) {
           direction = "NE";
+        }
+        else if (sW.classList.contains("down-boundary")) {
+          life();
         }
         else if (sW.classList.contains("left-boundary")) {
           direction = "SE";
@@ -158,6 +166,9 @@ const moveBall = (initDirection) => {
 
         if (sE.classList.contains("right-boundary") && document.getElementById(parseInt(sE.id) + 30).classList.contains("active")) {
           direction = "NW";
+        }
+        else if (sE.classList.contains("down-boundary")) {
+          life();
         }
         else if (sE.classList.contains("right-boundary")) {
           direction = "SW";
