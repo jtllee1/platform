@@ -109,6 +109,7 @@ const moveBall = (initDirection) => {
         }
         else if (s.classList.contains("down-boundary")) {
           life();
+          gameState = "Off";
         };
       }
       else if (direction == "SW") {
@@ -125,6 +126,7 @@ const moveBall = (initDirection) => {
         }
         else if (sW.classList.contains("down-boundary")) {
           life();
+          gameState = "Off";
         }
         else if (sW.classList.contains("left-boundary")) {
           direction = "SE";
@@ -169,6 +171,7 @@ const moveBall = (initDirection) => {
         }
         else if (sE.classList.contains("down-boundary")) {
           life();
+          gameState = "Off";
         }
         else if (sE.classList.contains("right-boundary")) {
           direction = "SW";
