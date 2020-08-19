@@ -52,7 +52,7 @@ const moveBall = (initDirection) => {
         }
         else if (up.classList.contains("obstacle")) {
           up.classList.remove("obstacle");
-          direction = "SW"
+          direction = "SW";
         };
       }
       else if (direction == "NE") {
@@ -83,7 +83,7 @@ const moveBall = (initDirection) => {
         }
         else if (up.classList.contains("obstacle")) {
           up.classList.remove("obstacle");
-          direction = "SE"
+          direction = "SE";
         };
       }
       else if (direction == "S") {
@@ -143,10 +143,13 @@ const moveBall = (initDirection) => {
         }
         else if (down.classList.contains("obstacle")) {
           down.classList.remove("obstacle");
-          direction = "NW"
+          direction = "NW";
         }
         else if (sW2.classList.contains("active") || s.classList.contains("active")) {
-          if (actives[4].id == sW2.id || actives[4].id == s.id) {
+          if (actives[0].id == sW2.id || actives[0].id == s.id) {
+            direction = "NW";
+          }
+          else if (actives[4].id == sW2.id || actives[4].id == s.id) {
             direction = "NE";
           }
           else if (actives[2].id == s.id) {
@@ -193,6 +196,9 @@ const moveBall = (initDirection) => {
         else if (sE2.classList.contains("active") || s.classList.contains("active")) {
           if (actives[0].id == sE2.id || actives[0].id == s.id) {
             direction = "NW";
+          }
+          else if (actives[4].id == sE2.id || actives[4].id == s.id) {
+            direction = "NE";
           }
           else if (actives[2].id == s.id) {
             direction = "N";
