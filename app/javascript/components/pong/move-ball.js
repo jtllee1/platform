@@ -94,17 +94,14 @@ const moveBall = (initDirection) => {
         location.classList.remove("ball");
 
         if (s2.classList.contains("active")) {
-          if (actives[0].id == s2.id) {
-            direction = "NW";
-          }
-          else if (actives[4].id == s2.id) {
-            direction = "NE";
-          }
-          else if (actives[2].id == s2.id) {
+          if (actives[2].id == s2.id) {
             direction = "N";
           }
-          else {
+          else if (actives[0].id == s2.id || actives[1].id == s2.id) {
             direction = "NW";
+          }
+          else if (actives[4].id == s2.id || actives[3].id == s2.id) {
+            direction = "NE";
           };
         }
         else if (s.classList.contains("down-boundary")) {
@@ -146,14 +143,14 @@ const moveBall = (initDirection) => {
           direction = "NW";
         }
         else if (sW2.classList.contains("active") || s.classList.contains("active")) {
-          if (actives[0].id == sW2.id || actives[0].id == s.id) {
+          if (actives[2].id == s.id) {
+            direction = "N";
+          }
+          else if (actives[0].id == sW2.id || actives[0].id == s.id) {
             direction = "NW";
           }
           else if (actives[4].id == sW2.id || actives[4].id == s.id) {
             direction = "NE";
-          }
-          else if (actives[2].id == s.id) {
-            direction = "N";
           }
           else {
             direction = "NW";
@@ -194,14 +191,14 @@ const moveBall = (initDirection) => {
           direction = "NE"
         }
         else if (sE2.classList.contains("active") || s.classList.contains("active")) {
-          if (actives[0].id == sE2.id || actives[0].id == s.id) {
+          if (actives[2].id == s.id) {
+            direction = "N";
+          }
+          else if (actives[0].id == sE2.id || actives[0].id == s.id) {
             direction = "NW";
           }
           else if (actives[4].id == sE2.id || actives[4].id == s.id) {
             direction = "NE";
-          }
-          else if (actives[2].id == s.id) {
-            direction = "N";
           }
           else {
             direction = "NE";
