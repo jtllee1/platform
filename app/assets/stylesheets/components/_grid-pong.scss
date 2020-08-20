@@ -11,7 +11,10 @@
     height: 5%;
   }
   .obstacle {
-    background-color: brown;
+    background-image: image-url('brick');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
   }
   .ball {
     background-color: cyan;
