@@ -5,7 +5,7 @@
   border-radius: 8px;
   display: flex;
   flex-wrap: wrap;
-  background-color: rgba(0, 0, 50, 0.9);
+  background-color: rgba(200, 240, 255, 0.9);
   .grid-pong {
     width: 3.333%;
     height: 5%;
@@ -17,8 +17,10 @@
     background-size: cover;
   }
   .ball {
-    background-color: cyan;
-    border-radius: 50%;
+    background-image: image-url('ball');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
   }
   .active {
     background-color: green;
