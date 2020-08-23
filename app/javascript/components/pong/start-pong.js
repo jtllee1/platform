@@ -11,15 +11,10 @@ const startPong = (newLevel) => {
   const start = document.getElementById("start");
   let gameState = document.getElementById("game-state");
 
-  start.addEventListener('click', () => {
-    const lives = document.querySelectorAll(".life");
+  generateLevel();
 
-    if (lives.length > 0) {
-      generateLevel();
-    }
-    else {
-      location.reload();
-    };
+  start.addEventListener('click', () => {
+    location.reload();
   });
 
   document.addEventListener('keydown', (e) => {
