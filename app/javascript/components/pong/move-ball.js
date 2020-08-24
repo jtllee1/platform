@@ -10,21 +10,21 @@ const moveBall = (initDirection) => {
     if (gameState.innerText == "On") {
       let actives = document.querySelectorAll(".active");
 
-      if (direction == "N") {
-        let n = document.getElementById(parseInt(location.id) - 30);
+      // if (direction == "N") {
+      //   let n = document.getElementById(parseInt(location.id) - 30);
 
-        n.classList.add("ball");
-        location.classList.remove("ball");
+      //   n.classList.add("ball");
+      //   location.classList.remove("ball");
 
-        if (n.classList.contains("up-boundary")) {
-          direction = "S";
-        }
-        else if (n.classList.contains("obstacle")) {
-          n.classList.remove("obstacle");
-          direction = "S";
-        }
-      }
-      else if (direction == "NW") {
+      //   if (n.classList.contains("up-boundary")) {
+      //     direction = "S";
+      //   }
+      //   else if (n.classList.contains("obstacle")) {
+      //     n.classList.remove("obstacle");
+      //     direction = "S";
+      //   }
+      // }
+      if (direction == "NW") {
         let nW = document.getElementById(parseInt(location.id) - 31);
         let up = document.getElementById(parseInt(nW.id) - 30);
 
@@ -86,29 +86,29 @@ const moveBall = (initDirection) => {
           direction = "SE";
         };
       }
-      else if (direction == "S") {
-        let s = document.getElementById(parseInt(location.id) + 30);
-        let s2 = document.getElementById(parseInt(s.id) + 30);
+      // else if (direction == "S") {
+      //   let s = document.getElementById(parseInt(location.id) + 30);
+      //   let s2 = document.getElementById(parseInt(s.id) + 30);
 
-        s.classList.add("ball");
-        location.classList.remove("ball");
+      //   s.classList.add("ball");
+      //   location.classList.remove("ball");
 
-        if (s2.classList.contains("active")) {
-          if (actives[2].id == s2.id) {
-            direction = "N";
-          }
-          else if (actives[0].id == s2.id || actives[1].id == s2.id) {
-            direction = "NW";
-          }
-          else if (actives[4].id == s2.id || actives[3].id == s2.id) {
-            direction = "NE";
-          };
-        }
-        else if (s.classList.contains("down-boundary")) {
-          life();
-          gameState = "Off";
-        };
-      }
+      //   if (s2.classList.contains("active")) {
+      //     if (actives[2].id == s2.id) {
+      //       direction = "N";
+      //     }
+      //     else if (actives[0].id == s2.id || actives[1].id == s2.id) {
+      //       direction = "NW";
+      //     }
+      //     else if (actives[4].id == s2.id || actives[3].id == s2.id) {
+      //       direction = "NE";
+      //     };
+      //   }
+      //   else if (s.classList.contains("down-boundary")) {
+      //     life();
+      //     gameState = "Off";
+      //   };
+      // }
       else if (direction == "SW") {
         let sW = document.getElementById(parseInt(location.id) + 29);
         let sW2 = document.getElementById(parseInt(sW.id) + 29);
@@ -142,19 +142,16 @@ const moveBall = (initDirection) => {
           down.classList.remove("obstacle");
           direction = "NW";
         }
-        else if (sW2.classList.contains("active") || s.classList.contains("active")) {
-          if (actives[3].id == s.id) {
-            direction = "N";
-          }
-          else if (actives[0].id == sW2.id || actives[0].id == s.id) {
-            direction = "NW";
-          }
-          else if (actives[4].id == sW2.id || actives[4].id == s.id) {
+        else if (sW2.classList.contains("active")) {
+          if (actives[3].id == sW2.id || actives[4].id == sW2.id) {
             direction = "NE";
           }
           else {
             direction = "NW";
           };
+        }
+        else if (document.getElementById(parseInt(sW2.id) + 1).classList.contains("active")) {
+          direction = "NW"
         };
       }
       else if (direction == "SE") {
@@ -190,19 +187,16 @@ const moveBall = (initDirection) => {
           down.classList.remove("obstacle");
           direction = "NE"
         }
-        else if (sE2.classList.contains("active") || s.classList.contains("active")) {
-          if (actives[1].id == s.id) {
-            direction = "N";
-          }
-          else if (actives[0].id == sE2.id || actives[0].id == s.id) {
+        else if (sE2.classList.contains("active")) {
+          if (actives[0].id == sE2.id || actives[1].id == sE2.id) {
             direction = "NW";
-          }
-          else if (actives[4].id == sE2.id || actives[4].id == s.id) {
-            direction = "NE";
           }
           else {
             direction = "NE";
           };
+        }
+        else if (document.getElementById(parseInt(sE2.id) - 1).classList.contains("active")) {
+          direction = "NE"
         };
       };
     };
