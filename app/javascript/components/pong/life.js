@@ -13,11 +13,11 @@ const life = () => {
   lives[counter].classList.remove("life");
   lives[counter].classList.add("empty");
 
-  if (counter == 0) {
-    grids.forEach(grid => {
-      grid.classList.remove("obstacle");
-    });
-  };
+  // if (counter == 0) {
+  //   grids.forEach(grid => {
+  //     grid.classList.remove("obstacle");
+  //   });
+  // };
 };
 
 export { life };
