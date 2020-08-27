@@ -6,5 +6,6 @@ Rails.application.routes.draw do
   get '/caterpillar', to: 'pages#caterpillar'
   get '/tetris', to: 'pages#tetris'
   get '/pong', to: 'pages#pong'
+  get '/game', to: 'pages#game'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
