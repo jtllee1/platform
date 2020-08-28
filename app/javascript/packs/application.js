@@ -66,3 +66,6 @@ else if (id == "Pong") {
   startPong();
   movePaddle();
 }
+else if (id == "Simon Says") {
+
+}
