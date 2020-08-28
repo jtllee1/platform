@@ -1,0 +1,21 @@
+#display {
+  width: 800px;
+  height: 400px;
+  border: 1px solid black;
+}
+
+#options {
+  width: 800px;
+  height: 200px;
+  border: 1px solid black;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  .option {
+    width: 150px;
+    height: 150px;
+    border: 1px solid black;
+    border-radius: 80%;
+  }
+}
