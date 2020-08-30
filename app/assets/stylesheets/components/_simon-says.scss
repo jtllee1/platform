@@ -1,8 +1,36 @@
 #display {
   width: 800px;
-  height: 400px;
-  border: 8px solid black;
+  min-height: 188px;
+  border: 8px solid #00000080;
   border-radius: 20px;
+  background-color: #97dbff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 16px;
+  .selection {
+    width: 120px;
+    height: 120px;
+    border: 8px solid #12b1b5;
+    border-radius: 20px;
+    margin: 8px;
+  }
+  .s-1 {
+    background-color: blue;
+  }
+  .s-2 {
+    background-color: red;
+  }
+  .s-3 {
+    background-color: cyan;
+  }
+  .s-4 {
+    background-color: green;
+  }
+  .s-5 {
+    background-color: orange;
+  }
 }
 
 #options {
@@ -15,7 +43,8 @@
   justify-content: space-between;
   align-items: center;
   padding: 10px;
-  margin-top: 16px;
+  margin-bottom: 32px;
+  position: sticky;
   .option {
     width: 150px;
     height: 150px;
@@ -24,5 +53,6 @@
   }
   .option:hover {
     border: 8px solid #fff53fdb;
+    cursor: pointer;
   }
 }
