@@ -65,8 +65,8 @@ const rotateTetris = (shape, color, dropping, orientation) => {
       document.getElementById(parseInt(dropping[1].id) + 17).classList.add(`${color}`, "dropping");
     }
     else if (orientation == 4) {
-      dropping[3].classList.remove(`${color}`, "dropping");
-      document.getElementById(parseInt(dropping[3].id) - 17).classList.add(`${color}`, "dropping");
+      dropping[0].classList.remove(`${color}`, "dropping");
+      document.getElementById(parseInt(dropping[0].id) + 15).classList.add(`${color}`, "dropping");
     };
   }
   else if (shape == "L") {
