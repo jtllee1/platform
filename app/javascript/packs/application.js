@@ -37,6 +37,7 @@ import { continualMovement } from '../components/caterpillar/continual-movement'
 import { startTetris } from '../components/tetris/start-tetris';
 import { startPong } from '../components/pong/start-pong';
 import { movePaddle } from '../components/pong/move-paddle';
+import { startSimon } from '../components/simonsays/start-simon';
 import { simonSays } from '../components/simonsays/simon-says';
 
 const id = document.getElementById("name").innerText;
@@ -68,5 +69,6 @@ else if (id == "Pong") {
   movePaddle();
 }
 else if (id == "Simon Says") {
+  startSimon();
   simonSays();
 }
