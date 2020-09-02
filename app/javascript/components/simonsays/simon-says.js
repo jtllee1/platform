@@ -1,18 +1,17 @@
+import { selection } from '../simonsays/selection';
+
 const simonSays = () => {
   const option1 = document.getElementById("o-1");
   const option2 = document.getElementById("o-2");
   const option3 = document.getElementById("o-3");
   const option4 = document.getElementById("o-4");
   const option5 = document.getElementById("o-5");
-  const display = document.getElementById("display");
 
   option1.addEventListener('click', () => {
     let gameState = document.getElementById("game-state");
 
     if (gameState.innerText == "On") {
-      let div = document.createElement('div');
-      div.className = 'selection s-1';
-      display.appendChild(div);
+      selection(1)
     };
   });
 
@@ -20,9 +19,7 @@ const simonSays = () => {
     let gameState = document.getElementById("game-state");
 
     if (gameState.innerText == "On") {
-      let div = document.createElement('div');
-      div.className = 'selection s-2';
-      display.appendChild(div);
+      selection(2)
     };
   });
 
@@ -30,9 +27,7 @@ const simonSays = () => {
     let gameState = document.getElementById("game-state");
 
     if (gameState.innerText == "On") {
-      let div = document.createElement('div');
-      div.className = 'selection s-3';
-      display.appendChild(div);
+      selection(3)
     };
   });
 
@@ -40,9 +35,7 @@ const simonSays = () => {
     let gameState = document.getElementById("game-state");
 
     if (gameState.innerText == "On") {
-      let div = document.createElement('div');
-      div.className = 'selection s-4';
-      display.appendChild(div);
+      selection(4)
     };
   });
 
@@ -50,9 +43,7 @@ const simonSays = () => {
     let gameState = document.getElementById("game-state");
 
     if (gameState.innerText == "On") {
-      let div = document.createElement('div');
-      div.className = 'selection s-5';
-      display.appendChild(div);
+      selection(5)
     };
   });
 };
