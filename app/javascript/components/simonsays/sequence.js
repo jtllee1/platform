@@ -2,7 +2,7 @@ import { selection } from '../simonsays/selection';
 
 const sequence = () => {
   const comSelect = document.getElementById("com-select");
-  const choice = Math.floor(Math.random() * 5);
+  const choice = Math.floor(Math.random() * 4) + 1;
 
   selection(choice);
 

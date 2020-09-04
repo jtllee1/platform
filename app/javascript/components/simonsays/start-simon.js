@@ -34,6 +34,18 @@ const startSimon = () => {
   };
 
   start.addEventListener('click', () => {
+    if (gameState.innerText == "GO") {
+      const selections = document.querySelectorAll(".sequence");
+
+      selections.forEach(selection => {
+        selection.remove();
+      });
+
+      turn = 0;
+
+      gameState.innerText = "Off";
+    };
+
     if (gameState.innerText == "Off") {
       clear();
       start.innerText = 3;
