@@ -23,6 +23,11 @@ const simonSays = () => {
         gameState.innerText = "Off";
         order = 0;
       };
+    }
+    else if (gameState.innerText == "On") {
+      start.innerText = "Gameover! Start Again!";
+      gameState.innerText = "GO";
+      order = 0;
     };
   });
 
@@ -39,6 +44,11 @@ const simonSays = () => {
         gameState.innerText = "Off";
         order = 0;
       };
+    }
+    else if (gameState.innerText == "On") {
+      start.innerText = "Gameover! Start Again!";
+      gameState.innerText = "GO";
+      order = 0;
     };
   });
 
@@ -55,6 +65,11 @@ const simonSays = () => {
         gameState.innerText = "Off";
         order = 0;
       };
+    }
+    else if (gameState.innerText == "On") {
+      start.innerText = "Gameover! Start Again!";
+      gameState.innerText = "GO";
+      order = 0;
     };
   });
 
@@ -71,6 +86,11 @@ const simonSays = () => {
         gameState.innerText = "Off";
         order = 0;
       };
+    }
+    else if (gameState.innerText == "On") {
+      start.innerText = "Gameover! Start Again!";
+      gameState.innerText = "GO";
+      order = 0;
     };
   });
 
@@ -87,6 +107,11 @@ const simonSays = () => {
         gameState.innerText = "Off";
         order = 0;
       };
+    }
+    else if (gameState.innerText == "On") {
+      start.innerText = "Gameover! Start Again!";
+      gameState.innerText = "GO";
+      order = 0;
     };
   });
 };
