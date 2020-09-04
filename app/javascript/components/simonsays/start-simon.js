@@ -1,5 +1,6 @@
 import { sequence } from '../simonsays/sequence';
 import { clear } from '../simonsays/clear';
+import { countdown } from '../simonsays/countdown';
 
 const startSimon = () => {
   const start = document.querySelector(".start");
@@ -16,16 +17,19 @@ const startSimon = () => {
     else if (sequenceNumber.length > turn) {
       gameState.innerText = "Off";
       turn++;
-      setTimeout(clear, 4000);
+      start.innerText = 3;
+      setTimeout(countdown, 1000);
+      setTimeout(clear, 3000);
     };
 
     setTimeout(gameControl, 2000);
   };
 
   start.addEventListener('click', () => {
-    start.classList.add("invisible");
+    start.innerText = 3;
+    setTimeout(countdown, 1000);
     gameState.innerText = "Comp";
-    setTimeout(gameControl, 4000);
+    setTimeout(gameControl, 3000);
   });
 };
 
