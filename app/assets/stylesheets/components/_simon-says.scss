@@ -7,7 +7,7 @@
     align-items: center;
     justify-content: center;
     width: 240px;
-    height: 60px;
+    height: 120px;
     border: 8px solid #12b1b5;
     border-radius: 20px;
     margin: 8px;
@@ -83,5 +83,20 @@
   .option:hover {
     border: 8px solid #fff53fdb;
     cursor: pointer;
+  }
+  #o-1 {
+    background-color: blue;
+  }
+  #o-2 {
+    background-color: red;
+  }
+  #o-3 {
+    background-color: cyan;
+  }
+  #o-4 {
+    background-color: green;
+  }
+  #o-5 {
+    background-color: orange;
   }
 }
