@@ -1,102 +1,111 @@
-.simon-start {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 16px;
-  .start {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 240px;
-    height: 120px;
-    border: 8px solid #12b1b5;
-    border-radius: 20px;
-    margin: 8px;
-    text-align: center;
-    font-size: 32px;
-    font-weight: bold;
-    color: #0008ff6b;
-    background-color: #ff9c2f;
-  }
-  .start:hover {
-    cursor: pointer;
-  }
-}
-
-#display {
-  width: 800px;
-  min-height: 188px;
-  border: 8px solid #00000080;
-  border-radius: 20px;
-  background-color: #97dbff;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
+#ss-game {
+  background-color: #f7f4bdfa;
   padding: 16px;
-  .button {
-    width: 120px;
-    height: 120px;
-    border: 8px solid #12b1b5;
-    border-radius: 20px;
-    margin: 8px;
-    text-align: center;
-    font-size: 32px;
-    font-weight: bold;
-    color: #0008ff6b;
-    background-color: #ff9c2f;
-  }
-  .s-1 {
-    background-color: blue;
-  }
-  .s-2 {
-    background-color: red;
-  }
-  .s-3 {
-    background-color: cyan;
-  }
-  .s-4 {
-    background-color: green;
-  }
-  .s-5 {
-    background-color: orange;
-  }
-}
-
-#options {
-  width: 800px;
-  height: 200px;
-  border: 8px solid #26283e85;
+  border: 12px solid #cac8a9db;
   border-radius: 20px;
-  background-color: #fb1b1bb5;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px;
-  margin-bottom: 16px;
-  position: sticky;
-  .option {
-    width: 150px;
-    height: 150px;
-    border: 8px solid #00000057;
-    border-radius: 50%;
+  .simon-start {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 16px;
+    .start {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 240px;
+      height: 120px;
+      border: 8px solid #12b1b5;
+      border-radius: 20px;
+      margin: 8px;
+      text-align: center;
+      font-size: 32px;
+      font-weight: bold;
+      color: #0008ff6b;
+      background-color: #ff9c2f;
+    }
+    .start:hover {
+      cursor: pointer;
+    }
   }
-  .option:hover {
-    border: 8px solid #fff53fdb;
-    cursor: pointer;
+
+  #display {
+    width: 800px;
+    min-height: 188px;
+    border: 8px solid #00000080;
+    border-radius: 20px;
+    background-color: #97dbff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 16px;
+    .button {
+      width: 120px;
+      height: 120px;
+      border: 8px solid #12b1b5;
+      border-radius: 20px;
+      margin: 8px;
+      text-align: center;
+      font-size: 32px;
+      font-weight: bold;
+      color: #0008ff6b;
+      background-color: #ff9c2f;
+    }
+    .selection {
+      border-radius: 50%;
+    }
+    .s-1 {
+      background-color: blue;
+    }
+    .s-2 {
+      background-color: red;
+    }
+    .s-3 {
+      background-color: cyan;
+    }
+    .s-4 {
+      background-color: green;
+    }
+    .s-5 {
+      background-color: orange;
+    }
   }
-  #o-1 {
-    background-color: blue;
-  }
-  #o-2 {
-    background-color: red;
-  }
-  #o-3 {
-    background-color: cyan;
-  }
-  #o-4 {
-    background-color: green;
-  }
-  #o-5 {
-    background-color: orange;
+
+  #options {
+    width: 800px;
+    height: 200px;
+    border: 8px solid #26283e85;
+    border-radius: 20px;
+    background-color: #fb1b1bb5;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    margin-bottom: 16px;
+    position: sticky;
+    .option {
+      width: 150px;
+      height: 150px;
+      border: 8px solid #00000057;
+      border-radius: 50%;
+    }
+    .option:hover {
+      border: 8px solid #fff53fdb;
+      cursor: pointer;
+    }
+    #o-1 {
+      background-color: blue;
+    }
+    #o-2 {
+      background-color: red;
+    }
+    #o-3 {
+      background-color: cyan;
+    }
+    #o-4 {
+      background-color: green;
+    }
+    #o-5 {
+      background-color: orange;
+    }
   }
 }
