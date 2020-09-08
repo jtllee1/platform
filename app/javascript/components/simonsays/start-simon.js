@@ -6,6 +6,7 @@ import { countdown } from '../simonsays/countdown';
 const startSimon = () => {
   const start = document.querySelector(".start");
   const gameState = document.getElementById("game-state");
+  const instructions = document.querySelector(".instructions");
   let turn = 0;
   let order = 0;
 
@@ -47,6 +48,7 @@ const startSimon = () => {
     };
 
     if (gameState.innerText == "Off") {
+      instructions.classList.add("invisible");
       clear();
       start.innerText = 3;
       setTimeout(countdown, 1000);
