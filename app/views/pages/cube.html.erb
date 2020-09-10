@@ -1,10 +1,27 @@
+<div class="title invisible">
+  <h1 id="name"><%= link_to "Cube", root_path %></h1>
+</div>
+
 <div class="wrapper">
   <div class="box-area">
-    <div class="box box-front"></div>
-    <div class="box box-right"></div>
-    <div class="box box-back"></div>
-    <div class="box box-left"></div>
-    <div class="box box-top"></div>
-    <div class="box box-bottom"></div>
+    <%= link_to cell_buster_path do %>
+      <div class="box box-front"></div>
+    <% end %>
+    <%= link_to caterpillar_path do %>
+      <div class="box box-right"></div>
+    <% end %>
+    <%= link_to helicopter_path do %>
+      <div class="box box-back"></div>
+    <% end %>
+    <%= link_to tetris_path do %>
+      <div class="box box-left"></div>
+    <% end %>
+    <%= link_to pong_path do %>
+      <div class="box box-bottom"></div>
+    <% end %>
+    <%= link_to simon_says_path do %>
+      <div class="box box-top"></div>
+    <% end %>
   </div>
 </div>
+

@@ -8,6 +8,7 @@
 .box-area {
   position: relative;
   transform-style: preserve-3d;
+  transform: rotate3d(0,1,0,0.5deg)matrix3d(0.845559, 0.0996988, 0.524498, 0, 0.122828, 0.919732, -0.37284, 0, -0.519563, 0.379683, 0.765434, 0, 0, 0, 0, 1);
   animation-name: rotate;
   animation-duration: 30s;
   animation-timing-function: linear;
@@ -23,32 +24,50 @@
 
 .box-front {
   transform: translateX(-200px) translateY(-200px) translateZ(200px);
-  background: rgba(255, 16, 107, 0.5);
+  background-image: image-url('Cell_Buster');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .box-back {
-  transform: translateX(-200px) translateY(-200px) translateZ(-200px);
-  background: rgba(1, 251, 236, 0.5);
+  transform: scaleX(-1) translateX(200px) translateY(-200px) translateZ(-200px);
+  background-image: image-url('Helicopter');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .box-right {
   transform: translateY(-200px) rotateY(90deg);
-  background: rgba(4, 255, 116, 0.5);
+  background-image: image-url('Caterpillar');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .box-left {
-  transform: translateX(-400px) translateY(-200px) rotateY(90deg);
-  background: rgba(216, 255, 0, 0.5);
+  transform: scaleZ(-1) translateX(-400px) translateY(-200px) rotateY(90deg);
+  background-image: image-url('Tetris');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .box-bottom {
-  transform: translateX(-200px) rotateX(90deg);
-  background: rgba(255, 30, 0, 0.5);
+  transform: scaleZ(-1) translateX(-200px) rotateX(90deg);
+  background-image: image-url('Pong');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .box-top {
   transform: translateX(-200px) translateY(-400px) rotateX(90deg);
-  background: rgba(0, 6, 246, 0.5);
+  background-image: image-url('Simon_Says');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 @keyframes rotate {

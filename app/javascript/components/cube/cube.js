@@ -1,0 +1,5 @@
+const cube = () => {
+
+};
+
+export { cube };
