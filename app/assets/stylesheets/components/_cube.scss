@@ -9,10 +9,10 @@
   position: relative;
   transform-style: preserve-3d;
   transform: rotate3d(0,1,0,0.5deg)matrix3d(0.845559, 0.0996988, 0.524498, 0, 0.122828, 0.919732, -0.37284, 0, -0.519563, 0.379683, 0.765434, 0, 0, 0, 0, 1);
-  animation-name: rotate;
-  animation-duration: 30s;
-  animation-timing-function: linear;
-  animation-iteration-count: infinite;
+  // animation-name: rotate;
+  // animation-duration: 30s;
+  // animation-timing-function: linear;
+  // animation-iteration-count: infinite;
 }
 
 .box {
@@ -70,17 +70,17 @@
   background-size: cover;
 }
 
-@keyframes rotate {
-  0% {
-    transform: rotate3d(0, 0, 0, 0);
-  }
-  25% {
-    transform: rotate3d(0, 1, 0, 90deg);
-  }
-  50% {
-    transform: rotate3d(1, 0, 0, 90deg);
-  }
-  100% {
-    transform: rotate3d(0, 0, 1, 180deg);
-  }
-}
+// @keyframes rotate {
+//   0% {
+//     transform: rotate3d(0, 0, 0, 0);
+//   }
+//   25% {
+//     transform: rotate3d(0, 1, 0, 90deg);
+//   }
+//   50% {
+//     transform: rotate3d(1, 0, 0, 90deg);
+//   }
+//   100% {
+//     transform: rotate3d(0, 0, 1, 180deg);
+//   }
+// }
