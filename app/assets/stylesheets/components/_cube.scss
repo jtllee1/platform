@@ -5,12 +5,6 @@
   perspective: 1500px;
 }
 
-#scroll-cube {
-  width: 300px;
-  height: 300px;
-  border: 1px solid black;
-}
-
 .box-area {
   position: relative;
   transform-style: preserve-3d;
@@ -30,25 +24,26 @@
     width: 100px;
     height: 100px;
     border: 2px solid #262626;
+    background-color: #fbf6ea;
   }
 
-  .front {
-    background-color: red;
-  }
-  .back {
+  .cube-23 .box {
     background-color: blue;
   }
-  .right {
+  .cube-17 .box {
+    background-color: red;
+  }
+  .cube-15 .box {
+    background-color: cyan;
+  }
+  .cube-13 .box {
     background-color: green;
   }
-  .left {
-    background-color: yellow;
-  }
-  .bottom {
+  .cube-5 .box {
     background-color: orange;
   }
-  .top {
-    background-color: purple;
+  .cube-11 .box {
+    background-color: pink;
   }
 
   .l-1.front {
