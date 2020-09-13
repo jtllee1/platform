@@ -40,6 +40,7 @@ import { movePaddle } from '../components/pong/move-paddle';
 import { startSimon } from '../components/simonsays/start-simon';
 import { simonSays } from '../components/simonsays/simon-says';
 import { cube } from '../components/cube/cube';
+import { cubePress } from '../components/cube/cube-press';
 
 const id = document.getElementById("name").innerText;
 // Call your functions here, e.g:
@@ -75,4 +76,5 @@ else if (id == "Simon Says") {
 }
 else if (id == "Cube") {
   cube();
+  cubePress();
 }
