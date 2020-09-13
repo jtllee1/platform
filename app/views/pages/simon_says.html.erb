@@ -13,23 +13,48 @@
 
 <div class="main">
   <div id="ss-game">
-    <div id="options">
-      <div class="option" id="o-1"></div>
-      <div class="option" id="o-2"></div>
-      <div class="option" id="o-3"></div>
-      <div class="option" id="o-4"></div>
-      <div class="option" id="o-5"></div>
-    </div>
     <div class="simon-start">
       <div class="button start">Start Game</div>
     </div>
-    <div id="display">
-      <div class="instructions">Watch the following sequence and repeat it during your turn.</div>
-<!--       <div class="button selection s-1"></div>
-      <div class="button selection s-2"></div>
-      <div class="button selection s-3"></div>
-      <div class="button selection s-4"></div>
-      <div class="button selection s-5"></div> -->
+    <div class="play-area">
+      <div id="options">
+      <!--   <div class="option" id="o-1"></div>
+        <div class="option" id="o-2"></div>
+        <div class="option" id="o-3"></div>
+        <div class="option" id="o-4"></div>
+        <div class="option" id="o-5"></div> -->
+        <% layer = 1 %>
+        <div class="wrapper">
+          <div class="box-area">
+            <% i = 1 %>
+            <% 3.times do %>
+              <% position = 1 %>
+              <% 9.times do %>
+                <div class="cube cube-<%= i %>">
+                  <div class="box l-<%= layer %> p-<%= position %> front"></div>
+                  <div class="box l-<%= layer %> p-<%= position %> right"></div>
+                  <div class="box l-<%= layer %> p-<%= position %> back"></div>
+                  <div class="box l-<%= layer %> p-<%= position %> left"></div>
+                  <div class="box l-<%= layer %> p-<%= position %> bottom"></div>
+                  <div class="box l-<%= layer %> p-<%= position %> top"></div>
+                </div>
+                <% i += 1 %>
+                <% position += 1 %>
+              <% end %>
+              <% layer += 1 %>
+            <% end %>
+          </div>
+        </div>
+      </div>
+      <div id="display">
+        <div class="instructions">Watch the following sequence and repeat it during your turn. Click and drag to rotate the cube.</div>
+        <!-- <div class="button selection s-1"></div>
+        <div class="button selection s-2"></div>
+        <div class="button selection s-3"></div>
+        <div class="button selection s-4"></div>
+        <div class="button selection s-5"></div>
+        <div class="button selection s-6"></div> -->
+      </div>
     </div>
   </div>
 </div>

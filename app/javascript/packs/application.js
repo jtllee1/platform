@@ -73,6 +73,8 @@ else if (id == "Pong") {
 else if (id == "Simon Says") {
   startSimon();
   simonSays();
+  cube();
+  cubePress();
 }
 else if (id == "Cube") {
   cube();

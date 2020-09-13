@@ -1,11 +1,12 @@
 import { selection } from '../simonsays/selection';
 
 const simonSays = () => {
-  const option1 = document.getElementById("o-1");
-  const option2 = document.getElementById("o-2");
-  const option3 = document.getElementById("o-3");
-  const option4 = document.getElementById("o-4");
-  const option5 = document.getElementById("o-5");
+  const option1 = document.querySelector(".cube-23");
+  const option2 = document.querySelector(".cube-17");
+  const option3 = document.querySelector(".cube-15");
+  const option4 = document.querySelector(".cube-13");
+  const option5 = document.querySelector(".cube-5");
+  const option6 = document.querySelector(".cube-11");
   const gameState = document.getElementById("game-state");
   const start = document.querySelector(".start");
   let order = 0;
@@ -100,6 +101,27 @@ const simonSays = () => {
 
     if (gameState.innerText == "On" && number == 5) {
       selection(5)
+      order++;
+
+      if (order == comSequence.length) {
+        start.innerText = "Correct! Start Next Round!";
+        gameState.innerText = "Off";
+        order = 0;
+      };
+    }
+    else if (gameState.innerText == "On") {
+      start.innerText = "Gameover! Start Again!";
+      gameState.innerText = "GO";
+      order = 0;
+    };
+  });
+
+  option6.addEventListener('click', () => {
+    let comSequence = document.querySelectorAll(".sequence");
+    let number = comSequence[order].innerText;
+
+    if (gameState.innerText == "On" && number == 6) {
+      selection(6)
       order++;
 
       if (order == comSequence.length) {
