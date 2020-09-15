@@ -7,6 +7,5 @@ Rails.application.routes.draw do
   get '/tetris', to: 'pages#tetris'
   get '/pong', to: 'pages#pong'
   get '/simon_says', to: 'pages#simon_says'
-  get '/cube', to: 'pages#cube'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
