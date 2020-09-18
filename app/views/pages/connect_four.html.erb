@@ -2,6 +2,10 @@
   <h1 id="name"><%= link_to "Connect Four", root_path %></h1>
 </div>
 
+<audio class="chip invisible" controls preload="none">
+    <source src="<%= asset_path('chip-drop.mp3') %>" type="audio/mpeg">
+</audio>
+
 <div class="main-c-4">
   <div id="grids-c-4">
     <% row = 1 %>
