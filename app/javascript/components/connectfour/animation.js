@@ -3,6 +3,7 @@ import { checkCondition } from '../connectfour/check-condition';
 
 const animation = (column, addedClass) => {
   const grids = document.getElementById("grids-c-4");
+  const chipSound = document.querySelector(".chip");
   let columnItems = [];
 
   for (let step = 1; step < 11; step++) {
@@ -14,7 +15,13 @@ const animation = (column, addedClass) => {
       if (columnItems[i].classList.contains("active-1") == false && columnItems[i].classList.contains("active-2") == false) {
         columnItems[i].classList.add(`${addedClass}`);
         checkCondition();
-      }
+      };
+
+      if (i == 9) {
+        chipSound.pause();
+        chipSound.currentTime = 0;
+        chipSound.play();
+      };
     }, i * 30 );
 
     setTimeout( function timer() {
