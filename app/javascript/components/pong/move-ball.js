@@ -3,6 +3,20 @@ import { life } from '../pong/life';
 const moveBall = (initDirection) => {
   let direction = initDirection;
   let gameState = document.getElementById("game-state");
+  const paddleSound = document.querySelector(".paddle");
+  const brickSound = document.querySelector(".brick");
+
+  function paddle() {
+    paddleSound.pause();
+    paddleSound.currentTime = 0;
+    paddleSound.play();
+  };
+
+  function brick() {
+    brickSound.pause();
+    brickSound.currentTime = 0;
+    brickSound.play();
+  };
 
   function ballMovement() {
     let location = document.querySelector(".ball");
@@ -33,15 +47,19 @@ const moveBall = (initDirection) => {
 
         if (nW.classList.contains("left-boundary") && nW.classList.contains("up-boundary")) {
           direction = "SE";
+          paddle();
         }
         else if (nW.classList.contains("left-boundary")) {
           direction = "NE";
+          paddle();
         }
         else if (nW.classList.contains("up-boundary")) {
           direction = "SW";
+          paddle();
         }
         else if (nW.classList.contains("obstacle")) {
           nW.classList.remove("obstacle");
+          brick();
 
           if (document.getElementById(parseInt(location.id) - 29).classList.contains("obstacle")) {
             direction = "SW";
@@ -52,6 +70,7 @@ const moveBall = (initDirection) => {
         }
         else if (up.classList.contains("obstacle")) {
           up.classList.remove("obstacle");
+          brick();
           direction = "SW";
         };
       }
@@ -64,15 +83,19 @@ const moveBall = (initDirection) => {
 
         if (nE.classList.contains("right-boundary") && nE.classList.contains("up-boundary")) {
           direction = "SW";
+          paddle();
         }
         else if (nE.classList.contains("right-boundary")) {
           direction = "NW";
+          paddle();
         }
         else if (nE.classList.contains("up-boundary")) {
           direction = "SE";
+          paddle();
         }
         else if (nE.classList.contains("obstacle")) {
           nE.classList.remove("obstacle");
+          brick();
 
           if (document.getElementById(parseInt(location.id) - 31).classList.contains("obstacle")) {
             direction = "SE";
@@ -83,6 +106,7 @@ const moveBall = (initDirection) => {
         }
         else if (up.classList.contains("obstacle")) {
           up.classList.remove("obstacle");
+          brick();
           direction = "SE";
         };
       }
@@ -120,16 +144,20 @@ const moveBall = (initDirection) => {
 
         if (sW.classList.contains("left-boundary") && document.getElementById(parseInt(sW.id) + 30).classList.contains("active")) {
           direction = "NE";
+          paddle();
         }
         else if (sW.classList.contains("down-boundary")) {
           life();
           gameState = "Off";
+          paddle();
         }
         else if (sW.classList.contains("left-boundary")) {
           direction = "SE";
+          paddle();
         }
         else if (sW.classList.contains("obstacle")) {
           sW.classList.remove("obstacle");
+          brick();
 
           if (document.getElementById(parseInt(location.id) + 31).classList.contains("obstacle")) {
             direction = "NW";
@@ -140,6 +168,7 @@ const moveBall = (initDirection) => {
         }
         else if (down.classList.contains("obstacle")) {
           down.classList.remove("obstacle");
+          brick();
           direction = "NW";
         }
         else if (sW2.classList.contains("active")) {
@@ -149,9 +178,11 @@ const moveBall = (initDirection) => {
           else {
             direction = "NW";
           };
+          paddle();
         }
         else if (document.getElementById(parseInt(sW2.id) + 1).classList.contains("active")) {
-          direction = "NW"
+          direction = "NW";
+          paddle();
         };
       }
       else if (direction == "SE") {
@@ -165,16 +196,20 @@ const moveBall = (initDirection) => {
 
         if (sE.classList.contains("right-boundary") && document.getElementById(parseInt(sE.id) + 30).classList.contains("active")) {
           direction = "NW";
+          paddle();
         }
         else if (sE.classList.contains("down-boundary")) {
           life();
           gameState = "Off";
+          paddle();
         }
         else if (sE.classList.contains("right-boundary")) {
           direction = "SW";
+          paddle();
         }
         else if (sE.classList.contains("obstacle")) {
           sE.classList.remove("obstacle");
+          brick();
 
           if (document.getElementById(parseInt(location.id) + 29).classList.contains("obstacle")) {
             direction = "NE";
@@ -185,7 +220,8 @@ const moveBall = (initDirection) => {
         }
         else if (down.classList.contains("obstacle")) {
           down.classList.remove("obstacle");
-          direction = "NE"
+          brick();
+          direction = "NE";
         }
         else if (sE2.classList.contains("active")) {
           if (actives[0].id == sE2.id || actives[1].id == sE2.id) {
@@ -194,9 +230,11 @@ const moveBall = (initDirection) => {
           else {
             direction = "NE";
           };
+          paddle();
         }
         else if (document.getElementById(parseInt(sE2.id) - 1).classList.contains("active")) {
-          direction = "NE"
+          direction = "NE";
+          paddle();
         };
       };
     };
