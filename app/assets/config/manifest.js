@@ -10,3 +10,5 @@
 //= link button-5.mp3
 //= link button-6.mp3
 //= link chip-drop.mp3
+//= link ball-paddle.mp3
+//= link ball-brick.mp3
