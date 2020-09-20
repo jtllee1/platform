@@ -2,6 +2,10 @@
   <h1 id="name"><%= link_to "Helicopter", root_path %></h1>
 </div>
 
+<audio class="helicopter invisible" controls loop preload="none">
+    <source src="<%= asset_path('helicopter.mp3') %>" type="audio/mpeg">
+</audio>
+
 <div class="main">
   <div id="grids-heli">
     <% row = 1 %>

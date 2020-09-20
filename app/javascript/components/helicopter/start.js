@@ -6,6 +6,7 @@ const start = () => {
   const text = document.getElementById("1847");
   const grids = document.querySelectorAll(".grid-heli");
   const score = document.getElementById("score");
+  const helicopterSound = document.querySelector(".helicopter");
   let on = false;
 
   createClouds(313);
@@ -17,6 +18,7 @@ const start = () => {
   start.addEventListener('click', () => {
     on = true;
 
+    helicopterSound.play();
 
     grids.forEach(grid => {
       grid.classList.remove("cover");
@@ -55,6 +57,9 @@ const start = () => {
         grids.forEach(grid => {
           grid.classList.add("cover");
         });
+
+        helicopterSound.pause();
+        helicopterSound.currentTime = 0;
       };
     });
 

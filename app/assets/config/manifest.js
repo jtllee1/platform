@@ -12,3 +12,4 @@
 //= link chip-drop.mp3
 //= link ball-paddle.mp3
 //= link ball-brick.mp3
+//= link helicopter.mp3
