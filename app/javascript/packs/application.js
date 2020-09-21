@@ -76,3 +76,6 @@ else if (id == "Simon Says") {
   cube();
   cubePress();
 }
+else if (id == "Match 3") {
+
+}
