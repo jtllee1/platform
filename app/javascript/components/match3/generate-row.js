@@ -11,7 +11,9 @@ const generateRow = () => {
 
     row[step] = color;
 
-    grids[step].classList.add(`${color}`, "item");
+    if (!grids[step].classList.contains("item")) {
+      grids[step].classList.add(`${color}`, "item");
+    };
   };
 
   dropRow(grids, row);
