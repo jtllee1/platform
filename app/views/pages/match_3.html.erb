@@ -4,14 +4,14 @@
 
 <div class="main">
   <div id="grids-m-3">
-    <% row = 1 %>
-    <% i = 1 %>
+    <% row = 0 %>
+    <% i = 0 %>
     <% 9.times do %>
-      <% column = 1 %>
+      <% column = 0 %>
       <% 9.times do %>
       <div class="grid-overlay">
-        <div id="<%= i %>" class="grid <%= column == 1 ? "left-boundary" : "" %> <%= column == 9 ? "right-boundary" : "" %>
-          <%= row == 1 ? "up-boundary" : "" %> <%= row == 9 ? "down-boundary" : "" %>"><%= i %></div>
+        <div id="<%= i %>" class="<%= column %> <%= row %> grid <%= column == 0 ? "left-boundary" : "" %> <%= column == 8 ? "right-boundary" : "" %>
+          <%= row == 0 ? "up-boundary" : "" %> <%= row == 8 ? "down-boundary" : "" %>"><%= i %></div>
       </div>
         <% i += 1 %>
         <% column += 1 %>
