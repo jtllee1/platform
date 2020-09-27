@@ -7,10 +7,10 @@ const generateColor = (column) => {
   let color = colors[Math.floor(Math.random() * colors.length)];
 
   if (!grids[column].classList.contains("item")) {
-    grids[column].classList.add(`${color}`, "item");
+    grids[column].classList.add("item", `${color}`);
   };
 
-  dropColor(column, grids, color);
+  dropColor(column, 0, grids, color);
 };
 
 export { generateColor };
