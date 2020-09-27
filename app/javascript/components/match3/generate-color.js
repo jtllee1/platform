@@ -10,7 +10,7 @@ const generateColor = (column) => {
     grids[column].classList.add("item", `${color}`);
   };
 
-  dropColor(column, 0, grids, color);
+  dropColor(column, 0, color);
 };
 
 export { generateColor };

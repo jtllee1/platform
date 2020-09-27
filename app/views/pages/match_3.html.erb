@@ -10,8 +10,7 @@
       <% column = 0 %>
       <% 9.times do %>
       <div class="grid-overlay">
-        <div id="<%= i %>" class="<%= column %> <%= row %> grid <%= column == 0 ? "left-boundary" : "" %> <%= column == 8 ? "right-boundary" : "" %>
-          <%= row == 0 ? "up-boundary" : "" %> <%= row == 8 ? "down-boundary" : "" %>"><%= i %></div>
+        <div id="<%= i %>" class="c-<%= column %> r-<%= row %> grid"><%= i %></div>
       </div>
         <% i += 1 %>
         <% column += 1 %>
