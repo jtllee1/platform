@@ -13,6 +13,34 @@ const checkMatch = () => {
         grids[grid].classList.remove("item", `${color1}`);
         grids[grid - 1].classList.remove("item", `${color2}`);
         grids[grid - 2].classList.remove("item", `${color3}`);
+
+        for (let subRow = 1; subRow < 9; subRow++) {
+          let prevGrid = grid - (subRow * 9);
+
+          if (prevGrid > -1) {
+            let prevColor1 = grids[prevGrid].className.split(" ").pop();
+            let prevColor2 = grids[prevGrid - 1].className.split(" ").pop();
+            let prevColor3 = grids[prevGrid - 2].className.split(" ").pop();
+            let column1 = parseInt(grids[prevGrid].className.split(" ").shift().slice(-1));
+            let column2 = parseInt(grids[prevGrid - 1].className.split(" ").shift().slice(-1));
+            let column3 = parseInt(grids[prevGrid - 2].className.split(" ").shift().slice(-1));
+            let prevRow = parseInt(grids[prevGrid].className.split(" ").slice(1)[0].slice(-1));
+
+            // console.log(prevColor1);
+            // console.log(prevColor2);
+            // console.log(prevColor3);
+            // console.log(column1);
+            // console.log(column2);
+            // console.log(column3);
+            // console.log(prevRow);
+
+            setTimeout( function timer() {
+              dropColor(column1, prevRow, prevColor1);
+              dropColor(column2, prevRow, prevColor2);
+              dropColor(column3, prevRow, prevColor3);
+            }, subRow * 100 );
+          };
+        };
       };
     };
   };
