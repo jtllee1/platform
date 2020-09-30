@@ -42,6 +42,7 @@ import { simonSays } from '../components/simonsays/simon-says';
 import { cube } from '../components/cube/cube';
 import { cubePress } from '../components/cube/cube-press';
 import { startMatch } from '../components/match3/start-match';
+import { swap } from '../components/match3/swap';
 
 const id = document.getElementById("name").innerText;
 // Call your functions here, e.g:
@@ -79,5 +80,6 @@ else if (id == "Simon Says") {
 }
 else if (id == "Match 3") {
   startMatch();
+  swap();
   levelAdjustor();
 }
