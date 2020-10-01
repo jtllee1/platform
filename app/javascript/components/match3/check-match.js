@@ -3,6 +3,7 @@ import { generateColor } from '../match3/generate-color';
 
 const checkMatch = () => {
   const grids = document.querySelectorAll(".grid");
+  const score = document.getElementById("score");
 
   for (let row = 0; row < 9; row++) {
     for (let grid = 80 - (row * 9); grid > 73 - (row * 9); grid--) {
@@ -14,6 +15,7 @@ const checkMatch = () => {
         grids[grid].classList.remove("item", `${color1}`);
         grids[grid - 1].classList.remove("item", `${color2}`);
         grids[grid - 2].classList.remove("item", `${color3}`);
+        score.innerText = parseInt(score.innerText) + 300;
 
         for (let subRow = 1; subRow < 9; subRow++) {
           let prevGrid = grid - (subRow * 9);
@@ -26,14 +28,6 @@ const checkMatch = () => {
             let column2 = parseInt(grids[prevGrid - 1].className.split(" ").shift().slice(-1));
             let column3 = parseInt(grids[prevGrid - 2].className.split(" ").shift().slice(-1));
             let prevRow = parseInt(grids[prevGrid].className.split(" ").slice(1)[0].slice(-1));
-
-            // console.log(prevColor1);
-            // console.log(prevColor2);
-            // console.log(prevColor3);
-            // console.log(column1);
-            // console.log(column2);
-            // console.log(column3);
-            // console.log(prevRow);
 
             setTimeout( function timer() {
               dropColor(column1, prevRow, prevColor1);
@@ -56,6 +50,7 @@ const checkMatch = () => {
         grids[grid].classList.remove("item", `${color1}`);
         grids[grid - 9].classList.remove("item", `${color2}`);
         grids[grid - 18].classList.remove("item", `${color3}`);
+        score.innerText = parseInt(score.innerText) + 300;
 
         for (let subRow = 1; subRow < 9; subRow++) {
           let prevGrid = (grid - 18) - (subRow * 9);
