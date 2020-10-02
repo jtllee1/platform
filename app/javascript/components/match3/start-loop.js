@@ -13,7 +13,7 @@ const startLoop = () => {
   }
   else {
     checkMatch();
-    setTimeout(startLoop, 2000);
+    setTimeout(startLoop, 1000);
   };
 };
 

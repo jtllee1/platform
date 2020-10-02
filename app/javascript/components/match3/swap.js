@@ -27,9 +27,9 @@ const swap = () => {
           let grid2 = document.querySelector(".active-2");
 
           if (((grid1.id == grid2.id + 1) && (!grid1.classList.contains("left-boundary"))) || ((grid1.id == grid2.id - 1) && (!grid1.classList.contains("right-boundary")))
-            || ((grid1.id == grid2.id + 9) && (!grid1.classList.contains("down-boundary"))) || ((grid1.id == grid2.id - 9) && (!grid1.classList.contains("up-boundary")))
+            || ((grid1.id == grid2.id + 9)) || ((grid1.id == grid2.id - 9))
             || ((grid2.id == grid1.id + 1) && (!grid2.classList.contains("left-boundary"))) || ((grid2.id == grid1.id - 1) && (!grid2.classList.contains("right-boundary")))
-            || ((grid2.id == grid1.id + 9) && (!grid2.classList.contains("down-boundary"))) || ((grid2.id == grid1.id - 9) && (!grid2.classList.contains("up-boundary")))) {
+            || ((grid2.id == grid1.id + 9)) || ((grid2.id == grid1.id - 9))) {
             grid1.classList.remove("item", "green", "blue", "orange", "purple", "red", "yellow", "red", "yellow", "cyan", "pink");
             grid1.classList.add("item", `${color2}`);
             grid2.classList.remove("item", "green", "blue", "orange", "purple", "red", "yellow", "red", "yellow", "cyan", "pink");
