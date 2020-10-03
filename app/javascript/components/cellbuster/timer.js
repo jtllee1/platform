@@ -6,7 +6,7 @@ const timer = () => {
   const count = document.getElementById("timer");
   const start = document.getElementById("start");
 
-  let state = false
+  let state = false;
 
   function countdown() {
     if (state == true) {
