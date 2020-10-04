@@ -33,7 +33,7 @@ const checkMatch = () => {
               dropColor(column1, prevRow, prevColor1);
               dropColor(column2, prevRow, prevColor2);
               dropColor(column3, prevRow, prevColor3);
-            }, subRow * 100 );
+            }, subRow * 200 );
           };
         };
       };
@@ -62,7 +62,7 @@ const checkMatch = () => {
 
             setTimeout( function timer() {
               dropColor(column1, prevRow, prevColor1);
-            }, subRow * 100 );
+            }, subRow * 200 );
           };
         };
       };

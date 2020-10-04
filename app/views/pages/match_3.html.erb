@@ -14,7 +14,7 @@
       <div class="grid-overlay">
         <div id="<%= i %>" class="c-<%= column %> r-<%= row %> grid
           <%= column == 0 ? "left-boundary" : "" %> <%= column == 8 ? "right-boundary" : "" %>
-          <%= row == 0 ? "up-boundary" : "" %> <%= row == 8 ? "down-boundary" : "" %>"><%= i %></div>
+          <%= row == 0 ? "up-boundary" : "" %> <%= row == 8 ? "down-boundary" : "" %>"></div>
       </div>
         <% i += 1 %>
         <% column += 1 %>
@@ -25,18 +25,18 @@
 
   <div class="data">
     <a><b>Time Remaining:</b></a>
-    <div id="timer">60</div>
-    <a><b>Level:</b></a>
+    <div id="timer">180</div>
+<!--     <a><b>Level:</b></a>
     <div id="level-selector">
       <div id="level-decrease" class="level-adjustor"><i class="fa fa-arrow-left" aria-hidden="true"></i></div>
       <div id="level" class="level-adjustor">1</div>
       <div id="level-increase" class="level-adjustor"><i class="fa fa-arrow-right" aria-hidden="true"></i></div>
-    </div>
+    </div> -->
     <a><b>Score:</b></a>
     <div id="score">0</div>
     <div id="start">Start</div>
     <div class="instructions">
-      <a>Move using the arrow keys and press space to shoot.</a>
+      <a>Click on the colors you want to swap to get a match of 3 or more.</a>
     </div>
   </div>
 </div>

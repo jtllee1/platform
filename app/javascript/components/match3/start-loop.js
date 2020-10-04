@@ -16,7 +16,7 @@ const startLoop = () => {
     }
     else {
       checkMatch();
-      setTimeout(startLoop, 1000);
+      setTimeout(startLoop, 800);
     };
   };
 };
