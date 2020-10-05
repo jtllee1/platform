@@ -81,5 +81,4 @@ else if (id == "Simon Says") {
 else if (id == "Match 3") {
   startMatch();
   swap();
-  levelAdjustor();
 }
