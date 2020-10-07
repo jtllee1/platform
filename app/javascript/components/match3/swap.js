@@ -41,7 +41,7 @@ const swap = () => {
             grids.forEach(grid => {
               grid.classList.remove("active-1", "active-2");
             });
-          }, 400 );
+          }, 200 );
         };
       };
     });
