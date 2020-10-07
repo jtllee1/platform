@@ -155,9 +155,10 @@ const checkMatch = () => {
   //   };
   // };
 
+  let conditionV1 = true;
+  let conditionV2 = true;
+
   for (let row = 0; row < 7; row++) {
-    let condition1 = true;
-    let condition2 = true;
 
     for (let grid = 80 - (row * 9); grid > 71 - (row * 9); grid--) {
       let color1 = grids[grid].className.split(" ").pop();
@@ -180,12 +181,12 @@ const checkMatch = () => {
         grids[grid - 18].classList.remove("item", `${color3}`);
         grids[grid - 27].classList.remove("item", `${color4}`);
         grids[grid - 36].classList.remove("item", `${color5}`);
-        condition1 = false;
-        condition2 = false;
+        conditionV1 = false;
+        conditionV2 = false;
         score.innerText = parseInt(score.innerText) + 900;
 
         for (let subRow = 1; subRow < 9; subRow++) {
-          let prevGrid = (grid - 18) - (subRow * 9);
+          let prevGrid = (grid - 36) - (subRow * 9);
 
           if (prevGrid > -1) {
             let prevColor1 = grids[prevGrid].className.split(" ").pop();
@@ -198,16 +199,16 @@ const checkMatch = () => {
           };
         };
       }
-      else if (condition1 && color1 == color2 && color2 == color3 && color3 == color4) {
+      else if (conditionV1 && color1 == color2 && color2 == color3 && color3 == color4) {
         grids[grid].classList.remove("item", `${color1}`);
         grids[grid - 9].classList.remove("item", `${color2}`);
         grids[grid - 18].classList.remove("item", `${color3}`);
         grids[grid - 27].classList.remove("item", `${color4}`);
-        condition2 = false;
+        conditionV2 = false;
         score.innerText = parseInt(score.innerText) + 600;
 
         for (let subRow = 1; subRow < 9; subRow++) {
-          let prevGrid = (grid - 18) - (subRow * 9);
+          let prevGrid = (grid - 27) - (subRow * 9);
 
           if (prevGrid > -1) {
             let prevColor1 = grids[prevGrid].className.split(" ").pop();
@@ -220,7 +221,7 @@ const checkMatch = () => {
           };
         };
       }
-      else if (condition2 && color1 == color2 && color2 == color3) {
+      else if (conditionV2 && color1 == color2 && color2 == color3) {
         grids[grid].classList.remove("item", `${color1}`);
         grids[grid - 9].classList.remove("item", `${color2}`);
         grids[grid - 18].classList.remove("item", `${color3}`);
