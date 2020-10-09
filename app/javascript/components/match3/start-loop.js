@@ -5,18 +5,17 @@ const startLoop = () => {
   const gameState = document.getElementById("game-state");
 
   if (gameState.innerText == "On") {
-    for (let column = 0; column < 9; column++) {
-      generateColor(column);
-    };
-
     let items = document.querySelectorAll(".item");
 
     if (items.length != 81) {
+      for (let column = 0; column < 9; column++) {
+        generateColor(column);
+      };
       setTimeout(startLoop, 400);
     }
     else {
       checkMatch();
-      setTimeout(startLoop, 800);
+      setTimeout(startLoop, 900);
     };
   };
 };

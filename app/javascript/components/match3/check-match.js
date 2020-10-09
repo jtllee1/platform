@@ -1,5 +1,4 @@
 import { dropColor } from '../match3/drop-color';
-import { generateColor } from '../match3/generate-color';
 
 const checkMatch = () => {
   const grids = document.querySelectorAll(".grid");
