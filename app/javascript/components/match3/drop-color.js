@@ -1,5 +1,6 @@
 const dropColor = (column, row, color) => {
   const grids = document.querySelectorAll(".grid");
+  const dropSound = document.querySelector(".m-drop");
 
   let count = 0;
 
@@ -17,6 +18,12 @@ const dropColor = (column, row, color) => {
 
     count++;
   };
+
+  setTimeout( function timer() {
+    dropSound.pause();
+    dropSound.currentTime = 0;
+    dropSound.play();
+  }, count * 40 );
 };
 
 export { dropColor };

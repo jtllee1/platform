@@ -13,3 +13,5 @@
 //= link ball-paddle.mp3
 //= link ball-brick.mp3
 //= link helicopter.mp3
+//= link pop.mp3
+//= link m-drop.mp3

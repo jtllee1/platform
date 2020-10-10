@@ -3,6 +3,10 @@ import { dropColor } from '../match3/drop-color';
 const checkMatch = () => {
   const grids = document.querySelectorAll(".grid");
   const score = document.getElementById("score");
+  const popSound = document.querySelector(".pop");
+  popSound.playbackRate = 2;
+
+  let time = 400;
 
   for (let row = 0; row < 9; row++) {
     let condition1 = true;
@@ -32,6 +36,7 @@ const checkMatch = () => {
         condition1 = false;
         condition2 = false;
         score.innerText = parseInt(score.innerText) + 900;
+        popSound.play();
 
         for (let subRow = 1; subRow < 9; subRow++) {
           let prevGrid = grid - (subRow * 9);
@@ -55,7 +60,7 @@ const checkMatch = () => {
               dropColor(column3, prevRow, prevColor3);
               dropColor(column4, prevRow, prevColor4);
               dropColor(column5, prevRow, prevColor5);
-            }, subRow * 200 );
+            }, subRow * time );
           };
         };
       }
@@ -66,6 +71,7 @@ const checkMatch = () => {
         grids[grid - 3].classList.remove("item", `${color4}`);
         condition2 = false;
         score.innerText = parseInt(score.innerText) + 600;
+        popSound.play();
 
         for (let subRow = 1; subRow < 9; subRow++) {
           let prevGrid = grid - (subRow * 9);
@@ -86,7 +92,7 @@ const checkMatch = () => {
               dropColor(column2, prevRow, prevColor2);
               dropColor(column3, prevRow, prevColor3);
               dropColor(column4, prevRow, prevColor4);
-            }, subRow * 200 );
+            }, subRow * time );
           };
         };
       }
@@ -95,6 +101,7 @@ const checkMatch = () => {
         grids[grid - 1].classList.remove("item", `${color2}`);
         grids[grid - 2].classList.remove("item", `${color3}`);
         score.innerText = parseInt(score.innerText) + 300;
+        popSound.play();
 
         for (let subRow = 1; subRow < 9; subRow++) {
           let prevGrid = grid - (subRow * 9);
@@ -112,7 +119,7 @@ const checkMatch = () => {
               dropColor(column1, prevRow, prevColor1);
               dropColor(column2, prevRow, prevColor2);
               dropColor(column3, prevRow, prevColor3);
-            }, subRow * 200 );
+            }, subRow * time );
           };
         };
       };
@@ -183,6 +190,7 @@ const checkMatch = () => {
         conditionV1 = false;
         conditionV2 = false;
         score.innerText = parseInt(score.innerText) + 900;
+        popSound.play();
 
         for (let subRow = 1; subRow < 9; subRow++) {
           let prevGrid = (grid - 36) - (subRow * 9);
@@ -194,7 +202,7 @@ const checkMatch = () => {
 
             setTimeout( function timer() {
               dropColor(column1, prevRow, prevColor1);
-            }, subRow * 200 );
+            }, subRow * time );
           };
         };
       }
@@ -205,6 +213,7 @@ const checkMatch = () => {
         grids[grid - 27].classList.remove("item", `${color4}`);
         conditionV2 = false;
         score.innerText = parseInt(score.innerText) + 600;
+        popSound.play();
 
         for (let subRow = 1; subRow < 9; subRow++) {
           let prevGrid = (grid - 27) - (subRow * 9);
@@ -216,7 +225,7 @@ const checkMatch = () => {
 
             setTimeout( function timer() {
               dropColor(column1, prevRow, prevColor1);
-            }, subRow * 200 );
+            }, subRow * time );
           };
         };
       }
@@ -225,6 +234,7 @@ const checkMatch = () => {
         grids[grid - 9].classList.remove("item", `${color2}`);
         grids[grid - 18].classList.remove("item", `${color3}`);
         score.innerText = parseInt(score.innerText) + 300;
+        popSound.play();
 
         for (let subRow = 1; subRow < 9; subRow++) {
           let prevGrid = (grid - 18) - (subRow * 9);
@@ -236,7 +246,7 @@ const checkMatch = () => {
 
             setTimeout( function timer() {
               dropColor(column1, prevRow, prevColor1);
-            }, subRow * 200 );
+            }, subRow * time );
           };
         };
       };
