@@ -1,5 +1,3 @@
-import { startLoop } from '../match3/start-loop';
-
 const swap = () => {
   const grids = document.querySelectorAll(".grid");
 

@@ -4,13 +4,13 @@ const generateColor = (column) => {
   const grids = document.querySelectorAll(".grid");
   const colors = ["green", "blue", "orange", "purple", "red", "yellow", "red", "yellow", "cyan", "pink"];
 
-  let color = colors[Math.floor(Math.random() * colors.length)];
+  for (let column = 0; column < 9; column++) {
+    let color = colors[Math.floor(Math.random() * colors.length)];
 
-  if (!grids[column].classList.contains("item")) {
-    grids[column].classList.add("item", `${color}`);
+    if (!grids[column].classList.contains("item")) {
+      grids[column].classList.add("item", `${color}`);
+    };
   };
-
-  dropColor(column, 0, color);
 };
 
 export { generateColor };
