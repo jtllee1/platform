@@ -4,6 +4,7 @@ import { checkMatch } from '../match3/check-match';
 const dropColor = (column, row, color) => {
   const grids = document.querySelectorAll(".grid");
   const dropSound = document.querySelector(".m-drop");
+  const gameState = document.getElementById("game-state");
 
   let dropSpeed = 40;
   let loopSpeed = 7;
@@ -34,7 +35,9 @@ const dropColor = (column, row, color) => {
       checkMatch()
     };
 
-    setTimeout(loop, loopSpeed * dropSpeed);
+    if (gameState.innerText == "On") {
+      setTimeout(loop, loopSpeed * dropSpeed);
+    };
   };
 
   loop();
