@@ -1,5 +1,5 @@
-import { startLoop } from '../match3/start-loop';
 import { matchTimer } from '../match3/match-timer';
+import { dropColor } from '../match3/drop-color';
 
 const startMatch = () => {
   const start = document.getElementById("start");
@@ -7,7 +7,7 @@ const startMatch = () => {
 
   start.addEventListener('click', () => {
     gameState.innerText = "On";
-    startLoop();
+    dropColor();
     matchTimer();
   });
 };

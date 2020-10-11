@@ -1,29 +1,43 @@
+import { generateColor } from '../match3/generate-color';
+import { checkMatch } from '../match3/check-match';
+
 const dropColor = (column, row, color) => {
   const grids = document.querySelectorAll(".grid");
   const dropSound = document.querySelector(".m-drop");
 
-  let count = 0;
+  let dropSpeed = 40;
+  let loopSpeed = 7;
 
-  for (let i = row; i < 9; i++) {
-    let active = grids[column+(9 * i)];
-    let down = grids[column+(9 * (i + 1))];
+  function loop() {
+    let itemsCheck = document.querySelectorAll(".item");
 
-    if (i < 8 && !down.classList.contains("item") && !active.classList.contains("down-boundary")) {
-      setTimeout( function timer() {
-        down.classList.remove("item", "green", "blue", "orange", "purple", "red", "yellow", "red", "yellow", "cyan", "pink");
-        down.classList.add("item", `${color}`);
-        active.classList.remove("item", "green", "blue", "orange", "purple", "red", "yellow", "red", "yellow", "cyan", "pink");
-      }, count * 40 );
+    if (itemsCheck.length != 81) {
+      for(let row = 0; row < 8; row++) {
+        for (let column = 0; column < 9; column++) {
+          let active = grids[71 - column - (row * 9)];
+          let down = grids[80 - column - (row * 9)];
+
+          if (!down.classList.contains("item") && active.classList.contains("item")) {
+            let color = grids[active.id].className.split(" ").pop();
+
+            setTimeout( function timer() {
+              down.classList.remove("item", "green", "blue", "orange", "purple", "red", "yellow", "red", "yellow", "cyan", "pink");
+              down.classList.add("item", `${color}`);
+              active.classList.remove("item", "green", "blue", "orange", "purple", "red", "yellow", "red", "yellow", "cyan", "pink");
+            }, row * dropSpeed );
+          };
+        };
+      };
+      setTimeout(generateColor, loopSpeed * dropSpeed);
+    }
+    else if (itemsCheck.length == 81) {
+      checkMatch()
     };
 
-    count++;
+    setTimeout(loop, loopSpeed * dropSpeed);
   };
 
-  setTimeout( function timer() {
-    dropSound.pause();
-    dropSound.currentTime = 0;
-    dropSound.play();
-  }, count * 40 );
+  loop();
 };
 
 export { dropColor };
