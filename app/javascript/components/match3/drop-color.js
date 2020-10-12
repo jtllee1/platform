@@ -6,7 +6,7 @@ const dropColor = (column, row, color) => {
   const dropSound = document.querySelector(".m-drop");
   const gameState = document.getElementById("game-state");
 
-  let dropSpeed = 40;
+  let dropSpeed = 20;
   let loopSpeed = 7;
 
   function loop() {
