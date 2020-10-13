@@ -44,14 +44,14 @@ const checkMatch = () => {
         grids[grid - 2].classList.remove("item", `${color3}`);
         grids[grid - 3].classList.remove("item", `${color4}`);
         condition2 = false;
-        score.innerText = parseInt(score.innerText) + 600;
+        score.innerText = parseInt(score.innerText) + 300;
         popSound.play();
       }
       else if (condition2 && color1 == color2 && color2 == color3) {
         grids[grid].classList.remove("item", `${color1}`);
         grids[grid - 1].classList.remove("item", `${color2}`);
         grids[grid - 2].classList.remove("item", `${color3}`);
-        score.innerText = parseInt(score.innerText) + 300;
+        score.innerText = parseInt(score.innerText) + 100;
         popSound.play();
       };
     };
@@ -93,14 +93,14 @@ const checkMatch = () => {
         grids[grid - 18].classList.remove("item", `${color3}`);
         grids[grid - 27].classList.remove("item", `${color4}`);
         conditionV2 = false;
-        score.innerText = parseInt(score.innerText) + 600;
+        score.innerText = parseInt(score.innerText) + 300;
         popSound.play();
       }
       else if (conditionV2 && color1 == color2 && color2 == color3) {
         grids[grid].classList.remove("item", `${color1}`);
         grids[grid - 9].classList.remove("item", `${color2}`);
         grids[grid - 18].classList.remove("item", `${color3}`);
-        score.innerText = parseInt(score.innerText) + 300;
+        score.innerText = parseInt(score.innerText) + 100;
         popSound.play();
       };
     };
