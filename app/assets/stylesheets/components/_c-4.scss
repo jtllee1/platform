@@ -49,6 +49,28 @@
     width: 600px;
     height: 600px;
     border: 8px solid rgba(150, 150, 150, 0.5);
+    .hover-1 {
+      background-color: #ffff1673;
+      border: 8px solid #96961e52
+    }
+    .hover-2 {
+      background-color: #ce282863;
+      border: 8px solid #9e22225c;
+    }
+    .active-1 {
+      background-color: #ffff16;
+      border: 8px solid #96961e8a;
+    }
+    .active-2 {
+      background-color: #ce2828;
+      border: 8px solid #9e2222a3;
+    }
+    .active-1.win {
+      border: 8px solid #ffffff8a;
+    }
+    .active-2.win {
+      border: 8px solid #ffffffa3;
+    }
   }
 }
 
