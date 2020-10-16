@@ -82,3 +82,6 @@ else if (id == "Match 3") {
   startMatch();
   swap();
 }
+else if (id == "Hangman") {
+
+}
