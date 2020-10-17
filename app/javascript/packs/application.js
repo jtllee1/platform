@@ -43,6 +43,7 @@ import { cube } from '../components/cube/cube';
 import { cubePress } from '../components/cube/cube-press';
 import { startMatch } from '../components/match3/start-match';
 import { swap } from '../components/match3/swap';
+import { startHangman } from '../components/hangman/start-hangman';
 
 const id = document.getElementById("name").innerText;
 // Call your functions here, e.g:
@@ -83,5 +84,5 @@ else if (id == "Match 3") {
   swap();
 }
 else if (id == "Hangman") {
-
+  startHangman();
 }
