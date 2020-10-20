@@ -1,4 +1,5 @@
 import { generateWord } from '../hangman/generate-word';
+import { checkLetter } from '../hangman/check-letter';
 
 const startHangman = () => {
   const start = document.getElementById("start");
@@ -15,6 +16,8 @@ const startHangman = () => {
     input.innerText = e.key;
 
     let condition = true;
+
+    checkLetter(e.key);
 
     letters.forEach(letter => {
       if (input.innerText == letter.innerText) {
