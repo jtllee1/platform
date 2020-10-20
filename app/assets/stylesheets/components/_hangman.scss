@@ -2,6 +2,12 @@
   #chosen-word {
 
   }
+  #word {
+    display: flex;
+    .hidden-letter {
+      margin-right: 8px;
+    }
+  }
   #image {
     background-color: white;
     width: 400px;
