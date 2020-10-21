@@ -6,10 +6,12 @@ const startHangman = () => {
   const input = document.getElementById("input");
   const usedLetters = document.getElementById("used-letters");
   const gameState = document.getElementById("game-state");
+  const count = document.getElementById("count");
 
   start.addEventListener('click', () => {
     input.innerText = "";
     usedLetters.innerText = "";
+    count.innerText = 0;
     generateWord();
     gameState.innerText = "On";
   });
