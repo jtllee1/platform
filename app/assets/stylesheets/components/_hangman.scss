@@ -25,8 +25,9 @@
 
   }
   #used-letters {
+    display: flex;
     .letter {
-
+      margin-right: 8px;
     }
   }
 }
