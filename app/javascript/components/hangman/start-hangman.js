@@ -5,31 +5,37 @@ const startHangman = () => {
   const start = document.getElementById("start");
   const input = document.getElementById("input");
   const usedLetters = document.getElementById("used-letters");
+  const gameState = document.getElementById("game-state");
 
   start.addEventListener('click', () => {
+    input.innerText = "";
+    usedLetters.innerText = "";
     generateWord();
+    gameState.innerText = "On";
   });
 
   document.addEventListener('keydown', (e) => {
-    let letters = document.querySelectorAll(".letter");
+    if (gameState.innerText == "On") {
+      let letters = document.querySelectorAll(".letter");
 
-    input.innerText = e.key;
+      input.innerText = e.key;
 
-    let condition = true;
+      let condition = true;
 
-    checkLetter(e.key);
+      letters.forEach(letter => {
+        if (input.innerText == letter.innerText) {
+          condition = false;
+        };
+      });
 
-    letters.forEach(letter => {
-      if (input.innerText == letter.innerText) {
-        condition = false;
+      if (condition) {
+        checkLetter(e.key);
+
+        let div = document.createElement('div');
+        div.className = "letter";
+        div.innerText = e.key;
+        usedLetters.appendChild(div);
       };
-    });
-
-    if (condition) {
-      let div = document.createElement('div');
-      div.className = "letter";
-      div.innerText = e.key;
-      usedLetters.appendChild(div);
     };
   });
 };
