@@ -4,15 +4,20 @@
   }
   #word {
     display: flex;
+    justify-content: center;
     .hidden-letter {
-      margin-right: 8px;
+      margin-right: 1em;
     }
   }
   #image {
+    margin: 0 auto;
+    margin-top: 1em;
+    border: 1em solid #d60000de;
     background-color: white;
-    width: 400px;
-    height: 400px;
-    padding: 16px;
+    border-radius: 25%;
+    width: 21em;
+    height: 21em;
+    padding: 2em;
     img {
       width: 100%;
       height: 100%;
@@ -22,12 +27,28 @@
     }
   }
   #input {
-
+    margin: 0 auto;
+    margin-top: 1em;
+    background-color: white;
+    width: 3em;
+    height: 3em;
+    border-radius: 25%;
+    text-align: center;
   }
   #used-letters {
+    margin-top: 2em;
+    padding: 1em;
+    margin: 0 auto;
+    margin-top: 1em;
     display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-color: white;
+    width: 21em;
+    min-height: 3em;
+    border-radius: 1em;
     .letter {
-      margin-right: 8px;
+      margin-right: 1em;
     }
   }
 }
