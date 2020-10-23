@@ -1,17 +1,31 @@
 #hangman {
+  background-color: beige;
+  padding: 2em;
+  width: 28em;
+  margin: 0 auto;
+  margin-top: 2em;
+  border-radius: 1em;
   #chosen-word {
 
   }
   #word {
     display: flex;
     justify-content: center;
+    background-color: white;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    padding: 1em;
+    width: 21em;
+    min-height: 3em;
+    border-radius: 1em;
     .hidden-letter {
-      margin-right: 1em;
+      margin-right: 0.5em;
+      margin-left: 0.5em;
     }
   }
   #image {
     margin: 0 auto;
-    margin-top: 1em;
+    margin-top: 2em;
     border: 1em solid #d60000de;
     background-color: white;
     border-radius: 25%;
@@ -27,8 +41,9 @@
     }
   }
   #input {
+    padding: 0.7em;
     margin: 0 auto;
-    margin-top: 1em;
+    margin-top: 2em;
     background-color: white;
     width: 3em;
     height: 3em;
@@ -36,10 +51,9 @@
     text-align: center;
   }
   #used-letters {
-    margin-top: 2em;
     padding: 1em;
     margin: 0 auto;
-    margin-top: 1em;
+    margin-top: 2em;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -48,7 +62,8 @@
     min-height: 3em;
     border-radius: 1em;
     .letter {
-      margin-right: 1em;
+      margin-right: 0.5em;
+      margin-left: 0.5em;
     }
   }
 }
