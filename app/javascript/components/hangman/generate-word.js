@@ -16,7 +16,10 @@ const generateWord = () => {
     image.innerText = null;
 
     let pokeImage = document.createElement("img");
-    pokeImage.srcset = `https://pokeres.bastionbot.org/images/pokemon/${number}.png`;
+    let imgSource1 = data.sprites.other["official-artwork"].front_default;
+    let imgSource2 = `https://pokeres.bastionbot.org/images/pokemon/${number}.png`;
+
+    pokeImage.srcset = imgSource2;
     pokeImage.className = "hidden poke-image";
     image.append(pokeImage);
 
