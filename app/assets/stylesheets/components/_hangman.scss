@@ -1,10 +1,11 @@
 #hangman {
   background-color: beige;
-  padding: 2em;
-  width: 28em;
+  border: 1rem solid #d60000de;
+  padding: 2rem;
+  width: 28rem;
   margin: 0 auto;
-  margin-top: 2em;
-  border-radius: 1em;
+  margin-top: 2rem;
+  border-radius: 32px;
   #chosen-word {
 
   }
@@ -14,24 +15,26 @@
     background-color: white;
     flex-wrap: wrap;
     margin: 0 auto;
-    padding: 1em;
-    width: 21em;
-    min-height: 3em;
-    border-radius: 1em;
+    padding: 1rem;
+    width: 21rem;
+    min-height: 3rem;
+    border-radius: 1rem;
     .hidden-letter {
-      margin-right: 0.5em;
-      margin-left: 0.5em;
+      margin-right: 0.5rem;
+      margin-left: 0.5rem;
+      font-size: 24px;
+      font-weight: bold;
     }
   }
   #image {
     margin: 0 auto;
-    margin-top: 2em;
-    border: 1em solid #d60000de;
+    margin-top: 2rem;
+    border: 1rem solid #d60000de;
     background-color: white;
     border-radius: 25%;
-    width: 21em;
-    height: 21em;
-    padding: 2em;
+    width: 21rem;
+    height: 21rem;
+    padding: 2rem;
     img {
       width: 100%;
       height: 100%;
@@ -41,29 +44,36 @@
     }
   }
   #input {
-    padding: 0.7em;
+    font-size: 24px;
+    font-weight: bold;
+    padding: 0.2rem;
     margin: 0 auto;
-    margin-top: 2em;
+    margin-top: 2rem;
     background-color: white;
-    width: 3em;
-    height: 3em;
+    border: 0.2rem solid #920000;
+    width: 3rem;
+    height: 3rem;
     border-radius: 25%;
     text-align: center;
   }
   #used-letters {
-    padding: 1em;
+    padding: 1rem;
     margin: 0 auto;
-    margin-top: 2em;
+    margin-top: 2rem;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     background-color: white;
-    width: 21em;
-    min-height: 3em;
-    border-radius: 1em;
+    width: 21rem;
+    min-height: 3rem;
+    border-radius: 1rem;
     .letter {
-      margin-right: 0.5em;
-      margin-left: 0.5em;
+      margin: 0.5rem;
+      border: 0.2rem solid #920000;
+      border-radius: 8px;
+      height: 2rem;
+      width: 2rem;
+      text-align: center;
     }
   }
 }
