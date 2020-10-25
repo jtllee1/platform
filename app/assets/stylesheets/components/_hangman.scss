@@ -1,10 +1,29 @@
+#hangman-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+  #lives {
+    display: flex;
+    .life {
+      background-color: red;
+      width: 2rem;
+      height: 2rem;
+      border-radius: 50%;
+      margin-right: 0.1rem;
+      margin-left: 0.1rem;
+      margin-bottom: 1rem;
+    }
+    .life.active {
+      background-color: green;
+    }
+  }
+}
+
 #hangman {
   background-color: beige;
   border: 1rem solid #d60000de;
   padding: 2rem;
   width: 28rem;
-  margin: 0 auto;
-  margin-top: 2rem;
   border-radius: 32px;
   #chosen-word {
 
@@ -13,6 +32,7 @@
     display: flex;
     justify-content: center;
     background-color: white;
+    border: 0.2rem solid #d60000de;
     flex-wrap: wrap;
     margin: 0 auto;
     padding: 1rem;
@@ -46,11 +66,11 @@
   #input {
     font-size: 24px;
     font-weight: bold;
-    padding: 0.2rem;
+    padding: 0.1rem;
     margin: 0 auto;
     margin-top: 2rem;
     background-color: white;
-    border: 0.2rem solid #920000;
+    border: 0.2rem solid #d60000de;
     width: 3rem;
     height: 3rem;
     border-radius: 25%;
@@ -64,6 +84,7 @@
     flex-wrap: wrap;
     justify-content: center;
     background-color: white;
+    border: 0.2rem solid #d60000de;
     width: 21rem;
     min-height: 3rem;
     border-radius: 1rem;

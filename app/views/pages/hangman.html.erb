@@ -2,28 +2,35 @@
   <h1 id="name"><%= link_to "Hangman", root_path %></h1>
 </div>
 
-<div id="game-state" class="invisible">Off</div>
+<div id="hangman-container">
+  <div id="game-state" class="invisible">Off</div>
 
-<div id="count" class="invisible">0</div>
+  <div id="count" class="invisible">0</div>
 
-<div id="hangman">
-  <div id="chosen-word" class="invisible"></div>
+  <div id="hangman">
+    <div id="chosen-word" class="invisible"></div>
 
-  <div id="word"></div>
+    <div id="word"></div>
 
-  <div id="image" class=""></div>
+    <div id="image" class=""></div>
 
-  <div id="input" class=""></div>
+    <div id="input" class=""></div>
 
-  <div id="used-letters" class=""></div>
-</div>
+    <div id="used-letters" class=""></div>
+  </div>
 
-
-<div class="main">
   <div class="data">
+    <div id="lives">
+      <div class="life active"></div>
+      <div class="life active"></div>
+      <div class="life active"></div>
+      <div class="life active"></div>
+      <div class="life active"></div>
+    </div>
     <div id="start">Start</div>
     <div class="instructions">
       <a></a>
     </div>
   </div>
 </div>
+
