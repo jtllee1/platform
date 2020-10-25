@@ -7,8 +7,13 @@ const startHangman = () => {
   const usedLetters = document.getElementById("used-letters");
   const gameState = document.getElementById("game-state");
   const count = document.getElementById("count");
+  const lives = document.querySelectorAll(".life");
 
   start.addEventListener('click', () => {
+    lives.forEach(life => {
+      life.classList.add("active");
+    });
+
     input.innerText = "";
     usedLetters.innerText = "";
     count.innerText = 0;
