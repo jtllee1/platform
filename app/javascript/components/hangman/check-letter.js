@@ -1,3 +1,5 @@
+import { revealWord } from '../hangman/reveal-word';
+
 const checkLetter = (letter) => {
   const chosenWord = document.getElementById("chosen-word");
   const count = document.getElementById("count");
@@ -23,8 +25,6 @@ const checkLetter = (letter) => {
     if (loseCount == hiddenLetters.length) {
       let lives = document.querySelectorAll(".active");
 
-      console.log(lives[lives.length - 1]);
-
       lives[lives.length - 1].classList.remove("active");
     };
   });
@@ -34,6 +34,10 @@ const checkLetter = (letter) => {
   if (count.innerText == chosenWord.innerText.length || checkLives.length == 0) {
     gameState.innerText = "Off";
     pokeImage.classList.remove("hidden");
+  };
+
+  if (checkLives.length == 0) {
+    revealWord();
   };
 };
 
