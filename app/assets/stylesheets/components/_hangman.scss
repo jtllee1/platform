@@ -26,23 +26,24 @@
 }
 
 #hangman {
-  background-color: beige;
+  background-color: #ff6d6dd6;
   border: 1rem solid #d60000de;
   padding: 2rem;
-  width: 28rem;
+  width: 30rem;
   border-radius: 32px;
+  color: #262682d6;
   #chosen-word {
 
   }
   #word {
     display: flex;
     justify-content: center;
-    background-color: white;
+    background-color: #ffefc6;
     border: 0.2rem solid #d60000de;
     flex-wrap: wrap;
     margin: 0 auto;
     padding: 1rem;
-    width: 21rem;
+    width: 24rem;
     min-height: 3rem;
     border-radius: 1rem;
     .hidden-letter {
@@ -58,8 +59,8 @@
     border: 1rem solid #d60000de;
     background-color: white;
     border-radius: 25%;
-    width: 21rem;
-    height: 21rem;
+    width: 23rem;
+    height: 23rem;
     padding: 2rem;
     img {
       width: 100%;
@@ -75,7 +76,7 @@
     padding: 0.1rem;
     margin: 0 auto;
     margin-top: 2rem;
-    background-color: white;
+    background-color: #ffce06;
     border: 0.2rem solid #d60000de;
     width: 3rem;
     height: 3rem;
@@ -89,18 +90,20 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    background-color: white;
+    background-color: #ffefc6;
     border: 0.2rem solid #d60000de;
-    width: 21rem;
+    width: 23rem;
     min-height: 3rem;
     border-radius: 1rem;
     .letter {
       margin: 0.5rem;
-      border: 0.2rem solid #920000;
+      border: 0.2rem solid #ffb948;
       border-radius: 8px;
       height: 2rem;
       width: 2rem;
       text-align: center;
+      font-weight: bold;
+      background-color: #ffce06;
     }
   }
 }
