@@ -83,6 +83,6 @@ else if (id == "Match 3") {
   startMatch();
   swap();
 }
-else if (id == "Hangman") {
+else if (id == "Pokémon Hangman") {
   startHangman();
 }
