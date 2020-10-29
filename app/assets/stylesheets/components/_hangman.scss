@@ -23,6 +23,24 @@
   #start {
     margin-top: 1rem;
   }
+  #hint {
+    width: 8.4rem;
+    height: 2rem;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+    padding: 0.1rem;
+    background-color: rgba(200, 100, 0, 1.0);
+    border: 2px solid rgba(200, 150, 0, 1.0);
+    border-radius: 24px;
+    font-weight: bold;
+  }
+
+  #hint:hover {
+    cursor: pointer;
+    background-color: rgba(230, 150, 0, 0.9);
+  }
 }
 
 #hangman {

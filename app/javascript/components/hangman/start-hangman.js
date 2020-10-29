@@ -1,8 +1,10 @@
 import { generateWord } from '../hangman/generate-word';
 import { checkLetter } from '../hangman/check-letter';
+import { generateHint } from '../hangman/generate-hint';
 
 const startHangman = () => {
   const start = document.getElementById("start");
+  const hint = document.getElementById("hint");
   const input = document.getElementById("input");
   const usedLetters = document.getElementById("used-letters");
   const gameState = document.getElementById("game-state");
@@ -19,6 +21,12 @@ const startHangman = () => {
     count.innerText = 0;
     generateWord();
     gameState.innerText = "On";
+  });
+
+  hint.addEventListener('click', () => {
+    if (gameState.innerText == "On") {
+      generateHint();
+    };
   });
 
   document.addEventListener('keydown', (e) => {
