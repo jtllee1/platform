@@ -1,3 +1,30 @@
 <div class="title">
   <h1 id="name"><%= link_to "2048", root_path %></h1>
 </div>
+
+<div class="main">
+  <div id="grids-2048">
+    <% row = 1 %>
+    <% i = 1 %>
+    <% 4.times do %>
+      <% column = 1 %>
+      <% 4.times do %>
+        <div id="<%= i %>" class="grid
+          <%= column == 1 ? "left-boundary" : "" %> <%= column == 4 ? "right-boundary" : "" %>
+          <%= row == 1 ? "up-boundary" : "" %> <%= row == 4 ? "down-boundary" : "" %>"></div>
+        <% i += 1 %>
+        <% column += 1 %>
+      <% end %>
+      <% row += 1 %>
+    <% end %>
+  </div>
+
+  <div class="data">
+    <a><b>Score:</b></a>
+    <div id="score">0</div>
+    <div id="start">Start</div>
+    <div class="instructions">
+      <a></a>
+    </div>
+  </div>
+</div>

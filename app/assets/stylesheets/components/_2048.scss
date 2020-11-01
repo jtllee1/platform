@@ -1,0 +1,13 @@
+#grids-2048 {
+  width: 40em;
+  height: 40em;
+  background-color: beige;
+  display: flex;
+  flex-wrap: wrap;
+  .grid {
+    width: 10em;
+    height: 10em;
+    background-color: yellow;
+    border: 1px solid black;
+  }
+}
