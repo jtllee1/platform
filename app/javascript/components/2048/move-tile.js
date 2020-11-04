@@ -6,27 +6,55 @@ const moveTile = (direction) => {
       setTimeout( function timer() {
         if (direction == "left" && !tiles[i].classList.contains("left-boundary")) {
           tiles[i].classList.remove("active");
-          tiles[i].innerText = "";
           tiles[i - 1].classList.add("active");
-          tiles[i - 1].innerText = "2";
+
+          if (tiles[i].innerText == tiles[i - 1].innerText) {
+            tiles[i - 1].innerText = parseInt(tiles[i].innerText) + parseInt(tiles[i - 1].innerText);
+          }
+          else {
+            tiles[i - 1].innerText = tiles[i].innerText;
+          };
+
+          tiles[i].innerText = "";
         }
         else if (direction == "right" && !tiles[i].classList.contains("right-boundary")) {
           tiles[i].classList.remove("active");
-          tiles[i].innerText = "";
           tiles[i + 1].classList.add("active");
-          tiles[i + 1].innerText = "2";
+
+          if (tiles[i].innerText == tiles[i + 1].innerText) {
+            tiles[i + 1].innerText = parseInt(tiles[i].innerText) + parseInt(tiles[i + 1].innerText);
+          }
+          else {
+            tiles[i + 1].innerText = tiles[i].innerText;
+          };
+
+          tiles[i].innerText = "";
         }
         else if (direction == "up" && !tiles[i].classList.contains("up-boundary")) {
           tiles[i].classList.remove("active");
-          tiles[i].innerText = "";
           tiles[i - 4].classList.add("active");
-          tiles[i - 4].innerText = "2";
+
+          if (tiles[i].innerText == tiles[i - 4].innerText) {
+            tiles[i - 4].innerText = parseInt(tiles[i].innerText) + parseInt(tiles[i - 4].innerText);
+          }
+          else {
+            tiles[i - 4].innerText = tiles[i].innerText;
+          };
+
+          tiles[i].innerText = "";
         }
         else if (direction == "down" && !tiles[i].classList.contains("down-boundary")) {
           tiles[i].classList.remove("active");
-          tiles[i].innerText = "";
           tiles[i + 4].classList.add("active");
-          tiles[i + 4].innerText = "2";
+
+          if (tiles[i].innerText == tiles[i + 4].innerText) {
+            tiles[i + 4].innerText = parseInt(tiles[i].innerText) + parseInt(tiles[i + 4].innerText);
+          }
+          else {
+            tiles[i + 4].innerText = tiles[i].innerText;
+          };
+
+          tiles[i].innerText = "";
         };
       }, 1);
     };
