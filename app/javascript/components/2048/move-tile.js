@@ -17,19 +17,6 @@ const moveTile = (direction) => {
 
           tiles[i].innerText = "";
         }
-        else if (direction == "right" && !tiles[i].classList.contains("right-boundary")) {
-          tiles[i].classList.remove("active");
-          tiles[i + 1].classList.add("active");
-
-          if (tiles[i].innerText == tiles[i + 1].innerText) {
-            tiles[i + 1].innerText = parseInt(tiles[i].innerText) + parseInt(tiles[i + 1].innerText);
-          }
-          else {
-            tiles[i + 1].innerText = tiles[i].innerText;
-          };
-
-          tiles[i].innerText = "";
-        }
         else if (direction == "up" && !tiles[i].classList.contains("up-boundary")) {
           tiles[i].classList.remove("active");
           tiles[i - 4].classList.add("active");
@@ -39,6 +26,26 @@ const moveTile = (direction) => {
           }
           else {
             tiles[i - 4].innerText = tiles[i].innerText;
+          };
+
+          tiles[i].innerText = "";
+        };
+      }, 1);
+    };
+  };
+
+  for (let i = 15; i > -1; i--) {
+    if (tiles[i].classList.contains("active")) {
+      setTimeout( function timer() {
+        if (direction == "right" && !tiles[i].classList.contains("right-boundary")) {
+          tiles[i].classList.remove("active");
+          tiles[i + 1].classList.add("active");
+
+          if (tiles[i].innerText == tiles[i + 1].innerText) {
+            tiles[i + 1].innerText = parseInt(tiles[i].innerText) + parseInt(tiles[i + 1].innerText);
+          }
+          else {
+            tiles[i + 1].innerText = tiles[i].innerText;
           };
 
           tiles[i].innerText = "";
