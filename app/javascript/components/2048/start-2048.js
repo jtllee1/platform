@@ -33,6 +33,10 @@ const start2048 = () => {
           moveTile(direction);
         }, i * 80);
       };
+
+      setTimeout(function timer() {
+        generateTile();
+      }, 300);
     };
   });
 };
