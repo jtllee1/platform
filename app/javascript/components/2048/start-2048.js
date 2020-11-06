@@ -28,7 +28,11 @@ const start2048 = () => {
         direction = "down"
       };
 
-      moveTile(direction);
+      for (let i = 0; i < 3; i++) {
+        setTimeout(function timer() {
+          moveTile(direction);
+        }, i * 80);
+      };
     };
   });
 };
