@@ -5,12 +5,18 @@
   display: flex;
   flex-wrap: wrap;
   .grid {
-    width: 10em;
-    height: 10em;
-    background-color: yellow;
+    width: 10rem;
+    height: 10rem;
+    background-color: #e4b566ad;
     border: 1px solid black;
+    color: #4c2401;
+    font-size: 56px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
   .active {
-    background-color: red;
+    background-color: #ffab00;
   }
 }
