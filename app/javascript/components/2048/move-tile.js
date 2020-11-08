@@ -1,3 +1,5 @@
+import { scoring } from '../2048/scoring';
+
 const moveTile = (direction) => {
   const tiles = document.querySelectorAll(".grid");
 
@@ -16,6 +18,7 @@ const moveTile = (direction) => {
             tiles[i - 1].classList.add("active");
             tiles[i - 1].innerText = parseInt(tiles[i].innerText) + parseInt(tiles[i - 1].innerText);
             tiles[i].innerText = "";
+            scoring(parseInt(tiles[i - 1].innerText));
           };
         }
         else if (direction == "up" && !tiles[i].classList.contains("up-boundary")) {
@@ -30,6 +33,7 @@ const moveTile = (direction) => {
             tiles[i - 4].classList.add("active");
             tiles[i - 4].innerText = parseInt(tiles[i].innerText) + parseInt(tiles[i - 4].innerText);
             tiles[i].innerText = "";
+            scoring(parseInt(tiles[i - 4].innerText));
           };
         };
       }, 1);
@@ -51,6 +55,7 @@ const moveTile = (direction) => {
             tiles[i + 1].classList.add("active");
             tiles[i + 1].innerText = parseInt(tiles[i].innerText) + parseInt(tiles[i + 1].innerText);
             tiles[i].innerText = "";
+            scoring(parseInt(tiles[i + 1].innerText));
           };
         }
         else if (direction == "down" && !tiles[i].classList.contains("down-boundary")) {
@@ -65,6 +70,7 @@ const moveTile = (direction) => {
             tiles[i + 4].classList.add("active");
             tiles[i + 4].innerText = parseInt(tiles[i].innerText) + parseInt(tiles[i + 4].innerText);
             tiles[i].innerText = "";
+            scoring(parseInt(tiles[i + 4].innerText));
           };
         };
       }, 1);
