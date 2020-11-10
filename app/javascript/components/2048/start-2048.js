@@ -4,8 +4,14 @@ import { moveTile } from '../2048/move-tile';
 const start2048 = () => {
   const start = document.getElementById("start");
   const gameState = document.getElementById("game-state");
+  const tiles = document.querySelectorAll(".grid");
 
   start.addEventListener('click', () => {
+    tiles.forEach(tile => {
+      tile.classList.remove("active");
+      tile.innerText = "";
+    });
+
     gameState.innerText = "On";
     generateTile();
     generateTile();
