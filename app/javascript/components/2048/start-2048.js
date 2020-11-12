@@ -1,5 +1,6 @@
 import { generateTile } from '../2048/generate-tile';
 import { moveTile } from '../2048/move-tile';
+import { color } from '../2048/color';
 
 const start2048 = () => {
   const start = document.getElementById("start");
@@ -43,6 +44,10 @@ const start2048 = () => {
       setTimeout(function timer() {
         generateTile();
       }, 300);
+
+      setTimeout(function timer() {
+        color();
+      }, 200);
     };
   });
 };
