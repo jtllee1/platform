@@ -11,6 +11,7 @@ const start2048 = () => {
     tiles.forEach(tile => {
       tile.classList.remove("active");
       tile.innerText = "";
+      tile.style.backgroundColor = "";
     });
 
     gameState.innerText = "On";
