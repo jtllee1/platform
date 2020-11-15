@@ -22,7 +22,9 @@ const start2048 = () => {
   document.addEventListener('keyup', (e) => {
     let direction = "";
 
-    if (gameState.innerText == "On") {
+    if (gameState.innerText == "On" &&
+      (e.keyCode == 37 || e.keyCode == 38 ||
+        e.keyCode == 39 || e.keyCode == 40)) {
       if (e.keyCode == 37) {
         direction = "left";
       }
