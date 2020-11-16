@@ -1,17 +1,17 @@
 #grids-2048 {
-  width: 40.4rem;
-  height: 40.4rem;
+  width: 40.4em;
+  height: 40.4em;
   background-color: #e4d4ba;
-  border: 0.2rem solid #0c080091;
+  border: 0.2em solid #0c080091;
   border-radius: 12px;
   display: flex;
   flex-wrap: wrap;
   .grid {
-    width: 9.9rem;
-    height: 9.9rem;
-    margin: 0.05rem;
+    width: 24.5%;
+    height: 24.5%;
+    margin: 0.25%;
     background-color: #e4b566ad;
-    border: 0.2rem solid #0c080087;
+    border: 4px solid #0c080087;
     border-radius: 8px;
     color: #4c2401;
     font-size: 56px;
@@ -22,5 +22,14 @@
   }
   .active {
     background-color: #ffab00;
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  #grids-2048 {
+    font-size: 12px;
+    .grid {
+      font-size: 40px;
+    }
   }
 }
