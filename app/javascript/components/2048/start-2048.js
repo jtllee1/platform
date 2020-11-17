@@ -25,6 +25,8 @@ const start2048 = () => {
     if (gameState.innerText == "On" &&
       (e.keyCode == 37 || e.keyCode == 38 ||
         e.keyCode == 39 || e.keyCode == 40)) {
+      gameState.innerText = "Off";
+
       if (e.keyCode == 37) {
         direction = "left";
       }
