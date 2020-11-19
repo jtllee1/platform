@@ -45,7 +45,7 @@ import { startMatch } from '../components/match3/start-match';
 import { swap } from '../components/match3/swap';
 import { startHangman } from '../components/hangman/start-hangman';
 import { start2048 } from '../components/2048/start-2048';
-import { startTest } from '../components/2048/start-test';
+import { startTest } from '../components/test/start-test';
 
 const id = document.getElementById("name").innerText;
 // Call your functions here, e.g:

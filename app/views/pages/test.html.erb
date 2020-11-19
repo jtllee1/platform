@@ -1,3 +1,26 @@
 <div class="title">
   <h1 id="name"><%= link_to "Test", root_path %></h1>
 </div>
+
+<% layer = 1 %>
+<div class="wrapper">
+  <div class="test-area">
+    <% i = 1 %>
+    <% 9.times do %>
+      <% position = 1 %>
+      <% 4.times do %>
+        <div class="cube cube-<%= i %>">
+          <div class="box l-<%= layer %> p-<%= position %> front"></div>
+          <div class="box l-<%= layer %> p-<%= position %> right"></div>
+          <div class="box l-<%= layer %> p-<%= position %> back"></div>
+          <div class="box l-<%= layer %> p-<%= position %> left"></div>
+          <div class="box l-<%= layer %> p-<%= position %> bottom"></div>
+          <div class="box l-<%= layer %> p-<%= position %> top"></div>
+        </div>
+        <% i += 1 %>
+        <% position += 1 %>
+      <% end %>
+      <% layer += 1 %>
+    <% end %>
+  </div>
+</div>
