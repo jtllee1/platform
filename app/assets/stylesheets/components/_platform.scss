@@ -1,4 +1,4 @@
-.test-area {
+.platform-area {
   position: relative;
   transform-style: preserve-3d;
   // animation-name: rotate;
@@ -192,15 +192,19 @@
   }
 
   .p-1 {
-    left: -100px;
+    left: -125px;
   }
   .p-2 {
-    left: 0px;
+    left: -25px;
   }
   .p-3 {
-    left: 100px;
+    left: 75px;
   }
   .p-4 {
-    left: 200px;
+    left: 175px;
+  }
+
+  .cube.up {
+    top: -100px;
   }
 }
