@@ -1,5 +1,0 @@
-const startTest = () => {
-
-};
-
-export { startTest };
