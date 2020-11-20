@@ -11,7 +11,7 @@ const wave = () => {
 
           setTimeout( function timer() {
             cubes[32 + i - (j * 4)].classList.remove("up");
-          }, j * 250);
+          }, (j + 1) * 200);
         };
       };
     };
