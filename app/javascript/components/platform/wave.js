@@ -28,7 +28,36 @@ const wave = () => {
           }, (j + 1) * 200);
         };
       };
+    }
+    else if (e.keyCode == 37) {
+      cubes[0].classList.add("up");
+
+      setTimeout( function timer() {
+        cubes[0].classList.remove("up");
+      }, 100);
+    }
+    else if (e.keyCode == 38) {
+      cubes[1].classList.add("up");
+
+      setTimeout( function timer() {
+        cubes[1].classList.remove("up");
+      }, 100);
+    }
+    else if (e.keyCode == 40) {
+      cubes[2].classList.add("up");
+
+      setTimeout( function timer() {
+        cubes[2].classList.remove("up");
+      }, 100);
+    }
+    else if (e.keyCode == 39) {
+      cubes[3].classList.add("up");
+
+      setTimeout( function timer() {
+        cubes[3].classList.remove("up");
+      }, 100);
     };
+
   });
 };
 
