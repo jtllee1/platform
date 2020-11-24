@@ -2,14 +2,10 @@ import { actions } from '../platform/actions';
 
 const control = () => {
   const cubes = document.querySelectorAll(".cube");
-  const tops = document.querySelectorAll(".top");
 
   document.addEventListener('keyup', (e) => {
-    if (e.keyCode == 32) {
-      actions(cubes, 4, 9, 200, "up");
-    }
-    else if (e.keyCode == 13) {
-      actions(tops, 4, 9, 200, "blue");
+    if (e.keyCode == 13) {
+      actions(0, 9, 200, "blue");
     }
     else if (e.keyCode == 37) {
       cubes[0].classList.add("up");
