@@ -2,6 +2,7 @@ const actions = (column, rows, timer, change) => {
   const cubes = document.querySelectorAll(".cube");
   const tops = document.querySelectorAll(".top");
   const hit = document.getElementById("hit");
+  const gameState = document.getElementById("game-state");
 
   for (let i = 0; i < rows; i++) {
     setTimeout( function timer() {
@@ -17,6 +18,8 @@ const actions = (column, rows, timer, change) => {
         }
         else {
           hit.innerText = "Miss!";
+
+          gameState.innerText = "Off";
         };
       };
     }, (i + 1) * timer);
