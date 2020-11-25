@@ -1,11 +1,14 @@
-import { actions } from '../platform/actions';
+import { playLoop } from '../platform/play-loop';
 
 const control = () => {
   const cubes = document.querySelectorAll(".cube");
+  const gameState = document.getElementById("game-state");
 
   document.addEventListener('keyup', (e) => {
     if (e.keyCode == 13) {
-      actions(0, 9, 200, "blue");
+      gameState.innerText = "On";
+
+      playLoop();
     }
     else if (e.keyCode == 37) {
       cubes[0].classList.add("up");
