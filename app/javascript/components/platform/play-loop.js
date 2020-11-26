@@ -6,11 +6,11 @@ const playLoop = () => {
   if (gameState.innerText == "On") {
     let column = Math.floor(Math.random() * 4);
 
-    actions(column, 9, 200, "blue");
+    actions(column, 9, 300, "blue");
 
     let time = Math.floor(Math.random() * 4) + 1;
 
-    setTimeout( playLoop, time * 1000);
+    setTimeout(playLoop, time * 1000);
   };
 };
 
