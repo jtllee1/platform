@@ -4,6 +4,7 @@ const actions = (column, rows, timer, change) => {
   const hit = document.getElementById("hit");
   const gameState = document.getElementById("game-state");
   const cymbalSound = document.querySelector(".cymbal");
+  const score = document.getElementById("score");
 
   for (let i = 0; i < rows; i++) {
     setTimeout( function timer() {
@@ -19,6 +20,7 @@ const actions = (column, rows, timer, change) => {
           cymbalSound.pause();
           cymbalSound.currentTime = 0;
           cymbalSound.play();
+          score.innerText = parseInt(score.innerText) + 500;
         }
         else {
           hit.innerText = "Miss!";
