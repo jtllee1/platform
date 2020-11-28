@@ -10,6 +10,6 @@ Rails.application.routes.draw do
   get '/match_3', to: 'pages#match_3'
   get '/hangman', to: 'pages#hangman'
   get '/play_2048', to: 'pages#play_2048'
-  get '/test', to: 'pages#test'
+  get '/sound_beat', to: 'pages#sound_beat'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
