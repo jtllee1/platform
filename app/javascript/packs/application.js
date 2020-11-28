@@ -91,6 +91,6 @@ else if (id == "Pokémon Hangman") {
 else if (id == "2048") {
   start2048();
 }
-else if (id == "Test") {
+else if (id == "Sound Beat") {
   control();
 }
