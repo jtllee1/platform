@@ -8,9 +8,21 @@
     <source src="<%= asset_path('cymbal.mp3') %>" type="audio/mpeg">
 </audio>
 
-<div id="score">0</div>
 
-<div id="hit"></div>
+<div class="sound-beat">
+  <div class="box"></div>
+
+  <div id="hit">Are You Ready?</div>
+
+  <div class="data">
+    <a><b>Score:</b></a>
+    <div id="score">0</div>
+    <div id="start">Start</div>
+    <div class="instructions">
+      <a></a>
+    </div>
+  </div>
+</div>
 
 <% layer = 1 %>
 <div class="wrapper">

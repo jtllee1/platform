@@ -1,0 +1,16 @@
+.sound-beat {
+  display: flex;
+  justify-content: space-between;
+  margin: auto;
+  padding: 8px;
+  margin-top: 1rem;
+  width: 50rem;
+  .box {
+    width: 180px;
+  }
+  #hit {
+    font-size: 32px;
+    font-weight: bold;
+    margin-top: 1rem;
+  }
+}
