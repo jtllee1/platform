@@ -3,14 +3,19 @@ import { playLoop } from '../platform/play-loop';
 const control = () => {
   const cubes = document.querySelectorAll(".cube");
   const gameState = document.getElementById("game-state");
+  const start = document.getElementById("start");
+  const score = document.getElementById("score");
+
+  start.addEventListener('click', (e) => {
+    gameState.innerText = "On";
+
+    score.innerText = 0;
+
+    playLoop();
+  });
 
   document.addEventListener('keyup', (e) => {
-    if (e.keyCode == 13) {
-      gameState.innerText = "On";
-
-      playLoop();
-    }
-    else if (e.keyCode == 37) {
+    if (e.keyCode == 37) {
       cubes[0].classList.add("up");
 
       setTimeout( function timer() {
