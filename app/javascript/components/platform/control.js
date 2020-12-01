@@ -6,6 +6,16 @@ const control = () => {
   const start = document.getElementById("start");
   const score = document.getElementById("score");
 
+  const cube1 = document.querySelector(".l-1.p-1.top");
+  const cube2 = document.querySelector(".l-1.p-2.top");
+  const cube3 = document.querySelector(".l-1.p-3.top");
+  const cube4 = document.querySelector(".l-1.p-4.top");
+
+  cube1.classList.add("far", "fa-arrow-alt-circle-left");
+  cube2.classList.add("far", "fa-arrow-alt-circle-up");
+  cube3.classList.add("far", "fa-arrow-alt-circle-down");
+  cube4.classList.add("far", "fa-arrow-alt-circle-right");
+
   start.addEventListener('click', (e) => {
     gameState.innerText = "On";
 
