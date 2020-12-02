@@ -26,19 +26,6 @@
     padding: 10px 0 !important;
   }
 
-  // .north {
-  //   background-image: ;
-  // }
-  // .south {
-  //   background-image: ;
-  // }
-  // .east {
-  //   background-image: ;
-  // }
-  // .west {
-  //   background-image: ;
-  // }
-
   .l-1.front {
     transform: translateX(-50px) translateY(-50px) translateZ(450px);
   }
@@ -228,6 +215,12 @@
   }
   .top.blue {
     background-color: blue;
+  }
+  .top.yellow {
+    background-color: yellow;
+  }
+  .top.red {
+    background-color: red;
   }
 }
 
