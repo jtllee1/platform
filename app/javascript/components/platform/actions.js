@@ -21,11 +21,23 @@ const actions = (column, rows, timer, change) => {
           cymbalSound.currentTime = 0;
           cymbalSound.play();
           score.innerText = parseInt(score.innerText) + 500;
+
+          tops[32 + column - (i * 4)].classList.add("yellow")
+
+          setTimeout( function timer() {
+            tops[32 + column - (i * 4)].classList.remove("yellow");
+          }, 300);
         }
         else {
           hit.innerText = "Miss!";
 
           gameState.innerText = "Off";
+
+          tops[32 + column - (i * 4)].classList.add("red")
+
+          setTimeout( function timer() {
+            tops[32 + column - (i * 4)].classList.remove("red");
+          }, 300);
         };
       };
     }, (i + 1) * timer);
