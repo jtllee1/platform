@@ -4,6 +4,7 @@ const actions = (column, rows, timer, change) => {
   const hit = document.getElementById("hit");
   const gameState = document.getElementById("game-state");
   const cymbalSound = document.querySelector(".cymbal");
+  const bgMusic = document.querySelector(".bg-music");
   const score = document.getElementById("score");
 
   for (let i = 0; i < rows; i++) {
@@ -33,7 +34,9 @@ const actions = (column, rows, timer, change) => {
 
           gameState.innerText = "Off";
 
-          tops[32 + column - (i * 4)].classList.add("red")
+          tops[32 + column - (i * 4)].classList.add("red");
+
+          bgMusic.pause();
 
           setTimeout( function timer() {
             tops[32 + column - (i * 4)].classList.remove("red");
