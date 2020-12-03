@@ -5,6 +5,7 @@ const control = () => {
   const gameState = document.getElementById("game-state");
   const start = document.getElementById("start");
   const score = document.getElementById("score");
+  const bgMusic = document.querySelector(".bg-music");
 
   const cube1 = document.querySelector(".l-1.p-1.top");
   const cube2 = document.querySelector(".l-1.p-2.top");
@@ -20,6 +21,10 @@ const control = () => {
     gameState.innerText = "On";
 
     score.innerText = 0;
+
+    bgMusic.pause();
+    bgMusic.currentTime = 0;
+    bgMusic.play();
 
     playLoop();
   });
@@ -53,7 +58,6 @@ const control = () => {
         cubes[3].classList.remove("up");
       }, 200);
     };
-
   });
 };
 
