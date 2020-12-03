@@ -29,6 +29,10 @@ const control = () => {
     playLoop();
   });
 
+  bgMusic.addEventListener('ended', (e) => {
+    gameState.innerText = "Off";
+  });
+
   document.addEventListener('keyup', (e) => {
     if (e.keyCode == 37) {
       cubes[0].classList.add("up");
