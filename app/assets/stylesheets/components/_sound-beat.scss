@@ -1,16 +1,26 @@
-.sound-beat {
-  display: flex;
-  justify-content: space-between;
+.sb-container {
+  border: 4px #b8c2c3 solid;
+  background-color: #1f1f54;
   margin: auto;
+  margin-top: 16px;
   padding: 8px;
-  margin-top: 1rem;
   width: 50rem;
-  .box {
-    width: 180px;
-  }
-  #hit {
-    font-size: 32px;
-    font-weight: bold;
+  height: 50rem;
+  border-radius: 16px;
+  .sound-beat {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px;
     margin-top: 1rem;
+    .box {
+      width: 180px;
+      height: 20rem;
+    }
+    #hit {
+      font-size: 32px;
+      font-weight: bold;
+      margin-top: 0.5rem;
+      color: #a9ffff;
+    }
   }
 }
