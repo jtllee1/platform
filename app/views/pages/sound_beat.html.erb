@@ -12,42 +12,44 @@
     <source src="<%= asset_path('bensound-creativeminds.mp3') %>" type="audio/mpeg">
 </audio>
 
+<div class="sb-container">
+  <div class="sound-beat">
+    <div class="box"></div>
 
-<div class="sound-beat">
-  <div class="box"></div>
+    <div id="hit">Are You Ready?</div>
 
-  <div id="hit">Are You Ready?</div>
+    <div class="data">
+      <a><b>Score:</b></a>
+      <div id="score">0</div>
+      <div id="start">Start</div>
+      <div class="instructions">
+        <p>Press the arrow keys to match the timing of the falling tiles.</p>
+        Music: <a href="https://www.bensound.com">Bensound</a>
+      </div>
+    </div>
+  </div>
 
-  <div class="data">
-    <a><b>Score:</b></a>
-    <div id="score">0</div>
-    <div id="start">Start</div>
-    <div class="instructions">
-      <p>Press the arrow keys to match the timing of the falling tiles.</p>
-      <p>Music: <a href="https://www.bensound.com">Bensound</a>.</p>
+  <% layer = 1 %>
+  <div class="wrapper">
+    <div class="platform-area">
+      <% i = 1 %>
+      <% 9.times do %>
+        <% position = 1 %>
+        <% 4.times do %>
+          <div class="cube cube-<%= i %>">
+            <div class="box l-<%= layer %> p-<%= position %> front"></div>
+            <div class="box l-<%= layer %> p-<%= position %> right"></div>
+            <div class="box l-<%= layer %> p-<%= position %> back"></div>
+            <div class="box l-<%= layer %> p-<%= position %> left"></div>
+            <div class="box l-<%= layer %> p-<%= position %> bottom"></div>
+            <div class="box l-<%= layer %> p-<%= position %> top"></div>
+          </div>
+          <% i += 1 %>
+          <% position += 1 %>
+        <% end %>
+        <% layer += 1 %>
+      <% end %>
     </div>
   </div>
 </div>
 
-<% layer = 1 %>
-<div class="wrapper">
-  <div class="platform-area">
-    <% i = 1 %>
-    <% 9.times do %>
-      <% position = 1 %>
-      <% 4.times do %>
-        <div class="cube cube-<%= i %>">
-          <div class="box l-<%= layer %> p-<%= position %> front"></div>
-          <div class="box l-<%= layer %> p-<%= position %> right"></div>
-          <div class="box l-<%= layer %> p-<%= position %> back"></div>
-          <div class="box l-<%= layer %> p-<%= position %> left"></div>
-          <div class="box l-<%= layer %> p-<%= position %> bottom"></div>
-          <div class="box l-<%= layer %> p-<%= position %> top"></div>
-        </div>
-        <% i += 1 %>
-        <% position += 1 %>
-      <% end %>
-      <% layer += 1 %>
-    <% end %>
-  </div>
-</div>
