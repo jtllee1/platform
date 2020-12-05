@@ -16,3 +16,7 @@
 //= link pop.mp3
 //= link cymbal.mp3
 //= link bensound-creativeminds.mp3
+//= link bensound-ukulele.mp3
+//= link bensound-happyrock.mp3
+//= link bensound-jazzyfrenchy.mp3
+//= link bensound-buddy.mp3

@@ -11,6 +11,18 @@
 <audio class="bg-music invisible" controls preload="none">
     <source src="<%= asset_path('bensound-creativeminds.mp3') %>" type="audio/mpeg">
 </audio>
+<audio class="bg-music invisible" controls preload="none">
+    <source src="<%= asset_path('bensound-ukulele.mp3') %>" type="audio/mpeg">
+</audio>
+<audio class="bg-music invisible" controls preload="none">
+    <source src="<%= asset_path('bensound-happyrock.mp3') %>" type="audio/mpeg">
+</audio>
+<audio class="bg-music invisible" controls preload="none">
+    <source src="<%= asset_path('bensound-jazzyfrenchy.mp3') %>" type="audio/mpeg">
+</audio>
+<audio class="bg-music invisible" controls preload="none">
+    <source src="<%= asset_path('bensound-buddy.mp3') %>" type="audio/mpeg">
+</audio>
 
 <div class="sb-container">
   <div class="sound-beat">
@@ -19,6 +31,14 @@
     <div id="hit">Are You Ready?</div>
 
     <div class="data">
+      <select id="song">
+        <option value="0">Creative Minds</option>
+        <option value="1">Ukulele</option>
+        <option value="2">Happy Rock</option>
+        <option value="3">Jazzy Frenchy</option>
+        <option value="4">Buddy</option>
+      </select>
+      <br>
       <a><b>Score:</b></a>
       <div id="score">0</div>
       <div id="start">Start</div>

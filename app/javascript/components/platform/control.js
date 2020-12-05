@@ -5,7 +5,7 @@ const control = () => {
   const gameState = document.getElementById("game-state");
   const start = document.getElementById("start");
   const score = document.getElementById("score");
-  const bgMusic = document.querySelector(".bg-music");
+  const bgMusics = document.querySelectorAll(".bg-music");
 
   const cube1 = document.querySelector(".l-1.p-1.top");
   const cube2 = document.querySelector(".l-1.p-2.top");
@@ -18,6 +18,9 @@ const control = () => {
   cube4.classList.add("far", "fa-arrow-alt-circle-right");
 
   start.addEventListener('click', (e) => {
+    const getValue = document.getElementById('song').selectedOptions[0].value;
+    const bgMusic = bgMusics[getValue];
+
     gameState.innerText = "On";
 
     score.innerText = 0;
@@ -26,7 +29,7 @@ const control = () => {
     bgMusic.currentTime = 0;
     bgMusic.play();
 
-    playLoop();
+    playLoop(bgMusic);
   });
 
   bgMusic.addEventListener('ended', (e) => {
