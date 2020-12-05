@@ -30,10 +30,10 @@ const control = () => {
     bgMusic.play();
 
     playLoop(bgMusic);
-  });
 
-  bgMusic.addEventListener('ended', (e) => {
-    gameState.innerText = "Off";
+    bgMusic.addEventListener('ended', (e) => {
+      gameState.innerText = "Off";
+    });
   });
 
   document.addEventListener('keyup', (e) => {
