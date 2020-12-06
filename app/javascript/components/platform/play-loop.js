@@ -12,13 +12,19 @@ const playLoop = (music) => {
     let time = Math.floor(Math.random() * 4) + 1;
 
     if (parseInt(score.innerText) >= 8000) {
-      setTimeout(playLoop, time * 600);
+      setTimeout( function timer() {
+        playLoop(music)
+      }, time * 600);
     }
     else if (parseInt(score.innerText) >= 4000) {
-      setTimeout(playLoop, time * 800);
+      setTimeout( function timer() {
+        playLoop(music)
+      }, time * 800);
     }
     else {
-      setTimeout(playLoop, time * 1000);
+      setTimeout( function timer() {
+        playLoop(music)
+      }, time * 1000);
     };
   };
 };
