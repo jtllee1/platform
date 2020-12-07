@@ -7,7 +7,7 @@ const select = () => {
   const grids = document.getElementById("grids-c-4");
   const player1 = document.getElementById("player-1");
   const player2 = document.getElementById("player-2");
-  const restart = document.getElementById("reset");
+  const restart = document.getElementById("reset-c-4");
 
   let activeColumn = 0;
   let turn = 1;
