@@ -18,22 +18,24 @@ const control = () => {
   cube4.classList.add("far", "fa-arrow-alt-circle-right");
 
   start.addEventListener('click', (e) => {
-    const getValue = document.getElementById('song').selectedOptions[0].value;
-    const bgMusic = bgMusics[getValue];
+    if (gameState.innerText == "Off") {
+      const getValue = document.getElementById('song').selectedOptions[0].value;
+      const bgMusic = bgMusics[getValue];
 
-    gameState.innerText = "On";
+      gameState.innerText = "On";
 
-    score.innerText = 0;
+      score.innerText = 0;
 
-    bgMusic.pause();
-    bgMusic.currentTime = 0;
-    bgMusic.play();
+      bgMusic.pause();
+      bgMusic.currentTime = 0;
+      bgMusic.play();
 
-    playLoop(bgMusic);
+      playLoop(bgMusic);
 
-    bgMusic.addEventListener('ended', (e) => {
-      gameState.innerText = "Off";
-    });
+      bgMusic.addEventListener('ended', (e) => {
+        gameState.innerText = "Off";
+      });
+    };
   });
 
   document.addEventListener('keyup', (e) => {
