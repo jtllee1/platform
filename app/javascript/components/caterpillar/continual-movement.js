@@ -14,6 +14,7 @@ const continualMovement = () => {
   const inners = document.querySelectorAll(".inner");
 
   const footstepSound = document.querySelector(".footstep");
+  const biteSound = document.querySelector(".bite");
   let gameState = false;
   var keyState = {};
   let difficulty = 1;
@@ -73,6 +74,9 @@ const continualMovement = () => {
         right.classList.remove("food");
         length++;
         updateScore(difficulty);
+        biteSound.pause();
+        biteSound.currentTime = 0;
+        biteSound.play();
       }
 
       if (i == length) {
@@ -94,6 +98,9 @@ const continualMovement = () => {
         left.classList.remove("food");
         length++;
         updateScore(difficulty);
+        biteSound.pause();
+        biteSound.currentTime = 0;
+        biteSound.play();
       }
 
       if (i == length) {
@@ -115,6 +122,9 @@ const continualMovement = () => {
         down.classList.remove("food");
         length++;
         updateScore(difficulty);
+        biteSound.pause();
+        biteSound.currentTime = 0;
+        biteSound.play();
       }
 
       if (i == length) {
@@ -136,6 +146,9 @@ const continualMovement = () => {
         up.classList.remove("food");
         length++;
         updateScore(difficulty);
+        biteSound.pause();
+        biteSound.currentTime = 0;
+        biteSound.play();
       }
 
       if (i == length) {
