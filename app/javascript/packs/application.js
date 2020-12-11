@@ -46,6 +46,7 @@ import { swap } from '../components/match3/swap';
 import { startHangman } from '../components/hangman/start-hangman';
 import { start2048 } from '../components/2048/start-2048';
 import { control } from '../components/platform/control';
+import { startBalloon } from '../components/balloon_blast/start-balloon';
 
 const id = document.getElementById("name").innerText;
 // Call your functions here, e.g:
@@ -93,4 +94,7 @@ else if (id == "2048") {
 }
 else if (id == "Sound Beat") {
   control();
+}
+else if (id == "Balloon Blast") {
+  startBalloon();
 }
