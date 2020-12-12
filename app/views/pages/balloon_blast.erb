@@ -1,3 +1,23 @@
 <div class="title">
   <h1 id="name"><%= link_to "Balloon Blast", root_path %></h1>
 </div>
+
+<div class="balloon">
+  <div class="main">
+    <div id="grids">
+      <% row = 1 %>
+      <% i = 1 %>
+      <% 10.times do %>
+        <% column = 1 %>
+        <% 10.times do %>
+          <div id="<%= i %>" class="grid <%= i == 1 ? "active" : "" %>
+            <%= column == 1 ? "left-boundary" : "" %> <%= column == 10 ? "right-boundary" : "" %>
+            <%= row == 1 ? "up-boundary" : "" %> <%= row == 10 ? "down-boundary" : "" %>"></div>
+          <% i += 1 %>
+          <% column += 1 %>
+        <% end %>
+        <% row += 1 %>
+      <% end %>
+    </div>
+  </div>
+</div>
