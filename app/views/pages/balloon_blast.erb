@@ -7,12 +7,12 @@
     <div id="grids">
       <% row = 1 %>
       <% i = 1 %>
-      <% 10.times do %>
+      <% 11.times do %>
         <% column = 1 %>
-        <% 10.times do %>
+        <% 11.times do %>
           <div id="<%= i %>" class="grid <%= i == 1 ? "active" : "" %>
-            <%= column == 1 ? "left-boundary" : "" %> <%= column == 10 ? "right-boundary" : "" %>
-            <%= row == 1 ? "up-boundary" : "" %> <%= row == 10 ? "down-boundary" : "" %>"></div>
+            <%= column == 1 ? "left-boundary" : "" %> <%= column == 11 ? "right-boundary" : "" %>
+            <%= row == 1 ? "up-boundary" : "" %> <%= row == 11 ? "down-boundary" : "" %>"></div>
           <% i += 1 %>
           <% column += 1 %>
         <% end %>
