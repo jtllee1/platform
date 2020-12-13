@@ -3,9 +3,12 @@
     #grids {
       background-color: white;
       .grid {
-        width: 10%;
-        height: 10%;
+        width: 9.091%;
+        height: 9.091%;
         border: 1px solid black;
+      }
+      .block {
+        background-color: brown;
       }
     }
   }
