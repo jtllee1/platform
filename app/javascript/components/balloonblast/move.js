@@ -1,3 +1,5 @@
+import { drop } from '../balloonblast/drop';
+
 const move = () => {
   window.addEventListener("keydown", function(e) {
     if ([32, 37, 38, 39, 40].indexOf(e.keyCode) > -1) {
@@ -13,6 +15,10 @@ const move = () => {
 
   document.addEventListener('keyup', (e) => {
     keyState[e.keyCode] = false;
+
+    if (e.keyCode == 32) {
+      drop();
+    };
   });
 
   function movementLoop() {
