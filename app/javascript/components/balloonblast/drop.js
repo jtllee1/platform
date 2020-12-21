@@ -7,7 +7,7 @@ const drop = () => {
 
   if (balloons.length < limit) {
     active.classList.add("balloon");
-    pop(active.id);
+    pop(active.id, 3000, 200);
   };
 };
 
