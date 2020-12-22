@@ -6,7 +6,7 @@ const pop = (num, blastTiming, shockWaveTiming) => {
   let up = document.getElementById(parseInt(num) - 11);
 
   setTimeout( function timer() {
-    if (right) {
+    if (right && !grid.classList.contains("right-boundary")) {
       right.classList.remove("crate");
 
       if (right.classList.contains("block") != true) {
@@ -17,7 +17,7 @@ const pop = (num, blastTiming, shockWaveTiming) => {
         right.classList.remove("blast");
       }, shockWaveTiming);
     };
-    if (left) {
+    if (left && !grid.classList.contains("left-boundary")) {
       left.classList.remove("crate");
 
       if (left.classList.contains("block") != true) {
