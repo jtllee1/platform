@@ -11,6 +11,7 @@ const pop = (num, blastTiming, shockWaveTiming) => {
 
       if (right.classList.contains("block") != true) {
         right.classList.add("blast");
+        right.classList.remove("active");
       };
 
       setTimeout( function timer() {
@@ -22,6 +23,7 @@ const pop = (num, blastTiming, shockWaveTiming) => {
 
       if (left.classList.contains("block") != true) {
         left.classList.add("blast");
+        left.classList.remove("active");
       };
 
       setTimeout( function timer() {
@@ -33,6 +35,7 @@ const pop = (num, blastTiming, shockWaveTiming) => {
 
       if (up.classList.contains("block") != true) {
         up.classList.add("blast");
+        up.classList.remove("active");
       };
 
       setTimeout( function timer() {
@@ -44,6 +47,7 @@ const pop = (num, blastTiming, shockWaveTiming) => {
 
       if (down.classList.contains("block") != true) {
         down.classList.add("blast");
+        down.classList.remove("active");
       };
 
       setTimeout( function timer() {
