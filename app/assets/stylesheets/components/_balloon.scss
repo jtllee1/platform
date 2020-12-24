@@ -1,4 +1,6 @@
 .balloon {
+  display: flex;
+  justify-content: center;
   .main {
     #grids {
       background-color: white;
