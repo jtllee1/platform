@@ -1,6 +1,12 @@
 const fillGrids = () => {
   const grids = document.querySelectorAll(".grid");
 
+  grids.forEach(grid => {
+    grid.classList.remove("active", "block", "crate");
+  });
+
+  grids[0].classList.add("active");
+
   for (let i = 0; i < 5; i++) {
     for (let j = 12 + (22 * i); j < 21 + (22 * i); j += 2) {
       grids[j].classList.add("block");
