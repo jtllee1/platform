@@ -1,3 +1,5 @@
+import { fillCrates } from '../balloonblast/fill-crates';
+
 const fillGrids = () => {
   const grids = document.querySelectorAll(".grid");
 
@@ -30,6 +32,8 @@ const fillGrids = () => {
     grids[33 + (22 * i)].classList.add("crate");
     grids[43 + (22 * i)].classList.add("crate");
   };
+
+  fillCrates();
 };
 
 export { fillGrids };
