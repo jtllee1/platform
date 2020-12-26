@@ -7,6 +7,8 @@ const move = () => {
     }
   }, false);
 
+  const limit = document.getElementById("limit");
+
   var keyState = {};
 
   document.addEventListener('keydown', (e) => {
@@ -32,21 +34,45 @@ const move = () => {
       && right.classList.contains("crate") == false && right.classList.contains("balloon") == false) {
       right.classList.add("active");
       active.classList.remove("active");
+
+      if (right.classList.contains("exballoon")) {
+        right.classList.remove("exballoon");
+
+        limit.innerText = parseInt(limit.innerText) + 1;
+      };
     }
     else if (keyState[37] && left && active.classList.contains("left-boundary") == false && left.classList.contains("block") == false
       && left.classList.contains("crate") == false && left.classList.contains("balloon") == false) {
       left.classList.add("active");
       active.classList.remove("active");
+
+      if (left.classList.contains("exballoon")) {
+        left.classList.remove("exballoon");
+
+        limit.innerText = parseInt(limit.innerText) + 1;
+      };
     }
     else if (keyState[40] && down && active.classList.contains("down-boundary") == false && down.classList.contains("block") == false
       && down.classList.contains("crate") == false && down.classList.contains("balloon") == false) {
       down.classList.add("active");
       active.classList.remove("active");
+
+      if (down.classList.contains("exballoon")) {
+        down.classList.remove("exballoon");
+
+        limit.innerText = parseInt(limit.innerText) + 1;
+      };
     }
     else if (keyState[38] && up && active.classList.contains("up-boundary") == false && up.classList.contains("block") == false
       && up.classList.contains("crate") == false && up.classList.contains("balloon") == false) {
       up.classList.add("active");
       active.classList.remove("active");
+
+      if (up.classList.contains("exballoon")) {
+        up.classList.remove("exballoon");
+
+        limit.innerText = parseInt(limit.innerText) + 1;
+      };
     };
 
     setTimeout(movementLoop, 100);
