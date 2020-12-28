@@ -8,6 +8,7 @@ const move = () => {
   }, false);
 
   const limit = document.getElementById("limit");
+  const strength = document.getElementById("strength");
 
   var keyState = {};
 
@@ -39,6 +40,11 @@ const move = () => {
         right.classList.remove("exballoon");
 
         limit.innerText = parseInt(limit.innerText) + 1;
+      }
+      else if (right.classList.contains("power")) {
+        right.classList.remove("power");
+
+        strength.innerText = parseInt(strength.innerText) + 1;
       };
     }
     else if (keyState[37] && left && active.classList.contains("left-boundary") == false && left.classList.contains("block") == false
@@ -50,6 +56,11 @@ const move = () => {
         left.classList.remove("exballoon");
 
         limit.innerText = parseInt(limit.innerText) + 1;
+      }
+      else if (left.classList.contains("power")) {
+        left.classList.remove("power");
+
+        strength.innerText = parseInt(strength.innerText) + 1;
       };
     }
     else if (keyState[40] && down && active.classList.contains("down-boundary") == false && down.classList.contains("block") == false
@@ -61,6 +72,11 @@ const move = () => {
         down.classList.remove("exballoon");
 
         limit.innerText = parseInt(limit.innerText) + 1;
+      }
+      else if (down.classList.contains("power")) {
+        down.classList.remove("power");
+
+        strength.innerText = parseInt(strength.innerText) + 1;
       };
     }
     else if (keyState[38] && up && active.classList.contains("up-boundary") == false && up.classList.contains("block") == false
@@ -72,6 +88,11 @@ const move = () => {
         up.classList.remove("exballoon");
 
         limit.innerText = parseInt(limit.innerText) + 1;
+      }
+      else if (up.classList.contains("power")) {
+        up.classList.remove("power");
+
+        strength.innerText = parseInt(strength.innerText) + 1;
       };
     };
 
