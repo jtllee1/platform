@@ -14,9 +14,12 @@ const pop = (num, blastTiming, shockWaveTiming) => {
 
     setTimeout( function timer() {
       if (right && !grid.classList.contains("right-boundary") && rightBlock == false) {
-        right.classList.remove("crate");
+        if (right.classList.contains("crate")) {
+          rightBlock = true;
+        };
 
         if (right.classList.contains("block") != true) {
+          right.classList.remove("crate");
           right.classList.add("blast");
           right.classList.remove("active");
         }
@@ -29,9 +32,12 @@ const pop = (num, blastTiming, shockWaveTiming) => {
         }, shockWaveTiming);
       };
       if (left && !grid.classList.contains("left-boundary") && leftBlock == false) {
-        left.classList.remove("crate");
+        if (left.classList.contains("crate")) {
+          leftBlock = true;
+        };
 
         if (left.classList.contains("block") != true) {
+          left.classList.remove("crate");
           left.classList.add("blast");
           left.classList.remove("active");
         }
@@ -44,9 +50,12 @@ const pop = (num, blastTiming, shockWaveTiming) => {
         }, shockWaveTiming);
       };
       if (up && upBlock == false) {
-        up.classList.remove("crate");
+        if (up.classList.contains("crate")) {
+          upBlock = true;
+        };
 
         if (up.classList.contains("block") != true) {
+          up.classList.remove("crate");
           up.classList.add("blast");
           up.classList.remove("active");
         }
@@ -59,9 +68,12 @@ const pop = (num, blastTiming, shockWaveTiming) => {
         }, shockWaveTiming);
       };
       if (down && downBlock == false) {
-        down.classList.remove("crate");
+        if (down.classList.contains("crate")) {
+          downBlock = true;
+        };
 
         if (down.classList.contains("block") != true) {
+          down.classList.remove("crate");
           down.classList.add("blast");
           down.classList.remove("active");
         }
