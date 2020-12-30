@@ -14,7 +14,7 @@ const pop = (num, blastTiming, shockWaveTiming) => {
 
     setTimeout( function timer() {
       if (right && !grid.classList.contains("right-boundary") && rightBlock == false) {
-        if (right.classList.contains("crate")) {
+        if (right.classList.contains("crate") || right.classList.contains("right-boundary")) {
           rightBlock = true;
         };
 
@@ -32,7 +32,7 @@ const pop = (num, blastTiming, shockWaveTiming) => {
         }, shockWaveTiming);
       };
       if (left && !grid.classList.contains("left-boundary") && leftBlock == false) {
-        if (left.classList.contains("crate")) {
+        if (left.classList.contains("crate") || left.classList.contains("left-boundary")) {
           leftBlock = true;
         };
 
