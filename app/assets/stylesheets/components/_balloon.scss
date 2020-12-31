@@ -7,19 +7,26 @@
       .grid {
         width: 9.091%;
         height: 9.091%;
-        border: 1px solid black;
       }
       .block {
-        background-color: brown;
+        background-color: #823728;
+        border-radius: 8px;
+        border: 1px solid #0000004d;
       }
       .crate {
         background-color: beige;
+        border-radius: 8px;
+        border: 1px solid #0000004d;
       }
       .balloon {
         background-color: blue;
+        border-radius: 50%;
+        border: 1px solid #0000004d;
       }
       .active {
         background-color: orange;
+        border-radius: 50%;
+        border: 1px solid #00000021;
       }
       .blast {
         background-color: cyan;
