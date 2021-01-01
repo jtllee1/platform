@@ -13,6 +13,12 @@ const pop = (num, blastTiming, shockWaveTiming) => {
     let up = document.getElementById(parseInt(num) - 11 * (i + 1));
 
     setTimeout( function timer() {
+      grid.classList.add("blast");
+
+      setTimeout( function timer() {
+        grid.classList.remove("blast");
+      }, shockWaveTiming);
+
       if (right && !grid.classList.contains("right-boundary") && rightBlock == false) {
         if (right.classList.contains("crate") || right.classList.contains("right-boundary")) {
           rightBlock = true;
