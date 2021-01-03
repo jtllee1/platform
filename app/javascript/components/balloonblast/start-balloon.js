@@ -4,6 +4,7 @@ import { move } from '../balloonblast/move';
 const startBalloon = () => {
   const start = document.getElementById("start");
 
+  fillGrids();
   move();
 
   start.addEventListener('click', () => {
