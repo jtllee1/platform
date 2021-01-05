@@ -19,14 +19,13 @@
         border: 1px solid #0000004d;
       }
       .balloon {
-        background-color: blue;
+        background: radial-gradient(#c9dbff, #32bce4);
+
         border-radius: 50%;
-        border: 1px solid #0000004d;
       }
       .active {
-        background-color: orange;
+        background: radial-gradient(#c53b00, #ffc67f);
         border-radius: 50%;
-        border: 1px solid #00000021;
       }
       .exballoon {
         background-color: pink;
