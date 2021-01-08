@@ -8,6 +8,7 @@ const fillGrids = () => {
   });
 
   grids[0].classList.add("active");
+  grids[grids.length - 1].classList.add("active-2");
 
   for (let i = 0; i < 5; i++) {
     for (let j = 12 + (22 * i); j < 21 + (22 * i); j += 2) {
