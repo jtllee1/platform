@@ -1,10 +1,18 @@
-const pop = (num, blastTiming, shockWaveTiming) => {
-  const strength = parseInt(document.getElementById("strength").innerText);
+const pop = (num, blastTiming, shockWaveTiming, number) => {
+  const strength = parseInt(document.getElementById(`strength-${number}`).innerText);
   const grid = document.getElementById(`${num}`);
   let rightBlock = false;
   let leftBlock = false;
   let upBlock = false;
   let downBlock = false;
+  let active = "";
+
+  if (number == 1) {
+    active = "active";
+  }
+  else if (number == 2) {
+    active = "active-2";
+  };
 
   for (let i = 0; i < strength; i++) {
     let right = document.getElementById(parseInt(num) + 1 + i);
@@ -27,7 +35,7 @@ const pop = (num, blastTiming, shockWaveTiming) => {
         if (right.classList.contains("block") != true) {
           right.classList.remove("crate");
           right.classList.add("blast-h");
-          right.classList.remove("active");
+          right.classList.remove(active);
         }
         else {
           rightBlock = true;
@@ -45,7 +53,7 @@ const pop = (num, blastTiming, shockWaveTiming) => {
         if (left.classList.contains("block") != true) {
           left.classList.remove("crate");
           left.classList.add("blast-h");
-          left.classList.remove("active");
+          left.classList.remove(active);
         }
         else {
           leftBlock = true;
@@ -63,7 +71,7 @@ const pop = (num, blastTiming, shockWaveTiming) => {
         if (up.classList.contains("block") != true) {
           up.classList.remove("crate");
           up.classList.add("blast-v");
-          up.classList.remove("active");
+          up.classList.remove(active);
         }
         else {
           upBlock = true;
@@ -81,7 +89,7 @@ const pop = (num, blastTiming, shockWaveTiming) => {
         if (down.classList.contains("block") != true) {
           down.classList.remove("crate");
           down.classList.add("blast-v");
-          down.classList.remove("active");
+          down.classList.remove(active);
         }
         else {
           downBlock = true;
@@ -92,7 +100,7 @@ const pop = (num, blastTiming, shockWaveTiming) => {
         }, shockWaveTiming);
       };
 
-      grid.classList.remove("balloon");
+      grid.classList.remove(`balloon-${number}`);
     }, blastTiming);
   };
 };
