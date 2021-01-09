@@ -18,7 +18,12 @@
         border-radius: 8px;
         border: 1px solid #0000004d;
       }
-      .balloon {
+      .balloon-1 {
+        background: radial-gradient(#c9dbff, #32bce4);
+
+        border-radius: 50%;
+      }
+      .balloon-2 {
         background: radial-gradient(#c9dbff, #32bce4);
 
         border-radius: 50%;
