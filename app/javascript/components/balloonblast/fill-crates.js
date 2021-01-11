@@ -12,7 +12,7 @@ const fillCrates = () => {
   else if (powers.length < 5) {
     let number = Math.floor(Math.random() * 84);
 
-    if (crates[number].classList.contains(".exballoon") == false) {
+    if (crates[number].classList.contains("exballoon") == false) {
       crates[number].classList.add("power");
 
       fillCrates();
