@@ -30,20 +30,20 @@
       .active {
         background: radial-gradient(#c53b00, #ffc67f);
         border-radius: 50%;
+        border: 1px solid #0000004d;
       }
       .active-2 {
-        background: radial-gradient(#c53b00, #ffc67f);
+        background: radial-gradient(#47a705, #7fffbe);
         border-radius: 50%;
+        border: 1px solid #0000004d;
       }
       .exballoon {
         background-color: pink;
         border-radius: 50%;
-        border: 1px solid #0000004d;
       }
       .power {
         background-color: green;
         border-radius: 50%;
-        border: 1px solid #0000004d;
       }
       .crate.exballoon {
         background-color: pink;
@@ -55,12 +55,15 @@
       }
       .blast {
         background: radial-gradient(circle, #24c2c6 0%, #00ffde 100%);
+        border-radius: 8px;
       }
       .blast-v {
         background: linear-gradient(90deg, #00ffde 0%, #24c2c6 50%, #00ffde 100%);
+        border-radius: 8px;
       }
       .blast-h {
         background: linear-gradient(0deg, #00ffde 0%, #24c2c6 50%, #00ffde 100%);
+        border-radius: 8px;
       }
     }
   }
