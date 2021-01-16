@@ -74,7 +74,30 @@
   }
 
   .data {
-   .exballoon {
+    #start {
+      margin-top: 8px;
+    }
+    .bars {
+      margin-left: 40px;
+      display: flex;
+      .bar-ex {
+        width: 16px;
+        height: 16px;
+        background-color: pink;
+        margin-right: 4px;
+        margin-bottom: 4px;
+        border-radius: 4px;
+      }
+      .bar-power {
+        width: 16px;
+        height: 16px;
+        background-color: green;
+        margin-right: 4px;
+        margin-bottom: 4px;
+        border-radius: 4px;
+      }
+    }
+    .exballoon {
       background-color: pink;
     }
     .power {

@@ -4,7 +4,7 @@ const fillGrids = () => {
   const grids = document.querySelectorAll(".grid");
 
   grids.forEach(grid => {
-    grid.classList.remove("active", "block", "crate", "exballoon", "power");
+    grid.classList.remove("active", "active-2", "block", "crate", "exballoon", "power");
   });
 
   grids[0].classList.add("active");

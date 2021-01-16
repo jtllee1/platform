@@ -1,4 +1,5 @@
 import { drop } from '../balloonblast/drop';
+import { addBar } from '../balloonblast/add-bar';
 
 const move = () => {
   window.addEventListener("keydown", function(e) {
@@ -45,11 +46,15 @@ const move = () => {
         right.classList.remove("exballoon");
 
         limit.innerText = parseInt(limit.innerText) + 1;
+
+        addBar("l-1", "bar-ex");
       }
       else if (right.classList.contains("power")) {
         right.classList.remove("power");
 
         strength.innerText = parseInt(strength.innerText) + 1;
+
+        addBar("s-1", "bar-power");
       };
     }
     else if (keyState[65] && left && active.classList.contains("left-boundary") == false && left.classList.contains("block") == false
@@ -61,11 +66,15 @@ const move = () => {
         left.classList.remove("exballoon");
 
         limit.innerText = parseInt(limit.innerText) + 1;
+
+        addBar("l-1", "bar-ex");
       }
       else if (left.classList.contains("power")) {
         left.classList.remove("power");
 
         strength.innerText = parseInt(strength.innerText) + 1;
+
+        addBar("s-1", "bar-power");
       };
     }
     else if (keyState[83] && down && active.classList.contains("down-boundary") == false && down.classList.contains("block") == false
@@ -77,11 +86,15 @@ const move = () => {
         down.classList.remove("exballoon");
 
         limit.innerText = parseInt(limit.innerText) + 1;
+
+        addBar("l-1", "bar-ex");
       }
       else if (down.classList.contains("power")) {
         down.classList.remove("power");
 
         strength.innerText = parseInt(strength.innerText) + 1;
+
+        addBar("s-1", "bar-power");
       };
     }
     else if (keyState[87] && up && active.classList.contains("up-boundary") == false && up.classList.contains("block") == false
@@ -93,11 +106,15 @@ const move = () => {
         up.classList.remove("exballoon");
 
         limit.innerText = parseInt(limit.innerText) + 1;
+
+        addBar("l-1", "bar-ex");
       }
       else if (up.classList.contains("power")) {
         up.classList.remove("power");
 
         strength.innerText = parseInt(strength.innerText) + 1;
+
+        addBar("s-1", "bar-power");
       };
     };
 
@@ -120,11 +137,15 @@ const move = () => {
         right.classList.remove("exballoon");
 
         limit2.innerText = parseInt(limit2.innerText) + 1;
+
+        addBar("l-2", "bar-ex");
       }
       else if (right.classList.contains("power")) {
         right.classList.remove("power");
 
         strength2.innerText = parseInt(strength2.innerText) + 1;
+
+        addBar("s-2", "bar-power");
       };
     }
     else if (keyState[37] && left && active.classList.contains("left-boundary") == false && left.classList.contains("block") == false
@@ -136,11 +157,15 @@ const move = () => {
         left.classList.remove("exballoon");
 
         limit2.innerText = parseInt(limit2.innerText) + 1;
+
+        addBar("l-2", "bar-ex");
       }
       else if (left.classList.contains("power")) {
         left.classList.remove("power");
 
         strength2.innerText = parseInt(strength2.innerText) + 1;
+
+        addBar("s-2", "bar-power");
       };
     }
     else if (keyState[40] && down && active.classList.contains("down-boundary") == false && down.classList.contains("block") == false
@@ -152,11 +177,15 @@ const move = () => {
         down.classList.remove("exballoon");
 
         limit2.innerText = parseInt(limit2.innerText) + 1;
+
+        addBar("l-2", "bar-ex");
       }
       else if (down.classList.contains("power")) {
         down.classList.remove("power");
 
         strength2.innerText = parseInt(strength2.innerText) + 1;
+
+        addBar("s-2", "bar-power");
       };
     }
     else if (keyState[38] && up && active.classList.contains("up-boundary") == false && up.classList.contains("block") == false
@@ -168,11 +197,15 @@ const move = () => {
         up.classList.remove("exballoon");
 
         limit2.innerText = parseInt(limit2.innerText) + 1;
+
+        addBar("l-2", "bar-ex");
       }
       else if (up.classList.contains("power")) {
         up.classList.remove("power");
 
         strength2.innerText = parseInt(strength2.innerText) + 1;
+
+        addBar("s-2", "bar-power");
       };
     };
 
