@@ -2,6 +2,14 @@
   <h1 id="name"><%= link_to "Balloon Blast", root_path %></h1>
 </div>
 
+<audio class="drop invisible" controls preload="none">
+    <source src="<%= asset_path('balloon-drop.mp3') %>" type="audio/mpeg">
+</audio>
+
+<audio class="splash invisible" controls preload="none">
+    <source src="<%= asset_path('balloon-splash.mp3') %>" type="audio/mpeg">
+</audio>
+
 <div class="balloon">
   <div class="main">
     <div id="grids">

@@ -6,6 +6,7 @@ const pop = (num, blastTiming, shockWaveTiming, number) => {
   let upBlock = false;
   let downBlock = false;
   let active = "";
+  const splashSound = document.querySelector(".splash");
 
   if (number == 1) {
     active = "active";
@@ -101,6 +102,10 @@ const pop = (num, blastTiming, shockWaveTiming, number) => {
       };
 
       grid.classList.remove(`balloon-${number}`);
+
+      splashSound.pause();
+      splashSound.currentTime = 0;
+      splashSound.play();
     }, blastTiming);
   };
 };

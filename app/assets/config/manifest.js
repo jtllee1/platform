@@ -21,3 +21,5 @@
 //= link bensound-jazzyfrenchy.mp3
 //= link bensound-buddy.mp3
 //= link bite.mp3
+//= link balloon-drop.mp3
+//= link balloon-splash.mp3
