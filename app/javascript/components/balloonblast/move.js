@@ -12,6 +12,7 @@ const move = () => {
   const strength = document.getElementById("strength-1");
   const limit2 = document.getElementById("limit-2");
   const strength2 = document.getElementById("strength-2");
+  const dropSound = document.querySelector(".drop");
 
   var keyState = {};
 
@@ -24,9 +25,15 @@ const move = () => {
 
     if (e.keyCode == 32) {
       drop("active", 1);
+      dropSound.pause();
+      dropSound.currentTime = 0;
+      dropSound.play();
     }
     else if (e.keyCode == 13) {
       drop("active-2", 2);
+      dropSound.pause();
+      dropSound.currentTime = 0;
+      dropSound.play();
     };
   });
 
