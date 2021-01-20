@@ -22,90 +22,147 @@ const pop = (num, blastTiming, shockWaveTiming, number) => {
     let up = document.getElementById(parseInt(num) - 11 * (i + 1));
 
     setTimeout( function timer() {
-      grid.classList.add("blast");
-
-      setTimeout( function timer() {
-        grid.classList.remove("blast");
-      }, shockWaveTiming);
-
-      if (right && !grid.classList.contains("right-boundary") && rightBlock == false) {
-        if (right.classList.contains("crate") || right.classList.contains("right-boundary")) {
-          rightBlock = true;
-        };
-
-        if (right.classList.contains("block") != true) {
-          right.classList.remove("crate");
-          right.classList.add("blast-h");
-          right.classList.remove(active);
-        }
-        else {
-          rightBlock = true;
-        };
+      if (grid.classList.contains("balloon")) {
+        grid.classList.add("blast");
 
         setTimeout( function timer() {
-          right.classList.remove("blast-h");
+          grid.classList.remove("blast");
         }, shockWaveTiming);
+
+        if (right && !grid.classList.contains("right-boundary") && rightBlock == false) {
+          if (right.classList.contains("crate") || right.classList.contains("right-boundary")) {
+            rightBlock = true;
+          };
+
+          if (right.classList.contains("block") != true) {
+            if (right.classList.contains("balloon")) {
+              let bNumber = 0;
+
+              if (right.classList.contains("balloon-1")) {
+                bNumber = 1;
+              }
+              else if (right.classList.contains("balloon-2")) {
+                bNumber = 2;
+              };
+
+              pop(right.id, 0, shockWaveTiming, bNumber);
+            };
+
+            right.classList.remove("crate");
+            right.classList.add("blast-h");
+            right.classList.remove(active);
+          }
+          else {
+            rightBlock = true;
+          };
+
+          setTimeout( function timer() {
+            right.classList.remove("blast-h");
+          }, shockWaveTiming);
+        };
+
+        if (left && !grid.classList.contains("left-boundary") && leftBlock == false) {
+          if (left.classList.contains("crate") || left.classList.contains("left-boundary")) {
+            leftBlock = true;
+          };
+
+          if (left.classList.contains("block") != true) {
+            if (left.classList.contains("balloon")) {
+              let bNumber = 0;
+
+              if (left.classList.contains("balloon-1")) {
+                bNumber = 1;
+              }
+              else if (left.classList.contains("balloon-2")) {
+                bNumber = 2;
+              };
+
+              pop(left.id, 0, shockWaveTiming, bNumber);
+            };
+
+            left.classList.remove("crate");
+            left.classList.add("blast-h");
+            left.classList.remove(active);
+          }
+          else {
+            leftBlock = true;
+          };
+
+          setTimeout( function timer() {
+            left.classList.remove("blast-h");
+          }, shockWaveTiming);
+        };
+
+        if (up && upBlock == false) {
+          if (up.classList.contains("crate")) {
+            upBlock = true;
+          };
+
+          if (up.classList.contains("block") != true) {
+            if (up.classList.contains("balloon")) {
+              let bNumber = 0;
+
+              if (up.classList.contains("balloon-1")) {
+                bNumber = 1;
+              }
+              else if (up.classList.contains("balloon-2")) {
+                bNumber = 2;
+              };
+
+              pop(up.id, 0, shockWaveTiming, bNumber);
+            };
+
+            up.classList.remove("crate");
+            up.classList.add("blast-v");
+            up.classList.remove(active);
+          }
+          else {
+            upBlock = true;
+          };
+
+          setTimeout( function timer() {
+            up.classList.remove("blast-v");
+          }, shockWaveTiming);
+        };
+
+        if (down && downBlock == false) {
+          if (down.classList.contains("crate")) {
+            downBlock = true;
+          };
+
+          if (down.classList.contains("block") != true) {
+            if (down.classList.contains("balloon")) {
+              let bNumber = 0;
+
+              if (down.classList.contains("balloon-1")) {
+                bNumber = 1;
+              }
+              else if (down.classList.contains("balloon-2")) {
+                bNumber = 2;
+              };
+
+              pop(down.id, 0, shockWaveTiming, bNumber);
+            };
+
+            down.classList.remove("crate");
+            down.classList.add("blast-v");
+            down.classList.remove(active);
+          }
+          else {
+            downBlock = true;
+          };
+
+          setTimeout( function timer() {
+            down.classList.remove("blast-v");
+          }, shockWaveTiming);
+        };
+
+        grid.classList.remove("balloon", `balloon-${number}`);
+
+        splashSound.pause();
+        splashSound.currentTime = 0;
+        splashSound.play();
       };
-      if (left && !grid.classList.contains("left-boundary") && leftBlock == false) {
-        if (left.classList.contains("crate") || left.classList.contains("left-boundary")) {
-          leftBlock = true;
-        };
-
-        if (left.classList.contains("block") != true) {
-          left.classList.remove("crate");
-          left.classList.add("blast-h");
-          left.classList.remove(active);
-        }
-        else {
-          leftBlock = true;
-        };
-
-        setTimeout( function timer() {
-          left.classList.remove("blast-h");
-        }, shockWaveTiming);
-      };
-      if (up && upBlock == false) {
-        if (up.classList.contains("crate")) {
-          upBlock = true;
-        };
-
-        if (up.classList.contains("block") != true) {
-          up.classList.remove("crate");
-          up.classList.add("blast-v");
-          up.classList.remove(active);
-        }
-        else {
-          upBlock = true;
-        };
-
-        setTimeout( function timer() {
-          up.classList.remove("blast-v");
-        }, shockWaveTiming);
-      };
-      if (down && downBlock == false) {
-        if (down.classList.contains("crate")) {
-          downBlock = true;
-        };
-
-        if (down.classList.contains("block") != true) {
-          down.classList.remove("crate");
-          down.classList.add("blast-v");
-          down.classList.remove(active);
-        }
-        else {
-          downBlock = true;
-        };
-
-        setTimeout( function timer() {
-          down.classList.remove("blast-v");
-        }, shockWaveTiming);
-      };
-
-      grid.classList.remove(`balloon-${number}`);
-
-      splashSound.pause();
-      splashSound.currentTime = 0;
-      splashSound.play();
     }, blastTiming);
   };
 };
