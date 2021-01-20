@@ -157,7 +157,9 @@ const pop = (num, blastTiming, shockWaveTiming, number) => {
           }, shockWaveTiming);
         };
 
-        grid.classList.remove("balloon", `balloon-${number}`);
+        setTimeout( function timer() {
+          grid.classList.remove("balloon", `balloon-${number}`);
+        }, 100);
 
         splashSound.pause();
         splashSound.currentTime = 0;
