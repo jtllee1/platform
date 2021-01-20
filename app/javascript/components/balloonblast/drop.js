@@ -6,7 +6,7 @@ const drop = (player, number) => {
   let limit = parseInt(document.getElementById(`limit-${number}`).innerText);
 
   if (balloons.length < limit) {
-    active.classList.add(`balloon-${number}`);
+    active.classList.add("balloon", `balloon-${number}`);
     pop(active.id, 3000, 200, number);
   };
 };
