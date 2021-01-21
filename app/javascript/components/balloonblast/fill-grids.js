@@ -28,7 +28,7 @@ const fillGrids = () => {
   addBar("s-2", "bar-power");
 
   grids.forEach(grid => {
-    grid.classList.remove("active", "active-2", "block", "crate", "exballoon", "power");
+    grid.classList.remove("active", "active-2", "block", "crate", "exballoon", "power", "balloon", "balloon-1", "balloon-2");
   });
 
   grids[0].classList.add("active");
