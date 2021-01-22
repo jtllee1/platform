@@ -12,7 +12,6 @@ const move = () => {
   const strength = document.getElementById("strength-1");
   const limit2 = document.getElementById("limit-2");
   const strength2 = document.getElementById("strength-2");
-  const dropSound = document.querySelector(".drop");
 
   var keyState = {};
 
@@ -37,6 +36,7 @@ const move = () => {
     let left = document.getElementById(parseInt(active.id) - 1);
     let down = document.getElementById(parseInt(active.id) + 11);
     let up = document.getElementById(parseInt(active.id) - 11);
+    const powerSound = document.querySelector(".power-up");
 
     if (keyState[68] && right && active.classList.contains("right-boundary") == false && right.classList.contains("block") == false
       && right.classList.contains("crate") == false && right.classList.contains("balloon") == false) {
@@ -49,6 +49,10 @@ const move = () => {
         limit.innerText = parseInt(limit.innerText) + 1;
 
         addBar("l-1", "bar-ex");
+
+        powerSound.pause();
+        powerSound.currentTime = 0;
+        powerSound.play();
       }
       else if (right.classList.contains("power")) {
         right.classList.remove("power");
@@ -56,6 +60,10 @@ const move = () => {
         strength.innerText = parseInt(strength.innerText) + 1;
 
         addBar("s-1", "bar-power");
+
+        powerSound.pause();
+        powerSound.currentTime = 0;
+        powerSound.play();
       };
     }
     else if (keyState[65] && left && active.classList.contains("left-boundary") == false && left.classList.contains("block") == false
@@ -69,6 +77,10 @@ const move = () => {
         limit.innerText = parseInt(limit.innerText) + 1;
 
         addBar("l-1", "bar-ex");
+
+        powerSound.pause();
+        powerSound.currentTime = 0;
+        powerSound.play();
       }
       else if (left.classList.contains("power")) {
         left.classList.remove("power");
@@ -76,6 +88,10 @@ const move = () => {
         strength.innerText = parseInt(strength.innerText) + 1;
 
         addBar("s-1", "bar-power");
+
+        powerSound.pause();
+        powerSound.currentTime = 0;
+        powerSound.play();
       };
     }
     else if (keyState[83] && down && active.classList.contains("down-boundary") == false && down.classList.contains("block") == false
@@ -89,6 +105,10 @@ const move = () => {
         limit.innerText = parseInt(limit.innerText) + 1;
 
         addBar("l-1", "bar-ex");
+
+        powerSound.pause();
+        powerSound.currentTime = 0;
+        powerSound.play();
       }
       else if (down.classList.contains("power")) {
         down.classList.remove("power");
@@ -96,6 +116,10 @@ const move = () => {
         strength.innerText = parseInt(strength.innerText) + 1;
 
         addBar("s-1", "bar-power");
+
+        powerSound.pause();
+        powerSound.currentTime = 0;
+        powerSound.play();
       };
     }
     else if (keyState[87] && up && active.classList.contains("up-boundary") == false && up.classList.contains("block") == false
@@ -109,6 +133,10 @@ const move = () => {
         limit.innerText = parseInt(limit.innerText) + 1;
 
         addBar("l-1", "bar-ex");
+
+        powerSound.pause();
+        powerSound.currentTime = 0;
+        powerSound.play();
       }
       else if (up.classList.contains("power")) {
         up.classList.remove("power");
@@ -116,6 +144,10 @@ const move = () => {
         strength.innerText = parseInt(strength.innerText) + 1;
 
         addBar("s-1", "bar-power");
+
+        powerSound.pause();
+        powerSound.currentTime = 0;
+        powerSound.play();
       };
     };
 
