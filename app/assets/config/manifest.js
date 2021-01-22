@@ -23,3 +23,4 @@
 //= link bite.mp3
 //= link balloon-drop.mp3
 //= link balloon-splash.mp3
+//= link balloon-power.mp3
