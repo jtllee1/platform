@@ -160,6 +160,7 @@ const move = () => {
     let left = document.getElementById(parseInt(active.id) - 1);
     let down = document.getElementById(parseInt(active.id) + 11);
     let up = document.getElementById(parseInt(active.id) - 11);
+    const powerSound = document.querySelector(".power-up");
 
     if (keyState[39] && right && active.classList.contains("right-boundary") == false && right.classList.contains("block") == false
       && right.classList.contains("crate") == false && right.classList.contains("balloon") == false) {
@@ -172,6 +173,10 @@ const move = () => {
         limit2.innerText = parseInt(limit2.innerText) + 1;
 
         addBar("l-2", "bar-ex");
+
+        powerSound.pause();
+        powerSound.currentTime = 0;
+        powerSound.play();
       }
       else if (right.classList.contains("power")) {
         right.classList.remove("power");
@@ -179,6 +184,10 @@ const move = () => {
         strength2.innerText = parseInt(strength2.innerText) + 1;
 
         addBar("s-2", "bar-power");
+
+        powerSound.pause();
+        powerSound.currentTime = 0;
+        powerSound.play();
       };
     }
     else if (keyState[37] && left && active.classList.contains("left-boundary") == false && left.classList.contains("block") == false
@@ -192,6 +201,10 @@ const move = () => {
         limit2.innerText = parseInt(limit2.innerText) + 1;
 
         addBar("l-2", "bar-ex");
+
+        powerSound.pause();
+        powerSound.currentTime = 0;
+        powerSound.play();
       }
       else if (left.classList.contains("power")) {
         left.classList.remove("power");
@@ -199,6 +212,10 @@ const move = () => {
         strength2.innerText = parseInt(strength2.innerText) + 1;
 
         addBar("s-2", "bar-power");
+
+        powerSound.pause();
+        powerSound.currentTime = 0;
+        powerSound.play();
       };
     }
     else if (keyState[40] && down && active.classList.contains("down-boundary") == false && down.classList.contains("block") == false
@@ -212,6 +229,10 @@ const move = () => {
         limit2.innerText = parseInt(limit2.innerText) + 1;
 
         addBar("l-2", "bar-ex");
+
+        powerSound.pause();
+        powerSound.currentTime = 0;
+        powerSound.play();
       }
       else if (down.classList.contains("power")) {
         down.classList.remove("power");
@@ -219,6 +240,10 @@ const move = () => {
         strength2.innerText = parseInt(strength2.innerText) + 1;
 
         addBar("s-2", "bar-power");
+
+        powerSound.pause();
+        powerSound.currentTime = 0;
+        powerSound.play();
       };
     }
     else if (keyState[38] && up && active.classList.contains("up-boundary") == false && up.classList.contains("block") == false
@@ -232,6 +257,10 @@ const move = () => {
         limit2.innerText = parseInt(limit2.innerText) + 1;
 
         addBar("l-2", "bar-ex");
+
+        powerSound.pause();
+        powerSound.currentTime = 0;
+        powerSound.play();
       }
       else if (up.classList.contains("power")) {
         up.classList.remove("power");
@@ -239,6 +268,10 @@ const move = () => {
         strength2.innerText = parseInt(strength2.innerText) + 1;
 
         addBar("s-2", "bar-power");
+
+        powerSound.pause();
+        powerSound.currentTime = 0;
+        powerSound.play();
       };
     };
 
