@@ -100,9 +100,16 @@
     }
     .exballoon {
       background-color: pink;
+      border-radius: 8px;
+      padding: 1px;
+      color: #5e006f;
+      font-weight: bold;
     }
     .power {
       background-color: green;
+      border-radius: 8px;
+      padding: 1px;
+      font-weight: bold;
     }
   }
 }
