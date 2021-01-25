@@ -8,13 +8,6 @@ const pop = (num, blastTiming, shockWaveTiming, number) => {
   let active = "";
   const splashSound = document.querySelector(".splash");
 
-  if (number == 1) {
-    active = "active";
-  }
-  else if (number == 2) {
-    active = "active-2";
-  };
-
   for (let i = 0; i < strength; i++) {
     let right = document.getElementById(parseInt(num) + 1 + i);
     let left = document.getElementById(parseInt(num) - 1 - i);
@@ -50,7 +43,7 @@ const pop = (num, blastTiming, shockWaveTiming, number) => {
 
             right.classList.remove("crate");
             right.classList.add("blast-h");
-            right.classList.remove(active);
+            right.classList.remove("active", "active-2");
           }
           else {
             rightBlock = true;
@@ -82,7 +75,7 @@ const pop = (num, blastTiming, shockWaveTiming, number) => {
 
             left.classList.remove("crate");
             left.classList.add("blast-h");
-            left.classList.remove(active);
+            left.classList.remove("active", "active-2");
           }
           else {
             leftBlock = true;
@@ -114,7 +107,7 @@ const pop = (num, blastTiming, shockWaveTiming, number) => {
 
             up.classList.remove("crate");
             up.classList.add("blast-v");
-            up.classList.remove(active);
+            up.classList.remove("active", "active-2");
           }
           else {
             upBlock = true;
@@ -146,7 +139,7 @@ const pop = (num, blastTiming, shockWaveTiming, number) => {
 
             down.classList.remove("crate");
             down.classList.add("blast-v");
-            down.classList.remove(active);
+            down.classList.remove("active", "active-2");
           }
           else {
             downBlock = true;
@@ -158,7 +151,7 @@ const pop = (num, blastTiming, shockWaveTiming, number) => {
         };
 
         setTimeout( function timer() {
-          grid.classList.remove("balloon", `balloon-${number}`);
+          grid.classList.remove("balloon", `balloon-${number}`, "active", "active-2");
         }, 100);
 
         splashSound.pause();

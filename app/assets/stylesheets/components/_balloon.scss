@@ -17,16 +17,6 @@
         background-color: #d2b17aa8;
         border: 1px solid #0000004d;
       }
-      .balloon-1 {
-        background: radial-gradient(#c9dbff, #32bce4);
-
-        border-radius: 50%;
-      }
-      .balloon-2 {
-        background: radial-gradient(#c9dbff, #32bce4);
-
-        border-radius: 50%;
-      }
       .active {
         background: radial-gradient(#c53b00, #ffc67f);
         border-radius: 50%;
@@ -36,6 +26,16 @@
         background: radial-gradient(#47a705, #7fffbe);
         border-radius: 50%;
         border: 1px solid #0000004d;
+      }
+      .balloon-1 {
+        background: radial-gradient(#c9dbff, #32bce4);
+
+        border-radius: 50%;
+      }
+      .balloon-2 {
+        background: radial-gradient(#c9dbff, #32bce4);
+
+        border-radius: 50%;
       }
       .exballoon {
         background-color: pink;
