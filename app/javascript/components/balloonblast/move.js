@@ -39,7 +39,7 @@ const move = () => {
     const powerSound = document.querySelector(".power-up");
 
     if (keyState[68] && right && active.classList.contains("right-boundary") == false && right.classList.contains("block") == false
-      && right.classList.contains("crate") == false && right.classList.contains("balloon") == false) {
+      && right.classList.contains("crate") == false && right.classList.contains("balloon") == false && right.classList.contains("active-2") == false) {
       right.classList.add("active");
       active.classList.remove("active");
 
@@ -67,7 +67,7 @@ const move = () => {
       };
     }
     else if (keyState[65] && left && active.classList.contains("left-boundary") == false && left.classList.contains("block") == false
-      && left.classList.contains("crate") == false && left.classList.contains("balloon") == false) {
+      && left.classList.contains("crate") == false && left.classList.contains("balloon") == false && left.classList.contains("active-2") == false) {
       left.classList.add("active");
       active.classList.remove("active");
 
@@ -95,7 +95,7 @@ const move = () => {
       };
     }
     else if (keyState[83] && down && active.classList.contains("down-boundary") == false && down.classList.contains("block") == false
-      && down.classList.contains("crate") == false && down.classList.contains("balloon") == false) {
+      && down.classList.contains("crate") == false && down.classList.contains("balloon") == false && down.classList.contains("active-2") == false) {
       down.classList.add("active");
       active.classList.remove("active");
 
@@ -123,7 +123,7 @@ const move = () => {
       };
     }
     else if (keyState[87] && up && active.classList.contains("up-boundary") == false && up.classList.contains("block") == false
-      && up.classList.contains("crate") == false && up.classList.contains("balloon") == false) {
+      && up.classList.contains("crate") == false && up.classList.contains("balloon") == false && up.classList.contains("active-2") == false) {
       up.classList.add("active");
       active.classList.remove("active");
 
@@ -163,7 +163,7 @@ const move = () => {
     const powerSound = document.querySelector(".power-up");
 
     if (keyState[39] && right && active.classList.contains("right-boundary") == false && right.classList.contains("block") == false
-      && right.classList.contains("crate") == false && right.classList.contains("balloon") == false) {
+      && right.classList.contains("crate") == false && right.classList.contains("balloon") == false && right.classList.contains("active") == false) {
       right.classList.add("active-2");
       active.classList.remove("active-2");
 
@@ -191,7 +191,7 @@ const move = () => {
       };
     }
     else if (keyState[37] && left && active.classList.contains("left-boundary") == false && left.classList.contains("block") == false
-      && left.classList.contains("crate") == false && left.classList.contains("balloon") == false) {
+      && left.classList.contains("crate") == false && left.classList.contains("balloon") == false && left.classList.contains("active") == false) {
       left.classList.add("active-2");
       active.classList.remove("active-2");
 
@@ -219,7 +219,7 @@ const move = () => {
       };
     }
     else if (keyState[40] && down && active.classList.contains("down-boundary") == false && down.classList.contains("block") == false
-      && down.classList.contains("crate") == false && down.classList.contains("balloon") == false) {
+      && down.classList.contains("crate") == false && down.classList.contains("balloon") == false && down.classList.contains("active") == false) {
       down.classList.add("active-2");
       active.classList.remove("active-2");
 
@@ -247,7 +247,7 @@ const move = () => {
       };
     }
     else if (keyState[38] && up && active.classList.contains("up-boundary") == false && up.classList.contains("block") == false
-      && up.classList.contains("crate") == false && up.classList.contains("balloon") == false) {
+      && up.classList.contains("crate") == false && up.classList.contains("balloon") == false && up.classList.contains("active") == false) {
       up.classList.add("active-2");
       active.classList.remove("active-2");
 
