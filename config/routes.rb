@@ -12,5 +12,6 @@ Rails.application.routes.draw do
   get '/play_2048', to: 'pages#play_2048'
   get '/sound_beat', to: 'pages#sound_beat'
   get '/balloon_blast', to: 'pages#balloon_blast'
+  get '/blockman', to: 'pages#blockman'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
