@@ -1,3 +1,46 @@
 <div class="title">
   <h1 id="name"><%= link_to "Blockman", root_path %></h1>
 </div>
+
+<div class="container">
+  <% layer = 1 %>
+  <div class="wrapper">
+    <div class="platform-area">
+      <div class="cube cube-player">
+        <div class="box front"></div>
+        <div class="box right"></div>
+        <div class="box back"></div>
+        <div class="box left"></div>
+        <div class="box bottom"></div>
+        <div class="box top"></div>
+      </div>
+
+      <div class="cube cube-enemy">
+        <div class="box front"></div>
+        <div class="box right"></div>
+        <div class="box back"></div>
+        <div class="box left"></div>
+        <div class="box bottom"></div>
+        <div class="box top"></div>
+      </div>
+
+      <% i = 0 %>
+      <% 9.times do %>
+        <% position = 0 %>
+        <% 5.times do %>
+          <div class="cube cube-<%= i %>">
+            <div class="box l-<%= layer %> p-<%= position %> front"></div>
+            <div class="box l-<%= layer %> p-<%= position %> right"></div>
+            <div class="box l-<%= layer %> p-<%= position %> back"></div>
+            <div class="box l-<%= layer %> p-<%= position %> left"></div>
+            <div class="box l-<%= layer %> p-<%= position %> bottom"></div>
+            <div class="box l-<%= layer %> p-<%= position %> top"></div>
+          </div>
+          <% i += 1 %>
+          <% position += 1 %>
+        <% end %>
+        <% layer += 1 %>
+      <% end %>
+    </div>
+  </div>
+</div>
