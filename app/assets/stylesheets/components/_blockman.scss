@@ -3,47 +3,47 @@
     top: -100px;
   }
   .front {
-    transform: translateX(-50px) translateY(-50px) translateZ(450px);
+    transform: translateX(-50px) translateY(-50px) translateZ(550px);
   }
   .back {
-    transform: translateX(-50px) translateY(-50px) translateZ(350px);
+    transform: translateX(-50px) translateY(-50px) translateZ(450px);
   }
   .right {
-    transform: translateY(-50px) translateZ(400px) rotateY(90deg);
+    transform: translateY(-50px) translateZ(500px) rotateY(90deg);
   }
   .left {
-    transform: translateX(-100px) translateY(-50px) translateZ(400px) rotateY(90deg);
+    transform: translateX(-100px) translateY(-50px) translateZ(500px) rotateY(90deg);
   }
   .bottom {
-    transform: translateX(-50px) translateZ(400px) rotateX(90deg);
+    transform: translateX(-50px) translateZ(500px) rotateX(90deg);
   }
   .top {
-    transform: translateX(-50px) translateY(-100px) translateZ(400px) rotateX(90deg);
+    transform: translateX(-50px) translateY(-100px) translateZ(500px) rotateX(90deg);
   }
 }
 
 .cube-enemy {
   .box {
     top: -100px;
-    left: -100px;
+    left: 0px;
   }
   .front {
-    transform: translateX(-50px) translateY(-50px) translateZ(-350px);
-  }
-  .back {
     transform: translateX(-50px) translateY(-50px) translateZ(-450px);
   }
+  .back {
+    transform: translateX(-50px) translateY(-50px) translateZ(-550px);
+  }
   .right {
-    transform: translateY(-50px) translateZ(-400px) rotateY(90deg);
+    transform: translateY(-50px) translateZ(-500px) rotateY(90deg);
   }
   .left {
-    transform: translateX(-100px) translateY(-50px) translateZ(-400px) rotateY(90deg);
+    transform: translateX(-100px) translateY(-50px) translateZ(-500px) rotateY(90deg);
   }
   .bottom {
-    transform: translateX(-50px) translateZ(-400px) rotateX(90deg);
+    transform: translateX(-50px) translateZ(-500px) rotateX(90deg);
   }
   .top {
-    transform: translateX(-50px) translateY(-100px) translateZ(-400px) rotateX(90deg);
+    transform: translateX(-50px) translateY(-100px) translateZ(-500px) rotateX(90deg);
   }
 }
 
@@ -53,47 +53,47 @@
       top: -50px;
     }
     .front {
-      transform: translateX(-25px) translateY(-25px) translateZ(225px);
+      transform: translateX(-25px) translateY(-25px) translateZ(275px);
     }
     .back {
-      transform: translateX(-25px) translateY(-25px) translateZ(1750px);
+      transform: translateX(-25px) translateY(-25px) translateZ(225px);
     }
     .right {
-      transform: translateY(-25px) translateZ(200px) rotateY(90deg);
+      transform: translateY(-25px) translateZ(250px) rotateY(90deg);
     }
     .left {
-      transform: translateX(-50px) translateY(-25px) translateZ(200px) rotateY(90deg);
+      transform: translateX(-50px) translateY(-25px) translateZ(250px) rotateY(90deg);
     }
     .bottom {
-      transform: translateX(-25px) translateZ(200px) rotateX(90deg);
+      transform: translateX(-25px) translateZ(250px) rotateX(90deg);
     }
     .top {
-      transform: translateX(-25px) translateY(-50px) translateZ(200px) rotateX(90deg);
+      transform: translateX(-25px) translateY(-50px) translateZ(250px) rotateX(90deg);
     }
   }
 
   .cube-enemy {
     .box {
       top: -50px;
-      left: -50px;
+      left: 0px;
     }
     .front {
-      transform: translateX(-25px) translateY(-25px) translateZ(-175px);
-    }
-    .back {
       transform: translateX(-25px) translateY(-25px) translateZ(-225px);
     }
+    .back {
+      transform: translateX(-25px) translateY(-25px) translateZ(-275px);
+    }
     .right {
-      transform: translateY(-25px) translateZ(-200px) rotateY(90deg);
+      transform: translateY(-25px) translateZ(-250px) rotateY(90deg);
     }
     .left {
-      transform: translateX(-50px) translateY(-25px) translateZ(-200px) rotateY(90deg);
+      transform: translateX(-50px) translateY(-25px) translateZ(-250px) rotateY(90deg);
     }
     .bottom {
-      transform: translateX(-25px) translateZ(-200px) rotateX(90deg);
+      transform: translateX(-25px) translateZ(-250px) rotateX(90deg);
     }
     .top {
-      transform: translateX(-25px) translateY(-50px) translateZ(-200px) rotateX(90deg);
+      transform: translateX(-25px) translateY(-50px) translateZ(-250px) rotateX(90deg);
     }
   }
 }
