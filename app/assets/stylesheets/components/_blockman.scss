@@ -47,6 +47,19 @@
   }
 }
 
+.box.move-left {
+  left: -100px;
+}
+.box.move-left2 {
+  left: -200px;
+}
+.box.move-right {
+  left: 100px;
+}
+.box.move-right2 {
+  left: 200px;
+}
+
 @media only screen and (max-width: 1200px) {
   .cube-player {
     .box {
@@ -95,5 +108,18 @@
     .top {
       transform: translateX(-25px) translateY(-50px) translateZ(-250px) rotateX(90deg);
     }
+  }
+
+  .box.move-left {
+    left: -50px;
+  }
+  .box.move-left2 {
+    left: -100px;
+  }
+  .box.move-right {
+    left: 50px;
+  }
+  .box.move-right2 {
+    left: 100px;
   }
 }
