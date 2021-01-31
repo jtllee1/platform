@@ -9,7 +9,6 @@ const move = (direction, player) => {
   };
 
   const cube = document.querySelector(`.${playerId}`);
-
   const cubeParts = cube.querySelectorAll(".box");
 
   if (direction == "left") {

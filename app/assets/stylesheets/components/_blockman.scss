@@ -47,6 +47,10 @@
   }
 }
 
+.laser {
+  top: -100px;
+}
+
 .box.move-left {
   left: -100px;
 }
@@ -108,6 +112,10 @@
     .top {
       transform: translateX(-25px) translateY(-50px) translateZ(-250px) rotateX(90deg);
     }
+  }
+
+  .laser {
+    top: -50px;
   }
 
   .box.move-left {
