@@ -1,4 +1,5 @@
 import { move } from '../blockman/move';
+import { shoot } from '../blockman/shoot';
 
 const startBlockman = () => {
   document.addEventListener('keyup', (e) => {
@@ -7,6 +8,10 @@ const startBlockman = () => {
     }
     else if (e.keyCode == 39) {
       move("right", 1);
+    };
+
+    if (e.keyCode == 32) {
+      shoot("forward");
     };
   });
 };
