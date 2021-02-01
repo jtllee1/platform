@@ -42,6 +42,17 @@ const shoot = (direction) => {
     div.classList.add("l-1", `${face}`, `${column}`);
     laser.appendChild(div);
   });
+
+  const laserParts = laser.querySelectorAll(".box");
+
+  for (let i = 1; i < 9; i++) {
+    setTimeout( function timer() {
+      laserParts.forEach(part => {
+        part.classList.remove(`l-${i}`);
+        part.classList.add(`l-${i + 1}`);
+      });
+    }, i * 60 );
+  };
 };
 
 export { shoot };
