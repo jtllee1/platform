@@ -17,6 +17,7 @@ const shoot = (direction) => {
 
   const cube = document.querySelector(`.${player}`);
   const cubePart = cube.querySelector(".box");
+  const shootStatus = document.querySelector(`.shoot-status-${playerId}`);
 
   let column = "";
 
@@ -66,6 +67,7 @@ const shoot = (direction) => {
 
   setTimeout( function timer() {
     laser.innerText = "";
+    shootStatus.innerText = "on";
   }, 9 * 60);
 };
 
