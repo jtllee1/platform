@@ -5,7 +5,17 @@
 <div class="shoot-status-1 invisible">on</div>
 <div class="shoot-status-2 invisible">on</div>
 
-<div class="container">
+<div class="container blockman">
+  <div class="health health-1">
+    <div class="outer">
+      <div class="desc">Player 1</div>
+    </div>
+    <div class="lives">
+      <div class="life"></div>
+      <div class="life"></div>
+      <div class="life"></div>
+    </div>
+  </div>
   <% layer = 1 %>
   <div class="wrapper">
     <div class="platform-area">
@@ -47,6 +57,16 @@
         <% end %>
         <% layer += 1 %>
       <% end %>
+    </div>
+  </div>
+  <div class="health health-2">
+    <div class="outer">
+      <div class="desc">Player 2</div>
+    </div>
+    <div class="lives">
+      <div class="life"></div>
+      <div class="life"></div>
+      <div class="life"></div>
     </div>
   </div>
 </div>
