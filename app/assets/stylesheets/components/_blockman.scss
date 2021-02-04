@@ -1,3 +1,38 @@
+.blockman {
+  height: 600px;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 32px;
+  .health {
+    border: 1px solid black;
+    border-radius: 8px;
+    width: 140px;
+    height: 94px;
+    .desc {
+      text-align: center;
+      margin-top: 6px;
+      margin-bottom: 4px;
+    }
+    .lives {
+      height: 100%;
+      display: flex;
+      .life {
+        border: 1px solid black;
+        border-radius: 50%;
+        width: 100%;
+        height: 40%;
+        margin: 4px;
+      }
+    }
+  }
+  .health-1 {
+    background-color: #b4ecffc9;
+  }
+  .health-2 {
+    background-color: #ff2f2fab;
+  }
+}
+
 .cube-player {
   .box {
     top: -100px;
