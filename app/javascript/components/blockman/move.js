@@ -19,12 +19,14 @@ const move = (direction, player) => {
       }
       else if (cubePart.classList.contains("move-right")) {
         cubePart.classList.remove("move-right");
+        cubePart.classList.add("middle");
       }
       else if (cubePart.classList.contains("move-left")) {
         cubePart.classList.remove("move-left");
         cubePart.classList.add("move-left2");
       }
       else {
+        cubePart.classList.remove("middle");
         cubePart.classList.add("move-left");
       }
     });
@@ -37,12 +39,14 @@ const move = (direction, player) => {
       }
       else if (cubePart.classList.contains("move-left")) {
         cubePart.classList.remove("move-left");
+        cubePart.classList.add("middle");
       }
       else if (cubePart.classList.contains("move-right")) {
         cubePart.classList.remove("move-right");
         cubePart.classList.add("move-right2");
       }
       else {
+        cubePart.classList.remove("middle");
         cubePart.classList.add("move-right");
       }
     });
