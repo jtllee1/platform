@@ -1,3 +1,5 @@
+import { life } from '../blockman/life';
+
 const shoot = (direction) => {
   let player = "";
   let playerId = "";
@@ -34,7 +36,7 @@ const shoot = (direction) => {
     column = "move-right2";
   }
   else {
-    column = "box";
+    column = "middle";
   };
 
   let laser = document.querySelector(`.laser-${playerId}`);
@@ -62,6 +64,25 @@ const shoot = (direction) => {
           part.classList.add(`l-${9 - i}`);
         };
       });
+
+      if (i == 8) {
+        if (direction == "forward") {
+          const enemy = document.querySelector(".cube-enemy");
+          const enemyId = enemy.querySelector(".box");
+
+          if (enemyId.classList.contains(`${column}`)) {
+            life("health-2");
+          };
+        }
+        else {
+          const enemy = document.querySelector(".cube-player");
+          const enemyId = enemy.querySelectorAll(".box");
+
+          if (enemyId.classList.contains(`${column}`)) {
+            life("health-1");
+          };
+        };
+      };
     }, i * 60 );
   };
 
