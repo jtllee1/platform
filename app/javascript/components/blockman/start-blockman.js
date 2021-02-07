@@ -1,8 +1,11 @@
 import { move } from '../blockman/move';
 import { shoot } from '../blockman/shoot';
+import { enemyMove } from '../blockman/enemy-move';
 
 const startBlockman = () => {
   const shootStatus = document.querySelector(".shoot-status-1");
+
+  enemyMove();
 
   document.addEventListener('keyup', (e) => {
     if (e.keyCode == 37) {
