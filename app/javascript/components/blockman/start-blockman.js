@@ -4,8 +4,13 @@ import { enemyMove } from '../blockman/enemy-move';
 
 const startBlockman = () => {
   const shootStatus = document.querySelector(".shoot-status-1");
+  const start = document.getElementById("start");
+  const data = document.querySelector(".data");
 
-  enemyMove();
+  start.addEventListener('click', (e) => {
+    enemyMove();
+    data.classList.add("invisible");
+  });
 
   document.addEventListener('keyup', (e) => {
     if (e.keyCode == 37) {
