@@ -7,6 +7,7 @@
   justify-content: space-between;
   margin-top: 16px;
   padding: 32px;
+  position: relative;
   .health {
     border: 1px solid #365e84;
     border-radius: 8px;
@@ -41,6 +42,16 @@
   }
   .health-2 {
     background-color: #ff2f2fab;
+  }
+
+  .data {
+    position: absolute;
+    bottom: 8px;
+    right: 8px;
+    height: 200px;
+    #start {
+      margin-top: 12px;
+    }
   }
 }
 
