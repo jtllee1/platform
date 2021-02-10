@@ -1,6 +1,7 @@
 import { move } from '../blockman/move';
 import { shoot } from '../blockman/shoot';
 import { enemyMove } from '../blockman/enemy-move';
+import { enemyShoot } from '../blockman/enemy-shoot';
 
 const startBlockman = () => {
   const shootStatus = document.querySelector(".shoot-status-1");
@@ -9,6 +10,7 @@ const startBlockman = () => {
 
   start.addEventListener('click', (e) => {
     enemyMove();
+    enemyShoot();
     data.classList.add("invisible");
   });
 
