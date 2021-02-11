@@ -76,7 +76,7 @@ const shoot = (direction) => {
         }
         else {
           const enemy = document.querySelector(".cube-player");
-          const enemyId = enemy.querySelectorAll(".box");
+          const enemyId = enemy.querySelector(".box");
 
           if (enemyId.classList.contains(`${column}`)) {
             life("health-1");
