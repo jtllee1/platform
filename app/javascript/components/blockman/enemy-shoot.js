@@ -9,7 +9,7 @@ const enemyShoot = () => {
   if ((enemyLives.length > 0) && (lives.length > 0)) {
     shoot("backward");
 
-    setTimeout(enemyShoot, 1000);
+    setTimeout(enemyShoot, 2000);
   };
 };
 

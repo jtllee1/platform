@@ -9,7 +9,7 @@ const startBlockman = () => {
   const data = document.querySelector(".data");
 
   start.addEventListener('click', (e) => {
-    enemyMove();
+    // enemyMove();
     enemyShoot();
     data.classList.add("invisible");
   });
