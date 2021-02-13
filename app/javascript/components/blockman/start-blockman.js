@@ -9,23 +9,28 @@ const startBlockman = () => {
   const data = document.querySelector(".data");
 
   start.addEventListener('click', (e) => {
-    // enemyMove();
+    enemyMove();
     enemyShoot();
     data.classList.add("invisible");
   });
 
   document.addEventListener('keyup', (e) => {
-    if (e.keyCode == 37) {
-      move("left", 1);
-    }
-    else if (e.keyCode == 39) {
-      move("right", 1);
-    };
+    const player = document.querySelector(".health-1")
+    const lives = player.querySelectorAll(".life");
 
-    if (e.keyCode == 32) {
-      if (shootStatus.innerText == "on") {
-        shoot("forward");
-        shootStatus.innerText = "off";
+    if (lives.length > 0) {
+      if (e.keyCode == 37) {
+        move("left", 1);
+      }
+      else if (e.keyCode == 39) {
+        move("right", 1);
+      };
+
+      if (e.keyCode == 32) {
+        if (shootStatus.innerText == "on") {
+          shoot("forward");
+          shootStatus.innerText = "off";
+        };
       };
     };
   });
