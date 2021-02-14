@@ -9,6 +9,13 @@ const startBlockman = () => {
   const data = document.querySelector(".data");
 
   start.addEventListener('click', (e) => {
+    const remainingLives = document.querySelectorAll(".empty");
+
+    remainingLives.forEach(life => {
+      life.classList.remove("empty");
+      life.classList.add("life");
+    });
+
     enemyMove();
     enemyShoot();
     data.classList.add("invisible");
