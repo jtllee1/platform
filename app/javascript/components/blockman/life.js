@@ -1,7 +1,7 @@
 const life = (playerId) => {
   const player = document.querySelector(`.${playerId}`)
   const lives = player.querySelectorAll(".life");
-  const grids = document.querySelectorAll(".grid-pong");
+  const data = document.querySelector(".data");
 
   let counter = -1;
 
@@ -13,6 +13,12 @@ const life = (playerId) => {
 
   lives[counter].classList.remove("life");
   lives[counter].classList.add("empty");
+
+  const remainingLives = player.querySelectorAll(".life");
+
+  if (remainingLives.length == 0) {
+    data.classList.remove("invisible");
+  };
 };
 
 export { life };
