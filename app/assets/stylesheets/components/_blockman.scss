@@ -9,11 +9,12 @@
   padding: 32px;
   position: relative;
   .health {
-    border: 1px solid #365e84;
+    border: 4px solid #365e84;
     border-radius: 8px;
     width: 140px;
     height: 94px;
     .desc {
+      color: #38384cfa;
       text-align: center;
       margin-top: 6px;
       margin-bottom: 4px;
@@ -58,6 +59,7 @@
 .cube-player {
   .box {
     top: -100px;
+    background-color: #b4ecffc9;
   }
   .front {
     transform: translateX(-50px) translateY(-50px) translateZ(550px);
@@ -83,6 +85,7 @@
   .box {
     top: -100px;
     left: 0px;
+    background-color: #ff2f2fab;
   }
   .front {
     transform: translateX(-50px) translateY(-50px) translateZ(-450px);
