@@ -24,3 +24,4 @@
 //= link balloon-drop.mp3
 //= link balloon-splash.mp3
 //= link balloon-power.mp3
+//= link block-impact.mp3

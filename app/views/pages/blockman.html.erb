@@ -2,6 +2,10 @@
   <h1 id="name"><%= link_to "Blockman", root_path %></h1>
 </div>
 
+<audio class="impact invisible" controls preload="none">
+    <source src="<%= asset_path('block-impact.mp3') %>" type="audio/mpeg">
+</audio>
+
 <div class="shoot-status-1 invisible">on</div>
 <div class="shoot-status-2 invisible">on</div>
 <div class="collision-status-1 invisible">off</div>

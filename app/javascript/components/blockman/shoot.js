@@ -1,6 +1,7 @@
 import { life } from '../blockman/life';
 
 const shoot = (direction) => {
+  const impactSound = document.querySelector(".impact");
   let player = "";
   let playerId = "";
   let playerId2 = "";
@@ -104,6 +105,9 @@ const shoot = (direction) => {
 
             if (enemyId.classList.contains(`${column}`)) {
               life("health-2");
+              impactSound.pause();
+              impactSound.currentTime = 0;
+              impactSound.play();
             };
           }
           else {
@@ -112,9 +116,16 @@ const shoot = (direction) => {
 
             if (enemyId.classList.contains(`${column}`)) {
               life("health-1");
+              impactSound.pause();
+              impactSound.currentTime = 0;
+              impactSound.play();
             };
           };
         };
+      };
+
+      if (collisionStatus.innerText == "on") {
+        impactSound.play();
       };
     }, i * 60 );
   };
