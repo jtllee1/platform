@@ -1,6 +1,6 @@
 import { move } from '../blockman/move';
 
-const enemyMove = () => {
+const enemyMove = (speed) => {
   const options = ["right", "left"];
   const enemyHealth = document.querySelector(".health-2");
   const enemyLives = enemyHealth.querySelectorAll(".life");
@@ -14,12 +14,14 @@ const enemyMove = () => {
   if ((enemyLives.length > 0) && (lives.length > 0)) {
     if ((enemyPart.classList.contains("move-right2") && selection == 0) ||
       (enemyPart.classList.contains("move-left2") && selection == 1)) {
-      enemyMove();
+      enemyMove(speed);
     }
     else {
       move(options[selection], 2);
 
-      setTimeout(enemyMove, 600);
+      setTimeout( function timer() {
+        enemyMove(speed);
+      }, speed);
     };
   };
 };

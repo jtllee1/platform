@@ -9,6 +9,7 @@ const startBlockman = () => {
   const data = document.querySelector(".data");
 
   start.addEventListener('click', (e) => {
+    const level = document.getElementById("level").innerText;
     const remainingLives = document.querySelectorAll(".empty");
 
     remainingLives.forEach(life => {
@@ -16,8 +17,20 @@ const startBlockman = () => {
       life.classList.add("life");
     });
 
-    enemyMove();
-    enemyShoot();
+    let moveSpeed = 600;
+    let shootSpeed = 2000;
+
+    if (level == "2") {
+      moveSpeed = 500;
+      shootSpeed = 1800;
+    }
+    else if (level == "3") {
+      moveSpeed = 400;
+      shootSpeed = 1600;
+    };
+
+    enemyMove(moveSpeed);
+    enemyShoot(shootSpeed);
     data.classList.add("invisible");
   });
 
