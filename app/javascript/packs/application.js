@@ -101,4 +101,5 @@ else if (id == "Balloon Blast") {
 }
 else if (id == "Blockman") {
   startBlockman();
+  levelAdjustor();
 }

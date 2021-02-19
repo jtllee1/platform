@@ -1,6 +1,6 @@
 import { shoot } from '../blockman/shoot';
 
-const enemyShoot = () => {
+const enemyShoot = (speed) => {
   const enemyHealth = document.querySelector(".health-2");
   const enemyLives = enemyHealth.querySelectorAll(".life");
   const health = document.querySelector(".health-1");
@@ -9,7 +9,9 @@ const enemyShoot = () => {
   if ((enemyLives.length > 0) && (lives.length > 0)) {
     shoot("backward");
 
-    setTimeout(enemyShoot, 2000);
+    setTimeout( function timer() {
+      enemyShoot(speed);
+    }, speed);
   };
 };
 
