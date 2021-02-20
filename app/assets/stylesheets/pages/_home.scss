@@ -38,3 +38,24 @@ body {
 .invisible {
   display: none;
 }
+
+.sort {
+  display: flex;
+  justify-content: center;
+  margin-top: 16px;
+  .tab {
+    border: 8px solid #aac6ff8a;
+    margin: 8px;
+    padding: 8px;
+    border-radius: 12px;
+    background-color: #4f77f9d9;
+    color: white;
+  }
+  .active {
+    background-color: #4263d0d9;
+    border: 8px solid #6be7ffd4;
+  }
+  .tab:hover {
+    cursor: pointer;
+  }
+}
