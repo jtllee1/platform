@@ -25,6 +25,7 @@ import "bootstrap";
 
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
+import { sort } from '../components/home/sort';
 import { grid } from '../components/cellbuster/grid';
 import { levelAdjustor } from '../components/cellbuster/level-adjustor';
 import { laser } from '../components/cellbuster/laser';
@@ -52,7 +53,10 @@ import { startBlockman } from '../components/blockman/start-blockman';
 const id = document.getElementById("name").innerText;
 // Call your functions here, e.g:
 // initSelect2();
-if (id == "Cell Buster") {
+if (id == "Gaming Center") {
+  sort();
+}
+else if (id == "Cell Buster") {
   grid();
   levelAdjustor();
   laser();
