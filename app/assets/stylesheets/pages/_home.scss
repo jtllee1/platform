@@ -42,7 +42,12 @@ body {
 .sort {
   display: flex;
   justify-content: center;
+  margin: 0 auto;
   margin-top: 16px;
+  border-radius: 8px;
+  width: 480px;
+  border: 8px solid #aac6ff8a;
+  background-color: rgba(50, 50, 100, 1.0);;
   .tab {
     border: 8px solid #aac6ff8a;
     margin: 8px;
@@ -50,6 +55,7 @@ body {
     border-radius: 12px;
     background-color: #4f77f9d9;
     color: white;
+    text-align: center;
   }
   .active {
     background-color: #4263d0d9;
@@ -57,5 +63,7 @@ body {
   }
   .tab:hover {
     cursor: pointer;
+    background-color: #4263d0a3;
+    border: 8px solid #6be7ff80;
   }
 }
