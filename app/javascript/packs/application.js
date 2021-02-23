@@ -26,6 +26,7 @@ import "bootstrap";
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
 import { sort } from '../components/home/sort';
+import { sortScroll } from '../components/home/sort-scroll';
 import { grid } from '../components/cellbuster/grid';
 import { levelAdjustor } from '../components/cellbuster/level-adjustor';
 import { laser } from '../components/cellbuster/laser';
@@ -55,6 +56,7 @@ const id = document.getElementById("name").innerText;
 // initSelect2();
 if (id == "Gaming Center") {
   sort();
+  sortScroll();
 }
 else if (id == "Cell Buster") {
   grid();
