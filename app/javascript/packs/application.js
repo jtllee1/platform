@@ -50,6 +50,7 @@ import { start2048 } from '../components/2048/start-2048';
 import { control } from '../components/platform/control';
 import { startBalloon } from '../components/balloonblast/start-balloon';
 import { startBlockman } from '../components/blockman/start-blockman';
+import { startGame } from '../components/game/start-game';
 
 const id = document.getElementById("name").innerText;
 // Call your functions here, e.g:
@@ -108,4 +109,7 @@ else if (id == "Balloon Blast") {
 else if (id == "Blockman") {
   startBlockman();
   levelAdjustor();
+}
+else if (id == "Game") {
+  startGame();
 }
