@@ -1,11 +1,10 @@
 const startGame = () => {
   var myGameArea = {
-    canvas : document.createElement("canvas"),
+    canvas : document.getElementById("game"),
     start : function() {
       this.canvas.width = 480;
       this.canvas.height = 270;
       this.context = this.canvas.getContext("2d");
-      document.body.insertBefore(this.canvas, document.body.childNodes[2]);
       this.frameNo = 0;
       this.interval = setInterval(updateGameArea, 20);
       window.addEventListener('keydown', function (e) {
@@ -129,11 +128,12 @@ const startGame = () => {
     };
     myGamePiece.newPos();
     myGamePiece.update();
-    myObstacle.update();
   };
 
   function everyinterval(n) {
-    if ((myGameArea.frameNo / n) % 1 == 0) {return true;}
+    if ((myGameArea.frameNo / n) % 1 == 0) {
+      return true;
+    };
     return false;
   };
 };
