@@ -44,14 +44,19 @@ const startGame = () => {
     this.height = height;
     this.x = x;
     this.y = y;
+    this.gravity = 0.05;
+    this.gravitySpeed = 0;
     this.update = function(){
       let ctx = myGameArea.context;
       ctx.fillStyle = color;
       ctx.fillRect(this.x, this.y, this.width, this.height);
     };
     this.newPos = function() {
+      this.gravitySpeed += this.gravity;
       this.x += this.speedX;
-      this.y += this.speedY;
+      this.y += this.speedY + this.gravitySpeed;
+      this.hitBottom();
+      this.hitTop();
     };
     this.crashWith = function(otherobj) {
       var myleft = this.x;
@@ -68,8 +73,20 @@ const startGame = () => {
       (myright < otherleft) ||
       (myleft > otherright)) {
         crash = false;
-      }
+      };
       return crash;
+    };
+    this.hitBottom = function() {
+      var bottom = myGameArea.canvas.height - this.height;
+      if (this.y > bottom) {
+        this.y = bottom;
+      };
+    };
+    this.hitTop = function() {
+      var top = 0;
+      if (this.y < top) {
+        this.y = top;
+      };
     };
   };
 
@@ -121,10 +138,14 @@ const startGame = () => {
       myGamePiece.speedX = 1;
     };
     if (myGameArea.keys && myGameArea.keys[38]) {
-      myGamePiece.speedY = -1;
+      // myGamePiece.speedY = -1;
+      myGamePiece.gravity = -0.1;
+    };
+    if (myGameArea.keys&& myGameArea.keys[38] == false) {
+      myGamePiece.gravity = 0.05;
     };
     if (myGameArea.keys && myGameArea.keys[40]) {
-      myGamePiece.speedY = 1;
+      // myGamePiece.speedY = 1;
     };
     myGamePiece.newPos();
     myGamePiece.update();
