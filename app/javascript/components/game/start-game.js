@@ -80,12 +80,14 @@ const startGame = () => {
       var bottom = myGameArea.canvas.height - this.height;
       if (this.y > bottom) {
         this.y = bottom;
+        this.gravitySpeed = 0;
       };
     };
     this.hitTop = function() {
       var top = 0;
       if (this.y < top) {
         this.y = top;
+        this.gravitySpeed = 0;
       };
     };
   };
