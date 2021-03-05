@@ -31,15 +31,18 @@ const startGame = () => {
 
   var myGamePiece;
   var myObstacles = [];
+  var myScore;
 
   // variables above
 
   myGamePiece = new component(30, 30, "red", 10, 120);
+  myScore = new component("30px", "Consolas", "black", 280, 40, "text");
   myGameArea.start();
 
   // functions below
 
-  function component(width, height, color, x, y) {
+  function component(width, height, color, x, y, type) {
+    this.type = type;
     this.width = width;
     this.height = height;
     this.x = x;
@@ -50,6 +53,15 @@ const startGame = () => {
       let ctx = myGameArea.context;
       ctx.fillStyle = color;
       ctx.fillRect(this.x, this.y, this.width, this.height);
+      if (this.type == "text") {
+        ctx.font = this.width + " " + this.height;
+        ctx.fillStyle = color;
+        ctx.fillText(this.text, this.x, this.y);
+      }
+      else {
+        ctx.fillStyle = color;
+        ctx.fillRect(this.x, this.y, this.width, this.height);
+      };
     };
     this.newPos = function() {
       this.gravitySpeed += this.gravity;
@@ -143,12 +155,14 @@ const startGame = () => {
       // myGamePiece.speedY = -1;
       myGamePiece.gravity = -0.1;
     };
-    if (myGameArea.keys&& myGameArea.keys[38] == false) {
+    if (myGameArea.keys && myGameArea.keys[38] == false) {
       myGamePiece.gravity = 0.05;
     };
     if (myGameArea.keys && myGameArea.keys[40]) {
       // myGamePiece.speedY = 1;
     };
+    myScore.text = "SCORE: " + myGameArea.frameNo;
+    myScore.update();
     myGamePiece.newPos();
     myGamePiece.update();
   };
