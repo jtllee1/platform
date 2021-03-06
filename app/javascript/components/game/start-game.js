@@ -93,6 +93,7 @@ const startGame = () => {
       if (this.y > bottom) {
         this.y = bottom;
         this.gravitySpeed = 0;
+        myGameArea.stop();
       };
     };
     this.hitTop = function() {
@@ -100,6 +101,7 @@ const startGame = () => {
       if (this.y < top) {
         this.y = top;
         this.gravitySpeed = 0;
+        myGameArea.stop();
       };
     };
   };
