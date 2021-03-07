@@ -20,6 +20,13 @@ const startGame = () => {
       // multiple direction movement
         myGameArea.keys[e.keyCode] = false;
       });
+      window.addEventListener('mousedown', function (e) {
+        myGameArea.keys = (myGameArea.keys || []);
+        myGameArea.keys[38] = true;
+      });
+      window.addEventListener('mouseup', function (e) {
+        myGameArea.keys[38] = false;
+      });
     },
     clear : function() {
       this.context.clearRect(0, 0, this.canvas.width, this.canvas.height);
