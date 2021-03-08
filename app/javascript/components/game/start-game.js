@@ -21,10 +21,12 @@ const startGame = () => {
         myGameArea.keys[e.keyCode] = false;
       });
       window.addEventListener('mousedown', function (e) {
+        e.preventDefault();
         myGameArea.keys = (myGameArea.keys || []);
         myGameArea.keys[38] = true;
       });
       window.addEventListener('mouseup', function (e) {
+        e.preventDefault();
         myGameArea.keys[38] = false;
       });
     },
