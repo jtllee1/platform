@@ -12,13 +12,16 @@ const startGame = () => {
         // myGameArea.key = e.keyCode;
       // multiple direction movement
         myGameArea.keys = (myGameArea.keys || []);
-        myGameArea.keys[e.keyCode] = true;
+        if (e.keyCode != 32) {
+          myGameArea.keys[e.keyCode] = true;
+        };
       });
       window.addEventListener('keyup', function (e) {
       // single direction movement
         // myGameArea.key = false;
       // multiple direction movement
         myGameArea.keys[e.keyCode] = false;
+        myGameArea.keys[32] = true;
       });
       window.addEventListener('mousedown', function (e) {
         e.preventDefault();
@@ -41,6 +44,7 @@ const startGame = () => {
   var myGamePiece;
   var myObstacles = [];
   var myScore;
+  var lasers = [];
 
   // variables above
 
@@ -171,6 +175,14 @@ const startGame = () => {
     };
     if (myGameArea.keys && myGameArea.keys[40]) {
       // myGamePiece.speedY = 1;
+    };
+    if (myGameArea.keys && myGameArea.keys[32]) {
+      lasers.push(new component(30, 30, "red", (myGamePiece.x * 2), myGamePiece.y));
+      myGameArea.keys[32] = false;
+    };
+    for (let i = 0; i < lasers.length; i += 1) {
+      lasers[i].x += 1;
+      lasers[i].update();
     };
     myScore.text = "SCORE: " + myGameArea.frameNo;
     myScore.update();
