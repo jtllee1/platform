@@ -117,6 +117,23 @@ const startGame = () => {
         myGameArea.stop();
       };
     };
+    this.laserHit = function(otherobj) {
+      var myleft = this.x;
+      var myright = this.x + (this.width);
+      var mytop = this.y;
+      var mybottom = this.y + (this.height);
+      var otherleft = otherobj.x;
+      var otherright = otherobj.x + (otherobj.width);
+      var othertop = otherobj.y;
+      var otherbottom = otherobj.y + (otherobj.height);
+      var crash = false;
+      if ((myright > otherleft) &&
+        ((mytop < otherbottom && mybottom > otherbottom) || (mybottom > othertop && mytop < othertop))
+        ) {
+        crash = true;
+      };
+      return crash;
+    };
   };
 
   function updateGameArea() {
@@ -125,6 +142,13 @@ const startGame = () => {
       if (myGamePiece.crashWith(myObstacles[i])) {
         myGameArea.stop();
         return;
+      };
+      for (let j = 0; j < lasers.length; j += 1) {
+        if (lasers[j].laserHit(myObstacles[i])) {
+          lasers.splice(j, 1);
+          myObstacles.splice(i, 1);
+          return;
+        };
       };
     };
     myGameArea.clear();
@@ -137,8 +161,11 @@ const startGame = () => {
       let minGap = 50;
       let maxGap = 200;
       let gap = Math.floor(Math.random()*(maxGap - minGap + 1) + minGap);
-      myObstacles.push(new component(10, height, "green", x, 0));
-      myObstacles.push(new component(10, x - height - gap, "green", x, height + gap));
+      myObstacles.push(new component(30, 30, "green", x, height));
+      myObstacles.push(new component(30, 30, "green", x, height + gap));
+    //bar obstacles
+      // myObstacles.push(new component(10, height, "green", x, 0));
+      // myObstacles.push(new component(10, x - height - gap, "green", x, height + gap));
     };
     for (let i = 0; i < myObstacles.length; i += 1) {
       myObstacles[i].x += -1;
