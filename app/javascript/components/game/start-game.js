@@ -21,7 +21,13 @@ const startGame = () => {
         // myGameArea.key = false;
       // multiple direction movement
         myGameArea.keys[e.keyCode] = false;
-        myGameArea.keys[32] = true;
+
+        if (e.keyCode != 32) {
+          myGameArea.keys[e.keyCode] = false;
+        }
+        else if (e.keyCode == 32) {
+          myGameArea.keys[e.keyCode] = true;
+        };
       });
       window.addEventListener('mousedown', function (e) {
         e.preventDefault();
@@ -106,7 +112,7 @@ const startGame = () => {
       if (this.y > bottom) {
         this.y = bottom;
         this.gravitySpeed = 0;
-        myGameArea.stop();
+        // myGameArea.stop();
       };
     };
     this.hitTop = function() {
@@ -114,7 +120,7 @@ const startGame = () => {
       if (this.y < top) {
         this.y = top;
         this.gravitySpeed = 0;
-        myGameArea.stop();
+        // myGameArea.stop();
       };
     };
     this.laserHit = function(otherobj) {
@@ -128,7 +134,7 @@ const startGame = () => {
       var otherbottom = otherobj.y + (otherobj.height);
       var crash = false;
       if ((myright > otherleft) &&
-        ((mytop < otherbottom && mybottom > otherbottom) || (mybottom > othertop && mytop < othertop))
+        ((mytop <= otherbottom && mybottom >= otherbottom) || (mybottom >= othertop && mytop <= othertop))
         ) {
         crash = true;
       };
@@ -155,8 +161,8 @@ const startGame = () => {
     myGameArea.frameNo += 1;
     if (myGameArea.frameNo == 1 || everyinterval(150)) {
       let x = myGameArea.canvas.width;
-      let minHeight = 20;
-      let maxHeight = 200;
+      let minHeight = 0;
+      let maxHeight = 240;
       let height = Math.floor(Math.random()*(maxHeight - minHeight + 1)+ minHeight);
       let minGap = 50;
       let maxGap = 200;
@@ -208,7 +214,7 @@ const startGame = () => {
       myGameArea.keys[32] = false;
     };
     for (let i = 0; i < lasers.length; i += 1) {
-      lasers[i].x += 1;
+      lasers[i].x += 2;
       lasers[i].update();
     };
     myScore.text = "SCORE: " + myGameArea.frameNo;
