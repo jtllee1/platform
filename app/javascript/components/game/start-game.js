@@ -27,6 +27,7 @@ const startGame = () => {
         }
         else if (e.keyCode == 32) {
           myGameArea.keys[e.keyCode] = true;
+          lasers.push(new component(30, 30, "red", (myGamePiece.x + 30), myGamePiece.y));
         };
       });
       window.addEventListener('mousedown', function (e) {
@@ -210,7 +211,6 @@ const startGame = () => {
       // myGamePiece.speedY = 1;
     };
     if (myGameArea.keys && myGameArea.keys[32]) {
-      lasers.push(new component(30, 30, "red", (myGamePiece.x * 2), myGamePiece.y));
       myGameArea.keys[32] = false;
     };
     for (let i = 0; i < lasers.length; i += 1) {
