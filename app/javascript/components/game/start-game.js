@@ -164,12 +164,15 @@ const startGame = () => {
       let x = myGameArea.canvas.width;
       let minHeight = 0;
       let maxHeight = 240;
-      let height = Math.floor(Math.random()*(maxHeight - minHeight + 1)+ minHeight);
-      let minGap = 50;
-      let maxGap = 200;
-      let gap = Math.floor(Math.random()*(maxGap - minGap + 1) + minGap);
+      let height = Math.floor(Math.random() * (maxHeight - minHeight) + minHeight);
+      let height2 = Math.floor(Math.random() * (maxHeight - minHeight) + minHeight);
+      let conditions = [true, false];
+      let condition = conditions[Math.floor(Math.random() * conditions.length)];
+
       myObstacles.push(new component(30, 30, "green", x, height));
-      myObstacles.push(new component(30, 30, "green", x, height + gap));
+      if (condition && height2 != height) {
+        myObstacles.push(new component(30, 30, "green", x, height2));
+      };
     //bar obstacles
       // myObstacles.push(new component(10, height, "green", x, 0));
       // myObstacles.push(new component(10, x - height - gap, "green", x, height + gap));
