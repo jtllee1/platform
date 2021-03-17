@@ -27,7 +27,7 @@ const startGame = () => {
         }
         else if (e.keyCode == 32) {
           myGameArea.keys[e.keyCode] = true;
-          lasers.push(new component(30, 30, "red", (myGamePiece.x + 30), myGamePiece.y));
+          lasers.push(new component(30, 10, "red", (myGamePiece.x + 30), (myGamePiece.y + 10)));
         };
       });
       window.addEventListener('mousedown', function (e) {
@@ -135,8 +135,8 @@ const startGame = () => {
       var otherbottom = otherobj.y + (otherobj.height);
       var crash = false;
       if ((myright > otherleft) &&
-        ((mytop <= otherbottom && mybottom >= otherbottom) || (mybottom >= othertop && mytop <= othertop))
-        ) {
+        ((mytop < othertop && mybottom > othertop) || (mytop < otherbottom && mybottom > otherbottom)
+          || (mytop >= othertop && mybottom <= otherbottom))) {
         crash = true;
       };
       return crash;
