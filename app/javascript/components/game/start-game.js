@@ -170,7 +170,7 @@ const startGame = () => {
       let condition = conditions[Math.floor(Math.random() * conditions.length)];
 
       myObstacles.push(new component(30, 30, "green", x, height));
-      if (condition && height2 != height) {
+      if (condition && ((height2 > height + 30) || (height2 < height - 30))) {
         myObstacles.push(new component(30, 30, "green", x, height2));
       };
     //bar obstacles
