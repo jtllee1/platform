@@ -1,10 +1,14 @@
 const startGame = () => {
+  const start = document.getElementById("start");
+
   var myGameArea = {
     canvas : document.getElementById("game"),
-    start : function() {
+    create : function() {
       this.canvas.width = 480;
       this.canvas.height = 270;
       this.context = this.canvas.getContext("2d");
+    },
+    start : function() {
       this.frameNo = 0;
       this.interval = setInterval(updateGameArea, 20);
       window.addEventListener('keydown', function (e) {
@@ -57,7 +61,17 @@ const startGame = () => {
 
   myGamePiece = new component(30, 30, "red", 10, 120);
   myScore = new component("30px", "Consolas", "black", 280, 40, "text");
-  myGameArea.start();
+  myGameArea.create();
+
+  start.addEventListener('click', function (e) {
+    myObstacles = [];
+    lasers = [];
+    myGamePiece.x = 10;
+    myGamePiece.y = 120;
+    myGameArea.stop();
+    myGameArea.clear();
+    myGameArea.start();
+  });
 
   // functions below
 
