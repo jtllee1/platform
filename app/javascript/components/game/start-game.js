@@ -1,5 +1,6 @@
 const startGame = () => {
   const start = document.getElementById("start");
+  let firstStart = true;
 
   var myGameArea = {
     canvas : document.getElementById("game"),
@@ -49,7 +50,11 @@ const startGame = () => {
     },
     stop : function() {
       clearInterval(this.interval);
-    }
+    },
+    restart : function() {
+      this.frameNo = 0;
+      this.interval = setInterval(updateGameArea, 20);
+    },
   };
 
   var myGamePiece;
@@ -64,13 +69,19 @@ const startGame = () => {
   myGameArea.create();
 
   start.addEventListener('click', function (e) {
-    myObstacles = [];
-    lasers = [];
-    myGamePiece.x = 10;
-    myGamePiece.y = 120;
-    myGameArea.stop();
-    myGameArea.clear();
-    myGameArea.start();
+    if (firstStart) {
+      myGameArea.start();
+      firstStart = false;
+    }
+    else {
+      myObstacles = [];
+      lasers = [];
+      myGamePiece.x = 10;
+      myGamePiece.y = 120;
+      myGameArea.stop();
+      myGameArea.clear();
+      myGameArea.restart();
+    };
   });
 
   // functions below
