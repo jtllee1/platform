@@ -30,7 +30,7 @@ const startGame = () => {
         if (e.keyCode != 32) {
           myGameArea.keys[e.keyCode] = false;
         }
-        else if (e.keyCode == 32) {
+        else if (e.keyCode == 32 && lasers.length < 2) {
           myGameArea.keys[e.keyCode] = true;
           lasers.push(new component(30, 10, "red", (myGamePiece.x + 30), (myGamePiece.y + 10)));
         };
@@ -149,6 +149,14 @@ const startGame = () => {
         // myGameArea.stop();
       };
     };
+    this.hitEnd = function() {
+      var end = myGameArea.canvas.width;
+      var crash = false;
+      if (this.x == end) {
+        crash = true;
+      };
+      return crash;
+    };
     this.laserHit = function(otherobj) {
       var myleft = this.x;
       var myright = this.x + (this.width);
@@ -181,6 +189,12 @@ const startGame = () => {
           myObstacles.splice(i, 1);
           return;
         };
+      };
+    };
+    for (let k = 0; k < lasers.length; k += 1) {
+      if (lasers[k].hitEnd()) {
+        lasers.splice(k, 1);
+        return;
       };
     };
     myGameArea.clear();
