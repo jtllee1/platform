@@ -187,6 +187,7 @@ const startGame = () => {
         if (lasers[j].laserHit(myObstacles[i])) {
           lasers.splice(j, 1);
           myObstacles.splice(i, 1);
+          myGameArea.frameNo += 500;
           return;
         };
       };
