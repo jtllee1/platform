@@ -257,7 +257,7 @@ const startGame = () => {
       myGameArea.keys[32] = false;
     };
     for (let i = 0; i < lasers.length; i += 1) {
-      lasers[i].x += 2;
+      lasers[i].x += 4;
       lasers[i].update();
     };
     myScore.text = "SCORE: " + myGameArea.frameNo;
