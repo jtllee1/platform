@@ -30,7 +30,7 @@ const startGame = () => {
         if (e.keyCode != 32) {
           myGameArea.keys[e.keyCode] = false;
         }
-        else if (e.keyCode == 32 && lasers.length < 2) {
+        else if (e.keyCode == 32 && lasers.length < limit) {
           myGameArea.keys[e.keyCode] = true;
           lasers.push(new component(30, 10, "red", (myGamePiece.x + 30), (myGamePiece.y + 10)));
         };
@@ -61,6 +61,7 @@ const startGame = () => {
   var myObstacles = [];
   var myScore;
   var lasers = [];
+  var limit = 1;
 
   // variables above
 
@@ -94,6 +95,7 @@ const startGame = () => {
     this.y = y;
     this.gravity = 0.05;
     this.gravitySpeed = 0;
+    this.color = color;
     this.update = function(){
       let ctx = myGameArea.context;
       ctx.fillStyle = color;
@@ -179,9 +181,13 @@ const startGame = () => {
   function updateGameArea() {
     var x, y;
     for (let i = 0; i < myObstacles.length; i += 1) {
-      if (myGamePiece.crashWith(myObstacles[i])) {
+      if (myGamePiece.crashWith(myObstacles[i]) && myObstacles[i].color == "green") {
         myGameArea.stop();
         return;
+      }
+      else if (myGamePiece.crashWith(myObstacles[i]) && myObstacles[i].color == "yellow") {
+        myObstacles.splice(i, 1);
+        limit += 1;
       };
       for (let j = 0; j < lasers.length; j += 1) {
         if (lasers[j].laserHit(myObstacles[i])) {
@@ -208,10 +214,13 @@ const startGame = () => {
       let height2 = Math.floor(Math.random() * (maxHeight - minHeight) + minHeight);
       let conditions = [true, false];
       let condition = conditions[Math.floor(Math.random() * conditions.length)];
+      let colors = ["green", "green", "green", "green", "green", "green", "green", "green", "green", "yellow"];
+      let color1 = colors[Math.floor(Math.random() * colors.length)];
+      let color2 = colors[Math.floor(Math.random() * colors.length)];
 
-      myObstacles.push(new component(30, 30, "green", x, height));
+      myObstacles.push(new component(30, 30, color1, x, height));
       if (condition && ((height2 > height + 30) || (height2 < height - 30))) {
-        myObstacles.push(new component(30, 30, "green", x, height2));
+        myObstacles.push(new component(30, 30, color2, x, height2));
       };
     //bar obstacles
       // myObstacles.push(new component(10, height, "green", x, 0));
