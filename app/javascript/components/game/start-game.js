@@ -77,6 +77,7 @@ const startGame = () => {
     else {
       myObstacles = [];
       lasers = [];
+      limit = 1;
       myGamePiece.x = 10;
       myGamePiece.y = 120;
       myGameArea.stop();
@@ -217,6 +218,11 @@ const startGame = () => {
       let colors = ["green", "green", "green", "green", "green", "green", "green", "green", "green", "yellow"];
       let color1 = colors[Math.floor(Math.random() * colors.length)];
       let color2 = colors[Math.floor(Math.random() * colors.length)];
+
+      if (limit > 2) {
+        color1 = "green";
+        color2 = "green";
+      };
 
       myObstacles.push(new component(30, 30, color1, x, height));
       if (condition && ((height2 > height + 30) || (height2 < height - 30))) {
