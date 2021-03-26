@@ -2,6 +2,10 @@
   <h1 id="name"><%= link_to "Game", root_path %></h1>
 </div>
 
+<audio class="laser invisible" controls preload="none">
+    <source src="<%= asset_path('laser.mp3') %>" type="audio/mpeg">
+</audio>
+
 <canvas id="game" style="background-color: white;"></canvas>
 
 <div class="data">

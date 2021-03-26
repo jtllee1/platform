@@ -1,6 +1,7 @@
 const startGame = () => {
   const start = document.getElementById("start");
   let firstStart = true;
+  const laserSound = document.querySelector(".laser");
 
   var myGameArea = {
     canvas : document.getElementById("game"),
@@ -33,6 +34,9 @@ const startGame = () => {
         else if (e.keyCode == 32 && lasers.length < limit) {
           myGameArea.keys[e.keyCode] = true;
           lasers.push(new component(30, 10, "red", (myGamePiece.x + 30), (myGamePiece.y + 10)));
+          laserSound.pause();
+          laserSound.currentTime = 0;
+          laserSound.play();
         };
       });
       window.addEventListener('mousedown', function (e) {
