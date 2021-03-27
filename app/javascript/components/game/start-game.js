@@ -2,6 +2,7 @@ const startGame = () => {
   const start = document.getElementById("start");
   let firstStart = true;
   const laserSound = document.querySelector(".laser");
+  const reloadSound = document.querySelector(".reload");
 
   var myGameArea = {
     canvas : document.getElementById("game"),
@@ -193,6 +194,9 @@ const startGame = () => {
       else if (myGamePiece.crashWith(myObstacles[i]) && myObstacles[i].color == "yellow") {
         myObstacles.splice(i, 1);
         limit += 1;
+        reloadSound.pause();
+        reloadSound.currentTime = 0;
+        reloadSound.play();
       };
       for (let j = 0; j < lasers.length; j += 1) {
         if (lasers[j].laserHit(myObstacles[i])) {
