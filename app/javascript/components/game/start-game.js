@@ -3,6 +3,8 @@ const startGame = () => {
   let firstStart = true;
   const laserSound = document.querySelector(".laser");
   const reloadSound = document.querySelector(".reload");
+  const impactSound = document.querySelector(".impact");
+  impactSound.volume = 0.3;
 
   var myGameArea = {
     canvas : document.getElementById("game"),
@@ -203,6 +205,9 @@ const startGame = () => {
           lasers.splice(j, 1);
           myObstacles.splice(i, 1);
           myGameArea.frameNo += 500;
+          impactSound.pause();
+          impactSound.currentTime = 0;
+          impactSound.play();
           return;
         };
       };
