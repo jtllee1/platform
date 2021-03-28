@@ -26,3 +26,4 @@
 //= link balloon-power.mp3
 //= link block-impact.mp3
 //= link reload-ammo.mp3
+//= link depth-charge.mp3
