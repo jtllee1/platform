@@ -5,6 +5,7 @@ const startGame = () => {
   const reloadSound = document.querySelector(".reload");
   const impactSound = document.querySelector(".impact");
   impactSound.volume = 0.3;
+  const avatar = document.getElementById("avatar");
 
   var myGameArea = {
     canvas : document.getElementById("game"),
@@ -72,7 +73,7 @@ const startGame = () => {
 
   // variables above
 
-  myGamePiece = new component(30, 30, "red", 10, 120);
+  myGamePiece = new component(30, 30, avatar.src , 10, 120, "image");
   myScore = new component("30px", "Consolas", "black", 280, 40, "text");
   myGameArea.create();
 
@@ -97,6 +98,10 @@ const startGame = () => {
 
   function component(width, height, color, x, y, type) {
     this.type = type;
+    if (type == "image") {
+      this.image = new Image();
+      this.image.src = color;
+    };
     this.width = width;
     this.height = height;
     this.x = x;
@@ -112,6 +117,12 @@ const startGame = () => {
         ctx.font = this.width + " " + this.height;
         ctx.fillStyle = color;
         ctx.fillText(this.text, this.x, this.y);
+      }
+      else if (type == "image") {
+        ctx.drawImage(this.image,
+          this.x,
+          this.y,
+          this.width, this.height);
       }
       else {
         ctx.fillStyle = color;
