@@ -69,12 +69,14 @@ const startGame = () => {
   var myObstacles = [];
   var myScore;
   var lasers = [];
+  var myAmmo;
   var limit = 1;
 
   // variables above
 
   myGamePiece = new component(30, 30, avatar.src , 10, 120, "image");
   myScore = new component("30px", "Consolas", "black", 280, 40, "text");
+  myAmmo = new component("30px", "Consolas", "black", 0, 40, "text");
   myGameArea.create();
 
   start.addEventListener('click', function (e) {
@@ -303,6 +305,8 @@ const startGame = () => {
     myScore.update();
     myGamePiece.newPos();
     myGamePiece.update();
+    myAmmo.text = "AMMO: " + (limit - lasers.length);
+    myAmmo.update();
   };
 
   function everyinterval(n) {
