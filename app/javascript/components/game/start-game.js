@@ -172,10 +172,20 @@ const startGame = () => {
         // myGameArea.stop();
       };
     };
-    this.hitEnd = function() {
-      var end = myGameArea.canvas.width;
+    this.hitEnd = function(item) {
+      var end;
+      var itemX;
+      if (item == "laser") {
+        end = myGameArea.canvas.width;
+        itemX = this.x;
+      }
+      else if (item == "obstacle") {
+        end = 0;
+        itemX = this.x + this.width;
+      };
+
       var crash = false;
-      if (this.x == end) {
+      if (itemX == end) {
         crash = true;
       };
       return crash;
@@ -213,6 +223,11 @@ const startGame = () => {
         reloadSound.currentTime = 0;
         reloadSound.play();
       };
+
+      if (myObstacles[i].hitEnd("obstacle")) {
+        myObstacles.splice(i, 1);
+      };
+
       for (let j = 0; j < lasers.length; j += 1) {
         if (lasers[j].laserHit(myObstacles[i])) {
           lasers.splice(j, 1);
@@ -226,7 +241,7 @@ const startGame = () => {
       };
     };
     for (let k = 0; k < lasers.length; k += 1) {
-      if (lasers[k].hitEnd()) {
+      if (lasers[k].hitEnd("laser")) {
         lasers.splice(k, 1);
         return;
       };
