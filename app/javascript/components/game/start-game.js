@@ -10,8 +10,8 @@ const startGame = () => {
   var myGameArea = {
     canvas : document.getElementById("game"),
     create : function() {
-      this.canvas.width = 480;
-      this.canvas.height = 270;
+      this.canvas.width = 600;
+      this.canvas.height = 400;
       this.context = this.canvas.getContext("2d");
     },
     start : function() {
@@ -37,7 +37,7 @@ const startGame = () => {
         }
         else if (e.keyCode == 32 && lasers.length < limit) {
           myGameArea.keys[e.keyCode] = true;
-          lasers.push(new component(30, 10, "red", (myGamePiece.x + 30), (myGamePiece.y + 10)));
+          lasers.push(new component(30, 10, "red", (myGamePiece.x + 60), (myGamePiece.y + 20)));
           laserSound.pause();
           laserSound.currentTime = 0;
           laserSound.play();
@@ -74,9 +74,9 @@ const startGame = () => {
 
   // variables above
 
-  myGamePiece = new component(30, 30, avatar.src , 10, 120, "image");
-  myScore = new component("30px", "Consolas", "black", 280, 40, "text");
-  myAmmo = new component("30px", "Consolas", "black", 0, 40, "text");
+  myGamePiece = new component(60, 60, avatar.src , 10, 170, "image");
+  myScore = new component("30px", "Consolas", "black", 400, 40, "text");
+  myAmmo = new component("30px", "Consolas", "black", 10, 40, "text");
   myGameArea.create();
 
   start.addEventListener('click', function (e) {
@@ -89,7 +89,7 @@ const startGame = () => {
       lasers = [];
       limit = 1;
       myGamePiece.x = 10;
-      myGamePiece.y = 120;
+      myGamePiece.y = 170;
       myGameArea.stop();
       myGameArea.clear();
       myGameArea.restart();
@@ -175,19 +175,23 @@ const startGame = () => {
     this.hitEnd = function(item) {
       var end;
       var itemX;
+      var crash = false;
+
       if (item == "laser") {
         end = myGameArea.canvas.width;
         itemX = this.x;
+        if (itemX >= end) {
+          crash = true;
+        };
       }
       else if (item == "obstacle") {
         end = 0;
         itemX = this.x + this.width;
+        if (itemX == end) {
+          crash = true;
+        };
       };
 
-      var crash = false;
-      if (itemX == end) {
-        crash = true;
-      };
       return crash;
     };
     this.laserHit = function(otherobj) {
@@ -251,7 +255,7 @@ const startGame = () => {
     if (myGameArea.frameNo == 1 || everyinterval(150)) {
       let x = myGameArea.canvas.width;
       let minHeight = 0;
-      let maxHeight = 240;
+      let maxHeight = 370;
       let height = Math.floor(Math.random() * (maxHeight - minHeight) + minHeight);
       let height2 = Math.floor(Math.random() * (maxHeight - minHeight) + minHeight);
       let conditions = [true, false];
