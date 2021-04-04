@@ -75,7 +75,7 @@ const startGame = () => {
   // variables above
 
   myGamePiece = new component(60, 60, avatar.src , 10, 170, "image");
-  myScore = new component("30px", "Consolas", "black", 400, 40, "text");
+  myScore = new component("30px", "Consolas", "black", 380, 40, "text");
   myAmmo = new component("30px", "Consolas", "black", 10, 40, "text");
   myGameArea.create();
 
