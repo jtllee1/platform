@@ -13,6 +13,6 @@ Rails.application.routes.draw do
   get '/sound_beat', to: 'pages#sound_beat'
   get '/balloon_blast', to: 'pages#balloon_blast'
   get '/blockman', to: 'pages#blockman'
-  get '/game', to: 'pages#game'
+  get '/depth_charge', to: 'pages#depth_charge'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
