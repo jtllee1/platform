@@ -4,6 +4,7 @@ const startGame = () => {
   const laserSound = document.querySelector(".laser");
   const reloadSound = document.querySelector(".reload");
   const impactSound = document.querySelector(".impact");
+  const swimSound = document.querySelector(".swim");
   impactSound.volume = 0.3;
   const avatar = document.getElementById("avatar");
 
@@ -47,6 +48,9 @@ const startGame = () => {
         e.preventDefault();
         myGameArea.keys = (myGameArea.keys || []);
         myGameArea.keys[38] = true;
+        swimSound.pause();
+        swimSound.currentTime = 0;
+        swimSound.play();
       });
       window.addEventListener('mouseup', function (e) {
         e.preventDefault();
