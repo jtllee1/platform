@@ -1,3 +1,11 @@
-#game {
-  background-color: rgb(150, 240, 255);
+.depth-charge {
+  display: flex;
+  justify-content: center;
+  #game {
+    background-color: rgb(150, 240, 255);
+  }
+
+  .depth-charge-data {
+    width: 200px;
+  }
 }
