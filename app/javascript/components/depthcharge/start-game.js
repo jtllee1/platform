@@ -6,6 +6,7 @@ const startGame = () => {
   const impactSound = document.querySelector(".impact");
   const swimSound = document.querySelector(".swim");
   impactSound.volume = 0.3;
+  swimSound.volume = 0.3;
   const avatar = document.getElementById("avatar");
 
   var myGameArea = {
@@ -301,12 +302,12 @@ const startGame = () => {
     //   myGamePiece.speedY = 1;
     // };
   // multiple direction movement
-    if (myGameArea.keys && myGameArea.keys[37]) {
-      myGamePiece.speedX = -1;
-    };
-    if (myGameArea.keys && myGameArea.keys[39]) {
-      myGamePiece.speedX = 1;
-    };
+    // if (myGameArea.keys && myGameArea.keys[37]) {
+    //   myGamePiece.speedX = -1;
+    // };
+    // if (myGameArea.keys && myGameArea.keys[39]) {
+    //   myGamePiece.speedX = 1;
+    // };
     if (myGameArea.keys && myGameArea.keys[38]) {
       // myGamePiece.speedY = -1;
       myGamePiece.gravity = -0.1;
@@ -314,12 +315,12 @@ const startGame = () => {
     if (myGameArea.keys && myGameArea.keys[38] == false) {
       myGamePiece.gravity = 0.05;
     };
-    if (myGameArea.keys && myGameArea.keys[40]) {
-      // myGamePiece.speedY = 1;
-    };
-    if (myGameArea.keys && myGameArea.keys[32]) {
-      myGameArea.keys[32] = false;
-    };
+    // if (myGameArea.keys && myGameArea.keys[40]) {
+    //   // myGamePiece.speedY = 1;
+    // };
+    // if (myGameArea.keys && myGameArea.keys[32]) {
+    //   myGameArea.keys[32] = false;
+    // };
     for (let i = 0; i < lasers.length; i += 1) {
       lasers[i].x += 4;
       lasers[i].update();
