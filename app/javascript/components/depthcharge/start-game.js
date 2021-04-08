@@ -49,9 +49,11 @@ const startGame = () => {
         e.preventDefault();
         myGameArea.keys = (myGameArea.keys || []);
         myGameArea.keys[38] = true;
-        swimSound.pause();
-        swimSound.currentTime = 0;
-        swimSound.play();
+        if (gameState) {
+          swimSound.pause();
+          swimSound.currentTime = 0;
+          swimSound.play();
+        };
       });
       window.addEventListener('mouseup', function (e) {
         e.preventDefault();
@@ -76,6 +78,7 @@ const startGame = () => {
   var lasers = [];
   var myAmmo;
   var limit = 1;
+  var gameState = false;
 
   // variables above
 
@@ -88,6 +91,7 @@ const startGame = () => {
     if (firstStart) {
       myGameArea.start();
       firstStart = false;
+      gameState = true;
     }
     else {
       myObstacles = [];
@@ -98,6 +102,7 @@ const startGame = () => {
       myGameArea.stop();
       myGameArea.clear();
       myGameArea.restart();
+      gameState = true;
     };
   });
 
@@ -222,6 +227,7 @@ const startGame = () => {
     var x, y;
     for (let i = 0; i < myObstacles.length; i += 1) {
       if (myGamePiece.crashWith(myObstacles[i]) && myObstacles[i].color == "green") {
+        gameState = false;
         myGameArea.stop();
         return;
       }
