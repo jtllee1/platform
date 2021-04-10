@@ -8,6 +8,7 @@ const startGame = () => {
   impactSound.volume = 0.3;
   swimSound.volume = 0.3;
   const avatar = document.getElementById("avatar");
+  const score = document.getElementById("score");
 
   var myGameArea = {
     canvas : document.getElementById("game"),
@@ -83,7 +84,7 @@ const startGame = () => {
   // variables above
 
   myGamePiece = new component(60, 60, avatar.src , 10, 170, "image");
-  myScore = new component("30px", "Consolas", "black", 380, 40, "text");
+  // myScore = new component("30px", "Consolas", "black", 380, 40, "text");
   myAmmo = new component("30px", "Consolas", "black", 10, 40, "text");
   myGameArea.create();
 
@@ -247,7 +248,8 @@ const startGame = () => {
         if (lasers[j].laserHit(myObstacles[i])) {
           lasers.splice(j, 1);
           myObstacles.splice(i, 1);
-          myGameArea.frameNo += 500;
+          // myGameArea.frameNo += 500;
+          score.innerText = parseInt(score.innerText) + 500;
           impactSound.pause();
           impactSound.currentTime = 0;
           impactSound.play();
@@ -331,8 +333,8 @@ const startGame = () => {
       lasers[i].x += 4;
       lasers[i].update();
     };
-    myScore.text = "SCORE: " + myGameArea.frameNo;
-    myScore.update();
+    // myScore.text = "SCORE: " + myGameArea.frameNo;
+    // myScore.update();
     myGamePiece.newPos();
     myGamePiece.update();
     myAmmo.text = "AMMO: " + (limit - lasers.length);

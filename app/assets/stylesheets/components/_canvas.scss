@@ -1,11 +1,12 @@
 .depth-charge {
   display: flex;
   justify-content: center;
+  margin-top: 32px;
   #game {
     background-color: rgb(150, 240, 255);
   }
-
   .depth-charge-data {
     width: 200px;
+    margin-left: 32px;
   }
 }
