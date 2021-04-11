@@ -104,6 +104,7 @@ const startGame = () => {
       myGameArea.clear();
       myGameArea.restart();
       gameState = true;
+      score.innerText = 0;
     };
   });
 
