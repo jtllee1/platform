@@ -35,15 +35,17 @@ const startGame = () => {
       // multiple direction movement
         myGameArea.keys[e.keyCode] = false;
 
-        if (e.keyCode != 32) {
-          myGameArea.keys[e.keyCode] = false;
-        }
-        else if (e.keyCode == 32 && lasers.length < limit) {
-          myGameArea.keys[e.keyCode] = true;
-          lasers.push(new component(30, 10, "red", (myGamePiece.x + 60), (myGamePiece.y + 20)));
-          laserSound.pause();
-          laserSound.currentTime = 0;
-          laserSound.play();
+        if (gameState) {
+          if (e.keyCode != 32) {
+            myGameArea.keys[e.keyCode] = false;
+          }
+          else if (e.keyCode == 32 && lasers.length < limit) {
+            myGameArea.keys[e.keyCode] = true;
+            lasers.push(new component(30, 10, "red", (myGamePiece.x + 60), (myGamePiece.y + 20)));
+            laserSound.pause();
+            laserSound.currentTime = 0;
+            laserSound.play();
+          };
         };
       });
       window.addEventListener('mousedown', function (e) {
