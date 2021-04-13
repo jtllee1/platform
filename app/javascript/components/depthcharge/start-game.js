@@ -228,7 +228,14 @@ const startGame = () => {
   };
 
   function updateGameArea() {
+    let playSpeed = -1;
     var x, y;
+    if (myGameArea.frameNo > 2000) {
+      playSpeed = -2;
+    }
+    else if (myGameArea.frameNo > 3000) {
+      playSpeed = -3;
+    };
     for (let i = 0; i < myObstacles.length; i += 1) {
       if (myGamePiece.crashWith(myObstacles[i]) && myObstacles[i].color == "green") {
         gameState = false;
@@ -294,7 +301,7 @@ const startGame = () => {
       // myObstacles.push(new component(10, x - height - gap, "green", x, height + gap));
     };
     for (let i = 0; i < myObstacles.length; i += 1) {
-      myObstacles[i].x += -1;
+      myObstacles[i].x += playSpeed;
       myObstacles[i].update();
     };
     myGamePiece.speedX = 0;
