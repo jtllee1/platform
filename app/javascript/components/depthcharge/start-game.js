@@ -5,6 +5,7 @@ const startGame = () => {
   const reloadSound = document.querySelector(".reload");
   const impactSound = document.querySelector(".impact");
   const swimSound = document.querySelector(".swim");
+  const loseSound = document.querySelector(".lose");
   impactSound.volume = 0.3;
   swimSound.volume = 0.3;
   const avatar = document.getElementById("avatar");
@@ -240,6 +241,9 @@ const startGame = () => {
       if (myGamePiece.crashWith(myObstacles[i]) && myObstacles[i].color == "green") {
         gameState = false;
         myGameArea.stop();
+        loseSound.pause();
+        loseSound.currentTime = 0;
+        loseSound.play();
         return;
       }
       else if (myGamePiece.crashWith(myObstacles[i]) && myObstacles[i].color == "yellow") {
