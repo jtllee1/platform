@@ -9,6 +9,7 @@ const startGame = () => {
   impactSound.volume = 0.3;
   swimSound.volume = 0.3;
   const avatar = document.getElementById("avatar");
+  const enemy = document.getElementById("enemy");
   const score = document.getElementById("score");
 
   var myGameArea = {
@@ -287,18 +288,23 @@ const startGame = () => {
       let height2 = Math.floor(Math.random() * (maxHeight - minHeight) + minHeight);
       let conditions = [true, false];
       let condition = conditions[Math.floor(Math.random() * conditions.length)];
-      let colors = ["green", "green", "green", "green", "green", "green", "green", "green", "green", "yellow"];
-      let color1 = colors[Math.floor(Math.random() * colors.length)];
-      let color2 = colors[Math.floor(Math.random() * colors.length)];
+      let randomNo1 = Math.floor(Math.random() * 10);
+      let randomNo2 = Math.floor(Math.random() * 10);
 
-      if (limit > 2) {
-        color1 = "green";
-        color2 = "green";
+      if (randomNo1 < 9 || limit > 2) {
+        myObstacles.push(new component(30, 30, enemy.src, x, height, "image"));
+      }
+      else {
+        myObstacles.push(new component(30, 30, "yellow", x, height));
       };
 
-      myObstacles.push(new component(30, 30, color1, x, height));
       if (condition && ((height2 > height + 30) || (height2 < height - 30))) {
-        myObstacles.push(new component(30, 30, color2, x, height2));
+        if (randomNo2 < 9 || limit > 2) {
+        myObstacles.push(new component(30, 30, enemy.src, x, height2, "image"));
+        }
+        else {
+          myObstacles.push(new component(30, 30, "yellow", x, height2));
+        };
       };
     //bar obstacles
       // myObstacles.push(new component(10, height, "green", x, 0));
