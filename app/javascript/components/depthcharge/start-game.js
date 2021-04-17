@@ -204,7 +204,7 @@ const startGame = () => {
       else if (item == "obstacle") {
         end = 0;
         itemX = this.x + this.width;
-        if (itemX == end) {
+        if (itemX <= end) {
           crash = true;
         };
       };
