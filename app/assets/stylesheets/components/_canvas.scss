@@ -3,7 +3,9 @@
   justify-content: center;
   margin-top: 32px;
   #game {
-    background-color: rgb(150, 240, 255);
+    background-image: image-url('depth_charge_canvas');
+    background-repeat: no-repeat;
+    background-size: cover;
   }
   .depth-charge-data {
     width: 200px;
