@@ -12,12 +12,20 @@ const startGame = () => {
   const enemy = document.getElementById("enemy");
   const ammo = document.getElementById("ammo");
   const score = document.getElementById("score");
+  let scale;
+
+  if ($(window).height() > 800 && $(window).width() > 1000) {
+    scale = 1.5;
+  }
+  else {
+    scale = 1;
+  };
 
   var myGameArea = {
     canvas : document.getElementById("game"),
     create : function() {
-      this.canvas.width = 600;
-      this.canvas.height = 400;
+      this.canvas.width = 600 * scale;
+      this.canvas.height = 400 * scale;
       this.context = this.canvas.getContext("2d");
     },
     start : function() {
@@ -44,7 +52,7 @@ const startGame = () => {
           }
           else if (e.keyCode == 32 && lasers.length < limit) {
             myGameArea.keys[e.keyCode] = true;
-            lasers.push(new component(30, 10, "red", (myGamePiece.x + 60), (myGamePiece.y + 20)));
+            lasers.push(new component((30 * scale), (10 * scale), "red", (myGamePiece.x + (60 * scale)), (myGamePiece.y + (20 * scale))));
             laserSound.pause();
             laserSound.currentTime = 0;
             laserSound.play();
@@ -88,7 +96,7 @@ const startGame = () => {
 
   // variables above
 
-  myGamePiece = new component(60, 60, avatar , 10, 170, "image");
+  myGamePiece = new component((60 * scale), (60 * scale), avatar , (10 * scale), (170 * scale), "image");
   // myScore = new component("30px", "Consolas", "black", 380, 40, "text");
   myAmmo = new component("30px", "Consolas", "black", 10, 40, "text");
   myGameArea.create();
@@ -103,8 +111,8 @@ const startGame = () => {
       myObstacles = [];
       lasers = [];
       limit = 1;
-      myGamePiece.x = 10;
-      myGamePiece.y = 170;
+      myGamePiece.x = 10 * scale;
+      myGamePiece.y = 170 * scale;
       myGameArea.stop();
       myGameArea.clear();
       myGameArea.restart();
@@ -284,7 +292,7 @@ const startGame = () => {
     if (myGameArea.frameNo == 1 || everyinterval(150)) {
       let x = myGameArea.canvas.width;
       let minHeight = 0;
-      let maxHeight = 370;
+      let maxHeight = 370 * scale;
       let height = Math.floor(Math.random() * (maxHeight - minHeight) + minHeight);
       let height2 = Math.floor(Math.random() * (maxHeight - minHeight) + minHeight);
       let conditions = [true, false];
@@ -293,18 +301,18 @@ const startGame = () => {
       let randomNo2 = Math.floor(Math.random() * 10);
 
       if (randomNo1 < 9 || limit > 2) {
-        myObstacles.push(new component(30, 30, enemy, x, height, "image"));
+        myObstacles.push(new component((30 * scale), (30 * scale), enemy, x, height, "image"));
       }
       else {
-        myObstacles.push(new component(30, 30, ammo, x, height, "image"));
+        myObstacles.push(new component((30 * scale), (30 * scale), ammo, x, height, "image"));
       };
 
-      if (condition && ((height2 > height + 30) || (height2 < height - 30))) {
+      if (condition && ((height2 > height + (30 * scale)) || (height2 < height - (30 * scale)))) {
         if (randomNo2 < 9 || limit > 2) {
-        myObstacles.push(new component(30, 30, enemy, x, height2, "image"));
+        myObstacles.push(new component((30 * scale), (30 * scale), enemy, x, height2, "image"));
         }
         else {
-          myObstacles.push(new component(30, 30, ammo, x, height2, "image"));
+          myObstacles.push(new component((30 * scale), (30 * scale), ammo, x, height2, "image"));
         };
       };
     //bar obstacles
@@ -312,7 +320,7 @@ const startGame = () => {
       // myObstacles.push(new component(10, x - height - gap, "green", x, height + gap));
     };
     for (let i = 0; i < myObstacles.length; i += 1) {
-      myObstacles[i].x += playSpeed;
+      myObstacles[i].x += playSpeed * scale;
       myObstacles[i].update();
     };
     myGamePiece.speedX = 0;
