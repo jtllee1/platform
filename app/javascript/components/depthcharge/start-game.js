@@ -14,12 +14,68 @@ const startGame = () => {
   const score = document.getElementById("score");
   let scale;
 
-  if ($(window).height() > 800 && $(window).width() > 1000) {
-    scale = 1.5;
-  }
-  else {
-    scale = 1;
+  function screenSize() {
+    if ($(window).height() > 800 && $(window).width() > 1000) {
+      scale = 1.5;
+    }
+    else {
+      scale = 1;
+    };
   };
+
+  screenSize();
+
+  window.addEventListener('resize', (e) => {
+    screenSize();
+
+    if (myGameArea) {
+      myGameArea.canvas.width = 600 * scale;
+      myGameArea.canvas.height = 400 * scale;
+    };
+
+    if (myGamePiece) {
+      myGamePiece.width = 60 * scale;
+      myGamePiece.height = 60 * scale;
+      if (scale == 1) {
+        myGamePiece.x = myGamePiece.x / 1.5;
+        myGamePiece.y = myGamePiece.y / 1.5;
+      }
+      else {
+        myGamePiece.x = myGamePiece.x * 1.5;
+        myGamePiece.y = myGamePiece.y * 1.5;
+      };
+    };
+
+    if (myObstacles.length > 0) {
+      myObstacles.forEach(obstacle => {
+        obstacle.width = 30 * scale;
+        obstacle.height = 30 * scale;
+        if (scale == 1) {
+          obstacle.x = obstacle.x / 1.5;
+          obstacle.y = obstacle.y / 1.5;
+        }
+        else {
+          obstacle.x = obstacle.x * 1.5;
+          obstacle.y = obstacle.y * 1.5;
+        };
+      });
+    };
+
+    if (lasers.length > 0) {
+      lasers.forEach(laser => {
+        laser.width = 30 * scale;
+        laser.height = 10 * scale;
+        if (scale == 1) {
+          laser.x = laser.x / 1.5;
+          laser.y = laser.y / 1.5;
+        }
+        else {
+          laser.x = laser.x * 1.5;
+          laser.y = laser.y * 1.5;
+        };
+      });
+    };
+  });
 
   var myGameArea = {
     canvas : document.getElementById("game"),
