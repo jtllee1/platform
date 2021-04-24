@@ -327,9 +327,11 @@ const startGame = () => {
       for (let j = 0; j < lasers.length; j += 1) {
         if (lasers[j].laserHit(myObstacles[i])) {
           lasers.splice(j, 1);
-          myObstacles.splice(i, 1);
           // myGameArea.frameNo += 500;
-          score.innerText = parseInt(score.innerText) + 500;
+          if (myObstacles[i].color == "enemy") {
+            score.innerText = parseInt(score.innerText) + 500;
+          };
+          myObstacles.splice(i, 1);
           impactSound.pause();
           impactSound.currentTime = 0;
           impactSound.play();
