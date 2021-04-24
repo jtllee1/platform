@@ -12,6 +12,7 @@ const startGame = () => {
   const enemy = document.getElementById("enemy");
   const ammo = document.getElementById("ammo");
   const score = document.getElementById("score");
+  const laserImage = document.getElementById("laser");
   let scale;
 
   function screenSize() {
@@ -108,7 +109,7 @@ const startGame = () => {
           }
           else if (e.keyCode == 32 && lasers.length < limit) {
             myGameArea.keys[e.keyCode] = true;
-            lasers.push(new component((30 * scale), (10 * scale), "red", (myGamePiece.x + (60 * scale)), (myGamePiece.y + (20 * scale))));
+            lasers.push(new component((30 * scale), (10 * scale), laserImage, (myGamePiece.x + (60 * scale)), (myGamePiece.y + (20 * scale)), "image"));
             laserSound.pause();
             laserSound.currentTime = 0;
             laserSound.play();
