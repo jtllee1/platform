@@ -410,6 +410,9 @@ const startGame = () => {
     };
     if (myGameArea.keys && myGameArea.keys[38] == false) {
       myGamePiece.gravity = 0.05;
+      swimSound.pause();
+      swimSound.currentTime = 0;
+      swimSound.play();
     };
     // if (myGameArea.keys && myGameArea.keys[40]) {
     //   // myGamePiece.speedY = 1;
