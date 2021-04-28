@@ -322,8 +322,10 @@ const startGame = () => {
       };
 
       if (myObstacles[i].hitEnd("obstacle")) {
+        if (myObstacles[i].color != "ammo") {
+          score.innerText = parseInt(score.innerText) - 1000;
+        };
         myObstacles.splice(i, 1);
-        score.innerText = parseInt(score.innerText) - 1000;
       };
 
       for (let j = 0; j < lasers.length; j += 1) {
