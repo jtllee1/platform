@@ -433,6 +433,11 @@ const startGame = () => {
     myGamePiece.update();
     myAmmo.text = "AMMO: " + (limit - lasers.length);
     myAmmo.update();
+
+    if (parseInt(score.innerText) < 0) {
+      gameState = false;
+      myGameArea.stop();
+    };
   };
 
   function everyinterval(n) {
