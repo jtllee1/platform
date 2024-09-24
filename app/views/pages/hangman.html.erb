@@ -1,40 +1,42 @@
-<div class="title">
-  <h1 id="name"><%= link_to "Pokémon Hangman", root_path %></h1>
-</div>
-
-<div id="hangman-container">
-  <div id="game-state" class="invisible">Off</div>
-
-  <div id="count" class="invisible">0</div>
-
-  <div id="hangman">
-    <div id="chosen-word" class="invisible"></div>
-
-    <div id="word"></div>
-
-    <div id="image" class=""></div>
-
-    <div id="input" class=""></div>
-
-    <div id="used-letters" class=""></div>
+<div data-controller="hangman">
+  <div class="title">
+    <h1 id="name"><%= link_to "Pokémon Hangman", root_path %></h1>
   </div>
 
-  <div class="data">
-    Lives:
-    <div id="lives">
-      <div class="life active"></div>
-      <div class="life active"></div>
-      <div class="life active"></div>
-      <div class="life active"></div>
-      <div class="life active"></div>
-      <div class="life active"></div>
-      <div class="life active"></div>
-      <div class="life active"></div>
+  <div id="hangman-container">
+    <div id="game-state" class="invisible">Off</div>
+
+    <div id="count" class="invisible">0</div>
+
+    <div id="hangman">
+      <div id="chosen-word" class="invisible"></div>
+
+      <div id="word"></div>
+
+      <div id="image" class=""></div>
+
+      <div id="input" class=""></div>
+
+      <div id="used-letters" class=""></div>
     </div>
-    <div id="start">Start</div>
-    <div class="instructions">
-      <a>Guess what Pokémon the silhouette belongs to by typing in matching letters.</a>
+
+    <div class="data">
+      Lives:
+      <div id="lives">
+        <div class="life active"></div>
+        <div class="life active"></div>
+        <div class="life active"></div>
+        <div class="life active"></div>
+        <div class="life active"></div>
+        <div class="life active"></div>
+        <div class="life active"></div>
+        <div class="life active"></div>
+      </div>
+      <div id="start">Start</div>
+      <div class="instructions">
+        <a>Guess what Pokémon the silhouette belongs to by typing in matching letters.</a>
+      </div>
+      <div id="hint">Reveal a letter</div>
     </div>
-    <div id="hint">Reveal a letter</div>
   </div>
 </div>

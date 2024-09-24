@@ -1,36 +1,38 @@
-<div class="title">
-  <h1 id="name"><%= link_to "Connect Four", root_path %></h1>
-</div>
-
-<audio class="chip invisible" controls preload="none">
-    <source src="<%= asset_path('chip-drop.mp3') %>" type="audio/mpeg">
-</audio>
-
-<div class="main-c-4">
-  <div id="grids-c-4">
-    <% row = 1 %>
-    <% i = 1 %>
-    <% 10.times do %>
-      <% column = 1 %>
-      <% 10.times do %>
-        <div class="overlay">
-          <div id="<%= row %>-<%= column %>" class="grid-c-4 r-<%= row %> c-<%= column %>"></div>
-        </div>
-        <% i += 1 %>
-        <% column += 1 %>
-      <% end %>
-      <% row += 1 %>
-    <% end %>
+<div data-controller="connect-four">
+  <div class="title">
+    <h1 id="name"><%= link_to "Connect Four", root_path %></h1>
   </div>
 
-  <div class="data-c-4">
-    <div class="player-data">
-      <div id="player-1" class="player active"><a><b>P1</b></a></div>
-      <div id="player-2" class="player"><a><b>P2</b></a></div>
+  <audio class="chip invisible" controls preload="none">
+      <source src="<%= asset_path('chip-drop.mp3') %>" type="audio/mpeg">
+  </audio>
+
+  <div class="main-c-4">
+    <div id="grids-c-4">
+      <% row = 1 %>
+      <% i = 1 %>
+      <% 10.times do %>
+        <% column = 1 %>
+        <% 10.times do %>
+          <div class="overlay">
+            <div id="<%= row %>-<%= column %>" class="grid-c-4 r-<%= row %> c-<%= column %>"></div>
+          </div>
+          <% i += 1 %>
+          <% column += 1 %>
+        <% end %>
+        <% row += 1 %>
+      <% end %>
     </div>
-    <div id="reset-c-4"><a><b>Reset Game</b></a></div>
-    <div class="instructions">
-      <a>Click onto the column you want to drop your chip into.</a>
+
+    <div class="data-c-4">
+      <div class="player-data">
+        <div id="player-1" class="player active"><a><b>P1</b></a></div>
+        <div id="player-2" class="player"><a><b>P2</b></a></div>
+      </div>
+      <div id="reset-c-4"><a><b>Reset Game</b></a></div>
+      <div class="instructions">
+        <a>Click onto the column you want to drop your chip into.</a>
+      </div>
     </div>
   </div>
 </div>

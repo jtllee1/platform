@@ -50,9 +50,6 @@
   width: 30em;
   border-radius: 32px;
   color: #262682d6;
-  #chosen-word {
-
-  }
   #word {
     display: flex;
     justify-content: center;
@@ -126,7 +123,7 @@
   }
 }
 
-@media only screen and (max-width: 1200px) {
+@media only screen and (max-height: 900px) {
   #hangman {
     font-size: 14px;
     .hidden-letter {

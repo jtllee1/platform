@@ -1,4 +1,3 @@
-import { columnHover } from '../connectfour/column-hover';
 import { checkCondition } from '../connectfour/check-condition';
 
 const animation = (column, addedClass) => {

@@ -1,47 +1,49 @@
-<div class="title">
-  <h1 id="name"><%= link_to "Caterpillar", root_path %></h1>
-</div>
-
-<audio class="footstep invisible" controls loop preload="none">
-    <source src="<%= asset_path('grass-footstep.mp3') %>" type="audio/mpeg">
-</audio>
-
-<audio class="bite invisible" controls preload="none">
-    <source src="<%= asset_path('bite.mp3') %>" type="audio/mpeg">
-</audio>
-
-<div class="main">
-  <div id="grids-caterpillar">
-    <% row = 1 %>
-    <% i = 1 %>
-    <% 20.times do %>
-      <% column = 1 %>
-      <% 20.times do %>
-        <div id="<%= i %>" class="grid-caterpillar <%= i == 390 ? "active" : "" %> <%= i == 390 ? "active-u" : "" %>
-          <%= column == 1 ? "left-boundary" : "" %> <%= column == 20 ? "right-boundary" : "" %>
-          <%= row == 1 ? "up-boundary" : "" %> <%= row == 20 ? "down-boundary" : "" %>"><div class="inner"></div></div>
-        <% i += 1 %>
-        <% column += 1 %>
-      <% end %>
-      <% row += 1 %>
-    <% end %>
+<div data-controller="caterpillar">
+  <div class="title">
+    <h1 id="name"><%= link_to "Caterpillar", root_path %></h1>
   </div>
 
-  <div class="data">
-    <a><b>Level:</b></a>
-    <div id="level-selector">
-      <div id="level-decrease" class="level-adjustor"><i class="fa fa-arrow-left" aria-hidden="true"></i></div>
-      <div id="level" class="level-adjustor">1</div>
-      <div id="level-increase" class="level-adjustor"><i class="fa fa-arrow-right" aria-hidden="true"></i></div>
+  <audio class="footstep invisible" controls loop preload="none">
+      <source src="<%= asset_path('grass-footstep.mp3') %>" type="audio/mpeg">
+  </audio>
+
+  <audio class="bite invisible" controls preload="none">
+      <source src="<%= asset_path('bite.mp3') %>" type="audio/mpeg">
+  </audio>
+
+  <div class="main">
+    <div id="grids-caterpillar">
+      <% row = 1 %>
+      <% i = 1 %>
+      <% 20.times do %>
+        <% column = 1 %>
+        <% 20.times do %>
+          <div id="<%= i %>" class="grid-caterpillar <%= i == 390 ? "active" : "" %> <%= i == 390 ? "active-u" : "" %>
+            <%= column == 1 ? "left-boundary" : "" %> <%= column == 20 ? "right-boundary" : "" %>
+            <%= row == 1 ? "up-boundary" : "" %> <%= row == 20 ? "down-boundary" : "" %>"><div class="inner"></div></div>
+          <% i += 1 %>
+          <% column += 1 %>
+        <% end %>
+        <% row += 1 %>
+      <% end %>
     </div>
-    <a><b>Score:</b></a>
-    <div id="score">0</div>
-    <div id="start">Start</div>
-    <div class="instructions">
-      <a>Move using the arrow keys.</a>
+
+    <div class="data">
+      <a><b>Level:</b></a>
+      <div id="level-selector">
+        <div id="level-decrease" class="level-adjustor"><i class="fa fa-arrow-left" aria-hidden="true"></i></div>
+        <div id="level" class="level-adjustor">1</div>
+        <div id="level-increase" class="level-adjustor"><i class="fa fa-arrow-right" aria-hidden="true"></i></div>
+      </div>
+      <a><b>Score:</b></a>
+      <div id="score">0</div>
+      <div id="start">Start</div>
+      <div class="instructions">
+        <a>Move using the arrow keys.</a>
+      </div>
+      <%= link_to caterpillar_path do %>
+        <div id="reset">Reset</div>
+      <% end %>
     </div>
-    <%= link_to caterpillar_path do %>
-      <div id="reset">Reset</div>
-    <% end %>
   </div>
 </div>

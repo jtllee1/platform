@@ -1,44 +1,46 @@
-<div class="title">
-  <h1 id="name"><%= link_to "Depth Charge", root_path %></h1>
-</div>
+<div data-controller="depth-charge">
+  <div class="title">
+    <h1 id="name"><%= link_to "Depth Charge", root_path %></h1>
+  </div>
 
-<audio class="laser invisible" controls preload="none">
-    <source src="<%= asset_path('laser.mp3') %>" type="audio/mpeg">
-</audio>
+  <audio class="laser invisible" controls preload="none">
+      <source src="<%= asset_path('laser.mp3') %>" type="audio/mpeg">
+  </audio>
 
-<audio class="reload invisible" controls preload="none">
-    <source src="<%= asset_path('reload-ammo.mp3') %>" type="audio/mpeg">
-</audio>
+  <audio class="reload invisible" controls preload="none">
+      <source src="<%= asset_path('reload-ammo.mp3') %>" type="audio/mpeg">
+  </audio>
 
-<audio class="impact invisible" controls preload="none">
-    <source src="<%= asset_path('depth-charge.mp3') %>" type="audio/mpeg">
-</audio>
+  <audio class="impact invisible" controls preload="none">
+      <source src="<%= asset_path('depth-charge.mp3') %>" type="audio/mpeg">
+  </audio>
 
-<audio class="swim invisible" controls preload="none">
-    <source src="<%= asset_path('swim.mp3') %>" type="audio/mpeg">
-</audio>
+  <audio class="swim invisible" controls preload="none">
+      <source src="<%= asset_path('swim.mp3') %>" type="audio/mpeg">
+  </audio>
 
-<audio class="lose invisible" controls preload="none">
-    <source src="<%= asset_path('block-impact.mp3') %>" type="audio/mpeg">
-</audio>
+  <audio class="lose invisible" controls preload="none">
+      <source src="<%= asset_path('block-impact.mp3') %>" type="audio/mpeg">
+  </audio>
 
-<img src="<%= asset_path("diver.jpg") %>" class="invisible" id="avatar">
+  <img src="<%= asset_path("diver.jpg") %>" class="invisible" id="avatar">
 
-<img src="<%= asset_path("fish.png") %>" class="invisible" id="enemy">
+  <img src="<%= asset_path("fish.png") %>" class="invisible" id="enemy">
 
-<img src="<%= asset_path("ammo.png") %>" class="invisible" id="ammo">
+  <img src="<%= asset_path("ammo.png") %>" class="invisible" id="ammo">
 
-<img src="<%= asset_path("laser.png") %>" class="invisible" id="laser">
+  <img src="<%= asset_path("laser.png") %>" class="invisible" id="laser">
 
-<div class="depth-charge">
-  <canvas id="game"></canvas>
+  <div class="depth-charge">
+    <canvas id="game"></canvas>
 
-  <div class="data depth-charge-data">
-    <a><b>Score:</b></a>
-    <div id="score">0</div>
-    <div id="start">Start</div>
-    <div class="instructions">
-      <a>Click left mouse button or press <b>↑</b> to swim up and <b>SPACE</b> to fire. Collect ammo to increase your number of shots.</a>
+    <div class="data depth-charge-data">
+      <a><b>Score:</b></a>
+      <div id="score">0</div>
+      <div id="start">Start</div>
+      <div class="instructions">
+        <a>Click left mouse button or press <b>↑</b> to swim up and <b>SPACE</b> to fire. Collect ammo to increase your number of shots.</a>
+      </div>
     </div>
   </div>
 </div>

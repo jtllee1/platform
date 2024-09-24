@@ -1,75 +1,76 @@
-<div class="title">
-  <h1 id="name"><%= link_to "Sound Beat", root_path %></h1>
-</div>
+<div data-controller="sound-beat">
+  <div class="title">
+    <h1 id="name"><%= link_to "Sound Beat", root_path %></h1>
+  </div>
 
-<div id="game-state" class="invisible">Off</div>
+  <div id="game-state" class="invisible">Off</div>
 
-<audio class="cymbal invisible" controls preload="none">
-    <source src="<%= asset_path('cymbal.mp3') %>" type="audio/mpeg">
-</audio>
+  <audio class="cymbal invisible" controls preload="none">
+      <source src="<%= asset_path('cymbal.mp3') %>" type="audio/mpeg">
+  </audio>
 
-<audio class="bg-music invisible" controls preload="none">
-    <source src="<%= asset_path('bensound-creativeminds.mp3') %>" type="audio/mpeg">
-</audio>
-<audio class="bg-music invisible" controls preload="none">
-    <source src="<%= asset_path('bensound-ukulele.mp3') %>" type="audio/mpeg">
-</audio>
-<audio class="bg-music invisible" controls preload="none">
-    <source src="<%= asset_path('bensound-happyrock.mp3') %>" type="audio/mpeg">
-</audio>
-<audio class="bg-music invisible" controls preload="none">
-    <source src="<%= asset_path('bensound-jazzyfrenchy.mp3') %>" type="audio/mpeg">
-</audio>
-<audio class="bg-music invisible" controls preload="none">
-    <source src="<%= asset_path('bensound-buddy.mp3') %>" type="audio/mpeg">
-</audio>
+  <audio class="bg-music invisible" controls preload="none">
+      <source src="<%= asset_path('bensound-creativeminds.mp3') %>" type="audio/mpeg">
+  </audio>
+  <audio class="bg-music invisible" controls preload="none">
+      <source src="<%= asset_path('bensound-ukulele.mp3') %>" type="audio/mpeg">
+  </audio>
+  <audio class="bg-music invisible" controls preload="none">
+      <source src="<%= asset_path('bensound-happyrock.mp3') %>" type="audio/mpeg">
+  </audio>
+  <audio class="bg-music invisible" controls preload="none">
+      <source src="<%= asset_path('bensound-jazzyfrenchy.mp3') %>" type="audio/mpeg">
+  </audio>
+  <audio class="bg-music invisible" controls preload="none">
+      <source src="<%= asset_path('bensound-buddy.mp3') %>" type="audio/mpeg">
+  </audio>
 
-<div class="sb-container">
-  <div class="sound-beat">
-    <div class="box"></div>
+  <div class="sb-container">
+    <div class="sound-beat">
+      <div class="box"></div>
 
-    <div id="hit">Are You Ready?</div>
+      <div id="hit">Are You Ready?</div>
 
-    <div class="data">
-      <select id="song">
-        <option value="0">Creative Minds</option>
-        <option value="1">Ukulele</option>
-        <option value="2">Happy Rock</option>
-        <option value="3">Jazzy Frenchy</option>
-        <option value="4">Buddy</option>
-      </select>
-      <br>
-      <a><b>Score:</b></a>
-      <div id="score">0</div>
-      <div id="start">Start</div>
-      <div class="instructions">
-        <p>Press the arrow keys to match the timing of the falling tiles.</p>
-        Music: <a href="https://www.bensound.com">Bensound</a>
+      <div class="data">
+        <select id="song">
+          <option value="0">Creative Minds</option>
+          <option value="1">Ukulele</option>
+          <option value="2">Happy Rock</option>
+          <option value="3">Jazzy Frenchy</option>
+          <option value="4">Buddy</option>
+        </select>
+        <br>
+        <a><b>Score:</b></a>
+        <div id="score">0</div>
+        <div id="start">Start</div>
+        <div class="instructions">
+          <p>Press the arrow keys to match the timing of the falling tiles.</p>
+          Music: <a href="https://www.bensound.com">Bensound</a>
+        </div>
+      </div>
+    </div>
+
+    <% layer = 1 %>
+    <div class="wrapper">
+      <div class="platform-area">
+        <% i = 1 %>
+        <% 9.times do %>
+          <% position = 1 %>
+          <% 4.times do %>
+            <div class="cube cube-<%= i %>">
+              <div class="box l-<%= layer %> p-<%= position %> front"></div>
+              <div class="box l-<%= layer %> p-<%= position %> right"></div>
+              <div class="box l-<%= layer %> p-<%= position %> back"></div>
+              <div class="box l-<%= layer %> p-<%= position %> left"></div>
+              <div class="box l-<%= layer %> p-<%= position %> bottom"></div>
+              <div class="box l-<%= layer %> p-<%= position %> top"></div>
+            </div>
+            <% i += 1 %>
+            <% position += 1 %>
+          <% end %>
+          <% layer += 1 %>
+        <% end %>
       </div>
     </div>
   </div>
-
-  <% layer = 1 %>
-  <div class="wrapper">
-    <div class="platform-area">
-      <% i = 1 %>
-      <% 9.times do %>
-        <% position = 1 %>
-        <% 4.times do %>
-          <div class="cube cube-<%= i %>">
-            <div class="box l-<%= layer %> p-<%= position %> front"></div>
-            <div class="box l-<%= layer %> p-<%= position %> right"></div>
-            <div class="box l-<%= layer %> p-<%= position %> back"></div>
-            <div class="box l-<%= layer %> p-<%= position %> left"></div>
-            <div class="box l-<%= layer %> p-<%= position %> bottom"></div>
-            <div class="box l-<%= layer %> p-<%= position %> top"></div>
-          </div>
-          <% i += 1 %>
-          <% position += 1 %>
-        <% end %>
-        <% layer += 1 %>
-      <% end %>
-    </div>
-  </div>
 </div>
-

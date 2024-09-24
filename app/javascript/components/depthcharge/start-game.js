@@ -16,14 +16,13 @@ const startGame = () => {
   let scale;
 
   function screenSize() {
-    if ($(window).height() > 800 && $(window).width() > 1000) {
+    if (window.innerHeight > 800 && window.innerWidth > 1000) {
       scale = 1.5;
     }
     else {
       scale = 1;
     };
-  };
-
+  }
   screenSize();
 
   window.addEventListener('resize', (e) => {

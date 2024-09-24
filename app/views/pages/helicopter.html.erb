@@ -1,37 +1,39 @@
-<div class="title">
-  <h1 id="name"><%= link_to "Helicopter", root_path %></h1>
-</div>
-
-<audio class="helicopter invisible" controls loop preload="none">
-    <source src="<%= asset_path('helicopter.mp3') %>" type="audio/mpeg">
-</audio>
-
-<div class="main">
-  <div id="grids-heli">
-    <% row = 1 %>
-    <% i = 1 %>
-    <% 40.times do %>
-      <% column = 1 %>
-      <% 100.times do %>
-        <div id="<%= i %>" class="grid-heli <%= i == 3901 ? "active" : "" %>
-          <%= i == 3902 ? "active" : "" %> <%= i == 3903 ? "active" : "" %>
-          <%= i == 3904 ? "active" : "" %> <%= i == 3905 ? "active" : "" %>
-          <%= i == 3801 ? "active" : "" %> <%= i == 3802 ? "active" : "" %>
-          <%= i == 3803 ? "active" : "" %> <%= i == 3804 ? "active" : "" %>
-          <%= i == 3805 ? "active" : "" %> r-<%= row %> c-<%= column %>"></div>
-        <% i += 1 %>
-        <% column += 1 %>
-      <% end %>
-      <% row += 1 %>
-    <% end %>
+<div data-controller="helicopter">
+  <div class="title">
+    <h1 id="name"><%= link_to "Helicopter", root_path %></h1>
   </div>
 
-  <div class="data">
-    <a><b>Score:</b></a>
-    <div id="score">0</div>
-    <div id="start">Start</div>
-    <div class="instructions">
-      <a>Press space or click to fly.</a>
+  <audio class="helicopter invisible" controls loop preload="none">
+      <source src="<%= asset_path('helicopter.mp3') %>" type="audio/mpeg">
+  </audio>
+
+  <div class="main">
+    <div id="grids-heli">
+      <% row = 1 %>
+      <% i = 1 %>
+      <% 40.times do %>
+        <% column = 1 %>
+        <% 100.times do %>
+          <div id="<%= i %>" class="grid-heli <%= i == 3901 ? "active" : "" %>
+            <%= i == 3902 ? "active" : "" %> <%= i == 3903 ? "active" : "" %>
+            <%= i == 3904 ? "active" : "" %> <%= i == 3905 ? "active" : "" %>
+            <%= i == 3801 ? "active" : "" %> <%= i == 3802 ? "active" : "" %>
+            <%= i == 3803 ? "active" : "" %> <%= i == 3804 ? "active" : "" %>
+            <%= i == 3805 ? "active" : "" %> r-<%= row %> c-<%= column %>"></div>
+          <% i += 1 %>
+          <% column += 1 %>
+        <% end %>
+        <% row += 1 %>
+      <% end %>
+    </div>
+
+    <div class="data">
+      <a><b>Score:</b></a>
+      <div id="score">0</div>
+      <div id="start">Start</div>
+      <div class="instructions">
+        <a>Press space or click to fly.</a>
+      </div>
     </div>
   </div>
 </div>
