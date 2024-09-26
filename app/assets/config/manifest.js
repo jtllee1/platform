@@ -1,5 +1,9 @@
 //= link_tree ../images
 //= link_directory ../stylesheets .css
+//= link_tree ../../javascript .js
+//= link_tree ../../../vendor/javascript .js
+//= link popper.js
+//= link bootstrap.min.js
 //= link tetris-music.mp3
 //= link laser.mp3
 //= link grass-footstep.mp3

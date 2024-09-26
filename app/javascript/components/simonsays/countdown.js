@@ -1,3 +1,5 @@
+import { setTimeout } from '../tools/timeout_manager';
+
 const countdown = () => {
   const start = document.querySelector(".start");
   const gameState = document.getElementById("game-state");

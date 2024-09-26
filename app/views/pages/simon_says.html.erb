@@ -1,83 +1,85 @@
-<div class="title">
-  <h1 id="name"><%= link_to "Simon Says", root_path %></h1>
-</div>
+<div data-controller="simon-says">
+  <div class="title">
+    <h1 id="name"><%= link_to "Simon Says", root_path %></h1>
+  </div>
 
-<audio class="button-1 invisible" controls preload="none">
-    <source src="<%= asset_path('button-1.mp3') %>" type="audio/mpeg">
-</audio>
+  <audio class="button-1 invisible" controls preload="none">
+      <source src="<%= asset_path('button-1.mp3') %>" type="audio/mpeg">
+  </audio>
 
-<audio class="button-2 invisible" controls preload="none">
-    <source src="<%= asset_path('button-2.mp3') %>" type="audio/mpeg">
-</audio>
+  <audio class="button-2 invisible" controls preload="none">
+      <source src="<%= asset_path('button-2.mp3') %>" type="audio/mpeg">
+  </audio>
 
-<audio class="button-3 invisible" controls preload="none">
-    <source src="<%= asset_path('button-3.mp3') %>" type="audio/mpeg">
-</audio>
+  <audio class="button-3 invisible" controls preload="none">
+      <source src="<%= asset_path('button-3.mp3') %>" type="audio/mpeg">
+  </audio>
 
-<audio class="button-4 invisible" controls preload="none">
-    <source src="<%= asset_path('button-4.mp3') %>" type="audio/mpeg">
-</audio>
+  <audio class="button-4 invisible" controls preload="none">
+      <source src="<%= asset_path('button-4.mp3') %>" type="audio/mpeg">
+  </audio>
 
-<audio class="button-5 invisible" controls preload="none">
-    <source src="<%= asset_path('button-5.mp3') %>" type="audio/mpeg">
-</audio>
+  <audio class="button-5 invisible" controls preload="none">
+      <source src="<%= asset_path('button-5.mp3') %>" type="audio/mpeg">
+  </audio>
 
-<audio class="button-6 invisible" controls preload="none">
-    <source src="<%= asset_path('button-6.mp3') %>" type="audio/mpeg">
-</audio>
+  <audio class="button-6 invisible" controls preload="none">
+      <source src="<%= asset_path('button-6.mp3') %>" type="audio/mpeg">
+  </audio>
 
-<div id="game-state" class="invisible">Off</div>
-<div id="com-select" class="invisible">
-<!--   <div class="sequence">1</div>
-  <div class="sequence">2</div>
-  <div class="sequence">3</div>
-  <div class="sequence">4</div>
-  <div class="sequence">5</div> -->
-</div>
+  <div id="game-state" class="invisible">Off</div>
+  <div id="com-select" class="invisible">
+  <!--   <div class="sequence">1</div>
+    <div class="sequence">2</div>
+    <div class="sequence">3</div>
+    <div class="sequence">4</div>
+    <div class="sequence">5</div> -->
+  </div>
 
-<div class="main">
-  <div id="ss-game">
-    <div class="simon-start">
-      <div class="button start">Start Game</div>
-    </div>
-    <div class="play-area">
-      <div id="options">
-      <!--   <div class="option" id="o-1"></div>
-        <div class="option" id="o-2"></div>
-        <div class="option" id="o-3"></div>
-        <div class="option" id="o-4"></div>
-        <div class="option" id="o-5"></div> -->
-        <% layer = 1 %>
-        <div class="wrapper">
-          <div class="box-area">
-            <% i = 1 %>
-            <% 3.times do %>
-              <% position = 1 %>
-              <% 9.times do %>
-                <div class="cube cube-<%= i %>">
-                  <div class="box l-<%= layer %> p-<%= position %> front"></div>
-                  <div class="box l-<%= layer %> p-<%= position %> right"></div>
-                  <div class="box l-<%= layer %> p-<%= position %> back"></div>
-                  <div class="box l-<%= layer %> p-<%= position %> left"></div>
-                  <div class="box l-<%= layer %> p-<%= position %> bottom"></div>
-                  <div class="box l-<%= layer %> p-<%= position %> top"></div>
-                </div>
-                <% i += 1 %>
-                <% position += 1 %>
+  <div class="main">
+    <div id="ss-game">
+      <div class="simon-start">
+        <div class="button start">Start Game</div>
+      </div>
+      <div class="play-area">
+        <div id="options">
+        <!--   <div class="option" id="o-1"></div>
+          <div class="option" id="o-2"></div>
+          <div class="option" id="o-3"></div>
+          <div class="option" id="o-4"></div>
+          <div class="option" id="o-5"></div> -->
+          <% layer = 1 %>
+          <div class="wrapper">
+            <div class="box-area">
+              <% i = 1 %>
+              <% 3.times do %>
+                <% position = 1 %>
+                <% 9.times do %>
+                  <div class="cube cube-<%= i %>">
+                    <div class="box l-<%= layer %> p-<%= position %> front"></div>
+                    <div class="box l-<%= layer %> p-<%= position %> right"></div>
+                    <div class="box l-<%= layer %> p-<%= position %> back"></div>
+                    <div class="box l-<%= layer %> p-<%= position %> left"></div>
+                    <div class="box l-<%= layer %> p-<%= position %> bottom"></div>
+                    <div class="box l-<%= layer %> p-<%= position %> top"></div>
+                  </div>
+                  <% i += 1 %>
+                  <% position += 1 %>
+                <% end %>
+                <% layer += 1 %>
               <% end %>
-              <% layer += 1 %>
-            <% end %>
+            </div>
           </div>
         </div>
-      </div>
-      <div id="display">
-        <div class="instructions">Watch the following sequence and repeat it during your turn. Click and drag to rotate the cube.</div>
-        <!-- <div class="button selection s-1"></div>
-        <div class="button selection s-2"></div>
-        <div class="button selection s-3"></div>
-        <div class="button selection s-4"></div>
-        <div class="button selection s-5"></div>
-        <div class="button selection s-6"></div> -->
+        <div id="display">
+          <div class="instructions">Watch the following sequence and repeat it during your turn. Click and drag to rotate the cube.</div>
+          <!-- <div class="button selection s-1"></div>
+          <div class="button selection s-2"></div>
+          <div class="button selection s-3"></div>
+          <div class="button selection s-4"></div>
+          <div class="button selection s-5"></div>
+          <div class="button selection s-6"></div> -->
+        </div>
       </div>
     </div>
   </div>

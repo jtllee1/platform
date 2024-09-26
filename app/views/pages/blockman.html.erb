@@ -1,94 +1,96 @@
-<div class="title">
-  <h1 id="name"><%= link_to "Blockman", root_path %></h1>
-</div>
-
-<audio class="impact invisible" controls preload="none">
-    <source src="<%= asset_path('block-impact.mp3') %>" type="audio/mpeg">
-</audio>
-
-<div class="shoot-status-1 invisible">on</div>
-<div class="shoot-status-2 invisible">on</div>
-<div class="collision-status-1 invisible">off</div>
-<div class="collision-status-2 invisible">off</div>
-
-<div class="container blockman">
-  <div class="health health-1">
-    <div class="outer">
-      <div class="desc"><b>Player 1</b></div>
-    </div>
-    <div class="lives">
-      <div class="life"></div>
-      <div class="life"></div>
-      <div class="life"></div>
-    </div>
+<div data-controller="blockman">
+  <div class="title">
+    <h1 id="name"><%= link_to "Blockman", root_path %></h1>
   </div>
 
-  <% layer = 1 %>
+  <audio class="impact invisible" controls preload="none">
+      <source src="<%= asset_path('block-impact.mp3') %>" type="audio/mpeg">
+  </audio>
 
-  <div class="wrapper">
-    <div class="platform-area">
-      <div class="cube cube-player">
-        <div class="box front middle"></div>
-        <div class="box right middle"></div>
-        <div class="box back middle"></div>
-        <div class="box left middle"></div>
-        <div class="box bottom middle"></div>
-        <div class="box top middle"></div>
+  <div class="shoot-status-1 invisible">on</div>
+  <div class="shoot-status-2 invisible">on</div>
+  <div class="collision-status-1 invisible">off</div>
+  <div class="collision-status-2 invisible">off</div>
+
+  <div class="container blockman">
+    <div class="health health-1">
+      <div class="outer">
+        <div class="desc"><b>Player 1</b></div>
       </div>
-
-      <div class="cube cube-enemy">
-        <div class="box front middle"></div>
-        <div class="box right middle"></div>
-        <div class="box back middle"></div>
-        <div class="box left middle"></div>
-        <div class="box bottom middle"></div>
-        <div class="box top middle"></div>
+      <div class="lives">
+        <div class="life"></div>
+        <div class="life"></div>
+        <div class="life"></div>
       </div>
+    </div>
 
-      <div class="cube laser laser-1"></div>
-      <div class="cube laser laser-2"></div>
+    <% layer = 1 %>
 
-      <% i = 0 %>
-      <% 9.times do %>
-        <% position = 0 %>
-        <% 5.times do %>
-          <div class="cube cube-<%= i %>">
-            <div class="box l-<%= layer %> p-<%= position %> front"></div>
-            <div class="box l-<%= layer %> p-<%= position %> right"></div>
-            <div class="box l-<%= layer %> p-<%= position %> back"></div>
-            <div class="box l-<%= layer %> p-<%= position %> left"></div>
-            <div class="box l-<%= layer %> p-<%= position %> bottom"></div>
-            <div class="box l-<%= layer %> p-<%= position %> top"></div>
-          </div>
-          <% i += 1 %>
-          <% position += 1 %>
+    <div class="wrapper">
+      <div class="platform-area">
+        <div class="cube cube-player">
+          <div class="box front middle"></div>
+          <div class="box right middle"></div>
+          <div class="box back middle"></div>
+          <div class="box left middle"></div>
+          <div class="box bottom middle"></div>
+          <div class="box top middle"></div>
+        </div>
+
+        <div class="cube cube-enemy">
+          <div class="box front middle"></div>
+          <div class="box right middle"></div>
+          <div class="box back middle"></div>
+          <div class="box left middle"></div>
+          <div class="box bottom middle"></div>
+          <div class="box top middle"></div>
+        </div>
+
+        <div class="cube laser laser-1"></div>
+        <div class="cube laser laser-2"></div>
+
+        <% i = 0 %>
+        <% 9.times do %>
+          <% position = 0 %>
+          <% 5.times do %>
+            <div class="cube cube-<%= i %>">
+              <div class="box l-<%= layer %> p-<%= position %> front"></div>
+              <div class="box l-<%= layer %> p-<%= position %> right"></div>
+              <div class="box l-<%= layer %> p-<%= position %> back"></div>
+              <div class="box l-<%= layer %> p-<%= position %> left"></div>
+              <div class="box l-<%= layer %> p-<%= position %> bottom"></div>
+              <div class="box l-<%= layer %> p-<%= position %> top"></div>
+            </div>
+            <% i += 1 %>
+            <% position += 1 %>
+          <% end %>
+          <% layer += 1 %>
         <% end %>
-        <% layer += 1 %>
-      <% end %>
+      </div>
     </div>
-  </div>
 
-  <div class="health health-2">
-    <div class="outer">
-      <div class="desc"><b>Player 2</b></div>
+    <div class="health health-2">
+      <div class="outer">
+        <div class="desc"><b>Player 2</b></div>
+      </div>
+      <div class="lives">
+        <div class="life"></div>
+        <div class="life"></div>
+        <div class="life"></div>
+      </div>
     </div>
-    <div class="lives">
-      <div class="life"></div>
-      <div class="life"></div>
-      <div class="life"></div>
-    </div>
-  </div>
 
-  <div class="data">
-    <a><b>Level:</b></a>
-    <div id="level-selector">
-      <div id="level-decrease" class="level-adjustor"><i class="fa fa-arrow-left" aria-hidden="true"></i></div>
-      <div id="level" class="level-adjustor">1</div>
-      <div id="level-increase" class="level-adjustor"><i class="fa fa-arrow-right" aria-hidden="true"></i></div>
+    <div class="data">
+      <a><b>Level:</b></a>
+      <div id="level-selector">
+        <div id="level-decrease" class="level-adjustor"><i class="fa fa-arrow-left" aria-hidden="true"></i></div>
+        <div id="level" class="level-adjustor">1</div>
+        <div id="level-increase" class="level-adjustor"><i class="fa fa-arrow-right" aria-hidden="true"></i></div>
+      </div>
+      <div class="instructions">
+        <a>Press arrow keys to move and SPACE to fire at the opponent.</a>
+      </div>
+      <div id="start">Start</div>
     </div>
-    <div class="instructions">
-      <a>Press arrow keys to move and SPACE to fire at the opponent.</a>
-    </div>
-    <div id="start">Start</div>
   </div>
 </div>

@@ -1,3 +1,6 @@
+import { setTimeout } from "../tools/timeout_manager";
+import { addEventListener } from "../tools/event_listener_manager";
+
 const swap = () => {
   const grids = document.querySelectorAll(".grid");
 
@@ -7,7 +10,7 @@ const swap = () => {
   let color2 = "";
 
   grids.forEach(grid => {
-    grid.addEventListener("click", () => {
+    addEventListener(grid, "click", () => {
       let gameState = document.getElementById("game-state");
       if (gameState.innerText == "On") {
         if (grid.classList.contains("item") && count < 1) {

@@ -1,3 +1,4 @@
+import { setTimeout } from '../tools/timeout_manager';
 import { life } from '../blockman/life';
 
 const shoot = (direction) => {
@@ -138,4 +139,3 @@ const shoot = (direction) => {
 };
 
 export { shoot };
-

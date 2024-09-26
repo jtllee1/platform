@@ -1,3 +1,5 @@
+import { setTimeout } from '../tools/timeout_manager';
+import { addEventListener } from '../tools/event_listener_manager';
 import { obstacle } from '../helicopter/obstacle';
 import { createClouds } from '../helicopter/create-clouds';
 
@@ -15,7 +17,7 @@ const start = () => {
   createClouds(2914);
   createClouds(3373);
 
-  start.addEventListener('click', () => {
+  addEventListener(start, 'click', () => {
     on = true;
 
     helicopterSound.play();

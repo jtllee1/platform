@@ -1,11 +1,16 @@
+import { addEventListener } from "../tools/event_listener_manager";
+
 const sortScroll = () => {
-  $(document).ready(function() {
-    $(window).scroll(function() {
-      if($(this).scrollTop() > 100) {
-        $(".sort").css({"opacity" : "0.8"});
-      }
-      else {
-        $(".sort").css({"opacity" : "1"});
+  addEventListener(document, 'DOMContentLoaded', () => {
+    addEventListener(window, 'scroll', () => {
+      if (window.scrollY > 100) {
+        document.querySelectorAll('.sort').forEach((element) => {
+          element.style.opacity = '0.8';
+        });
+      } else {
+        document.querySelectorAll('.sort').forEach((element) => {
+          element.style.opacity = '1';
+        });
       }
     });
   });

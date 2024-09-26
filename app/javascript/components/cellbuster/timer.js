@@ -1,3 +1,4 @@
+import { setTimeout } from '../tools/timeout_manager';
 import { clearGrid } from '../cellbuster/clear-grid';
 import { checkGrid } from '../cellbuster/check-grid';
 import { scoring } from '../cellbuster/scoring';

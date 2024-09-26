@@ -1,43 +1,44 @@
-<div class="title">
-  <h1 id="name"><%= link_to "Cell Buster", root_path %></h1>
-</div>
+<div data-controller="cell-buster">
+  <div class="title">
+    <h1 id="name"><%= link_to "Cell Buster", root_path %></h1>
+  </div>
 
-<audio class="laser invisible" controls preload="none">
-    <source src="<%= asset_path('laser.mp3') %>" type="audio/mpeg">
-</audio>
+  <audio class="laser invisible" controls preload="none">
+      <source src="<%= asset_path('laser.mp3') %>" type="audio/mpeg">
+  </audio>
 
-<div class="main cell">
-  <div id="grids">
-    <% row = 1 %>
-    <% i = 1 %>
-    <% 20.times do %>
-      <% column = 1 %>
+  <div class="main cell">
+    <div id="grids">
+      <% row = 1 %>
+      <% i = 1 %>
       <% 20.times do %>
-        <div id="<%= i %>" class="grid <%= i == 390 ? "active" : "" %>
-          <%= column == 1 ? "left-boundary" : "" %> <%= column == 20 ? "right-boundary" : "" %>
-          <%= row == 1 ? "up-boundary" : "" %> <%= row == 20 ? "down-boundary" : "" %>"></div>
-        <% i += 1 %>
-        <% column += 1 %>
+        <% column = 1 %>
+        <% 20.times do %>
+          <div id="<%= i %>" class="grid <%= i == 390 ? "active" : "" %>
+            <%= column == 1 ? "left-boundary" : "" %> <%= column == 20 ? "right-boundary" : "" %>
+            <%= row == 1 ? "up-boundary" : "" %> <%= row == 20 ? "down-boundary" : "" %>"></div>
+          <% i += 1 %>
+          <% column += 1 %>
+        <% end %>
+        <% row += 1 %>
       <% end %>
-      <% row += 1 %>
-    <% end %>
-  </div>
-
-  <div class="data">
-    <a><b>Time Remaining:</b></a>
-    <div id="timer">60</div>
-    <a><b>Level:</b></a>
-    <div id="level-selector">
-      <div id="level-decrease" class="level-adjustor"><i class="fa fa-arrow-left" aria-hidden="true"></i></div>
-      <div id="level" class="level-adjustor">1</div>
-      <div id="level-increase" class="level-adjustor"><i class="fa fa-arrow-right" aria-hidden="true"></i></div>
     </div>
-    <a><b>Score:</b></a>
-    <div id="score">0</div>
-    <div id="start">Start</div>
-    <div class="instructions">
-      <a>Move using the arrow keys and press space to shoot.</a>
+
+    <div class="data">
+      <a><b>Time Remaining:</b></a>
+      <div id="timer">60</div>
+      <a><b>Level:</b></a>
+      <div id="level-selector">
+        <div id="level-decrease" class="level-adjustor"><i class="fa fa-arrow-left" aria-hidden="true"></i></div>
+        <div id="level" class="level-adjustor">1</div>
+        <div id="level-increase" class="level-adjustor"><i class="fa fa-arrow-right" aria-hidden="true"></i></div>
+      </div>
+      <a><b>Score:</b></a>
+      <div id="score">0</div>
+      <div id="start">Start</div>
+      <div class="instructions">
+        <a>Move using the arrow keys and press space to shoot.</a>
+      </div>
     </div>
   </div>
 </div>
-

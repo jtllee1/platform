@@ -1,5 +1,8 @@
+import { setTimeout } from '../tools/timeout_manager';
+import { addEventListener } from '../tools/event_listener_manager';
+
 const grid = () => {
-  window.addEventListener("keydown", function(e) {
+  addEventListener(window, 'keydown', (e) => {
     if ([32, 37, 38, 39, 40].indexOf(e.keyCode) > -1) {
         e.preventDefault();
     }
@@ -7,11 +10,11 @@ const grid = () => {
 
   var keyState = {};
 
-  document.addEventListener('keydown', (e) => {
+  addEventListener(document, 'keydown', (e) => {
     keyState[e.keyCode] = true;
   });
 
-  document.addEventListener('keyup', (e) => {
+  addEventListener(document, 'keyup', (e) => {
     keyState[e.keyCode] = false;
   });
 

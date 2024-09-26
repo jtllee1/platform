@@ -1,10 +1,10 @@
+import { addEventListener } from '../tools/event_listener_manager';
 import { columnHover } from '../connectfour/column-hover';
 import { animation } from '../connectfour/animation';
 import { reset } from '../connectfour/reset';
 
 const select = () => {
   const slots = document.querySelectorAll(".grid-c-4");
-  const grids = document.getElementById("grids-c-4");
   const player1 = document.getElementById("player-1");
   const player2 = document.getElementById("player-2");
   const restart = document.getElementById("reset-c-4");
@@ -14,7 +14,7 @@ const select = () => {
   function isOdd(n) { return Math.abs(n % 2) == 1;};
 
   slots.forEach(slot => {
-    slot.addEventListener('mouseover', () => {
+    addEventListener(slot, 'mouseover', () => {
       slots.forEach(slot => {
         slot.classList.remove("hover-1");
         slot.classList.remove("hover-2");
@@ -33,7 +33,7 @@ const select = () => {
       };
     });
 
-    slot.addEventListener('click', () => {
+    addEventListener(slot, 'click', () => {
       if (isOdd(turn)) {
         animation(activeColumn, "active-1");
         columnHover(activeColumn, "stop");
@@ -50,7 +50,7 @@ const select = () => {
     });
   });
 
-  restart.addEventListener('click', () => {
+  addEventListener(restart, 'click', () => {
     slots.forEach(slot => {
       reset(slot);
     });

@@ -1,3 +1,5 @@
+import { setTimeout } from '../tools/timeout_manager';
+import { addEventListener } from '../tools/event_listener_manager';
 import { clearGrid } from '../cellbuster/clear-grid';
 import { enemyMovement } from '../cellbuster/enemy-movement';
 
@@ -5,7 +7,7 @@ const generateEnemies = () => {
   const start = document.getElementById("start");
   const scoreBoard = document.getElementById("score");
 
-  start.addEventListener('click', () => {
+  addEventListener(start, 'click', (e) => {
     const level = document.getElementById("level").innerText;
     const ids = [];
     const level1 = [];

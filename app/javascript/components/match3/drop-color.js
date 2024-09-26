@@ -1,3 +1,4 @@
+import { setTimeout } from '../tools/timeout_manager';
 import { generateColor } from '../match3/generate-color';
 import { checkMatch } from '../match3/check-match';
 
