@@ -1,3 +1,5 @@
+import { setTimeout } from '../tools/timeout_manager';
+import { addEventListener } from '../tools/event_listener_manager';
 import { playLoop } from '../platform/play-loop';
 
 const control = () => {
@@ -17,7 +19,7 @@ const control = () => {
   cube3.classList.add("far", "fa-arrow-alt-circle-down");
   cube4.classList.add("far", "fa-arrow-alt-circle-right");
 
-  start.addEventListener('click', (e) => {
+  addEventListener(start, 'click', (e) => {
     if (gameState.innerText == "Off") {
       const getValue = document.getElementById('song').selectedOptions[0].value;
       const bgMusic = bgMusics[getValue];
@@ -32,13 +34,13 @@ const control = () => {
 
       playLoop(bgMusic);
 
-      bgMusic.addEventListener('ended', (e) => {
+      addEventListener(bgMusic, 'ended', (e) => {
         gameState.innerText = "Off";
       });
     };
   });
 
-  document.addEventListener('keyup', (e) => {
+  addEventListener(document, 'keyup', (e) => {
     if (e.keyCode == 37) {
       cubes[0].classList.add("up");
 

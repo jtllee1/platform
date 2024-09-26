@@ -1,3 +1,4 @@
+import { setTimeout } from '../tools/timeout_manager';
 import { checkCondition } from '../connectfour/check-condition';
 
 const animation = (column, addedClass) => {

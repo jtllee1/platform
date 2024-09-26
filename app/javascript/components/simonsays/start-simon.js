@@ -1,3 +1,5 @@
+import { setTimeout } from '../tools/timeout_manager';
+import { addEventListener } from '../tools/event_listener_manager';
 import { sequence } from '../simonsays/sequence';
 import { selection } from '../simonsays/selection';
 import { clear } from '../simonsays/clear';
@@ -34,7 +36,7 @@ const startSimon = () => {
     };
   };
 
-  start.addEventListener('click', () => {
+  addEventListener(start, 'click', () => {
     if (gameState.innerText == "GO") {
       const selections = document.querySelectorAll(".sequence");
 

@@ -1,3 +1,5 @@
+import { setTimeout } from '../tools/timeout_manager';
+
 const pop = (num, blastTiming, shockWaveTiming, number) => {
   const strength = parseInt(document.getElementById(`strength-${number}`).innerText);
   const grid = document.getElementById(`${num}`);

@@ -1,3 +1,4 @@
+import { addEventListener } from '../tools/event_listener_manager';
 import { selection } from '../simonsays/selection';
 
 const simonSays = () => {
@@ -17,7 +18,7 @@ const simonSays = () => {
   const start = document.querySelector(".start");
   let order = 0;
 
-  option1.addEventListener('click', () => {
+  addEventListener(option1, 'click', () => {
     button1.pause();
     button1.currentTime = 0;
     button1.play();
@@ -42,7 +43,7 @@ const simonSays = () => {
     };
   });
 
-  option2.addEventListener('click', () => {
+  addEventListener(option2, 'click', () => {
     button2.pause();
     button2.currentTime = 0;
     button2.play();
@@ -67,7 +68,7 @@ const simonSays = () => {
     };
   });
 
-  option3.addEventListener('click', () => {
+  addEventListener(option3, 'click', () => {
     button3.pause();
     button3.currentTime = 0;
     button3.play();
@@ -92,7 +93,7 @@ const simonSays = () => {
     };
   });
 
-  option4.addEventListener('click', () => {
+  addEventListener(option4, 'click', () => {
     button4.pause();
     button4.currentTime = 0;
     button4.play();
@@ -117,7 +118,7 @@ const simonSays = () => {
     };
   });
 
-  option5.addEventListener('click', () => {
+  addEventListener(option5, 'click', () => {
     button5.pause();
     button5.currentTime = 0;
     button5.play();
@@ -142,7 +143,7 @@ const simonSays = () => {
     };
   });
 
-  option6.addEventListener('click', () => {
+  addEventListener(option6, 'click', () => {
     button6.pause();
     button6.currentTime = 0;
     button6.play();

@@ -1,3 +1,6 @@
+import { setInterval } from '../tools/timeout_manager';
+import { addEventListener } from '../tools/event_listener_manager';
+
 const startGame = () => {
   const start = document.getElementById("start");
   let firstStart = true;
@@ -25,7 +28,7 @@ const startGame = () => {
   }
   screenSize();
 
-  window.addEventListener('resize', (e) => {
+  addEventListener(window, 'resize', (e) => {
     screenSize();
 
     if (myGameArea) {
@@ -87,7 +90,7 @@ const startGame = () => {
     start : function() {
       this.frameNo = 0;
       this.interval = setInterval(updateGameArea, 20);
-      window.addEventListener('keydown', function (e) {
+      addEventListener(window, 'keydown', function (e) {
       // single direction movement
         // myGameArea.key = e.keyCode;
       // multiple direction movement
@@ -96,7 +99,7 @@ const startGame = () => {
           myGameArea.keys[e.keyCode] = true;
         };
       });
-      window.addEventListener('keyup', function (e) {
+      addEventListener(window, 'keyup', function (e) {
       // single direction movement
         // myGameArea.key = false;
       // multiple direction movement
@@ -115,7 +118,7 @@ const startGame = () => {
           };
         };
       });
-      window.addEventListener('mousedown', function (e) {
+      addEventListener(window, 'mousedown', function (e) {
         e.preventDefault();
         myGameArea.keys = (myGameArea.keys || []);
         myGameArea.keys[38] = true;
@@ -125,7 +128,7 @@ const startGame = () => {
           swimSound.play();
         };
       });
-      window.addEventListener('mouseup', function (e) {
+      addEventListener(window, 'mouseup', function (e) {
         e.preventDefault();
         myGameArea.keys[38] = false;
       });
@@ -157,7 +160,7 @@ const startGame = () => {
   myAmmo = new component("30px", "Consolas", "black", 10, 40, "text");
   myGameArea.create();
 
-  start.addEventListener('click', function (e) {
+  addEventListener(start, 'click', function (e) {
     if (firstStart) {
       myGameArea.start();
       firstStart = false;

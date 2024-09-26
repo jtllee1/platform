@@ -1,3 +1,4 @@
+import { setTimeout } from '../tools/timeout_manager';
 import { generateObstacle } from '../helicopter/generate-obstacle';
 import { removeObstacle } from '../helicopter/remove-obstacle';
 

@@ -1,4 +1,6 @@
 import { Controller } from "@hotwired/stimulus"
+import { clearAllTimeouts } from '../components/tools/timeout_manager';
+import { clearAllEventListeners } from '../components/tools/event_listener_manager';
 import { startSimon } from '../components/simonsays/start-simon';
 import { simonSays } from '../components/simonsays/simon-says';
 import { cube } from '../components/cube/cube';
@@ -10,5 +12,10 @@ export default class extends Controller {
     simonSays();
     cube();
     cubePress();
+  }
+
+  disconnect() {
+    clearAllTimeouts();
+    clearAllEventListeners();
   }
 }

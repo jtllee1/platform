@@ -1,3 +1,4 @@
+import { addEventListener } from '../tools/event_listener_manager';
 import { move } from '../blockman/move';
 import { shoot } from '../blockman/shoot';
 import { enemyMove } from '../blockman/enemy-move';
@@ -8,7 +9,7 @@ const startBlockman = () => {
   const start = document.getElementById("start");
   const data = document.querySelector(".data");
 
-  start.addEventListener('click', (e) => {
+  addEventListener(start, 'click', (e) => {
     const level = document.getElementById("level").innerText;
     const remainingLives = document.querySelectorAll(".empty");
 
@@ -34,7 +35,7 @@ const startBlockman = () => {
     data.classList.add("invisible");
   });
 
-  document.addEventListener('keyup', (e) => {
+  addEventListener(document, 'keyup', (e) => {
     const player = document.querySelector(".health-1")
     const lives = player.querySelectorAll(".life");
 

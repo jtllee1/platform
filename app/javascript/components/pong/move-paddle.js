@@ -1,11 +1,14 @@
+import { setTimeout } from '../tools/timeout_manager';
+import { addEventListener } from '../tools/event_listener_manager';
+
 const movePaddle = () => {
   var keyState = {};
 
-  document.addEventListener('keydown', (e) => {
+  addEventListener(document, 'keydown', (e) => {
     keyState[e.keyCode] = true;
   });
 
-  document.addEventListener('keyup', (e) => {
+  addEventListener(document, 'keyup', (e) => {
     keyState[e.keyCode] = false;
   });
 

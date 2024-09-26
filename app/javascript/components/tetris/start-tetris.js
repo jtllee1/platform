@@ -1,10 +1,12 @@
+import { setTimeout } from '../tools/timeout_manager';
+import { addEventListener } from '../tools/event_listener_manager';
 import { generateShape } from '../tetris/generate-shape';
 import { moveTetris } from '../tetris/move-tetris';
 import { rotateTetris } from '../tetris/rotate-tetris';
 import { clearCondition } from '../tetris/clear-condition';
 
 const startTetris = () => {
-  window.addEventListener("keydown", function(e) {
+  addEventListener(window, "keydown", function(e) {
     if ([32, 37, 38, 39, 40].indexOf(e.keyCode) > -1) {
         e.preventDefault();
     }
@@ -28,7 +30,7 @@ const startTetris = () => {
   let shape = shapes[Math.floor(Math.random() * 7)];
   let color = colors[Math.floor(Math.random() * 6)];
 
-  start.addEventListener('click', () => {
+  addEventListener(start, 'click', () => {
     if (gameState == false) {
       grids.forEach(grid => {
         grid.classList.remove("dropped", "dropping", "red", "orange", "green", "cyan", "yellow", "purple");
@@ -42,7 +44,7 @@ const startTetris = () => {
     };
   });
 
-  document.addEventListener('keydown', (e) => {
+  addEventListener(document, 'keydown', (e) => {
     if (e.keyCode == 40) {
       time = 50;
     };
@@ -51,7 +53,7 @@ const startTetris = () => {
     };
   });
 
-  document.addEventListener('keyup', (e) => {
+  addEventListener(document, 'keyup', (e) => {
     if (e.keyCode == 40) {
       time = 400;
     };

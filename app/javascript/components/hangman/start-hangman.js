@@ -1,3 +1,4 @@
+import { addEventListener } from '../tools/event_listener_manager';
 import { generateWord } from '../hangman/generate-word';
 import { checkLetter } from '../hangman/check-letter';
 import { generateHint } from '../hangman/generate-hint';
@@ -11,7 +12,7 @@ const startHangman = () => {
   const count = document.getElementById("count");
   const lives = document.querySelectorAll(".life");
 
-  start.addEventListener('click', () => {
+  addEventListener(start, 'click', () => {
     lives.forEach(life => {
       life.classList.add("active");
     });
@@ -29,7 +30,7 @@ const startHangman = () => {
     };
   });
 
-  document.addEventListener('keydown', (e) => {
+  addEventListener(document, 'keydown', (e) => {
     if (gameState.innerText == "On") {
       let letters = document.querySelectorAll(".letter");
 

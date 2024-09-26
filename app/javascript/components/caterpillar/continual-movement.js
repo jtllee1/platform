@@ -1,9 +1,11 @@
+import { setTimeout } from '../tools/timeout_manager';
+import { addEventListener } from '../tools/event_listener_manager';
 import { tail } from '../caterpillar/tail';
 import { generateFood } from '../caterpillar/generate-food';
 import { updateScore } from '../caterpillar/update-score';
 
 const continualMovement = () => {
-  window.addEventListener("keydown", function(e) {
+  addEventListener(window, "keydown", function(e) {
     if ([32, 37, 38, 39, 40].indexOf(e.keyCode) > -1) {
         e.preventDefault();
     }
@@ -24,7 +26,7 @@ const continualMovement = () => {
 
   keyState[38] = true;
 
-  document.addEventListener('keydown', (e) => {
+  addEventListener(document, 'keydown', (e) => {
     keyState[37] = false;
     keyState[38] = false;
     keyState[39] = false;
@@ -40,7 +42,7 @@ const continualMovement = () => {
     };
   };
 
-  start.addEventListener('click', () => {
+  addEventListener(start, 'click', () => {
     difficulty = document.getElementById("level").innerText;
 
     footstepSound.play();

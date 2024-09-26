@@ -1,3 +1,4 @@
+import { addEventListener } from '../tools/event_listener_manager';
 import { matchTimer } from '../match3/match-timer';
 import { dropColor } from '../match3/drop-color';
 import { clearGrid } from '../match3/clear-grid';
@@ -8,7 +9,7 @@ const startMatch = () => {
   const count = document.getElementById("timer");
   const scoreBoard = document.getElementById("score");
 
-  start.addEventListener('click', () => {
+  addEventListener(start, 'click', () => {
     if (gameState.innerText == "Off") {
       scoreBoard.innerText = 0;
       count.innerText = 180;

@@ -1,3 +1,5 @@
+import { setTimeout } from '../tools/timeout_manager';
+import { addEventListener } from '../tools/event_listener_manager';
 import { generateTile } from '../2048/generate-tile';
 import { moveTile } from '../2048/move-tile';
 import { color } from '../2048/color';
@@ -7,7 +9,7 @@ const start2048 = () => {
   const gameState = document.getElementById("game-state");
   const tiles = document.querySelectorAll(".grid");
 
-  start.addEventListener('click', () => {
+  addEventListener(start, 'click', () => {
     tiles.forEach(tile => {
       tile.classList.remove("active");
       tile.innerText = "";
@@ -19,7 +21,7 @@ const start2048 = () => {
     generateTile();
   });
 
-  document.addEventListener('keyup', (e) => {
+  addEventListener(document, 'keyup', (e) => {
     let direction = "";
 
     if (gameState.innerText == "On" &&

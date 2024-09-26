@@ -1,3 +1,4 @@
+import { setTimeout } from '../tools/timeout_manager';
 import { shoot } from '../blockman/shoot';
 
 const enemyShoot = (speed) => {

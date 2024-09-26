@@ -1,6 +1,8 @@
+import { addEventListener } from "../tools/event_listener_manager";
+
 const sortScroll = () => {
-  document.addEventListener('DOMContentLoaded', () => {
-    window.addEventListener('scroll', () => {
+  addEventListener(document, 'DOMContentLoaded', () => {
+    addEventListener(window, 'scroll', () => {
       if (window.scrollY > 100) {
         document.querySelectorAll('.sort').forEach((element) => {
           element.style.opacity = '0.8';

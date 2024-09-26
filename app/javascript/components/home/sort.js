@@ -1,10 +1,12 @@
+import { addEventListener } from "../tools/event_listener_manager";
+
 const sort = () => {
   const all = document.querySelector(".all");
   const singlePlayer = document.querySelector(".single-p");
   const twoPlayer = document.querySelector(".two-p");
   const games = document.querySelectorAll(".game");
 
-  all.addEventListener('click', (e) => {
+  addEventListener(all, 'click', (e) => {
     all.classList.add("active");
     singlePlayer.classList.remove("active");
     twoPlayer.classList.remove("active");
@@ -14,7 +16,7 @@ const sort = () => {
     });
   });
 
-  singlePlayer.addEventListener('click', (e) => {
+  addEventListener(singlePlayer, 'click', (e) => {
     all.classList.remove("active");
     singlePlayer.classList.add("active");
     twoPlayer.classList.remove("active");
@@ -29,7 +31,7 @@ const sort = () => {
     });
   });
 
-  twoPlayer.addEventListener('click', (e) => {
+  addEventListener(twoPlayer, 'click', (e) => {
     all.classList.remove("active");
     singlePlayer.classList.remove("active");
     twoPlayer.classList.add("active");

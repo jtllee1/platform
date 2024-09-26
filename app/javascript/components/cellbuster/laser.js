@@ -1,9 +1,11 @@
+import { setTimeout } from '../tools/timeout_manager';
+import { addEventListener } from '../tools/event_listener_manager';
 import { scoring } from '../cellbuster/scoring';
 
 const laser = () => {
   const laserSound = document.querySelector(".laser");
 
-  document.addEventListener('keyup', (e) => {
+  addEventListener(document, 'keyup', (e) => {
     let active = document.querySelector(".active");
     let up = document.getElementById(parseInt(active.id) - 20);
     let i = 20;

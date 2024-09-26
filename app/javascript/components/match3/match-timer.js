@@ -1,3 +1,5 @@
+import { setTimeout } from '../tools/timeout_manager';
+
 const matchTimer = () => {
   const count = document.getElementById("timer");
   const gameState = document.getElementById("game-state");

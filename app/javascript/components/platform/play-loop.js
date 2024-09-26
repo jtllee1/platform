@@ -1,3 +1,4 @@
+import { setTimeout } from '../tools/timeout_manager';
 import { actions } from '../platform/actions';
 
 const playLoop = (music) => {
