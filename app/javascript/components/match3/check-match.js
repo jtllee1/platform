@@ -1,5 +1,3 @@
-import { dropColor } from '../match3/drop-color';
-
 const checkMatch = () => {
   const grids = document.querySelectorAll(".grid");
   const score = document.getElementById("score");

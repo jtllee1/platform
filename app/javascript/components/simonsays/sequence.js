@@ -1,4 +1,4 @@
-import { selection } from '../simonsays/selection';
+import { selection } from '../simonsays/selection.js';
 
 const sequence = () => {
   const comSelect = document.getElementById("com-select");

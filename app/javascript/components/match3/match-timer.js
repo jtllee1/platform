@@ -1,4 +1,4 @@
-import { setTimeout } from '../tools/timeout_manager';
+import { setTimeout } from '../tools/timeout_manager.js';
 
 const matchTimer = () => {
   const count = document.getElementById("timer");

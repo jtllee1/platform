@@ -1,4 +1,4 @@
-import { checkLetter } from '../hangman/check-letter';
+import { checkLetter } from '../hangman/check-letter.js';
 
 const generateHint = () => {
   const chosenWord = document.getElementById("chosen-word");

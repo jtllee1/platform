@@ -1,4 +1,4 @@
-import { addEventListener } from "../tools/event_listener_manager";
+import { addEventListener } from "../tools/event_listener_manager.js";
 
 const sortScroll = () => {
   addEventListener(document, 'DOMContentLoaded', () => {

@@ -1,7 +1,7 @@
-import { addEventListener } from '../tools/event_listener_manager';
-import { generateWord } from '../hangman/generate-word';
-import { checkLetter } from '../hangman/check-letter';
-import { generateHint } from '../hangman/generate-hint';
+import { addEventListener } from '../tools/event_listener_manager.js';
+import { generateWord } from '../hangman/generate-word.js';
+import { checkLetter } from '../hangman/check-letter.js';
+import { generateHint } from '../hangman/generate-hint.js';
 
 const startHangman = () => {
   const start = document.getElementById("start");

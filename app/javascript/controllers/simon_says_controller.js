@@ -1,10 +1,10 @@
 import { Controller } from "@hotwired/stimulus"
-import { clearAllTimeouts } from '../components/tools/timeout_manager';
-import { clearAllEventListeners } from '../components/tools/event_listener_manager';
-import { startSimon } from '../components/simonsays/start-simon';
-import { simonSays } from '../components/simonsays/simon-says';
-import { cube } from '../components/cube/cube';
-import { cubePress } from '../components/cube/cube-press';
+import { clearAllTimeouts } from '../components/tools/timeout_manager.js';
+import { clearAllEventListeners } from '../components/tools/event_listener_manager.js';
+import { startSimon } from '../components/simonsays/start-simon.js';
+import { simonSays } from '../components/simonsays/simon-says.js';
+import { cube } from '../components/cube/cube.js';
+import { cubePress } from '../components/cube/cube-press.js';
 
 export default class extends Controller {
   connect() {

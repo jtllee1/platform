@@ -1,6 +1,6 @@
-import { addEventListener } from '../tools/event_listener_manager';
-import { moveBall } from '../pong/move-ball';
-import { generateLevel } from '../pong/generate-level';
+import { addEventListener } from '../tools/event_listener_manager.js';
+import { moveBall } from '../pong/move-ball.js';
+import { generateLevel } from '../pong/generate-level.js';
 
 const startPong = (newLevel) => {
   addEventListener(window, "keydown", function(e) {

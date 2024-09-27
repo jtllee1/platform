@@ -1,4 +1,4 @@
-import { setTimeout } from '../tools/timeout_manager';
+import { setTimeout } from '../tools/timeout_manager.js';
 
 const countdown = () => {
   const start = document.querySelector(".start");

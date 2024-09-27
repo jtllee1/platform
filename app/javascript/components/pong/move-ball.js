@@ -1,5 +1,5 @@
-import { setTimeout } from '../tools/timeout_manager';
-import { life } from '../pong/life';
+import { setTimeout } from '../tools/timeout_manager.js';
+import { life } from '../pong/life.js';
 
 const moveBall = (initDirection) => {
   let direction = initDirection;

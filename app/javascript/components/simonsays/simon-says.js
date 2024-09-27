@@ -1,5 +1,5 @@
-import { addEventListener } from '../tools/event_listener_manager';
-import { selection } from '../simonsays/selection';
+import { addEventListener } from '../tools/event_listener_manager.js';
+import { selection } from '../simonsays/selection.js';
 
 const simonSays = () => {
   const button1 = document.querySelector(".button-1");

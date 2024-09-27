@@ -1,6 +1,6 @@
-import { setTimeout } from '../tools/timeout_manager';
-import { generateObstacle } from '../helicopter/generate-obstacle';
-import { removeObstacle } from '../helicopter/remove-obstacle';
+import { setTimeout } from '../tools/timeout_manager.js';
+import { generateObstacle } from '../helicopter/generate-obstacle.js';
+import { removeObstacle } from '../helicopter/remove-obstacle.js';
 
 const obstacle = (time) => {
   let number = Math.floor(Math.random() * 20);

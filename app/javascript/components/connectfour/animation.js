@@ -1,5 +1,5 @@
-import { setTimeout } from '../tools/timeout_manager';
-import { checkCondition } from '../connectfour/check-condition';
+import { setTimeout } from '../tools/timeout_manager.js';
+import { checkCondition } from '../connectfour/check-condition.js';
 
 const animation = (column, addedClass) => {
   const grids = document.getElementById("grids-c-4");

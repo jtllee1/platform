@@ -1,7 +1,7 @@
-import { addEventListener } from '../tools/event_listener_manager';
-import { matchTimer } from '../match3/match-timer';
-import { dropColor } from '../match3/drop-color';
-import { clearGrid } from '../match3/clear-grid';
+import { addEventListener } from '../tools/event_listener_manager.js';
+import { matchTimer } from '../match3/match-timer.js';
+import { dropColor } from '../match3/drop-color.js';
+import { clearGrid } from '../match3/clear-grid.js';
 
 const startMatch = () => {
   const start = document.getElementById("start");

@@ -1,4 +1,4 @@
-import { setTimeout } from '../tools/timeout_manager';
+import { setTimeout } from '../tools/timeout_manager.js';
 
 const actions = (column, rows, timer, change, music) => {
   const cubes = document.querySelectorAll(".cube");

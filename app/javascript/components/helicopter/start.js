@@ -1,7 +1,7 @@
-import { setTimeout } from '../tools/timeout_manager';
-import { addEventListener } from '../tools/event_listener_manager';
-import { obstacle } from '../helicopter/obstacle';
-import { createClouds } from '../helicopter/create-clouds';
+import { setTimeout } from '../tools/timeout_manager.js';
+import { addEventListener } from '../tools/event_listener_manager.js';
+import { obstacle } from '../helicopter/obstacle.js';
+import { createClouds } from '../helicopter/create-clouds.js';
 
 const start = () => {
   const start = document.getElementById("start");
