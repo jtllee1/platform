@@ -1,8 +1,8 @@
-import { setTimeout } from '../tools/timeout_manager';
-import { addEventListener } from '../tools/event_listener_manager';
-import { tail } from '../caterpillar/tail';
-import { generateFood } from '../caterpillar/generate-food';
-import { updateScore } from '../caterpillar/update-score';
+import { setTimeout } from 'components/tools/timeout_manager';
+import { addEventListener } from 'components/tools/event_listener_manager';
+import { tail } from 'components/caterpillar/tail';
+import { generateFood } from 'components/caterpillar/generate-food';
+import { updateScore } from 'components/caterpillar/update-score';
 
 const continualMovement = () => {
   addEventListener(window, "keydown", function(e) {

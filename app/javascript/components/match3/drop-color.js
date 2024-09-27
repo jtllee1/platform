@@ -1,6 +1,6 @@
-import { setTimeout } from '../tools/timeout_manager.js';
-import { generateColor } from '../match3/generate-color.js';
-import { checkMatch } from '../match3/check-match.js';
+import { setTimeout } from 'components/tools/timeout_manager';
+import { generateColor } from 'components/match3/generate-color';
+import { checkMatch } from 'components/match3/check-match';
 
 const dropColor = (column, row, color) => {
   const grids = document.querySelectorAll(".grid");

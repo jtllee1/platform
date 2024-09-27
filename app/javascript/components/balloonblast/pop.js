@@ -1,4 +1,4 @@
-import { setTimeout } from '../tools/timeout_manager';
+import { setTimeout } from 'components/tools/timeout_manager';
 
 const pop = (num, blastTiming, shockWaveTiming, number) => {
   const strength = parseInt(document.getElementById(`strength-${number}`).innerText);

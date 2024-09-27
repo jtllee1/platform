@@ -1,9 +1,9 @@
-import { setTimeout } from '../tools/timeout_manager.js';
-import { addEventListener } from '../tools/event_listener_manager.js';
-import { generateShape } from '../tetris/generate-shape.js';
-import { moveTetris } from '../tetris/move-tetris.js';
-import { rotateTetris } from '../tetris/rotate-tetris.js';
-import { clearCondition } from '../tetris/clear-condition.js';
+import { setTimeout } from 'components/tools/timeout_manager';
+import { addEventListener } from 'components/tools/event_listener_manager';
+import { generateShape } from 'components/tetris/generate-shape';
+import { moveTetris } from 'components/tetris/move-tetris';
+import { rotateTetris } from 'components/tetris/rotate-tetris';
+import { clearCondition } from 'components/tetris/clear-condition';
 
 const startTetris = () => {
   addEventListener(window, "keydown", function(e) {

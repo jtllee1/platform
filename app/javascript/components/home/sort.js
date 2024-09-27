@@ -1,4 +1,4 @@
-import { addEventListener } from "../tools/event_listener_manager.js";
+import { addEventListener } from "../tools/event_listener_manager";
 
 const sort = () => {
   const all = document.querySelector(".all");

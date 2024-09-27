@@ -1,8 +1,8 @@
-import { setTimeout } from '../tools/timeout_manager';
-import { addEventListener } from '../tools/event_listener_manager';
-import { generateTile } from '../2048/generate-tile';
-import { moveTile } from '../2048/move-tile';
-import { color } from '../2048/color';
+import { setTimeout } from 'components/tools/timeout_manager';
+import { addEventListener } from 'components/tools/event_listener_manager';
+import { generateTile } from 'components/2048/generate-tile';
+import { moveTile } from 'components/2048/move-tile';
+import { color } from 'components/2048/color';
 
 const start2048 = () => {
   const start = document.getElementById("start");

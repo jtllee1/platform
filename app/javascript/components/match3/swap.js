@@ -1,5 +1,5 @@
-import { setTimeout } from "../tools/timeout_manager.js";
-import { addEventListener } from "../tools/event_listener_manager.js";
+import { setTimeout } from "../tools/timeout_manager";
+import { addEventListener } from "../tools/event_listener_manager";
 
 const swap = () => {
   const grids = document.querySelectorAll(".grid");

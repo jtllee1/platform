@@ -1,5 +1,5 @@
-import { setTimeout } from '../tools/timeout_manager';
-import { move } from '../blockman/move';
+import { setTimeout } from 'components/tools/timeout_manager';
+import { move } from 'components/blockman/move';
 
 const enemyMove = (speed) => {
   const options = ["right", "left"];

@@ -1,5 +1,5 @@
-import { setTimeout } from '../tools/timeout_manager';
-import { scoring } from '../2048/scoring';
+import { setTimeout } from 'components/tools/timeout_manager';
+import { scoring } from 'components/2048/scoring';
 
 const moveTile = (direction) => {
   const tiles = document.querySelectorAll(".grid");

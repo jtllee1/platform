@@ -1,7 +1,7 @@
-import { setTimeout } from '../tools/timeout_manager';
-import { addEventListener } from '../tools/event_listener_manager';
-import { clearGrid } from '../cellbuster/clear-grid';
-import { enemyMovement } from '../cellbuster/enemy-movement';
+import { setTimeout } from 'components/tools/timeout_manager';
+import { addEventListener } from 'components/tools/event_listener_manager';
+import { clearGrid } from 'components/cellbuster/clear-grid';
+import { enemyMovement } from 'components/cellbuster/enemy-movement';
 
 const generateEnemies = () => {
   const start = document.getElementById("start");

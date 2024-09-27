@@ -7,7 +7,7 @@ const generateWord = () => {
   word.innerText = "";
 
   fetch(`https://pokeapi.co/api/v2/pokemon/${number}/`).then(function (response) {
-    return response.json();
+    return responseon();
   }).then(function (data) {
     chosenWord.innerText = data.name;
 

@@ -1,5 +1,5 @@
-import { setTimeout } from '../tools/timeout_manager';
-import { shoot } from '../blockman/shoot';
+import { setTimeout } from 'components/tools/timeout_manager';
+import { shoot } from 'components/blockman/shoot';
 
 const enemyShoot = (speed) => {
   const enemyHealth = document.querySelector(".health-2");

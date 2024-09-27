@@ -1,4 +1,4 @@
-import { pop } from '../balloonblast/pop';
+import { pop } from 'components/balloonblast/pop';
 
 const drop = (player, number) => {
   let active = document.querySelector(`.${player}`);

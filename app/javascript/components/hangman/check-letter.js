@@ -1,4 +1,4 @@
-import { revealWord } from '../hangman/reveal-word.js';
+import { revealWord } from 'components/hangman/reveal-word';
 
 const checkLetter = (letter) => {
   const chosenWord = document.getElementById("chosen-word");

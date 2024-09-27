@@ -1,8 +1,8 @@
-import { addEventListener } from '../tools/event_listener_manager';
-import { move } from '../blockman/move';
-import { shoot } from '../blockman/shoot';
-import { enemyMove } from '../blockman/enemy-move';
-import { enemyShoot } from '../blockman/enemy-shoot';
+import { addEventListener } from 'components/tools/event_listener_manager';
+import { move } from 'components/blockman/move';
+import { shoot } from 'components/blockman/shoot';
+import { enemyMove } from 'components/blockman/enemy-move';
+import { enemyShoot } from 'components/blockman/enemy-shoot';
 
 const startBlockman = () => {
   const shootStatus = document.querySelector(".shoot-status-1");

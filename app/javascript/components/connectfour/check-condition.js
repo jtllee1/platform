@@ -1,4 +1,4 @@
-import { collectSequence } from '../connectfour/collect-sequence.js';
+import { collectSequence } from 'components/connectfour/collect-sequence';
 
 const checkCondition = () => {
   let firstRow = 90;

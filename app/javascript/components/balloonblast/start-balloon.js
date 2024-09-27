@@ -1,6 +1,6 @@
-import { addEventListener } from '../tools/event_listener_manager';
-import { fillGrids } from '../balloonblast/fill-grids';
-import { move } from '../balloonblast/move';
+import { addEventListener } from 'components/tools/event_listener_manager';
+import { fillGrids } from 'components/balloonblast/fill-grids';
+import { move } from 'components/balloonblast/move';
 
 const startBalloon = () => {
   const start = document.getElementById("start");
