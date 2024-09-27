@@ -1,12 +1,12 @@
 databases:
-  - name: Games Platform
-    databaseName: Games Platform
-    user: Games Platform
+  - name: GamesPlatform
+    databaseName: GamesPlatform
+    user: GamesPlatform
     plan: free
 
 services:
   - type: web
-    name: Games Platform
+    name: GamesPlatform
     runtime: ruby
     plan: free
     buildCommand: "./bin/render-build.sh"
