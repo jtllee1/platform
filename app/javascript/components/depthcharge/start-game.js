@@ -1,5 +1,5 @@
-import { setInterval } from '../tools/timeout_manager';
-import { addEventListener } from '../tools/event_listener_manager';
+import { setInterval } from 'components/tools/timeout_manager';
+import { addEventListener } from 'components/tools/event_listener_manager';
 
 const startGame = () => {
   const start = document.getElementById("start");

@@ -1,9 +1,9 @@
-import { setTimeout } from '../tools/timeout_manager';
-import { addEventListener } from '../tools/event_listener_manager';
-import { sequence } from '../simonsays/sequence';
-import { selection } from '../simonsays/selection';
-import { clear } from '../simonsays/clear';
-import { countdown } from '../simonsays/countdown';
+import { setTimeout } from 'components/tools/timeout_manager';
+import { addEventListener } from 'components/tools/event_listener_manager';
+import { sequence } from 'components/simonsays/sequence';
+import { selection } from 'components/simonsays/selection';
+import { clear } from 'components/simonsays/clear';
+import { countdown } from 'components/simonsays/countdown';
 
 const startSimon = () => {
   const start = document.querySelector(".start");

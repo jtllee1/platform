@@ -1,7 +1,7 @@
-import { setTimeout } from '../tools/timeout_manager';
-import { clearGrid } from '../cellbuster/clear-grid';
-import { checkGrid } from '../cellbuster/check-grid';
-import { scoring } from '../cellbuster/scoring';
+import { setTimeout } from 'components/tools/timeout_manager';
+import { clearGrid } from 'components/cellbuster/clear-grid';
+import { checkGrid } from 'components/cellbuster/check-grid';
+import { scoring } from 'components/cellbuster/scoring';
 
 const timer = () => {
   const count = document.getElementById("timer");

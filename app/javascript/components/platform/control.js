@@ -1,6 +1,6 @@
-import { setTimeout } from '../tools/timeout_manager';
-import { addEventListener } from '../tools/event_listener_manager';
-import { playLoop } from '../platform/play-loop';
+import { setTimeout } from 'components/tools/timeout_manager';
+import { addEventListener } from 'components/tools/event_listener_manager';
+import { playLoop } from 'components/platform/play-loop';
 
 const control = () => {
   const cubes = document.querySelectorAll(".cube");

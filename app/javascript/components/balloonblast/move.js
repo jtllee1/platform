@@ -1,7 +1,7 @@
-import { setTimeout } from '../tools/timeout_manager';
-import { addEventListener } from '../tools/event_listener_manager';
-import { drop } from '../balloonblast/drop';
-import { addBar } from '../balloonblast/add-bar';
+import { setTimeout } from 'components/tools/timeout_manager';
+import { addEventListener } from 'components/tools/event_listener_manager';
+import { drop } from 'components/balloonblast/drop';
+import { addBar } from 'components/balloonblast/add-bar';
 
 const move = () => {
   addEventListener(window, "keydown", function(e) {

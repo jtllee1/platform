@@ -1,5 +1,5 @@
-import { setTimeout } from '../tools/timeout_manager';
-import { addEventListener } from '../tools/event_listener_manager';
+import { setTimeout } from 'components/tools/timeout_manager';
+import { addEventListener } from 'components/tools/event_listener_manager';
 
 const movePaddle = () => {
   var keyState = {};

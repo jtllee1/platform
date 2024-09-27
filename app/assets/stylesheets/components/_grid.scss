@@ -14,7 +14,7 @@
 
 .cell {
   .active {
-    background-image: image-url('cell');
+    background-image: image-url('cell.png');
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -66,21 +66,21 @@
 }
 
 .laser {
-  background-image: image-url('particle1');
+  background-image: image-url('particle1.png');
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
 }
 
 .enemy {
-  background-image: image-url('virus2');
+  background-image: image-url('virus2.png');
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
 }
 
 .level-2 {
-  background-image: image-url('virus');
+  background-image: image-url('virus.png');
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;

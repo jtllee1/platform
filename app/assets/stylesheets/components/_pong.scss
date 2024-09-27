@@ -11,19 +11,19 @@
     height: 5%;
   }
   .obstacle {
-    background-image: image-url('brick');
+    background-image: image-url('brick.png');
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
   }
   .ball {
-    background-image: image-url('ball');
+    background-image: image-url('ball.png');
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
   }
   .active {
-    background-image: image-url('paddle');
+    background-image: image-url('paddle.png');
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;

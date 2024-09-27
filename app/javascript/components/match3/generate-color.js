@@ -1,5 +1,3 @@
-import { dropColor } from '../match3/drop-color';
-
 const generateColor = (column) => {
   const grids = document.querySelectorAll(".grid");
   const colors = ["green", "blue", "orange", "purple", "red", "yellow", "red", "yellow", "cyan", "pink"];

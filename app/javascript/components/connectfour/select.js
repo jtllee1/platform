@@ -1,7 +1,7 @@
-import { addEventListener } from '../tools/event_listener_manager';
-import { columnHover } from '../connectfour/column-hover';
-import { animation } from '../connectfour/animation';
-import { reset } from '../connectfour/reset';
+import { addEventListener } from 'components/tools/event_listener_manager';
+import { columnHover } from 'components/connectfour/column-hover';
+import { animation } from 'components/connectfour/animation';
+import { reset } from 'components/connectfour/reset';
 
 const select = () => {
   const slots = document.querySelectorAll(".grid-c-4");

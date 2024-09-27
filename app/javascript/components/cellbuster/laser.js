@@ -1,6 +1,6 @@
-import { setTimeout } from '../tools/timeout_manager';
-import { addEventListener } from '../tools/event_listener_manager';
-import { scoring } from '../cellbuster/scoring';
+import { setTimeout } from 'components/tools/timeout_manager';
+import { addEventListener } from 'components/tools/event_listener_manager';
+import { scoring } from 'components/cellbuster/scoring';
 
 const laser = () => {
   const laserSound = document.querySelector(".laser");

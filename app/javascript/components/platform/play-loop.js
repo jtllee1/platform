@@ -1,5 +1,5 @@
-import { setTimeout } from '../tools/timeout_manager';
-import { actions } from '../platform/actions';
+import { setTimeout } from 'components/tools/timeout_manager';
+import { actions } from 'components/platform/actions';
 
 const playLoop = (music) => {
   const gameState = document.getElementById("game-state");

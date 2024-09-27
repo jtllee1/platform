@@ -1,5 +1,5 @@
-import { fillCrates } from '../balloonblast/fill-crates';
-import { addBar } from '../balloonblast/add-bar';
+import { fillCrates } from 'components/balloonblast/fill-crates';
+import { addBar } from 'components/balloonblast/add-bar';
 
 const fillGrids = () => {
   const grids = document.querySelectorAll(".grid");
